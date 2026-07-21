@@ -67,7 +67,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
         <Link
           to="/"
-          className="group inline-flex items-center gap-4 focus-visible:outline-none md:gap-5"
+          className="group inline-flex items-center gap-1.5 focus-visible:outline-none md:gap-2"
           aria-label="Oliveira Ritzmann Advogados — 30 anos — Início"
         >
           <img
