@@ -473,15 +473,22 @@ function CarreiraFold() {
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Overscura verde-profundo — mantém contraste e tinge a foto na paleta */}
+      {/* Vinheta lateral — ancora o card à esquerda sem tingir a foto */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(8,38,36,0.88) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.35) 100%)",
+            "linear-gradient(90deg, rgba(8,38,36,0.72) 0%, rgba(8,38,36,0.35) 38%, rgba(8,38,36,0) 62%)",
         }}
       />
+      {/* Leve escurecida geral para coesão com a paleta */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{ backgroundColor: "rgba(0,0,0,0.18)" }}
+      />
+
 
       <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
         <div
