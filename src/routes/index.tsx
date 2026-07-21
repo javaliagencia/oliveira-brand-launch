@@ -196,11 +196,8 @@ function CompetenciasFold() {
         }}
       >
         <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
-          <p className="eyebrow flex items-center gap-4" style={{ color: "var(--deep-green)" }}>
-            <span className="hairline" aria-hidden="true" style={{ backgroundColor: "var(--gold)" }} />
-            Duas competências, um método
-          </p>
-          <h2 className="mt-6 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+          <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
+          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
             Volume e estratégia,{" "}
             <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
           </h2>
