@@ -595,7 +595,7 @@ function SociosCarousel() {
         onClick={() => setStart((s) => Math.max(0, s - 1))}
         disabled={!canPrev}
         aria-label="Anterior"
-        className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
+        className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity"
         style={{
           backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
           border: "1px solid var(--gold)",
@@ -611,7 +611,7 @@ function SociosCarousel() {
         onClick={() => setStart((s) => Math.min(maxStart, s + 1))}
         disabled={!canNext}
         aria-label="Próximo"
-        className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
+        className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity"
         style={{
           backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
           border: "1px solid var(--gold)",
