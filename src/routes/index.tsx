@@ -205,15 +205,8 @@ function CompetenciasFold() {
             <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
           </h2>
         </div>
-        {/* Transição suave bege → verde profundo, encostando nos painéis */}
-        <div
-          aria-hidden="true"
-          className="h-24 w-full md:h-32"
-          style={{
-            background: "linear-gradient(to bottom, var(--sand) 0%, var(--ink) 100%)",
-          }}
-        />
       </div>
+
 
 
       {/* Dois painéis conectados — o hovered expande e invade o vizinho, como no Machado Meyer. */}
