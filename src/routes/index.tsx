@@ -536,35 +536,49 @@ function SociosCarousel() {
         }}
       >
         {loop.map((socio, i) => (
-          <div
+          <a
             key={`${socio.nome}-${i}`}
-            className="relative aspect-[3/4] shrink-0 overflow-hidden"
+            href="/socios"
+            className="socio-card relative aspect-[3/4] shrink-0 overflow-hidden group"
             style={{
               width: "calc((min(1360px, 100vw) - 3rem) / 5)",
               backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
             }}
+            aria-label={`Ver perfil de ${socio.nome}`}
           >
             {socio.foto ? (
               <img
                 src={socio.foto}
                 alt={socio.nome}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 style={{ objectPosition: socio.objectPosition ?? "50% 50%" }}
                 loading="lazy"
               />
             ) : null}
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-center p-5">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-center gap-2 p-5">
               <span
-                className="font-display text-[15px] leading-tight whitespace-nowrap text-center"
+                className="font-display text-[15px] leading-tight whitespace-nowrap text-center inline-flex items-center gap-2"
                 style={{
                   color: "var(--sand)",
                   textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
                 }}
               >
                 {socio.nome}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-[14px] w-[14px] shrink-0 -translate-x-1 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  style={{ color: "var(--gold)" }}
+                >
+                  <path d="M7 17L17 7" strokeLinecap="square" />
+                  <path d="M9 7h8v8" strokeLinecap="square" />
+                </svg>
               </span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
       <style>{`
