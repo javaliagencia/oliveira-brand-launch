@@ -4,6 +4,8 @@ import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
+import { SectionEyebrow } from "@/components/section-eyebrow";
+
 
 
 
@@ -194,11 +196,8 @@ function CompetenciasFold() {
         }}
       >
         <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
-          <p className="eyebrow flex items-center gap-4" style={{ color: "var(--deep-green)" }}>
-            <span className="hairline" aria-hidden="true" style={{ backgroundColor: "var(--gold)" }} />
-            Duas competências, um método
-          </p>
-          <h2 className="mt-6 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+          <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
+          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
             Volume e estratégia,{" "}
             <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
           </h2>
@@ -398,10 +397,8 @@ function ManifestoFold() {
         <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
-              <p className="eyebrow" style={{ color: "var(--gold)" }}>
-                Quem conduz o método
-              </p>
-              <h3 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.2] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
+              <SectionEyebrow>Quem conduz o método</SectionEyebrow>
+              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
                 Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
               </h3>
             </div>
