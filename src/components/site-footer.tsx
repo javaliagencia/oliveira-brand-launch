@@ -237,9 +237,6 @@ export function SiteFooter() {
           >
             Nove sedes próprias. Atuação em 27 unidades da federação.
           </h3>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-sand/70">
-            Estrutura própria, sem repasse a correspondente.
-          </p>
 
           <ul className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {SEDES.map((sede) => (
