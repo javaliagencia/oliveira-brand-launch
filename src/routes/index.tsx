@@ -473,32 +473,25 @@ function CarreiraFold() {
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Vinheta lateral — ancora o card à esquerda sem tingir a foto */}
+      {/* Leve escurecida geral — coesão sem tingir de verde */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(8,38,36,0.72) 0%, rgba(8,38,36,0.35) 38%, rgba(8,38,36,0) 62%)",
-        }}
+        style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
       />
-      {/* Leve escurecida geral para coesão com a paleta */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.18)" }}
-      />
+
 
 
       <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
         <div
-          className="max-w-[560px] p-8 md:p-12"
+          className="max-w-[560px] p-8 backdrop-blur-md md:p-12"
           style={{
-            backgroundColor: "var(--ink)",
-            border: "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
+            backgroundColor: "rgba(8, 38, 36, 0.42)",
+            border: "1px solid color-mix(in oklch, var(--gold) 45%, transparent)",
             borderRadius: 4,
           }}
         >
+
           <SectionEyebrow>Carreira</SectionEyebrow>
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
             Formar advogados que{" "}
