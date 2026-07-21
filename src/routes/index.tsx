@@ -549,12 +549,13 @@ function SociosCarousel() {
                 src={socio.foto}
                 alt={socio.nome}
                 className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: socio.objectPosition ?? "50% 50%" }}
                 loading="lazy"
               />
             ) : null}
-            <div className="absolute inset-x-0 bottom-0 flex items-end p-5">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-center p-5">
               <span
-                className="font-display text-[15px] leading-tight whitespace-nowrap"
+                className="font-display text-[15px] leading-tight whitespace-nowrap text-center"
                 style={{
                   color: "var(--sand)",
                   textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
