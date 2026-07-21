@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 
 /**
  * Header institucional — minimalista.
@@ -65,15 +66,16 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
         <Link
           to="/"
-          className="group inline-flex items-baseline gap-2 focus-visible:outline-none"
+          className="group inline-flex items-center focus-visible:outline-none"
           aria-label="Oliveira Ritzmann Advogados — Início"
         >
-          <span className="font-display text-[16px] font-medium tracking-[0.02em] text-sand transition-colors group-hover:text-[var(--gold)]">
-            Oliveira Ritzmann
-          </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.32em] text-sand/70 sm:inline">
-            Advogados
-          </span>
+          <img
+            src={logoVerde.url}
+            alt="Oliveira Ritzmann Advogados"
+            className="h-8 w-auto md:h-9"
+            loading="eager"
+            decoding="async"
+          />
         </Link>
 
         <button
@@ -109,9 +111,11 @@ export function SiteHeader() {
           >
             <div className="w-full">
               <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
-                <span className="font-display text-[16px] font-medium tracking-[0.02em]">
-                  Oliveira Ritzmann
-                </span>
+                <img
+                  src={logoVerde.url}
+                  alt="Oliveira Ritzmann Advogados"
+                  className="h-8 w-auto md:h-9"
+                />
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
