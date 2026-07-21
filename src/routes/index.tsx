@@ -504,7 +504,7 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS: { nome: string; foto: string | null }[] = [
+const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] = [
   { nome: "Jorge Ritzmann de Oliveira", foto: socioJorge.url },
   { nome: "Juliano Schmitt", foto: socioJuliano.url },
   { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
@@ -513,7 +513,7 @@ const SOCIOS: { nome: string; foto: string | null }[] = [
   { nome: "Sonia Angulski", foto: socioSonia.url },
   { nome: "Mariana Hillesheim", foto: socioMariana.url },
   { nome: "Bruna Schmitt", foto: socioBruna.url },
-  { nome: "Carolina Schmidt", foto: socioCarolina.url },
+  { nome: "Carolina Schmidt", foto: socioCarolina.url, objectPosition: "50% 20%" },
 ];
 
 function SociosCarousel() {
