@@ -101,10 +101,8 @@ export function SiteHeader() {
             <span className="block h-px w-full bg-current" />
           </span>
         </button>
-
-        </div>
-
       </div>
+
 
       {/* Overlay menu — tela cheia */}
       {open && (
