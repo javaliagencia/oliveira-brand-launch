@@ -509,11 +509,11 @@ const SOCIOS: { nome: string; foto: string | null }[] = [
   { nome: "Juliano Schmitt", foto: socioJuliano.url },
   { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
   { nome: "Cintia Carla Senem", foto: socioCintia.url },
-  { nome: "Guilherme Otte", foto: null },
-  { nome: "Sonia Angulski", foto: null },
+  { nome: "Guilherme Otte", foto: socioGuilherme.url },
+  { nome: "Sonia Angulski", foto: socioSonia.url },
   { nome: "Mariana Hillesheim", foto: socioMariana.url },
   { nome: "Bruna Schmitt", foto: socioBruna.url },
-  { nome: "Carolina Schmidt", foto: null },
+  { nome: "Carolina Schmidt", foto: socioCarolina.url },
 ];
 
 function SociosCarousel() {
@@ -552,38 +552,16 @@ function SociosCarousel() {
                 loading="lazy"
               />
             ) : null}
-            <div
-              className="absolute inset-x-0 bottom-0 h-1/2"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(8,38,36,0.92) 0%, rgba(8,38,36,0.55) 55%, transparent 100%)",
-              }}
-            />
-            <div className="absolute inset-0 flex items-end p-5">
-              <div className="flex flex-col gap-2">
-                <span
-                  className="text-[10px] uppercase tracking-[0.28em]"
-                  style={{ color: "var(--gold)" }}
-                >
-                  {String((i % SOCIOS.length) + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className="font-display text-[15px] leading-tight"
-                  style={{ color: "var(--sand)" }}
-                >
-                  {socio.nome}
-                </span>
-                {!socio.foto ? (
-                  <span
-                    className="text-[10px] uppercase tracking-[0.24em]"
-                    style={{
-                      color: "color-mix(in oklch, var(--sand) 55%, transparent)",
-                    }}
-                  >
-                    Foto ⟨PENDENTE⟩
-                  </span>
-                ) : null}
-              </div>
+            <div className="absolute inset-x-0 bottom-0 flex items-end p-5">
+              <span
+                className="font-display text-[15px] leading-tight whitespace-nowrap"
+                style={{
+                  color: "var(--sand)",
+                  textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
+                }}
+              >
+                {socio.nome}
+              </span>
             </div>
           </div>
         ))}
