@@ -107,7 +107,7 @@ function HeroFold() {
               profundidade
             </em>
           </span>
-          <span className="mt-4 block text-[clamp(0.95rem,1.15vw,1.2rem)] font-light uppercase tracking-[0.32em] leading-none text-sand/70">
+          <span className="mt-5 block font-display text-[clamp(1.75rem,3.4vw,3rem)] font-light leading-[1.05] tracking-[-0.005em] text-sand/90">
             em qualquer escala.
           </span>
         </h1>
