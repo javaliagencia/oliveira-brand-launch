@@ -1,5 +1,6 @@
-import { Mail, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
 import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
+
 
 
 /**
