@@ -3,6 +3,7 @@ import { useState } from "react";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
+import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 
 
 
