@@ -86,21 +86,31 @@ export function SiteHeader() {
           />
         </Link>
 
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menu"
-          aria-expanded={open}
-          className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-        >
-          <span
-            aria-hidden="true"
-            className="inline-flex h-[8px] w-6 flex-col justify-between"
+        <div className="inline-flex items-center gap-5 md:gap-7">
+          <a
+            href="https://intranet.oliveiraritzmann.com.br"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hidden text-[11px] uppercase tracking-[0.24em] text-sand/80 transition-colors hover:text-[var(--gold)] md:inline-flex"
           >
-            <span className="block h-px w-full bg-current" />
-            <span className="block h-px w-full bg-current" />
-          </span>
-        </button>
+            Intranet
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menu"
+            aria-expanded={open}
+            className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-flex h-[8px] w-6 flex-col justify-between"
+            >
+              <span className="block h-px w-full bg-current" />
+              <span className="block h-px w-full bg-current" />
+            </span>
+          </button>
+        </div>
       </div>
 
 
@@ -192,7 +202,11 @@ export function SiteHeader() {
                   </li>
                 </ul>
 
-                <div className="mt-16 flex gap-6 text-[11px] uppercase tracking-[0.2em] text-sand/70">
+                <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
+                  <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
+                    Intranet
+                  </a>
+                  <span aria-hidden="true" className="text-sand/30">·</span>
                   <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
                     LinkedIn
                   </a>
