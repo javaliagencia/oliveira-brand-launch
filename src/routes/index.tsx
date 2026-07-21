@@ -271,25 +271,6 @@ function CompetenciaCard({ data }: { data: Competencia }) {
       </div>
 
 
-        <div className="flex h-full flex-col justify-between">
-          <p className="max-w-[52ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
-            {data.descricao}
-          </p>
-          <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="block h-px w-10"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <span
-              className="text-[11px] uppercase tracking-[0.24em]"
-              style={{ color: "var(--gold)" }}
-            >
-              Conhecer a área
-            </span>
-          </div>
-        </div>
-      </div>
     </a>
   );
 }
