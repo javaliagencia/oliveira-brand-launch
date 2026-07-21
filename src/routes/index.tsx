@@ -7,6 +7,12 @@ import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink } from "@/components/brand-ui";
+import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
+import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
+import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
+import socioJuliano from "@/assets/socios/juliano-schmitt.png.asset.json";
+import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
+import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
 
 
 
