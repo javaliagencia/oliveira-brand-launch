@@ -202,10 +202,33 @@ function CompetenciaCard({ data }: { data: Competencia }) {
       style={{ backgroundColor: "var(--ink)" }}
       aria-label={`${data.titulo} — saber mais`}
     >
-      {/* Painel visual (imagem) — desliza para cima no hover */}
-      <div className="relative h-[520px] w-full overflow-hidden md:h-[600px]">
+      {/* Bloco de descrição — fica por baixo; revelado quando a imagem sobe */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[38%] px-6 pb-8 pt-6 text-sand md:px-8">
+        <div className="flex h-full flex-col justify-between">
+          <p className="max-w-[52ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
+            {data.descricao}
+          </p>
+          <div className="flex items-center gap-3">
+            <span
+              aria-hidden="true"
+              className="block h-px w-10"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <span
+              className="text-[11px] uppercase tracking-[0.24em]"
+              style={{ color: "var(--gold)" }}
+            >
+              Conhecer a área
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Painel visual (imagem) — desliza para cima no hover, revelando a descrição */}
+      <div className="relative z-10 h-[520px] w-full overflow-hidden md:h-[600px]">
         <div
           className="absolute inset-0 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,0.84,0.24,1)] group-hover:-translate-y-[38%] group-focus-visible:-translate-y-[38%]"
+          style={{ backgroundColor: "var(--ink)" }}
         >
           <img
             src={data.imagem}
@@ -247,8 +270,7 @@ function CompetenciaCard({ data }: { data: Competencia }) {
         </div>
       </div>
 
-      {/* Bloco de descrição — revelado por baixo da imagem no hover */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] px-6 pb-8 pt-6 text-sand md:px-8">
+
         <div className="flex h-full flex-col justify-between">
           <p className="max-w-[52ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
             {data.descricao}
