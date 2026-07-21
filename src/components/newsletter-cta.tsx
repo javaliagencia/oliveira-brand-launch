@@ -13,6 +13,30 @@ export function NewsletterCta() {
       className="relative overflow-hidden text-sand"
       style={{ backgroundColor: "var(--ink-2)" }}
     >
+      {/* Grafismo da marca — monograma OR em linha (círculo + dois "D") */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-1/2 h-[180%] w-auto -translate-y-1/2 opacity-[0.14]"
+        viewBox="0 0 200 200"
+        fill="none"
+      >
+        {/* Círculo externo */}
+        <circle cx="100" cy="100" r="88" stroke="var(--gold)" strokeWidth="1" />
+        {/* D esquerdo (curva à direita, base vertical à esquerda) */}
+        <path
+          d="M 70 34 L 70 166 M 70 34 A 66 66 0 0 1 70 166"
+          stroke="var(--gold)"
+          strokeWidth="1"
+          strokeLinecap="square"
+        />
+        {/* D direito, espelhado */}
+        <path
+          d="M 130 34 L 130 166 M 130 34 A 66 66 0 0 0 130 166"
+          stroke="var(--gold)"
+          strokeWidth="1"
+          strokeLinecap="square"
+        />
+      </svg>
 
       <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-16 md:py-20">
         {/* Coluna 1 — Assine */}
