@@ -2,15 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 /**
- * Header institucional — menu sanduíche.
+ * Header institucional — minimalista.
+ * Logo à esquerda ("Oliveira Ritzmann · Advogados"), ícone hambúrguer
+ * discreto à direita. Sem linha utilitária no topo — LinkedIn/Instagram
+ * ficam dentro do overlay do menu.
  *
- *   Linha 1 (utilitária, ink-2): LinkedIn · Instagram à direita.
- *   Linha 2 (principal, ink):    logo à esquerda, botão "Menu" (hambúrguer)
- *                                 à direita — desktop e mobile.
- *
- * O hambúrguer abre um overlay em tela cheia com a navegação principal
- * e o submenu de Atuação, separado por um filete dourado antes de
- * "Recuperação de créditos complexos".
+ * O header é transparente por padrão (sobreposto ao hero em vídeo) e
+ * ganha fundo sólido verde-profundo após um pequeno scroll.
  */
 
 type NavItem = { label: string; href: string };
@@ -39,7 +37,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -59,80 +57,43 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 w-full">
-      {/* Linha 1 — utilitária */}
-      <div
-        className="w-full text-sand/85"
-        style={{ backgroundColor: "var(--ink-2)" }}
-      >
-        <div className="mx-auto flex max-w-[1360px] items-center justify-end gap-6 px-6 py-1.5 text-[11px] tracking-[0.14em] uppercase">
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-          >
-            LinkedIn
-          </a>
-          <span aria-hidden="true" className="text-sand/30">·</span>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-          >
-            Instagram
-          </a>
-        </div>
-      </div>
-
-      {/* Linha 2 — principal */}
-      <div
-        className="w-full text-sand"
-        style={{ backgroundColor: "var(--ink)" }}
-      >
-        <div
-          className={`mx-auto flex max-w-[1360px] items-center justify-between px-6 transition-[padding] duration-300 ${
-            scrolled ? "py-3" : "py-5"
-          }`}
+    <header
+      className={`fixed inset-x-0 top-0 z-40 w-full text-sand transition-colors duration-500 ${
+        scrolled ? "bg-[var(--ink)]/95 backdrop-blur-[2px]" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
+        <Link
+          to="/"
+          className="group inline-flex items-baseline gap-2 focus-visible:outline-none"
+          aria-label="Oliveira Ritzmann Advogados — Início"
         >
-          <Link
-            to="/"
-            className="group inline-flex items-baseline gap-2 focus-visible:outline-none"
-            aria-label="Oliveira Ritzmann Advogados — Início"
-          >
-            <span className="font-display text-[17px] font-medium tracking-[0.02em] text-sand transition-colors group-hover:text-[var(--gold)]">
-              Oliveira Ritzmann
-            </span>
-            <span className="hidden text-[10px] uppercase tracking-[0.28em] text-sand/60 sm:inline">
-              Advogados
-            </span>
-          </Link>
+          <span className="font-display text-[16px] font-medium tracking-[0.02em] text-sand transition-colors group-hover:text-[var(--gold)]">
+            Oliveira Ritzmann
+          </span>
+          <span className="hidden text-[10px] uppercase tracking-[0.32em] text-sand/70 sm:inline">
+            Advogados
+          </span>
+        </Link>
 
-          {/* Hambúrguer — desktop + mobile */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Abrir menu"
-            aria-expanded={open}
-            className="group inline-flex items-center gap-4 text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Abrir menu"
+          aria-expanded={open}
+          className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+        >
+          <span
+            aria-hidden="true"
+            className="inline-flex h-[8px] w-6 flex-col justify-between"
           >
-            <span className="text-[11px] uppercase tracking-[0.22em]">Menu</span>
-            <span
-              aria-hidden="true"
-              className="inline-flex h-[10px] w-7 flex-col justify-between"
-            >
-              <span className="block h-px w-full bg-current" />
-              <span className="block h-px w-full bg-current" />
-            </span>
-          </button>
-        </div>
-
-        {/* Filete dourado */}
-        <div className="h-px w-full" style={{ backgroundColor: "var(--gold)" }} />
+            <span className="block h-px w-full bg-current" />
+            <span className="block h-px w-full bg-current" />
+          </span>
+        </button>
       </div>
 
-      {/* Overlay menu */}
+      {/* Overlay menu — tela cheia */}
       {open && (
         <div className="fixed inset-0 z-50">
           <div
@@ -146,19 +107,17 @@ export function SiteHeader() {
             aria-label="Menu"
             className="relative flex h-full w-full flex-col text-sand"
           >
-            {/* Topo do overlay — repete estrutura do header */}
-            <div className="w-full" style={{ backgroundColor: "var(--ink)" }}>
-              <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5">
-                <span className="font-display text-[17px] font-medium tracking-[0.02em]">
+            <div className="w-full">
+              <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
+                <span className="font-display text-[16px] font-medium tracking-[0.02em]">
                   Oliveira Ritzmann
                 </span>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Fechar menu"
-                  className="inline-flex items-center gap-4 text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  className="inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)]"
                 >
-                  <span className="text-[11px] uppercase tracking-[0.22em]">Fechar</span>
                   <span aria-hidden="true" className="relative inline-block h-4 w-4">
                     <span className="absolute left-0 top-1/2 block h-px w-4 rotate-45 bg-current" />
                     <span className="absolute left-0 top-1/2 block h-px w-4 -rotate-45 bg-current" />
@@ -168,9 +127,7 @@ export function SiteHeader() {
               <div className="h-px w-full" style={{ backgroundColor: "var(--gold)" }} />
             </div>
 
-            {/* Conteúdo */}
             <div className="mx-auto grid w-full max-w-[1360px] flex-1 grid-cols-1 gap-16 px-6 py-16 md:grid-cols-[1.15fr_1fr] md:py-24">
-              {/* Coluna 1 — navegação principal */}
               <nav aria-label="Navegação principal" className="flex flex-col">
                 <p className="eyebrow">Navegação</p>
                 <ul className="mt-8 flex flex-col gap-4">
@@ -179,7 +136,7 @@ export function SiteHeader() {
                       <a
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="font-display text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                        className="font-display text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand transition-colors hover:text-[var(--gold)]"
                       >
                         {item.label}
                       </a>
@@ -188,7 +145,6 @@ export function SiteHeader() {
                 </ul>
               </nav>
 
-              {/* Coluna 2 — Atuação */}
               <div className="flex flex-col">
                 <p className="eyebrow">Atuação</p>
                 <ul className="mt-8 flex flex-col gap-3">
@@ -197,7 +153,7 @@ export function SiteHeader() {
                       <a
                         href={sub.href}
                         onClick={() => setOpen(false)}
-                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
                       >
                         {sub.label}
                       </a>
@@ -208,7 +164,7 @@ export function SiteHeader() {
                     <a
                       href={ATUACAO_SECONDARY.href}
                       onClick={() => setOpen(false)}
-                      className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                      className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
                     >
                       {ATUACAO_SECONDARY.label}
                     </a>
@@ -216,21 +172,11 @@ export function SiteHeader() {
                 </ul>
 
                 <div className="mt-16 flex gap-6 text-[11px] uppercase tracking-[0.2em] text-sand/70">
-                  <a
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="hover:text-[var(--gold)]"
-                  >
+                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
                     LinkedIn
                   </a>
                   <span aria-hidden="true" className="text-sand/30">·</span>
-                  <a
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="hover:text-[var(--gold)]"
-                  >
+                  <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
                     Instagram
                   </a>
                 </div>
