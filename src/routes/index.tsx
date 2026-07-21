@@ -53,6 +53,7 @@ function Index() {
       <HeroFold />
       <CompetenciasFold />
       <ManifestoFold />
+      <CarreiraFold />
     </main>
   );
 }
