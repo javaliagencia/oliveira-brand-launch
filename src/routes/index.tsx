@@ -414,42 +414,8 @@ function ManifestoFold() {
             </BrandLink>
           </div>
 
-          <div
-            className="relative mt-14 grid grid-cols-2 gap-px overflow-hidden md:grid-cols-3 lg:grid-cols-5"
-            style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)", zIndex: 2 }}
-          >
-            {[
-              "Jorge Oliveira",
-              "Juliano Ritzmann",
-              "Tatiane",
-              "Cíntia",
-              "Guilherme",
-              "Sônia",
-              "Mariana",
-              "Bruna",
-              "Carolina",
-            ].map((nome, i) => (
-              <div
-                key={nome}
-                className="relative aspect-[3/4] w-full"
-                style={{ backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)" }}
-              >
-                <div className="absolute inset-0 flex items-end p-5">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-display text-[15px] leading-tight" style={{ color: "var(--sand)" }}>
-                      {nome}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-[0.24em]" style={{ color: "color-mix(in oklch, var(--sand) 55%, transparent)" }}>
-                      Foto ⟨PENDENTE⟩
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SociosCarousel />
+
 
         </div>
       </div>
