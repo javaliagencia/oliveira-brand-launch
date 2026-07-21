@@ -501,16 +501,16 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS = [
-  "Jorge Ritzmann de Oliveira",
-  "Juliano Schmitt",
-  "Tatiane Bittencourt",
-  "Cintia Carla Senem",
-  "Guilherme Otte",
-  "Sonia Angulski",
-  "Mariana Hillesheim",
-  "Bruna Schmitt",
-  "Carolina Schmidt",
+const SOCIOS: { nome: string; foto: string | null }[] = [
+  { nome: "Jorge Ritzmann de Oliveira", foto: socioJorge.url },
+  { nome: "Juliano Schmitt", foto: socioJuliano.url },
+  { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
+  { nome: "Cintia Carla Senem", foto: socioCintia.url },
+  { nome: "Guilherme Otte", foto: null },
+  { nome: "Sonia Angulski", foto: null },
+  { nome: "Mariana Hillesheim", foto: socioMariana.url },
+  { nome: "Bruna Schmitt", foto: socioBruna.url },
+  { nome: "Carolina Schmidt", foto: null },
 ];
 
 function SociosCarousel() {
