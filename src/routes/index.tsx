@@ -397,10 +397,8 @@ function ManifestoFold() {
         <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
-              <p className="eyebrow" style={{ color: "var(--gold)" }}>
-                Quem conduz o método
-              </p>
-              <h3 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.2] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
+              <SectionEyebrow>Quem conduz o método</SectionEyebrow>
+              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
                 Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
               </h3>
             </div>
