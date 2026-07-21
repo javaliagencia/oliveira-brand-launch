@@ -1,4 +1,6 @@
 import { Mail, Linkedin, Instagram, Facebook } from "lucide-react";
+import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
+
 
 /**
  * Faixa "Assine / Conecte-se" — inspirada na barra roxa do Gowling WLG,
