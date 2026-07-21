@@ -93,8 +93,7 @@ function HeroFold() {
 
       {/* Conteúdo */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-20 pt-32 md:pb-28 md:pt-40">
-        <p className="eyebrow flex items-center gap-4 text-[var(--gold)]">
-          <span className="hairline" aria-hidden="true" />
+        <p className="eyebrow text-[var(--gold)]">
           Método. Previsibilidade. Resultado.
         </p>
         <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
@@ -109,9 +108,6 @@ function HeroFold() {
         aria-label="Continuar para a próxima seção"
         className="group absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-10"
       >
-        <span className="text-[10px] uppercase tracking-[0.32em]">
-          Continue
-        </span>
         <svg
           width="44"
           height="56"
