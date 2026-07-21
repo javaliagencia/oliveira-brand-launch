@@ -177,118 +177,108 @@ const COMPETENCIAS: Competencia[] = [
 function CompetenciasFold() {
   return (
     <section
+      id="competencias"
       aria-label="Competências"
       className="relative w-full"
-      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
+      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
-      <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
-        {/* Boxinho institucional com o enunciado curto */}
-        <div className="mb-14 md:mb-20">
-          <div
-            className="inline-flex max-w-full flex-col gap-3 border px-6 py-5 md:px-8 md:py-6"
-            style={{
-              borderColor: "color-mix(in oklch, var(--gold) 55%, transparent)",
-              backgroundColor: "color-mix(in oklch, var(--sand) 60%, white)",
-            }}
-          >
-            <span className="eyebrow" style={{ color: "var(--gold-ink, #6f6647)" }}>
-              Duas competências, um método
-            </span>
-            <p className="font-display text-[clamp(1.25rem,2.2vw,1.9rem)] font-medium leading-[1.2] tracking-[-0.005em]">
-              Volume e estratégia, conduzidos com o mesmo método.
-            </p>
-          </div>
-        </div>
+      {/* Enunciado — sem "boxinho", tratado como abertura editorial */}
+      <div className="mx-auto max-w-[1360px] px-6 pt-20 pb-12 md:pt-28 md:pb-16">
+        <p className="eyebrow flex items-center gap-4" style={{ color: "var(--gold)" }}>
+          <span className="hairline" aria-hidden="true" />
+          Duas competências, um método
+        </p>
+        <h2 className="mt-6 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+          Volume e estratégia,{" "}
+          <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
+        </h2>
+      </div>
 
-        {/* Grid de cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-          {COMPETENCIAS.map((c) => (
-            <CompetenciaCard key={c.index} data={c} />
-          ))}
-        </div>
+      {/* Dois painéis conectados — full-bleed, sem gap. Filete dourado separa. */}
+      <div className="grid w-full grid-cols-1 md:grid-cols-2">
+        {COMPETENCIAS.map((c, i) => (
+          <CompetenciaCard key={c.index} data={c} isLast={i === COMPETENCIAS.length - 1} />
+        ))}
       </div>
     </section>
   );
 }
 
-function CompetenciaCard({ data }: { data: Competencia }) {
+function CompetenciaCard({ data, isLast }: { data: Competencia; isLast: boolean }) {
   return (
     <a
       href={data.href}
-      className="group relative block overflow-hidden focus-visible:outline-none"
-      style={{ backgroundColor: "var(--ink)" }}
+      className="group relative block h-[560px] overflow-hidden focus-visible:outline-none md:h-[680px]"
+      style={{
+        backgroundColor: "var(--ink)",
+        borderRight: isLast ? undefined : "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
+      }}
       aria-label={`${data.titulo} — saber mais`}
     >
-      {/* Bloco de descrição — fica por baixo; revelado quando a imagem sobe */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[38%] px-6 pb-8 pt-6 text-sand md:px-8">
-        <div className="flex h-full flex-col justify-between">
-          <p className="max-w-[52ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
-            {data.descricao}
-          </p>
-          <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="block h-px w-10"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <span
-              className="text-[11px] uppercase tracking-[0.24em]"
-              style={{ color: "var(--gold)" }}
-            >
-              Conhecer a área
-            </span>
-          </div>
+      {/* Bloco de descrição — por baixo, revelado quando a imagem escorrega horizontalmente */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-[58%] flex-col justify-center gap-6 px-8 py-12 text-sand md:px-12">
+        <span className="eyebrow" style={{ color: "var(--gold)" }}>
+          {data.index} — {data.eyebrow}
+        </span>
+        <h3 className="font-display text-[clamp(1.5rem,2.2vw,2rem)] font-medium leading-[1.15] tracking-[-0.01em]">
+          {data.titulo}
+        </h3>
+        <p className="max-w-[42ch] text-[15px] leading-[1.7] text-sand/85 md:text-[16px]">
+          {data.descricao}
+        </p>
+        <div className="mt-2 flex items-center gap-3">
+          <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
+          <span className="text-[11px] uppercase tracking-[0.24em]" style={{ color: "var(--gold)" }}>
+            Conhecer a área
+          </span>
         </div>
       </div>
 
-      {/* Painel visual (imagem) — desliza para cima no hover, revelando a descrição */}
-      <div className="relative z-10 h-[520px] w-full overflow-hidden md:h-[600px]">
+      {/* Painel visual (imagem) — desliza para a esquerda no hover, revelando o texto à direita */}
+      <div
+        className="absolute inset-0 z-10 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,0.84,0.24,1)] group-hover:-translate-x-[58%] group-focus-visible:-translate-x-[58%]"
+        style={{ backgroundColor: "var(--ink)" }}
+      >
+        <img
+          src={data.imagem}
+          alt=""
+          width={1280}
+          height={1600}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+        {/* leve escurecimento inferior p/ legibilidade do rótulo */}
         <div
-          className="absolute inset-0 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,0.84,0.24,1)] group-hover:-translate-y-[38%] group-focus-visible:-translate-y-[38%]"
-          style={{ backgroundColor: "var(--ink)" }}
-        >
-          <img
-            src={data.imagem}
-            alt=""
-            width={1280}
-            height={1600}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover"
-          />
-          {/* leve escurecimento inferior p/ legibilidade do rótulo */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 h-1/2"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.72) 100%)",
-            }}
-          />
-          {/* Rótulo sobre a imagem */}
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-6 pb-7 md:px-8 md:pb-8">
-            <div className="text-sand">
-              <span
-                className="eyebrow block"
-                style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}
-              >
-                {data.index} — {data.eyebrow}
-              </span>
-              <h3 className="mt-3 font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
-                {data.titulo}
-              </h3>
-            </div>
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-1/2"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.78) 100%)",
+          }}
+        />
+        {/* Rótulo sobre a imagem — visível no estado de repouso */}
+        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-8 pb-8 md:px-12 md:pb-10">
+          <div className="text-sand">
             <span
-              aria-hidden="true"
-              className="hidden h-px w-16 shrink-0 self-center md:block"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
+              className="eyebrow block"
+              style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}
+            >
+              {data.index} — {data.eyebrow}
+            </span>
+            <h3 className="mt-3 font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+              {data.titulo}
+            </h3>
           </div>
+          <span
+            aria-hidden="true"
+            className="hidden h-px w-16 shrink-0 self-center md:block"
+            style={{ backgroundColor: "var(--gold)" }}
+          />
         </div>
       </div>
-
-
     </a>
   );
 }
+
 
