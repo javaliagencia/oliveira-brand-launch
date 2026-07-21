@@ -586,6 +586,9 @@ function SociosCarousel() {
           ))}
         </div>
       </div>
+      <style>{`
+        a.group:hover [data-socio-name] { background-size: 100% 1px !important; }
+      `}</style>
 
       <button
         type="button"
