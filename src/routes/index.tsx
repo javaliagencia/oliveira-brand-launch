@@ -496,15 +496,15 @@ function CarreiraFold() {
 }
 
 const SOCIOS = [
-  "Jorge Oliveira",
-  "Juliano Ritzmann",
-  "Tatiane",
-  "Cíntia",
-  "Guilherme",
-  "Sônia",
-  "Mariana",
-  "Bruna",
-  "Carolina",
+  "Jorge Ritzmann de Oliveira",
+  "Juliano Schmitt",
+  "Tatiane Bittencourt",
+  "Cintia Carla Senem",
+  "Guilherme Otte",
+  "Sonia Angulski",
+  "Mariana Hillesheim",
+  "Bruna Schmitt",
+  "Carolina Schmidt",
 ];
 
 function SociosCarousel() {
