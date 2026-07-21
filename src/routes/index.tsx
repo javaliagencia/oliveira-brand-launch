@@ -504,18 +504,10 @@ function CarreiraFold() {
             risco e a responsabilidade pelo caso do primeiro contato à decisão
             final.
           </p>
-          <div className="mt-10 flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="block h-px w-10"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <span
-              className="text-[11px] uppercase tracking-[0.28em]"
-              style={{ color: "var(--gold)" }}
-            >
+          <div className="mt-10">
+            <BrandLink href="/carreira" invert>
               Junte-se ao escritório
-            </span>
+            </BrandLink>
           </div>
         </div>
       </div>
