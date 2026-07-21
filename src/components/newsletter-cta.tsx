@@ -13,18 +13,6 @@ export function NewsletterCta() {
       className="relative overflow-hidden text-sand"
       style={{ backgroundColor: "var(--ink-2)" }}
     >
-      {/* Arcos decorativos — evocam o grafismo da referência, em ouro sutil */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-1/2 h-[220%] w-auto -translate-y-1/2 opacity-[0.18]"
-        viewBox="0 0 400 400"
-        fill="none"
-      >
-        <circle cx="300" cy="200" r="180" stroke="var(--gold)" strokeWidth="1" />
-        <circle cx="300" cy="200" r="140" stroke="var(--gold)" strokeWidth="1" />
-        <circle cx="300" cy="200" r="100" stroke="var(--gold)" strokeWidth="1" />
-        <circle cx="300" cy="200" r="60" stroke="var(--gold)" strokeWidth="1" />
-      </svg>
 
       <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-16 md:py-20">
         {/* Coluna 1 — Assine */}
