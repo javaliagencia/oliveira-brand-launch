@@ -409,12 +409,9 @@ function ManifestoFold() {
                 Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
               </h3>
             </div>
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-              <span className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
-                Conhecer o time
-              </span>
-            </div>
+            <BrandLink href="/socios" invert>
+              Conhecer o time
+            </BrandLink>
           </div>
 
           <div
