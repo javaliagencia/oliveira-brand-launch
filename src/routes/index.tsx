@@ -388,6 +388,8 @@ function ManifestoFold() {
           <div className="md:col-span-6" />
         </div>
       </div>
+
+      {/* Bloco 2 — Faixa "Quem conduz" sobre verde-profundo.
           O símbolo dourado do bloco acima extravasa aqui dentro. */}
       <div
         className="relative"
