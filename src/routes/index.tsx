@@ -509,11 +509,11 @@ const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] =
   { nome: "Juliano Schmitt", foto: socioJuliano.url },
   { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
   { nome: "Cintia Carla Senem", foto: socioCintia.url },
-  { nome: "Guilherme Otte", foto: socioGuilherme.url },
+  { nome: "Carolina Schmidt", foto: socioCarolina.url, objectPosition: "50% 20%" },
   { nome: "Sonia Angulski", foto: socioSonia.url },
   { nome: "Mariana Hillesheim", foto: socioMariana.url },
   { nome: "Bruna Schmitt", foto: socioBruna.url },
-  { nome: "Carolina Schmidt", foto: socioCarolina.url, objectPosition: "50% 20%" },
+  { nome: "Guilherme Otte", foto: socioGuilherme.url },
 ];
 
 function SociosCarousel() {
