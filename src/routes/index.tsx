@@ -438,43 +438,24 @@ function ManifestoFold() {
 }
 
 /**
- * MonogramGrid — grafismo institucional na cor da marca.
+ * MonogramGrid — símbolo oficial da marca Oliveira Ritzmann.
  *
- * Composição inspirada no Seyfarth: uma malha 2×2 preenchida por quartos
- * de círculo em dourado sobre bege, com um núcleo em verde-profundo que
- * cita o monograma OR. Nada decorativo é adicionado fora da paleta.
+ * Reproduz fielmente o grafismo do logo: um círculo cheio seguido por
+ * duas meias-luas (D-shapes) em dourado. Nada é adicionado ou inventado.
  */
 function MonogramGrid() {
-  const ink = "var(--ink)";
   const gold = "var(--gold)";
-  const goldSoft = "color-mix(in oklch, var(--gold) 55%, var(--sand))";
   return (
     <svg
-      viewBox="0 0 400 400"
+      viewBox="0 0 165 100"
       className="h-full w-full"
       role="img"
-      aria-label="Monograma Oliveira Ritzmann — composição institucional"
+      aria-label="Monograma Oliveira Ritzmann"
+      preserveAspectRatio="xMidYMid meet"
     >
-      {/* Filete guia — 1px dourado, canto superior esquerdo */}
-      <line x1="0" y1="0" x2="60" y2="0" stroke={gold} strokeWidth="1" />
-      <line x1="0" y1="0" x2="0" y2="60" stroke={gold} strokeWidth="1" />
-
-      {/* Célula 1 — quarto de círculo dourado (canto sup. esq. → cheio) */}
-      <path d="M0 200 A200 200 0 0 1 200 0 L200 200 Z" fill={gold} />
-
-      {/* Célula 2 — quarto de círculo mais claro, contra-forma */}
-      <path d="M200 0 A200 200 0 0 1 400 200 L200 200 Z" fill={goldSoft} />
-
-      {/* Célula 3 — quarto de círculo em verde-profundo (peso institucional) */}
-      <path d="M0 200 L200 200 L200 400 A200 200 0 0 1 0 200 Z" fill={ink} />
-
-      {/* Célula 4 — contra-forma bege com arco dourado interno (O + R) */}
-      <path d="M200 200 L400 200 A200 200 0 0 1 200 400 Z" fill={goldSoft} />
-      <circle cx="300" cy="300" r="70" fill="var(--sand)" />
-      <circle cx="300" cy="300" r="70" fill="none" stroke={ink} strokeWidth="1.25" />
-
-      {/* Núcleo OR — pequeno círculo dourado sobre o verde */}
-      <circle cx="100" cy="300" r="34" fill="none" stroke={gold} strokeWidth="1.25" />
+      <circle cx="50" cy="50" r="50" fill={gold} />
+      <path d="M85 0 A50 50 0 0 1 85 100 Z" fill={gold} />
+      <path d="M115 0 A50 50 0 0 1 115 100 Z" fill={gold} />
     </svg>
   );
 }
