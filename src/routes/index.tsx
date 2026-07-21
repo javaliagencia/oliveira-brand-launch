@@ -322,7 +322,8 @@ function CompetenciaCard({
           </div>
         </div>
       </div>
-    </a>
+    </div>
+
   );
 }
 
