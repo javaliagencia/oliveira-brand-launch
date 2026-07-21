@@ -517,76 +517,102 @@ const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] =
 ];
 
 function SociosCarousel() {
-  // Duplicamos a lista para criar loop infinito via translate -50%.
-  const loop = [...SOCIOS, ...SOCIOS];
+  const VISIBLE = 5;
+  const [start, setStart] = useState(0);
+  const maxStart = Math.max(0, SOCIOS.length - VISIBLE);
+  const canPrev = start > 0;
+  const canNext = start < maxStart;
+
   return (
-    <div
-      className="relative mt-14 overflow-hidden"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
-      }}
-    >
-      <div
-        className="flex w-max"
+    <div className="relative mt-14">
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{
+            width: `${(SOCIOS.length / VISIBLE) * 100}%`,
+            transform: `translateX(-${(start / SOCIOS.length) * 100}%)`,
+          }}
+        >
+          {SOCIOS.map((socio, i) => (
+            <a
+              key={`${socio.nome}-${i}`}
+              href="/socios"
+              className="relative aspect-[3/4] shrink-0 overflow-hidden group"
+              style={{
+                width: `${100 / SOCIOS.length}%`,
+                backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
+              }}
+              aria-label={`Ver perfil de ${socio.nome}`}
+            >
+              {socio.foto ? (
+                <img
+                  src={socio.foto}
+                  alt={socio.nome}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  style={{ objectPosition: socio.objectPosition ?? "50% 50%" }}
+                  loading="lazy"
+                />
+              ) : null}
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-center gap-2 p-5">
+                <span
+                  className="font-display text-[15px] leading-tight whitespace-nowrap text-center inline-flex items-center gap-2"
+                  style={{
+                    color: "var(--sand)",
+                    textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {socio.nome}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-[14px] w-[14px] shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    style={{ color: "var(--gold)" }}
+                  >
+                    <path d="M7 17L17 7" strokeLinecap="square" />
+                    <path d="M9 7h8v8" strokeLinecap="square" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setStart((s) => Math.max(0, s - 1))}
+        disabled={!canPrev}
+        aria-label="Anterior"
+        className="absolute left-3 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
         style={{
-          animation: "socios-marquee 48s linear infinite",
+          backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
+          border: "1px solid var(--gold)",
+          color: "var(--gold)",
         }}
       >
-        {loop.map((socio, i) => (
-          <a
-            key={`${socio.nome}-${i}`}
-            href="/socios"
-            className="socio-card relative aspect-[3/4] shrink-0 overflow-hidden group"
-            style={{
-              width: "calc((min(1360px, 100vw) - 3rem) / 5)",
-              backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
-            }}
-            aria-label={`Ver perfil de ${socio.nome}`}
-          >
-            {socio.foto ? (
-              <img
-                src={socio.foto}
-                alt={socio.nome}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                style={{ objectPosition: socio.objectPosition ?? "50% 50%" }}
-                loading="lazy"
-              />
-            ) : null}
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-center gap-2 p-5">
-              <span
-                className="font-display text-[15px] leading-tight whitespace-nowrap text-center inline-flex items-center gap-2"
-                style={{
-                  color: "var(--sand)",
-                  textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
-                }}
-              >
-                {socio.nome}
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  className="h-[14px] w-[14px] shrink-0 -translate-x-1 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  style={{ color: "var(--gold)" }}
-                >
-                  <path d="M7 17L17 7" strokeLinecap="square" />
-                  <path d="M9 7h8v8" strokeLinecap="square" />
-                </svg>
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-      <style>{`
-        @keyframes socios-marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75">
+          <path d="M15 6l-6 6 6 6" strokeLinecap="square" strokeLinejoin="miter" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        onClick={() => setStart((s) => Math.min(maxStart, s + 1))}
+        disabled={!canNext}
+        aria-label="Próximo"
+        className="absolute right-3 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
+        style={{
+          backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
+          border: "1px solid var(--gold)",
+          color: "var(--gold)",
+        }}
+      >
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75">
+          <path d="M9 6l6 6-6 6" strokeLinecap="square" strokeLinejoin="miter" />
+        </svg>
+      </button>
     </div>
   );
 }
