@@ -533,15 +533,30 @@ function SociosCarousel() {
           backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)",
         }}
       >
-        {loop.map((nome, i) => (
+        {loop.map((socio, i) => (
           <div
-            key={`${nome}-${i}`}
-            className="relative aspect-[3/4] shrink-0"
+            key={`${socio.nome}-${i}`}
+            className="relative aspect-[3/4] shrink-0 overflow-hidden"
             style={{
               width: "calc((min(1360px, 100vw) - 3rem) / 5)",
               backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
             }}
           >
+            {socio.foto ? (
+              <img
+                src={socio.foto}
+                alt={socio.nome}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+            ) : null}
+            <div
+              className="absolute inset-x-0 bottom-0 h-1/2"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(8,38,36,0.92) 0%, rgba(8,38,36,0.55) 55%, transparent 100%)",
+              }}
+            />
             <div className="absolute inset-0 flex items-end p-5">
               <div className="flex flex-col gap-2">
                 <span
@@ -554,16 +569,18 @@ function SociosCarousel() {
                   className="font-display text-[15px] leading-tight"
                   style={{ color: "var(--sand)" }}
                 >
-                  {nome}
+                  {socio.nome}
                 </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.24em]"
-                  style={{
-                    color: "color-mix(in oklch, var(--sand) 55%, transparent)",
-                  }}
-                >
-                  Foto ⟨PENDENTE⟩
-                </span>
+                {!socio.foto ? (
+                  <span
+                    className="text-[10px] uppercase tracking-[0.24em]"
+                    style={{
+                      color: "color-mix(in oklch, var(--sand) 55%, transparent)",
+                    }}
+                  >
+                    Foto ⟨PENDENTE⟩
+                  </span>
+                ) : null}
               </div>
             </div>
           </div>
