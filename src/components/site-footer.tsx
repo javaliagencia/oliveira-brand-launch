@@ -21,18 +21,76 @@ type Sede = {
   cidade: string;
   uf: string;
   matriz?: boolean;
+  linhas: string[];
+  cep: string;
+  telefones: string[];
 };
 
 const SEDES: Sede[] = [
-  { cidade: "Blumenau", uf: "SC", matriz: true },
-  { cidade: "São Paulo", uf: "SP" },
-  { cidade: "Curitiba", uf: "PR" },
-  { cidade: "Porto Alegre", uf: "RS" },
-  { cidade: "Rio de Janeiro", uf: "RJ" },
-  { cidade: "Salvador", uf: "BA" },
-  { cidade: "Goiânia", uf: "GO" },
-  { cidade: "Maceió", uf: "AL" },
-  { cidade: "Aracaju", uf: "SE" },
+  {
+    cidade: "Blumenau",
+    uf: "SC",
+    matriz: true,
+    linhas: ["Rua Frederico Guilherme Busch, 87", "Jardim Blumenau"],
+    cep: "89010-360",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "São Paulo",
+    uf: "SP",
+    linhas: ["Avenida Paulista, 1636", "Conj. 1507-1509, Bela Vista"],
+    cep: "01310-200",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Curitiba",
+    uf: "PR",
+    linhas: ["Rua da Glória, 251", "Ed. NEO Corporate, Conj. 202", "Centro Cívico"],
+    cep: "80030-060",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Porto Alegre",
+    uf: "RS",
+    linhas: ["Avenida Ipiranga, 40", "Conj. 603-604-605, Praia de Belas"],
+    cep: "90160-090",
+    telefones: ["(51) 3407-2284", "(51) 3519-2284"],
+  },
+  {
+    cidade: "Rio de Janeiro",
+    uf: "RJ",
+    linhas: ["Rua Visconde de Inhaúma, 134", "Salas 2001 a 2004, Centro"],
+    cep: "20091-901",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Salvador",
+    uf: "BA",
+    linhas: ["Avenida Tancredo Neves, 450", "23º andar, Caminho das Árvores"],
+    cep: "41820-901",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Goiânia",
+    uf: "GO",
+    linhas: ["Avenida 136, Quadra F44, nº 761", "Sala A1, Setor Sul"],
+    cep: "74093-250",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Maceió",
+    uf: "AL",
+    linhas: ["Rua José Maia Gomes, 258", "SL 5, CXPST 264, Jatiúca"],
+    cep: "57036-240",
+    telefones: ["(47) 3041-9565"],
+  },
+  {
+    cidade: "Aracaju",
+    uf: "SE",
+    linhas: ["Rua Manoel Espírito Santo, 165", "Sala 201, Pavimento Superior", "Grageru"],
+    cep: "49025-440",
+    telefones: ["(47) 3041-9565"],
+  },
 ];
 
 const ATUACAO_LINKS = [
@@ -75,6 +133,7 @@ function Pending({ label }: { label: string }) {
 }
 
 function SedeCard({ sede }: { sede: Sede }) {
+  const streetAddress = sede.linhas.join(", ");
   return (
     <li
       itemScope
@@ -94,17 +153,25 @@ function SedeCard({ sede }: { sede: Sede }) {
           )}
         </span>
       </p>
+      <div
+        className="mt-2 text-[13px] leading-relaxed text-sand/70"
+        itemProp="address"
+        itemScope
+        itemType="https://schema.org/PostalAddress"
+      >
+        <meta itemProp="streetAddress" content={streetAddress} />
+        {sede.linhas.map((linha) => (
+          <p key={linha}>{linha}</p>
+        ))}
+        <p itemProp="postalCode">CEP {sede.cep}</p>
+      </div>
       <p className="mt-2 text-[13px] leading-relaxed text-sand/70">
-        <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-          <span itemProp="streetAddress">
-            <Pending label={`Endereço ${sede.cidade}`} />
+        {sede.telefones.map((tel, i) => (
+          <span key={tel} itemProp="telephone">
+            {i > 0 && <span className="text-sand/40"> · </span>}
+            {tel}
           </span>
-        </span>
-      </p>
-      <p className="mt-1 text-[13px] leading-relaxed text-sand/70">
-        <span itemProp="telephone">
-          <Pending label={`Telefone ${sede.cidade}`} />
-        </span>
+        ))}
       </p>
     </li>
   );
