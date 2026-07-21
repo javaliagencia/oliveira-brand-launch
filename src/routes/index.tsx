@@ -7,6 +7,12 @@ import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink } from "@/components/brand-ui";
+import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
+import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
+import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
+import socioJuliano from "@/assets/socios/juliano-schmitt.png.asset.json";
+import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
+import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
 
 
 
@@ -495,16 +501,16 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS = [
-  "Jorge Ritzmann de Oliveira",
-  "Juliano Schmitt",
-  "Tatiane Bittencourt",
-  "Cintia Carla Senem",
-  "Guilherme Otte",
-  "Sonia Angulski",
-  "Mariana Hillesheim",
-  "Bruna Schmitt",
-  "Carolina Schmidt",
+const SOCIOS: { nome: string; foto: string | null }[] = [
+  { nome: "Jorge Ritzmann de Oliveira", foto: socioJorge.url },
+  { nome: "Juliano Schmitt", foto: socioJuliano.url },
+  { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
+  { nome: "Cintia Carla Senem", foto: socioCintia.url },
+  { nome: "Guilherme Otte", foto: null },
+  { nome: "Sonia Angulski", foto: null },
+  { nome: "Mariana Hillesheim", foto: socioMariana.url },
+  { nome: "Bruna Schmitt", foto: socioBruna.url },
+  { nome: "Carolina Schmidt", foto: null },
 ];
 
 function SociosCarousel() {
@@ -527,15 +533,30 @@ function SociosCarousel() {
           backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)",
         }}
       >
-        {loop.map((nome, i) => (
+        {loop.map((socio, i) => (
           <div
-            key={`${nome}-${i}`}
-            className="relative aspect-[3/4] shrink-0"
+            key={`${socio.nome}-${i}`}
+            className="relative aspect-[3/4] shrink-0 overflow-hidden"
             style={{
               width: "calc((min(1360px, 100vw) - 3rem) / 5)",
               backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
             }}
           >
+            {socio.foto ? (
+              <img
+                src={socio.foto}
+                alt={socio.nome}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+            ) : null}
+            <div
+              className="absolute inset-x-0 bottom-0 h-1/2"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(8,38,36,0.92) 0%, rgba(8,38,36,0.55) 55%, transparent 100%)",
+              }}
+            />
             <div className="absolute inset-0 flex items-end p-5">
               <div className="flex flex-col gap-2">
                 <span
@@ -548,16 +569,18 @@ function SociosCarousel() {
                   className="font-display text-[15px] leading-tight"
                   style={{ color: "var(--sand)" }}
                 >
-                  {nome}
+                  {socio.nome}
                 </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.24em]"
-                  style={{
-                    color: "color-mix(in oklch, var(--sand) 55%, transparent)",
-                  }}
-                >
-                  Foto ⟨PENDENTE⟩
-                </span>
+                {!socio.foto ? (
+                  <span
+                    className="text-[10px] uppercase tracking-[0.24em]"
+                    style={{
+                      color: "color-mix(in oklch, var(--sand) 55%, transparent)",
+                    }}
+                  >
+                    Foto ⟨PENDENTE⟩
+                  </span>
+                ) : null}
               </div>
             </div>
           </div>
