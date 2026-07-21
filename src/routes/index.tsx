@@ -345,118 +345,106 @@ function ManifestoFold() {
     <section
       id="manifesto"
       aria-label="Manifesto — trinta anos de método"
-      className="relative w-full"
-      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
+      className="relative w-full overflow-hidden"
     >
-      <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 pb-28 pt-28 md:grid-cols-12 md:gap-10 md:pb-40 md:pt-40">
-        {/* Coluna texto */}
-        <div className="md:col-span-7">
-          <p className="eyebrow" style={{ color: "var(--gold)" }}>
-            Trinta anos, um método
-          </p>
-          <h2 className="mt-8 font-display text-[clamp(1.85rem,3.6vw,3.15rem)] font-medium leading-[1.22] tracking-[-0.01em]">
-            <span style={{ color: "color-mix(in oklch, var(--ink) 42%, var(--sand))" }}>
-              Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
-            </span>{" "}
-            <span style={{ color: "var(--ink)" }}>
-              É o método aplicado a ela.
-            </span>
-          </h2>
+      {/* Símbolo institucional — atravessa o fundo bege e extravasa
+          para dentro da faixa verde-profundo abaixo. Mesma cor dourada
+          nas duas metades: só o fundo muda. */}
+      <img
+        src={simboloDourado.url}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute select-none"
+        style={{
+          right: "-6%",
+          top: "42%",
+          width: "min(78vw, 900px)",
+          height: "auto",
+          opacity: 0.95,
+          zIndex: 1,
+        }}
+      />
 
-          <div className="mt-12 flex items-center gap-4">
-            <span aria-hidden="true" className="block h-px w-12" style={{ backgroundColor: "var(--gold)" }} />
-            <span className="eyebrow" style={{ color: "var(--ink)" }}>
-              Método. Previsibilidade. Resultado.
-            </span>
-          </div>
-        </div>
+      {/* Bloco 1 — Manifesto sobre bege */}
+      <div
+        className="relative"
+        style={{ backgroundColor: "var(--sand)", color: "var(--ink)", zIndex: 0 }}
+      >
+        <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 pb-40 pt-28 md:grid-cols-12 md:gap-10 md:pb-56 md:pt-40">
+          <div className="md:col-span-7">
+            <p className="eyebrow" style={{ color: "var(--gold)" }}>
+              Trinta anos, um método
+            </p>
+            <h2 className="mt-8 font-display text-[clamp(1.85rem,3.6vw,3.15rem)] font-medium leading-[1.22] tracking-[-0.01em]">
+              <span style={{ color: "color-mix(in oklch, var(--ink) 42%, var(--sand))" }}>
+                Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
+              </span>{" "}
+              <span style={{ color: "var(--ink)" }}>
+                É o método aplicado a ela.
+              </span>
+            </h2>
 
-        {/* Coluna grafismo — monograma OR deconstruído em quartos de círculo */}
-        <div className="relative md:col-span-5">
-          <div className="relative aspect-square w-full max-w-[520px] md:ml-auto">
-            <MonogramGrid />
+            <div className="mt-12 flex items-center gap-4">
+              <span aria-hidden="true" className="block h-px w-12" style={{ backgroundColor: "var(--gold)" }} />
+              <span className="eyebrow" style={{ color: "var(--ink)" }}>
+                Método. Previsibilidade. Resultado.
+              </span>
+            </div>
           </div>
+          <div className="md:col-span-5" />
         </div>
       </div>
 
-      {/* Filete de transição — separa manifesto da faixa "quem conduz" */}
+      {/* Bloco 2 — Faixa "Quem conduz" sobre verde-profundo.
+          O símbolo dourado do bloco acima extravasa aqui dentro. */}
       <div
-        aria-hidden="true"
-        className="mx-auto h-px w-full max-w-[1360px]"
-        style={{ backgroundColor: "color-mix(in oklch, var(--gold) 45%, transparent)" }}
-      />
-
-      {/* Faixa "Quem conduz o método" — teaser sóbrio de pessoas */}
-      <div className="mx-auto max-w-[1360px] px-6 py-24 md:py-28">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-[52ch]">
-            <p className="eyebrow" style={{ color: "var(--gold)" }}>
-              Quem conduz o método
-            </p>
-            <h3 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.2] tracking-[-0.01em]">
-              Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
-            </h3>
+        className="relative"
+        style={{ backgroundColor: "var(--ink)", color: "var(--sand)", zIndex: 0 }}
+      >
+        <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-40 md:pb-28 md:pt-56">
+          <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
+            <div className="max-w-[52ch]">
+              <p className="eyebrow" style={{ color: "var(--gold)" }}>
+                Quem conduz o método
+              </p>
+              <h3 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.2] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
+                Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
+              </h3>
+            </div>
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
+              <span className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
+                Conhecer o time
+              </span>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-            <span className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--ink)" }}>
-              Conhecer o time
-            </span>
-          </div>
-        </div>
 
-        {/* Grade de placeholders — 4 lentes retangulares em ink com ⟨PENDENTE⟩ */}
-        <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden md:grid-cols-4" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)" }}>
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="relative aspect-[3/4] w-full"
-              style={{ backgroundColor: "var(--ink)" }}
-            >
-              <div className="absolute inset-0 flex items-end p-5">
-                <div className="flex flex-col gap-2">
-                  <span
-                    className="text-[10px] uppercase tracking-[0.28em]"
-                    style={{ color: "var(--gold)" }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className="font-display text-[15px] leading-tight"
-                    style={{ color: "var(--sand)" }}
-                  >
-                    ⟨PENDENTE⟩
-                  </span>
+          <div
+            className="relative mt-14 grid grid-cols-2 gap-px overflow-hidden md:grid-cols-4"
+            style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)", zIndex: 2 }}
+          >
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="relative aspect-[3/4] w-full"
+                style={{ backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)" }}
+              >
+                <div className="absolute inset-0 flex items-end p-5">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-display text-[15px] leading-tight" style={{ color: "var(--sand)" }}>
+                      ⟨PENDENTE⟩
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-/**
- * MonogramGrid — símbolo oficial da marca Oliveira Ritzmann.
- *
- * Reproduz fielmente o grafismo do logo: um círculo cheio seguido por
- * duas meias-luas (D-shapes) em dourado. Nada é adicionado ou inventado.
- */
-function MonogramGrid() {
-  const gold = "var(--gold)";
-  return (
-    <svg
-      viewBox="0 0 165 100"
-      className="h-full w-full"
-      role="img"
-      aria-label="Monograma Oliveira Ritzmann"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <circle cx="50" cy="50" r="50" fill={gold} />
-      <path d="M85 0 A50 50 0 0 1 85 100 Z" fill={gold} />
-      <path d="M115 0 A50 50 0 0 1 115 100 Z" fill={gold} />
-    </svg>
   );
 }
 
