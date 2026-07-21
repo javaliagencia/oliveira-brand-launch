@@ -274,22 +274,9 @@ export function SiteFooter() {
         {/* Bloco 3 — Institucional */}
         <section
           aria-label="Informações institucionais"
-          className="grid grid-cols-1 gap-10 md:grid-cols-3"
+          className="grid grid-cols-1 gap-10 md:grid-cols-2"
         >
-          <div>
-            <p className="eyebrow">Razão social</p>
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-px w-8"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <p className="mt-4 text-[13px] leading-relaxed text-sand/80">
-              <Pending label="Razão social completa" />
-            </p>
-            <p className="mt-2 text-[13px] leading-relaxed text-sand/70">
-              OAB · <Pending label="Inscrição OAB" />
-            </p>
-          </div>
+
 
           <div>
             <p className="eyebrow">Conformidade</p>
