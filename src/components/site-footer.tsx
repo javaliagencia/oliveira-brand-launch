@@ -150,11 +150,6 @@ export function SiteFooter() {
       style={{ backgroundColor: "var(--ink)" }}
       aria-labelledby="footer-heading"
     >
-      <span
-        aria-hidden="true"
-        className="block h-px w-full"
-        style={{ backgroundColor: "var(--gold)" }}
-      />
 
       <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
         <h2 id="footer-heading" className="sr-only">
