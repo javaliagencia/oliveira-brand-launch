@@ -45,9 +45,11 @@ function Index() {
   return (
     <main className="bg-background text-foreground">
       <HeroFold />
+      <CompetenciasFold />
     </main>
   );
 }
+
 
 function HeroFold() {
   return (
