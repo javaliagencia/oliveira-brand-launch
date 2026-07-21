@@ -202,7 +202,11 @@ export function SiteHeader() {
                   </li>
                 </ul>
 
-                <div className="mt-16 flex gap-6 text-[11px] uppercase tracking-[0.2em] text-sand/70">
+                <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
+                  <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
+                    Intranet
+                  </a>
+                  <span aria-hidden="true" className="text-sand/30">·</span>
                   <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
                     LinkedIn
                   </a>
