@@ -67,8 +67,8 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
         <Link
           to="/"
-          className="group inline-flex items-center gap-4 focus-visible:outline-none md:gap-5"
-          aria-label="Oliveira Ritzmann Advogados — 30 anos — Início"
+          className="group inline-flex items-center focus-visible:outline-none"
+          aria-label="Oliveira Ritzmann Advogados — Início"
         >
           <img
             src={logoVerde.url}
@@ -77,11 +77,9 @@ export function SiteHeader() {
             loading="eager"
             decoding="async"
           />
-          <span
-            aria-hidden="true"
-            className="block h-8 w-px md:h-9"
-            style={{ backgroundColor: "color-mix(in oklch, var(--gold) 55%, transparent)" }}
-          />
+        </Link>
+
+        <div className="inline-flex items-center gap-6 md:gap-8">
           <img
             src={selo30.url}
             alt="30 anos"
@@ -89,23 +87,23 @@ export function SiteHeader() {
             loading="eager"
             decoding="async"
           />
-        </Link>
-
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menu"
-          aria-expanded={open}
-          className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-        >
-          <span
-            aria-hidden="true"
-            className="inline-flex h-[8px] w-6 flex-col justify-between"
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menu"
+            aria-expanded={open}
+            className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
           >
-            <span className="block h-px w-full bg-current" />
-            <span className="block h-px w-full bg-current" />
-          </span>
-        </button>
+            <span
+              aria-hidden="true"
+              className="inline-flex h-[8px] w-6 flex-col justify-between"
+            >
+              <span className="block h-px w-full bg-current" />
+              <span className="block h-px w-full bg-current" />
+            </span>
+          </button>
+        </div>
+
       </div>
 
       {/* Overlay menu — tela cheia */}
@@ -124,35 +122,31 @@ export function SiteHeader() {
           >
             <div className="w-full">
               <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
-                <div className="inline-flex items-center gap-4 md:gap-5">
-                  <img
-                    src={logoVerde.url}
-                    alt="Oliveira Ritzmann Advogados"
-                    className="h-11 w-auto md:h-12"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="block h-8 w-px md:h-9"
-                    style={{ backgroundColor: "color-mix(in oklch, var(--gold) 55%, transparent)" }}
-                  />
+                <img
+                  src={logoVerde.url}
+                  alt="Oliveira Ritzmann Advogados"
+                  className="h-11 w-auto md:h-12"
+                />
+                <div className="inline-flex items-center gap-6 md:gap-8">
                   <img
                     src={selo30.url}
                     alt="30 anos"
                     className="h-9 w-auto md:h-10"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    aria-label="Fechar menu"
+                    className="inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)]"
+                  >
+                    <span aria-hidden="true" className="relative inline-block h-4 w-4">
+                      <span className="absolute left-0 top-1/2 block h-px w-4 rotate-45 bg-current" />
+                      <span className="absolute left-0 top-1/2 block h-px w-4 -rotate-45 bg-current" />
+                    </span>
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label="Fechar menu"
-                  className="inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)]"
-                >
-                  <span aria-hidden="true" className="relative inline-block h-4 w-4">
-                    <span className="absolute left-0 top-1/2 block h-px w-4 rotate-45 bg-current" />
-                    <span className="absolute left-0 top-1/2 block h-px w-4 -rotate-45 bg-current" />
-                  </span>
-                </button>
               </div>
+
               <div className="h-px w-full" style={{ backgroundColor: "var(--gold)" }} />
             </div>
 
