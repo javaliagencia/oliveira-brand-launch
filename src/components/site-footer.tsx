@@ -14,6 +14,8 @@
  * Endereços e telefones ficam ⟨PENDENTE⟩ visíveis — a definir com o
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
+import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
+
 
 type Sede = {
   cidade: string;
@@ -284,7 +286,12 @@ export function SiteFooter() {
         </section>
 
         {/* Assinatura */}
-        <div className="mt-20 flex flex-col items-center gap-4">
+        <div className="mt-20 flex flex-col items-center gap-6">
+          <img
+            src={logoVerde.url}
+            alt="Oliveira Ritzmann Advogados"
+            className="h-10 w-auto opacity-95"
+          />
           <span
             aria-hidden="true"
             className="block h-px w-16"
