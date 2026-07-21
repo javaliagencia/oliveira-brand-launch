@@ -100,9 +100,19 @@ function HeroFold() {
         <p className="eyebrow text-[var(--gold)]">
           Método. Previsibilidade. Resultado.
         </p>
-        <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
-          Advocacia com profundidade em{" "}
-          <span style={{ color: "var(--gold)" }}>qualquer escala.</span>
+        <h1 className="mt-8 max-w-[20ch] font-display text-sand">
+          <span className="block text-[clamp(1.05rem,1.35vw,1.5rem)] font-light uppercase tracking-[0.32em] leading-none text-sand/75">
+            Advocacia com
+          </span>
+          <span className="mt-3 block font-display text-[clamp(3.25rem,8.6vw,8rem)] font-medium leading-[0.98] tracking-[-0.02em]">
+            <em className="not-italic md:italic" style={{ fontWeight: 400 }}>profundidade</em>
+          </span>
+          <span className="mt-2 block text-[clamp(1.05rem,1.35vw,1.5rem)] font-light uppercase tracking-[0.32em] leading-none text-sand/75">
+            em qualquer
+          </span>
+          <span className="mt-3 block font-display text-[clamp(3.25rem,8.6vw,8rem)] font-medium leading-[0.98] tracking-[-0.02em]" style={{ color: "var(--gold)" }}>
+            escala.
+          </span>
         </h1>
       </div>
 
