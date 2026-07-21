@@ -90,11 +90,8 @@ export function NewsletterCta() {
                 href: "https://www.facebook.com/oliveiraritzmann",
                 Icon: Facebook,
               },
-              {
-                label: "E-mail",
-                href: "mailto:contato@oliveiraritzmann.com.br",
-                Icon: Mail,
-              },
+
+
             ].map(({ label, href, Icon }) => (
               <li key={label}>
                 <a
