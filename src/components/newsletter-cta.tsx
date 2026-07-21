@@ -110,12 +110,6 @@ export function NewsletterCta() {
         </div>
       </div>
 
-      {/* Filete dourado inferior — costura visual com o rodapé */}
-      <div
-        aria-hidden="true"
-        className="h-px w-full"
-        style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)" }}
-      />
     </section>
   );
 }
