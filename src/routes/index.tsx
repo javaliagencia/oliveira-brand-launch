@@ -518,28 +518,56 @@ const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] =
 
 function SociosCarousel() {
   const VISIBLE = 5;
+  const LEN = SOCIOS.length;
+  const LOOP = [...SOCIOS, ...SOCIOS];
   const [start, setStart] = useState(0);
-  const maxStart = Math.max(0, SOCIOS.length - VISIBLE);
-  const canPrev = start > 0;
-  const canNext = start < maxStart;
+  const [animate, setAnimate] = useState(true);
+
+  // After sliding forward past the end, snap back silently.
+  // After sliding backward below 0, snap forward silently.
+  useEffect(() => {
+    if (start >= LEN) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setStart((s) => s - LEN);
+      }, 520);
+      return () => clearTimeout(t);
+    }
+    if (start < 0) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setStart((s) => s + LEN);
+      }, 520);
+      return () => clearTimeout(t);
+    }
+  }, [start, LEN]);
+
+  // Re-enable animation on the next frame after a silent snap.
+  useEffect(() => {
+    if (!animate) {
+      const r = requestAnimationFrame(() => setAnimate(true));
+      return () => cancelAnimationFrame(r);
+    }
+  }, [animate]);
 
   return (
     <div className="relative mt-14">
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-out"
+          className="flex"
           style={{
-            width: `${(SOCIOS.length / VISIBLE) * 100}%`,
-            transform: `translateX(-${(start / SOCIOS.length) * 100}%)`,
+            width: `${(LOOP.length / VISIBLE) * 100}%`,
+            transform: `translateX(-${(start / LOOP.length) * 100}%)`,
+            transition: animate ? "transform 500ms ease-out" : "none",
           }}
         >
-          {SOCIOS.map((socio, i) => (
+          {LOOP.map((socio, i) => (
             <a
               key={`${socio.nome}-${i}`}
               href="/socios"
               className="relative aspect-[3/4] shrink-0 overflow-hidden group"
               style={{
-                width: `${100 / SOCIOS.length}%`,
+                width: `${100 / LOOP.length}%`,
                 backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
               }}
               aria-label={`Ver perfil de ${socio.nome}`}
@@ -592,10 +620,9 @@ function SociosCarousel() {
 
       <button
         type="button"
-        onClick={() => setStart((s) => Math.max(0, s - 1))}
-        disabled={!canPrev}
+        onClick={() => setStart((s) => s - 1)}
         aria-label="Anterior"
-        className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity"
+        className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center"
         style={{
           backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
           border: "1px solid var(--gold)",
@@ -608,10 +635,9 @@ function SociosCarousel() {
       </button>
       <button
         type="button"
-        onClick={() => setStart((s) => Math.min(maxStart, s + 1))}
-        disabled={!canNext}
+        onClick={() => setStart((s) => s + 1)}
         aria-label="Próximo"
-        className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity"
+        className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center"
         style={{
           backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
           border: "1px solid var(--gold)",
@@ -623,6 +649,7 @@ function SociosCarousel() {
         </svg>
       </button>
     </div>
+
   );
 }
 
