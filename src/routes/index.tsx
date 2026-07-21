@@ -48,6 +48,7 @@ function Index() {
     <main className="bg-background text-foreground">
       <HeroFold />
       <CompetenciasFold />
+      <ManifestoFold />
     </main>
   );
 }
