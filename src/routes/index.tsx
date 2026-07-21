@@ -602,7 +602,7 @@ function SociosCarousel() {
         onClick={() => setStart((s) => Math.min(maxStart, s + 1))}
         disabled={!canNext}
         aria-label="Próximo"
-        className="absolute right-3 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
+        className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center transition-opacity disabled:opacity-25"
         style={{
           backgroundColor: "color-mix(in oklch, var(--ink) 70%, transparent)",
           border: "1px solid var(--gold)",
