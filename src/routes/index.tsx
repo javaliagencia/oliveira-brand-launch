@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
@@ -175,6 +177,8 @@ const COMPETENCIAS: Competencia[] = [
 ];
 
 function CompetenciasFold() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section
       id="competencias"
@@ -194,91 +198,120 @@ function CompetenciasFold() {
         </h2>
       </div>
 
-      {/* Dois painéis conectados — full-bleed, sem gap. Filete dourado separa. */}
-      <div className="grid w-full grid-cols-1 md:grid-cols-2">
-        {COMPETENCIAS.map((c, i) => (
-          <CompetenciaCard key={c.index} data={c} isLast={i === COMPETENCIAS.length - 1} />
-        ))}
+      {/* Dois painéis conectados — o hovered expande e invade o vizinho, como no Machado Meyer. */}
+      <div className="flex w-full flex-col md:flex-row">
+        {COMPETENCIAS.map((c, i) => {
+          const isHovered = hovered === i;
+          const otherHovered = hovered !== null && hovered !== i;
+          // Proporções de expansão: 1 (repouso), ~1.7 (hovered), ~0.3 (vizinho encolhido)
+          const flexGrow = isHovered ? 1.7 : otherHovered ? 0.3 : 1;
+          return (
+            <CompetenciaCard
+              key={c.index}
+              data={c}
+              isLast={i === COMPETENCIAS.length - 1}
+              flexGrow={flexGrow}
+              isHovered={isHovered}
+              onEnter={() => setHovered(i)}
+              onLeave={() => setHovered((h) => (h === i ? null : h))}
+            />
+          );
+        })}
       </div>
     </section>
   );
 }
 
-function CompetenciaCard({ data, isLast }: { data: Competencia; isLast: boolean }) {
+function CompetenciaCard({
+  data,
+  isLast,
+  flexGrow,
+  isHovered,
+  onEnter,
+  onLeave,
+}: {
+  data: Competencia;
+  isLast: boolean;
+  flexGrow: number;
+  isHovered: boolean;
+  onEnter: () => void;
+  onLeave: () => void;
+}) {
   return (
     <a
       href={data.href}
-      className="group relative block h-[560px] overflow-hidden focus-visible:outline-none md:h-[680px]"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      onFocus={onEnter}
+      onBlur={onLeave}
+      className="group relative block h-[560px] basis-0 overflow-hidden focus-visible:outline-none md:h-[680px]"
       style={{
+        flexGrow,
+        transition: "flex-grow 800ms cubic-bezier(0.16,0.84,0.24,1)",
         backgroundColor: "var(--ink)",
         borderRight: isLast ? undefined : "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
       }}
       aria-label={`${data.titulo} — saber mais`}
     >
-      {/* Bloco de descrição — por baixo, revelado quando a imagem escorrega horizontalmente */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-[58%] flex-col justify-center gap-6 px-8 py-12 text-sand md:px-12">
-        <span className="eyebrow" style={{ color: "var(--gold)" }}>
+      {/* Imagem — cresce (zoom in) quando o card está ativo */}
+      <img
+        src={data.imagem}
+        alt=""
+        width={1600}
+        height={1200}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,0.84,0.24,1)]"
+        style={{ transform: isHovered ? "scale(1.06)" : "scale(1)" }}
+      />
+
+      {/* Overscura — mais forte no hover para dar suporte ao texto */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 transition-opacity duration-[600ms]"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.92) 100%)",
+          opacity: isHovered ? 1 : 0.7,
+        }}
+      />
+
+      {/* Rótulo permanente (01/02 + área + título) — sobe um pouco no hover para dar lugar à descrição */}
+      <div
+        className="absolute inset-x-0 bottom-0 flex flex-col gap-3 px-8 pb-8 text-sand transition-[padding,transform] duration-[600ms] md:px-12 md:pb-10"
+        style={{ transform: isHovered ? "translateY(-2px)" : "translateY(0)" }}
+      >
+        <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
           {data.index} — {data.eyebrow}
         </span>
-        <h3 className="font-display text-[clamp(1.5rem,2.2vw,2rem)] font-medium leading-[1.15] tracking-[-0.01em]">
+        <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
           {data.titulo}
         </h3>
-        <p className="max-w-[42ch] text-[15px] leading-[1.7] text-sand/85 md:text-[16px]">
-          {data.descricao}
-        </p>
-        <div className="mt-2 flex items-center gap-3">
-          <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-          <span className="text-[11px] uppercase tracking-[0.24em]" style={{ color: "var(--gold)" }}>
-            Conhecer a área
-          </span>
-        </div>
-      </div>
 
-      {/* Painel visual (imagem) — desliza para a esquerda no hover, revelando o texto à direita */}
-      <div
-        className="absolute inset-0 z-10 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,0.84,0.24,1)] group-hover:-translate-x-[58%] group-focus-visible:-translate-x-[58%]"
-        style={{ backgroundColor: "var(--ink)" }}
-      >
-        <img
-          src={data.imagem}
-          alt=""
-          width={1280}
-          height={1600}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
-        {/* leve escurecimento inferior p/ legibilidade do rótulo */}
+        {/* Descrição — aparece por baixo do título no mouse over */}
         <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-1/2"
+          className="grid transition-[grid-template-rows,opacity] duration-[600ms] ease-out"
           style={{
-            background:
-              "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.78) 100%)",
+            gridTemplateRows: isHovered ? "1fr" : "0fr",
+            opacity: isHovered ? 1 : 0,
           }}
-        />
-        {/* Rótulo sobre a imagem — visível no estado de repouso */}
-        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-8 pb-8 md:px-12 md:pb-10">
-          <div className="text-sand">
-            <span
-              className="eyebrow block"
-              style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}
-            >
-              {data.index} — {data.eyebrow}
-            </span>
-            <h3 className="mt-3 font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
-              {data.titulo}
-            </h3>
+        >
+          <div className="overflow-hidden">
+            <p className="max-w-[54ch] pt-3 text-[15px] leading-[1.65] text-sand/90 md:text-[16px]">
+              {data.descricao}
+            </p>
+            <div className="mt-5 flex items-center gap-3">
+              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
+              <span className="text-[11px] uppercase tracking-[0.24em]" style={{ color: "var(--gold)" }}>
+                Conhecer a área
+              </span>
+            </div>
           </div>
-          <span
-            aria-hidden="true"
-            className="hidden h-px w-16 shrink-0 self-center md:block"
-            style={{ backgroundColor: "var(--gold)" }}
-          />
         </div>
       </div>
     </a>
   );
 }
+
 
 
