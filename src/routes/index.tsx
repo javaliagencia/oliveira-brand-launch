@@ -249,12 +249,13 @@ function CompetenciaCard({
   onLeave: () => void;
 }) {
   return (
-    <a
-      href={data.href}
+    <div
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       onFocus={onEnter}
       onBlur={onLeave}
+      tabIndex={0}
+      role="group"
       className="group relative block h-[560px] basis-0 overflow-hidden focus-visible:outline-none md:h-[680px]"
       style={{
         flexGrow,
@@ -262,8 +263,9 @@ function CompetenciaCard({
         backgroundColor: "var(--ink)",
         borderRight: isLast ? undefined : "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
       }}
-      aria-label={`${data.titulo} — saber mais`}
+      aria-label={data.titulo}
     >
+
       {/* Imagem — cresce (zoom in) quando o card está ativo */}
       <img
         src={data.imagem}
@@ -320,7 +322,8 @@ function CompetenciaCard({
           </div>
         </div>
       </div>
-    </a>
+    </div>
+
   );
 }
 
