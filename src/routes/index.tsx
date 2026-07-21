@@ -446,6 +446,82 @@ function ManifestoFold() {
   );
 }
 
+/**
+ * Dobra 4 — Carreira.
+ *
+ * Referência Sheppard/Seyfarth: fotografia institucional em fundo full-bleed
+ * (aérea noturna, luzes quentes) e um card sólido sobreposto à esquerda com
+ * eyebrow + título + parágrafo curto + link discreto. Sem sombra, cantos
+ * quase retos (4px máximo do manual), hairline dourada.
+ */
+function CarreiraFold() {
+  return (
+    <section
+      id="carreira"
+      aria-label="Carreira"
+      className="relative w-full overflow-hidden"
+      style={{ backgroundColor: "var(--ink)" }}
+    >
+      {/* Imagem de fundo full-bleed */}
+      <img
+        src={carreiraBg.url}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1080}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Overscura verde-profundo — mantém contraste e tinge a foto na paleta */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(8,38,36,0.88) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.35) 100%)",
+        }}
+      />
 
-
+      <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
+        <div
+          className="max-w-[560px] p-8 md:p-12"
+          style={{
+            backgroundColor: "var(--ink)",
+            border: "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
+            borderRadius: 4,
+          }}
+        >
+          <SectionEyebrow>Carreira</SectionEyebrow>
+          <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
+            Formar advogados que{" "}
+            <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+              respondem pelo método.
+            </em>
+          </h2>
+          <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.7] text-sand/80 md:text-[16px]">
+            Trinta anos formando profissionais que operam entre a disciplina do
+            contencioso de volume e a profundidade do empresarial estratégico.
+            Buscamos quem se compromete com o rigor técnico, a leitura fina do
+            risco e a responsabilidade pelo caso do primeiro contato à decisão
+            final.
+          </p>
+          <div className="mt-10 flex items-center gap-3">
+            <span
+              aria-hidden="true"
+              className="block h-px w-10"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <span
+              className="text-[11px] uppercase tracking-[0.28em]"
+              style={{ color: "var(--gold)" }}
+            >
+              Junte-se ao escritório
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
