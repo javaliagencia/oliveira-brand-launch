@@ -100,9 +100,19 @@ function HeroFold() {
         <p className="eyebrow text-[var(--gold)]">
           Método. Previsibilidade. Resultado.
         </p>
-        <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
-          Advocacia com profundidade em{" "}
-          <span style={{ color: "var(--gold)" }}>qualquer escala.</span>
+        <h1 className="mt-8 max-w-[20ch] font-display text-sand">
+          <span className="block text-[clamp(1.05rem,1.35vw,1.5rem)] font-light uppercase tracking-[0.32em] leading-none text-sand/75">
+            Advocacia com
+          </span>
+          <span className="mt-3 block font-display text-[clamp(3.25rem,8.6vw,8rem)] font-medium leading-[0.98] tracking-[-0.02em]">
+            <em className="not-italic md:italic" style={{ fontWeight: 400 }}>profundidade</em>
+          </span>
+          <span className="mt-2 block text-[clamp(1.05rem,1.35vw,1.5rem)] font-light uppercase tracking-[0.32em] leading-none text-sand/75">
+            em qualquer
+          </span>
+          <span className="mt-3 block font-display text-[clamp(3.25rem,8.6vw,8rem)] font-medium leading-[0.98] tracking-[-0.02em]" style={{ color: "var(--gold)" }}>
+            escala.
+          </span>
         </h1>
       </div>
 
@@ -197,9 +207,16 @@ function CompetenciasFold() {
       >
         <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
-          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
-            Volume e estratégia,{" "}
-            <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
+          <h2 className="mt-8 max-w-[24ch] font-display">
+            <span className="block font-display text-[clamp(2.4rem,5.8vw,4.75rem)] font-medium leading-[1] tracking-[-0.02em]">
+              Volume <span className="font-light" style={{ fontStyle: "italic" }}>e</span> estratégia,
+            </span>
+            <span className="mt-4 block text-[clamp(0.95rem,1.15vw,1.2rem)] font-light uppercase tracking-[0.32em] leading-[1.4]" style={{ color: "color-mix(in oklch, var(--ink) 55%, white)" }}>
+              conduzidos com
+            </span>
+            <span className="mt-1 block font-display text-[clamp(2.4rem,5.8vw,4.75rem)] font-medium leading-[1] tracking-[-0.02em]" style={{ color: "var(--gold)" }}>
+              o mesmo <em style={{ fontWeight: 400 }}>método.</em>
+            </span>
           </h2>
         </div>
       </div>
