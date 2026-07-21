@@ -504,7 +504,7 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS: { nome: string; foto: string | null }[] = [
+const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] = [
   { nome: "Jorge Ritzmann de Oliveira", foto: socioJorge.url },
   { nome: "Juliano Schmitt", foto: socioJuliano.url },
   { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
@@ -513,7 +513,7 @@ const SOCIOS: { nome: string; foto: string | null }[] = [
   { nome: "Sonia Angulski", foto: socioSonia.url },
   { nome: "Mariana Hillesheim", foto: socioMariana.url },
   { nome: "Bruna Schmitt", foto: socioBruna.url },
-  { nome: "Carolina Schmidt", foto: socioCarolina.url },
+  { nome: "Carolina Schmidt", foto: socioCarolina.url, objectPosition: "50% 20%" },
 ];
 
 function SociosCarousel() {
@@ -549,12 +549,13 @@ function SociosCarousel() {
                 src={socio.foto}
                 alt={socio.nome}
                 className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: socio.objectPosition ?? "50% 50%" }}
                 loading="lazy"
               />
             ) : null}
-            <div className="absolute inset-x-0 bottom-0 flex items-end p-5">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-center p-5">
               <span
-                className="font-display text-[15px] leading-tight whitespace-nowrap"
+                className="font-display text-[15px] leading-tight whitespace-nowrap text-center"
                 style={{
                   color: "var(--sand)",
                   textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
