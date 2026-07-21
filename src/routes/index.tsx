@@ -322,6 +322,8 @@ function CompetenciaCard({
     </div>
 
   );
+}
+
 
 /**
  * Dobra 3 — Manifesto dos 30 anos.
