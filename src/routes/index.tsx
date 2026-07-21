@@ -562,7 +562,9 @@ function SociosCarousel() {
                   }}
                 >
                   <span
-                    className="bg-[length:100%_1px] bg-no-repeat bg-[position:0_100%] bg-[image:linear-gradient(currentColor,currentColor)] [background-size:0_1px] transition-[background-size] duration-300 ease-out group-hover:[background-size:100%_1px]"
+                    className="bg-no-repeat bg-[image:linear-gradient(currentColor,currentColor)] transition-[background-size] duration-300 ease-out"
+                    style={{ backgroundSize: "0% 1px", backgroundPosition: "0 100%" }}
+                    data-socio-name
                   >
                     {socio.nome}
                   </span>
@@ -584,6 +586,9 @@ function SociosCarousel() {
           ))}
         </div>
       </div>
+      <style>{`
+        a.group:hover [data-socio-name] { background-size: 100% 1px !important; }
+      `}</style>
 
       <button
         type="button"
