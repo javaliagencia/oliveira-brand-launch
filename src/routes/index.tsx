@@ -357,12 +357,12 @@ function ManifestoFold() {
         aria-hidden="true"
         className="pointer-events-none absolute select-none hidden md:block"
         style={{
-          right: "-10%",
-          top: "18%",
-          width: "min(52vw, 640px)",
+          right: "-8%",
+          top: "10%",
+          width: "min(46vw, 560px)",
           height: "auto",
-          opacity: 0.95,
-          zIndex: 1,
+          opacity: 1,
+          zIndex: 3,
         }}
       />
 
@@ -371,12 +371,9 @@ function ManifestoFold() {
         className="relative"
         style={{ backgroundColor: "#ffffff", color: "var(--ink)", zIndex: 2 }}
       >
-        <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 pb-40 pt-28 md:grid-cols-12 md:gap-10 md:pb-56 md:pt-40">
+        <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 pb-20 pt-16 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-20">
           <div className="md:col-span-6">
-            <p className="eyebrow" style={{ color: "var(--gold)" }}>
-              Trinta anos, um método
-            </p>
-            <h2 className="mt-8 font-display text-[clamp(1.5rem,2.6vw,2.35rem)] font-normal leading-[1.28] tracking-[-0.005em]">
+            <h2 className="font-display text-[clamp(1.5rem,2.6vw,2.35rem)] font-normal leading-[1.28] tracking-[-0.005em]">
               <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
@@ -391,8 +388,6 @@ function ManifestoFold() {
           <div className="md:col-span-6" />
         </div>
       </div>
-
-      {/* Bloco 2 — Faixa "Quem conduz" sobre verde-profundo.
           O símbolo dourado do bloco acima extravasa aqui dentro. */}
       <div
         className="relative"
