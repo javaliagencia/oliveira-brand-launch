@@ -395,7 +395,7 @@ function ManifestoFold() {
         className="relative"
         style={{ backgroundColor: "var(--ink)", color: "var(--sand)", zIndex: 0 }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-40 md:pb-28 md:pt-56">
+        <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
               <p className="eyebrow" style={{ color: "var(--gold)" }}>
