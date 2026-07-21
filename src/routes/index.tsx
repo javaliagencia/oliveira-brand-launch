@@ -527,10 +527,9 @@ function SociosCarousel() {
       }}
     >
       <div
-        className="flex w-max gap-px"
+        className="flex w-max"
         style={{
           animation: "socios-marquee 48s linear infinite",
-          backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)",
         }}
       >
         {loop.map((socio, i) => (
