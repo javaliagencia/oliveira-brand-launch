@@ -207,9 +207,16 @@ function CompetenciasFold() {
       >
         <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
-          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
-            Volume e estratégia,{" "}
-            <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
+          <h2 className="mt-8 max-w-[24ch] font-display">
+            <span className="block font-display text-[clamp(2.4rem,5.8vw,4.75rem)] font-medium leading-[1] tracking-[-0.02em]">
+              Volume <span className="font-light" style={{ fontStyle: "italic" }}>e</span> estratégia,
+            </span>
+            <span className="mt-4 block text-[clamp(0.95rem,1.15vw,1.2rem)] font-light uppercase tracking-[0.32em] leading-[1.4]" style={{ color: "color-mix(in oklch, var(--ink) 55%, white)" }}>
+              conduzidos com
+            </span>
+            <span className="mt-1 block font-display text-[clamp(2.4rem,5.8vw,4.75rem)] font-medium leading-[1] tracking-[-0.02em]" style={{ color: "var(--gold)" }}>
+              o mesmo <em style={{ fontWeight: 400 }}>método.</em>
+            </span>
           </h2>
         </div>
       </div>
