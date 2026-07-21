@@ -561,7 +561,11 @@ function SociosCarousel() {
                     textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
                   }}
                 >
-                  {socio.nome}
+                  <span
+                    className="bg-[length:100%_1px] bg-no-repeat bg-[position:0_100%] bg-[image:linear-gradient(currentColor,currentColor)] [background-size:0_1px] transition-[background-size] duration-300 ease-out group-hover:[background-size:100%_1px]"
+                  >
+                    {socio.nome}
+                  </span>
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 24 24"
