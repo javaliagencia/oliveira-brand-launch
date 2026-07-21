@@ -355,11 +355,11 @@ function ManifestoFold() {
         src={simboloDourado.url}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute select-none"
+        className="pointer-events-none absolute select-none hidden md:block"
         style={{
-          right: "-6%",
-          top: "8%",
-          width: "min(78vw, 900px)",
+          right: "-10%",
+          top: "18%",
+          width: "min(52vw, 640px)",
           height: "auto",
           opacity: 0.95,
           zIndex: 1,
@@ -369,23 +369,26 @@ function ManifestoFold() {
       {/* Bloco 1 — Manifesto sobre branco */}
       <div
         className="relative"
-        style={{ backgroundColor: "#ffffff", color: "var(--ink)", zIndex: 0 }}
+        style={{ backgroundColor: "#ffffff", color: "var(--ink)", zIndex: 2 }}
       >
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 pb-40 pt-28 md:grid-cols-12 md:gap-10 md:pb-56 md:pt-40">
-          <div className="md:col-span-7">
+          <div className="md:col-span-6">
             <p className="eyebrow" style={{ color: "var(--gold)" }}>
               Trinta anos, um método
             </p>
-            <h2 className="mt-8 font-display text-[clamp(1.85rem,3.6vw,3.15rem)] font-medium leading-[1.22] tracking-[-0.01em]">
-              <span style={{ color: "color-mix(in oklch, var(--ink) 42%, white)" }}>
+            <h2 className="mt-8 font-display text-[clamp(1.5rem,2.6vw,2.35rem)] font-normal leading-[1.28] tracking-[-0.005em]">
+              <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
-              <span style={{ color: "var(--ink)" }}>
+              <em
+                className="font-display"
+                style={{ color: "var(--ink)", fontStyle: "italic", fontWeight: 500 }}
+              >
                 É o método aplicado a ela.
-              </span>
+              </em>
             </h2>
           </div>
-          <div className="md:col-span-5" />
+          <div className="md:col-span-6" />
         </div>
       </div>
 
