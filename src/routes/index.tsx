@@ -318,11 +318,10 @@ function CompetenciaCard({
             <p className="max-w-[54ch] pt-3 text-[15px] leading-[1.65] text-sand/90 md:text-[16px]">
               {data.descricao}
             </p>
-            <div className="mt-5 flex items-center gap-3">
-              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-              <span className="text-[11px] uppercase tracking-[0.24em]" style={{ color: "var(--gold)" }}>
+            <div className="mt-6">
+              <BrandLink href={data.href} invert>
                 Conhecer a área
-              </span>
+              </BrandLink>
             </div>
           </div>
         </div>
