@@ -67,8 +67,8 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1360px] items-center justify-between px-6 py-5 md:py-6">
         <Link
           to="/"
-          className="group inline-flex items-center gap-4 focus-visible:outline-none md:gap-5"
-          aria-label="Oliveira Ritzmann Advogados — 30 anos — Início"
+          className="group inline-flex items-center focus-visible:outline-none"
+          aria-label="Oliveira Ritzmann Advogados — Início"
         >
           <img
             src={logoVerde.url}
@@ -77,11 +77,9 @@ export function SiteHeader() {
             loading="eager"
             decoding="async"
           />
-          <span
-            aria-hidden="true"
-            className="block h-8 w-px md:h-9"
-            style={{ backgroundColor: "color-mix(in oklch, var(--gold) 55%, transparent)" }}
-          />
+        </Link>
+
+        <div className="inline-flex items-center gap-6 md:gap-8">
           <img
             src={selo30.url}
             alt="30 anos"
@@ -89,23 +87,23 @@ export function SiteHeader() {
             loading="eager"
             decoding="async"
           />
-        </Link>
-
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menu"
-          aria-expanded={open}
-          className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-        >
-          <span
-            aria-hidden="true"
-            className="inline-flex h-[8px] w-6 flex-col justify-between"
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menu"
+            aria-expanded={open}
+            className="group inline-flex h-9 w-9 items-center justify-center text-sand transition-colors hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
           >
-            <span className="block h-px w-full bg-current" />
-            <span className="block h-px w-full bg-current" />
-          </span>
-        </button>
+            <span
+              aria-hidden="true"
+              className="inline-flex h-[8px] w-6 flex-col justify-between"
+            >
+              <span className="block h-px w-full bg-current" />
+              <span className="block h-px w-full bg-current" />
+            </span>
+          </button>
+        </div>
+
       </div>
 
       {/* Overlay menu — tela cheia */}
