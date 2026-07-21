@@ -186,17 +186,35 @@ function CompetenciasFold() {
       className="relative w-full"
       style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
-      {/* Enunciado — sem "boxinho", tratado como abertura editorial */}
-      <div className="mx-auto max-w-[1360px] px-6 pt-20 pb-12 md:pt-28 md:pb-16">
-        <p className="eyebrow flex items-center gap-4" style={{ color: "var(--gold)" }}>
-          <span className="hairline" aria-hidden="true" />
-          Duas competências, um método
-        </p>
-        <h2 className="mt-6 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
-          Volume e estratégia,{" "}
-          <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
-        </h2>
+      {/* Respiro bege — separa o hero (vídeo escuro) da área de painéis e
+          conecta cromaticamente com a luz das imagens abaixo. */}
+      <div
+        className="w-full"
+        style={{
+          backgroundColor: "var(--sand)",
+          color: "var(--ink)",
+        }}
+      >
+        <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+          <p className="eyebrow flex items-center gap-4" style={{ color: "var(--deep-green)" }}>
+            <span className="hairline" aria-hidden="true" style={{ backgroundColor: "var(--gold)" }} />
+            Duas competências, um método
+          </p>
+          <h2 className="mt-6 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+            Volume e estratégia,{" "}
+            <span style={{ color: "var(--gold)" }}>conduzidos com o mesmo método.</span>
+          </h2>
+        </div>
+        {/* Transição suave bege → verde profundo, encostando nos painéis */}
+        <div
+          aria-hidden="true"
+          className="h-24 w-full md:h-32"
+          style={{
+            background: "linear-gradient(to bottom, var(--sand) 0%, var(--ink) 100%)",
+          }}
+        />
       </div>
+
 
       {/* Dois painéis conectados — o hovered expande e invade o vizinho, como no Machado Meyer. */}
       <div className="flex w-full flex-col md:flex-row">
