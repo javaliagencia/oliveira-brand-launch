@@ -6,6 +6,7 @@ import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
+import { BrandLink } from "@/components/brand-ui";
 
 
 
@@ -317,11 +318,10 @@ function CompetenciaCard({
             <p className="max-w-[54ch] pt-3 text-[15px] leading-[1.65] text-sand/90 md:text-[16px]">
               {data.descricao}
             </p>
-            <div className="mt-5 flex items-center gap-3">
-              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-              <span className="text-[11px] uppercase tracking-[0.24em]" style={{ color: "var(--gold)" }}>
+            <div className="mt-6">
+              <BrandLink href={data.href} invert>
                 Conhecer a área
-              </span>
+              </BrandLink>
             </div>
           </div>
         </div>
@@ -409,12 +409,9 @@ function ManifestoFold() {
                 Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
               </h3>
             </div>
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
-              <span className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
-                Conhecer o time
-              </span>
-            </div>
+            <BrandLink href="/socios" invert>
+              Conhecer o time
+            </BrandLink>
           </div>
 
           <div
@@ -507,18 +504,10 @@ function CarreiraFold() {
             risco e a responsabilidade pelo caso do primeiro contato à decisão
             final.
           </p>
-          <div className="mt-10 flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="block h-px w-10"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <span
-              className="text-[11px] uppercase tracking-[0.28em]"
-              style={{ color: "var(--gold)" }}
-            >
+          <div className="mt-10">
+            <BrandLink href="/carreira" invert>
               Junte-se ao escritório
-            </span>
+            </BrandLink>
           </div>
         </div>
       </div>
