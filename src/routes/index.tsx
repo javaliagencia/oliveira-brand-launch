@@ -198,7 +198,7 @@ function CompetenciasFold() {
           color: "var(--ink)",
         }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+        <div className="mx-auto max-w-[1360px] px-6 pt-14 pb-10 md:pt-20 md:pb-14">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
           <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
             Volume e estratégia, conduzidos com o{" "}
