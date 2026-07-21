@@ -48,6 +48,7 @@ function Index() {
     <main className="bg-background text-foreground">
       <HeroFold />
       <CompetenciasFold />
+      <ManifestoFold />
     </main>
   );
 }
@@ -322,6 +323,162 @@ function CompetenciaCard({
 
   );
 }
+
+
+/**
+ * Dobra 3 — Manifesto dos 30 anos.
+ *
+ * Composição em duas colunas sobre fundo bege:
+ *  - Coluna esquerda: manifesto tipográfico em dois tons. A primeira
+ *    sentença fica em ink/40 (quase filigrana), a segunda em ink cheio,
+ *    ancorando a leitura no "é o método aplicado a ela".
+ *  - Coluna direita: grafismo geométrico inspirado no Seyfarth,
+ *    construído a partir do monograma OR (quartos de círculo em dourado
+ *    e verde-profundo). Sem imagem raster, apenas SVG — nítido em
+ *    qualquer resolução e dentro da paleta fechada.
+ *
+ * Abaixo, uma faixa discreta "Quem conduz o método" prepara a próxima
+ * dobra de pessoas sem se comprometer com fotos ainda inexistentes.
+ */
+function ManifestoFold() {
+  return (
+    <section
+      id="manifesto"
+      aria-label="Manifesto — trinta anos de método"
+      className="relative w-full"
+      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
+    >
+      <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 pb-28 pt-28 md:grid-cols-12 md:gap-10 md:pb-40 md:pt-40">
+        {/* Coluna texto */}
+        <div className="md:col-span-7">
+          <p className="eyebrow" style={{ color: "var(--gold)" }}>
+            Trinta anos, um método
+          </p>
+          <h2 className="mt-8 font-display text-[clamp(1.85rem,3.6vw,3.15rem)] font-medium leading-[1.22] tracking-[-0.01em]">
+            <span style={{ color: "color-mix(in oklch, var(--ink) 42%, var(--sand))" }}>
+              Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
+            </span>{" "}
+            <span style={{ color: "var(--ink)" }}>
+              É o método aplicado a ela.
+            </span>
+          </h2>
+
+          <div className="mt-12 flex items-center gap-4">
+            <span aria-hidden="true" className="block h-px w-12" style={{ backgroundColor: "var(--gold)" }} />
+            <span className="eyebrow" style={{ color: "var(--ink)" }}>
+              Método. Previsibilidade. Resultado.
+            </span>
+          </div>
+        </div>
+
+        {/* Coluna grafismo — monograma OR deconstruído em quartos de círculo */}
+        <div className="relative md:col-span-5">
+          <div className="relative aspect-square w-full max-w-[520px] md:ml-auto">
+            <MonogramGrid />
+          </div>
+        </div>
+      </div>
+
+      {/* Filete de transição — separa manifesto da faixa "quem conduz" */}
+      <div
+        aria-hidden="true"
+        className="mx-auto h-px w-full max-w-[1360px]"
+        style={{ backgroundColor: "color-mix(in oklch, var(--gold) 45%, transparent)" }}
+      />
+
+      {/* Faixa "Quem conduz o método" — teaser sóbrio de pessoas */}
+      <div className="mx-auto max-w-[1360px] px-6 py-24 md:py-28">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-[52ch]">
+            <p className="eyebrow" style={{ color: "var(--gold)" }}>
+              Quem conduz o método
+            </p>
+            <h3 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.2] tracking-[-0.01em]">
+              Sócios e advogados que respondem pelo caso do primeiro contato à decisão final.
+            </h3>
+          </div>
+          <div className="flex items-center gap-3">
+            <span aria-hidden="true" className="block h-px w-10" style={{ backgroundColor: "var(--gold)" }} />
+            <span className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--ink)" }}>
+              Conhecer o time
+            </span>
+          </div>
+        </div>
+
+        {/* Grade de placeholders — 4 lentes retangulares em ink com ⟨PENDENTE⟩ */}
+        <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden md:grid-cols-4" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)" }}>
+          {[0, 1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="relative aspect-[3/4] w-full"
+              style={{ backgroundColor: "var(--ink)" }}
+            >
+              <div className="absolute inset-0 flex items-end p-5">
+                <div className="flex flex-col gap-2">
+                  <span
+                    className="text-[10px] uppercase tracking-[0.28em]"
+                    style={{ color: "var(--gold)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className="font-display text-[15px] leading-tight"
+                    style={{ color: "var(--sand)" }}
+                  >
+                    ⟨PENDENTE⟩
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * MonogramGrid — grafismo institucional na cor da marca.
+ *
+ * Composição inspirada no Seyfarth: uma malha 2×2 preenchida por quartos
+ * de círculo em dourado sobre bege, com um núcleo em verde-profundo que
+ * cita o monograma OR. Nada decorativo é adicionado fora da paleta.
+ */
+function MonogramGrid() {
+  const ink = "var(--ink)";
+  const gold = "var(--gold)";
+  const goldSoft = "color-mix(in oklch, var(--gold) 55%, var(--sand))";
+  return (
+    <svg
+      viewBox="0 0 400 400"
+      className="h-full w-full"
+      role="img"
+      aria-label="Monograma Oliveira Ritzmann — composição institucional"
+    >
+      {/* Filete guia — 1px dourado, canto superior esquerdo */}
+      <line x1="0" y1="0" x2="60" y2="0" stroke={gold} strokeWidth="1" />
+      <line x1="0" y1="0" x2="0" y2="60" stroke={gold} strokeWidth="1" />
+
+      {/* Célula 1 — quarto de círculo dourado (canto sup. esq. → cheio) */}
+      <path d="M0 200 A200 200 0 0 1 200 0 L200 200 Z" fill={gold} />
+
+      {/* Célula 2 — quarto de círculo mais claro, contra-forma */}
+      <path d="M200 0 A200 200 0 0 1 400 200 L200 200 Z" fill={goldSoft} />
+
+      {/* Célula 3 — quarto de círculo em verde-profundo (peso institucional) */}
+      <path d="M0 200 L200 200 L200 400 A200 200 0 0 1 0 200 Z" fill={ink} />
+
+      {/* Célula 4 — contra-forma bege com arco dourado interno (O + R) */}
+      <path d="M200 200 L400 200 A200 200 0 0 1 200 400 Z" fill={goldSoft} />
+      <circle cx="300" cy="300" r="70" fill="var(--sand)" />
+      <circle cx="300" cy="300" r="70" fill="none" stroke={ink} strokeWidth="1.25" />
+
+      {/* Núcleo OR — pequeno círculo dourado sobre o verde */}
+      <circle cx="100" cy="300" r="34" fill="none" stroke={gold} strokeWidth="1.25" />
+    </svg>
+  );
+}
+
 
 
 
