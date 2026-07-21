@@ -101,17 +101,34 @@ function HeroFold() {
         </h1>
       </div>
 
-      {/* Indicador de continuidade */}
-      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center gap-2">
-        <span className="text-[10px] uppercase tracking-[0.32em] text-sand/70">
-          Continuidade
+      {/* Indicador de continuidade — seta grande dourada */}
+      <a
+        href="#competencias"
+        aria-label="Continuar para a próxima seção"
+        className="group absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-10"
+      >
+        <span className="text-[10px] uppercase tracking-[0.32em]">
+          Continue
         </span>
-        <span
+        <svg
+          width="44"
+          height="56"
+          viewBox="0 0 44 56"
+          fill="none"
           aria-hidden="true"
-          className="block h-6 w-px animate-pulse"
-          style={{ backgroundColor: "var(--gold)" }}
-        />
-      </div>
+          className="animate-[pulse_2.4s_ease-in-out_infinite] transition-transform duration-300 group-hover:translate-y-1"
+        >
+          <path
+            d="M22 4 V48 M8 34 L22 48 L36 34"
+            stroke="var(--gold)"
+            strokeWidth="1.25"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+            fill="none"
+          />
+        </svg>
+      </a>
+
     </section>
   );
 }
