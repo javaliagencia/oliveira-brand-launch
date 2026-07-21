@@ -115,3 +115,160 @@ function HeroFold() {
     </section>
   );
 }
+
+/**
+ * Dobra 2 — Competências.
+ *
+ * Fundo bege. No topo, um "boxinho" (chip institucional) com o título
+ * curto "Volume e estratégia, conduzidos com o mesmo método." Abaixo,
+ * dois cards lado a lado (Clientes Corporativos / Empresarial Estratégico).
+ *
+ * Interação (referência Machado Meyer): ao passar o mouse sobre o card,
+ * a imagem desliza sutilmente para cima e revela, por baixo, um bloco
+ * de texto descritivo com um link discreto. Sem parallax, sem sombras.
+ */
+type Competencia = {
+  index: string;
+  eyebrow: string;
+  titulo: string;
+  descricao: string;
+  imagem: string;
+  href: string;
+};
+
+const COMPETENCIAS: Competencia[] = [
+  {
+    index: "01",
+    eyebrow: "Escala e volume",
+    titulo: "Clientes Corporativos",
+    descricao:
+      "Contencioso de massa e recuperação de crédito conduzidos com engenharia processual: previsibilidade em cada etapa, indicadores auditáveis e método replicável em qualquer jurisdição.",
+    imagem: imgCorporativos.url,
+    href: "/atuacao/contencioso-de-volume",
+  },
+  {
+    index: "02",
+    eyebrow: "Decisão e profundidade",
+    titulo: "Empresarial Estratégico",
+    descricao:
+      "Consultivo e contencioso de alta complexidade, para operações que exigem leitura fina do risco, sofisticação técnica e a mesma disciplina que estrutura o volume.",
+    imagem: imgEmpresarial.url,
+    href: "/atuacao/empresarial-estrategico",
+  },
+];
+
+function CompetenciasFold() {
+  return (
+    <section
+      aria-label="Competências"
+      className="relative w-full"
+      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
+    >
+      <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
+        {/* Boxinho institucional com o enunciado curto */}
+        <div className="mb-14 md:mb-20">
+          <div
+            className="inline-flex max-w-full flex-col gap-3 border px-6 py-5 md:px-8 md:py-6"
+            style={{
+              borderColor: "color-mix(in oklch, var(--gold) 55%, transparent)",
+              backgroundColor: "color-mix(in oklch, var(--sand) 60%, white)",
+            }}
+          >
+            <span className="eyebrow" style={{ color: "var(--gold-ink, #6f6647)" }}>
+              Duas competências, um método
+            </span>
+            <p className="font-display text-[clamp(1.25rem,2.2vw,1.9rem)] font-medium leading-[1.2] tracking-[-0.005em]">
+              Volume e estratégia, conduzidos com o mesmo método.
+            </p>
+          </div>
+        </div>
+
+        {/* Grid de cards */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          {COMPETENCIAS.map((c) => (
+            <CompetenciaCard key={c.index} data={c} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CompetenciaCard({ data }: { data: Competencia }) {
+  return (
+    <a
+      href={data.href}
+      className="group relative block overflow-hidden focus-visible:outline-none"
+      style={{ backgroundColor: "var(--ink)" }}
+      aria-label={`${data.titulo} — saber mais`}
+    >
+      {/* Painel visual (imagem) — desliza para cima no hover */}
+      <div className="relative h-[520px] w-full overflow-hidden md:h-[600px]">
+        <div
+          className="absolute inset-0 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,0.84,0.24,1)] group-hover:-translate-y-[38%] group-focus-visible:-translate-y-[38%]"
+        >
+          <img
+            src={data.imagem}
+            alt=""
+            width={1280}
+            height={1600}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+          {/* leve escurecimento inferior p/ legibilidade do rótulo */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 h-1/2"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.72) 100%)",
+            }}
+          />
+          {/* Rótulo sobre a imagem */}
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-6 pb-7 md:px-8 md:pb-8">
+            <div className="text-sand">
+              <span
+                className="eyebrow block"
+                style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}
+              >
+                {data.index} — {data.eyebrow}
+              </span>
+              <h3 className="mt-3 font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+                {data.titulo}
+              </h3>
+            </div>
+            <span
+              aria-hidden="true"
+              className="hidden h-px w-16 shrink-0 self-center md:block"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Bloco de descrição — revelado por baixo da imagem no hover */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] px-6 pb-8 pt-6 text-sand md:px-8">
+        <div className="flex h-full flex-col justify-between">
+          <p className="max-w-[52ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
+            {data.descricao}
+          </p>
+          <div className="flex items-center gap-3">
+            <span
+              aria-hidden="true"
+              className="block h-px w-10"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <span
+              className="text-[11px] uppercase tracking-[0.24em]"
+              style={{ color: "var(--gold)" }}
+            >
+              Conhecer a área
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
