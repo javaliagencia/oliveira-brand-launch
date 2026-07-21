@@ -414,42 +414,8 @@ function ManifestoFold() {
             </BrandLink>
           </div>
 
-          <div
-            className="relative mt-14 grid grid-cols-2 gap-px overflow-hidden md:grid-cols-3 lg:grid-cols-5"
-            style={{ backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)", zIndex: 2 }}
-          >
-            {[
-              "Jorge Oliveira",
-              "Juliano Ritzmann",
-              "Tatiane",
-              "Cíntia",
-              "Guilherme",
-              "Sônia",
-              "Mariana",
-              "Bruna",
-              "Carolina",
-            ].map((nome, i) => (
-              <div
-                key={nome}
-                className="relative aspect-[3/4] w-full"
-                style={{ backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)" }}
-              >
-                <div className="absolute inset-0 flex items-end p-5">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.28em]" style={{ color: "var(--gold)" }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-display text-[15px] leading-tight" style={{ color: "var(--sand)" }}>
-                      {nome}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-[0.24em]" style={{ color: "color-mix(in oklch, var(--sand) 55%, transparent)" }}>
-                      Foto ⟨PENDENTE⟩
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SociosCarousel />
+
 
         </div>
       </div>
@@ -528,4 +494,83 @@ function CarreiraFold() {
     </section>
   );
 }
+
+const SOCIOS = [
+  "Jorge Oliveira",
+  "Juliano Ritzmann",
+  "Tatiane",
+  "Cíntia",
+  "Guilherme",
+  "Sônia",
+  "Mariana",
+  "Bruna",
+  "Carolina",
+];
+
+function SociosCarousel() {
+  // Duplicamos a lista para criar loop infinito via translate -50%.
+  const loop = [...SOCIOS, ...SOCIOS];
+  return (
+    <div
+      className="relative mt-14 overflow-hidden"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
+      }}
+    >
+      <div
+        className="flex w-max gap-px"
+        style={{
+          animation: "socios-marquee 48s linear infinite",
+          backgroundColor: "color-mix(in oklch, var(--gold) 40%, transparent)",
+        }}
+      >
+        {loop.map((nome, i) => (
+          <div
+            key={`${nome}-${i}`}
+            className="relative aspect-[3/4] shrink-0"
+            style={{
+              width: "calc((min(1360px, 100vw) - 3rem) / 5)",
+              backgroundColor: "color-mix(in oklch, var(--ink) 82%, black)",
+            }}
+          >
+            <div className="absolute inset-0 flex items-end p-5">
+              <div className="flex flex-col gap-2">
+                <span
+                  className="text-[10px] uppercase tracking-[0.28em]"
+                  style={{ color: "var(--gold)" }}
+                >
+                  {String((i % SOCIOS.length) + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className="font-display text-[15px] leading-tight"
+                  style={{ color: "var(--sand)" }}
+                >
+                  {nome}
+                </span>
+                <span
+                  className="text-[10px] uppercase tracking-[0.24em]"
+                  style={{
+                    color: "color-mix(in oklch, var(--sand) 55%, transparent)",
+                  }}
+                >
+                  Foto ⟨PENDENTE⟩
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <style>{`
+        @keyframes socios-marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
 
