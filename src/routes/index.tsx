@@ -6,6 +6,7 @@ import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
+import { BrandLink } from "@/components/brand-ui";
 
 
 
