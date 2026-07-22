@@ -441,6 +441,235 @@ function ManifestoFold() {
  * eyebrow + título + parágrafo curto + link discreto. Sem sombra, cantos
  * quase retos (4px máximo do manual), hairline dourada.
  */
+
+/**
+ * Dobra Publicações — "Em ponto. Informação que desperta. De segunda a sexta."
+ *
+ * Referência Simmons & Simmons: fundo cromático quente (ocre-terroso),
+ * animação sutil de manchas em movimento lento no fundo, e uma grade de
+ * publicações. A primeira é destaque com imagem + texto sobrepostos e CTA
+ * dentro do card. As demais têm imagem no topo, texto abaixo e um pequeno
+ * CTA.
+ */
+type Publicacao = {
+  data: string;
+  categoria: string;
+  titulo: string;
+  resumo: string;
+  imagem: string;
+  href: string;
+};
+
+const PUBLICACOES: Publicacao[] = [
+  {
+    data: "21 jul 2026",
+    categoria: "Publicação",
+    titulo: "Contencioso de massa: o que os indicadores de 2026 revelam",
+    resumo:
+      "Uma leitura do desempenho do contencioso de volume no primeiro semestre e o que mudou na engenharia processual das grandes carteiras.",
+    imagem: imgCorporativos.url,
+    href: "/publicacoes/contencioso-massa-2026",
+  },
+  {
+    data: "18 jul 2026",
+    categoria: "Publicação",
+    titulo: "Reforma tributária: o que decidir agora",
+    resumo:
+      "Movimentos regulatórios que já exigem posicionamento das áreas jurídica e financeira das empresas.",
+    imagem: imgEmpresarial.url,
+    href: "/publicacoes/reforma-tributaria-agora",
+  },
+  {
+    data: "15 jul 2026",
+    categoria: "Publicação",
+    titulo: "Recuperação de crédito e o novo ciclo de juros",
+    resumo:
+      "Como calibrar estratégia, prazo e método diante da mudança de patamar da taxa básica.",
+    imagem: carreiraBg.url,
+    href: "/publicacoes/recuperacao-credito-juros",
+  },
+];
+
+function PublicacoesFold() {
+  return (
+    <section
+      id="publicacoes"
+      aria-label="Publicações — Em ponto"
+      className="relative w-full overflow-hidden"
+      style={{ backgroundColor: "#8a4a2e", color: "var(--sand)" }}
+    >
+      {/* Animação de fundo — manchas quentes em movimento lento */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute -top-1/3 -left-1/4 h-[70vw] w-[70vw] rounded-full opacity-40 mix-blend-screen"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(220,140,80,0.55), rgba(220,140,80,0) 70%)",
+            animation: "publicacoes-drift-a 22s ease-in-out infinite alternate",
+          }}
+        />
+        <div
+          className="absolute top-1/4 -right-1/4 h-[60vw] w-[60vw] rounded-full opacity-30 mix-blend-screen"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(180,60,40,0.55), rgba(180,60,40,0) 70%)",
+            animation: "publicacoes-drift-b 28s ease-in-out infinite alternate",
+          }}
+        />
+        <div
+          className="absolute bottom--1/4 left-1/3 h-[55vw] w-[55vw] rounded-full opacity-30 mix-blend-screen"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(240,180,110,0.5), rgba(240,180,110,0) 70%)",
+            animation: "publicacoes-drift-c 34s ease-in-out infinite alternate",
+          }}
+        />
+        {/* Vinheta sutil para sustentar o contraste da tipografia */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(60,20,10,0.15) 0%, rgba(60,20,10,0) 25%, rgba(60,20,10,0) 75%, rgba(60,20,10,0.25) 100%)",
+          }}
+        />
+      </div>
+      <style>{`
+        @keyframes publicacoes-drift-a {
+          0%   { transform: translate3d(0,0,0) scale(1); }
+          100% { transform: translate3d(6vw, 4vw, 0) scale(1.08); }
+        }
+        @keyframes publicacoes-drift-b {
+          0%   { transform: translate3d(0,0,0) scale(1); }
+          100% { transform: translate3d(-5vw, 3vw, 0) scale(1.1); }
+        }
+        @keyframes publicacoes-drift-c {
+          0%   { transform: translate3d(0,0,0) scale(1); }
+          100% { transform: translate3d(3vw, -4vw, 0) scale(1.06); }
+        }
+      `}</style>
+
+      <div className="relative mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
+        {/* Cabeçalho */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-[52ch]">
+            <SectionEyebrow>Em ponto</SectionEyebrow>
+            <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand">
+              Informação que{" "}
+              <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+                desperta.
+              </em>{" "}
+              <span style={{ color: "color-mix(in oklch, var(--sand) 75%, transparent)" }}>
+                De segunda a sexta.
+              </span>
+            </h2>
+          </div>
+          <BrandLink href="/publicacoes" invert>
+            Ver todas as publicações
+          </BrandLink>
+        </div>
+
+        {/* Grade — 1 destaque + 3 cards */}
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-12">
+          {/* Destaque — imagem full com texto e CTA por dentro */}
+          <a
+            href={PUBLICACOES[0].href}
+            className="group relative col-span-1 block aspect-[16/10] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[520px]"
+            style={{
+              border: "1px solid color-mix(in oklch, var(--gold) 45%, transparent)",
+              borderRadius: 4,
+            }}
+          >
+            <img
+              src={PUBLICACOES[0].imagem}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(20,10,5,0.15) 0%, rgba(20,10,5,0.55) 55%, rgba(20,10,5,0.9) 100%)",
+              }}
+            />
+            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
+              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
+                {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
+              </span>
+              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-medium leading-[1.15] tracking-[-0.01em] text-sand">
+                {PUBLICACOES[0].titulo}
+              </h3>
+              <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
+                {PUBLICACOES[0].resumo}
+              </p>
+              <div className="mt-2">
+                <span
+                  className="eyebrow inline-flex items-center gap-2"
+                  style={{ color: "var(--gold)" }}
+                >
+                  Ler publicação
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.75">
+                    <path d="M7 17L17 7" strokeLinecap="square" />
+                    <path d="M9 7h8v8" strokeLinecap="square" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          {/* Cards menores — imagem no topo, texto abaixo, CTA no fim */}
+          <div className="col-span-1 grid grid-cols-1 gap-6 md:col-span-5 sm:grid-cols-2 md:grid-cols-1">
+            {PUBLICACOES.slice(1).map((p) => (
+              <a
+                key={p.href}
+                href={p.href}
+                className="group flex flex-col overflow-hidden"
+                style={{
+                  backgroundColor: "color-mix(in oklch, var(--ink) 60%, transparent)",
+                  border: "1px solid color-mix(in oklch, var(--gold) 35%, transparent)",
+                  borderRadius: 4,
+                }}
+              >
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img
+                    src={p.imagem}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
+                    {p.data} — {p.categoria}
+                  </span>
+                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium leading-[1.2] tracking-[-0.005em] text-sand">
+                    {p.titulo}
+                  </h3>
+                  <p className="text-[14px] leading-[1.6] text-sand/80">{p.resumo}</p>
+                  <div className="mt-auto pt-3">
+                    <span
+                      className="eyebrow inline-flex items-center gap-2"
+                      style={{ color: "var(--gold)" }}
+                    >
+                      Ler
+                      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.75">
+                        <path d="M7 17L17 7" strokeLinecap="square" />
+                        <path d="M9 7h8v8" strokeLinecap="square" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Dobra 4 — Carreira.
+ */
 function CarreiraFold() {
   return (
     <section
