@@ -78,9 +78,9 @@ function JorgePage() {
           style={{ backgroundColor: "var(--gold)" }}
         />
 
-        <div className="mx-auto grid max-w-[1360px] grid-cols-1 items-end gap-10 px-6 pb-0 md:grid-cols-[1.05fr_1fr] md:gap-16 md:pt-16">
+        <div className="mx-auto grid max-w-[1360px] grid-cols-1 items-end gap-10 px-6 pb-0 md:min-h-[720px] md:pt-16">
           {/* Coluna texto */}
-          <div className="pb-16 md:pb-24">
+          <div className="relative z-20 pb-16 md:max-w-[610px] md:pb-24">
             <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--gold)]">
               Sócio · Fundador
             </p>
@@ -142,7 +142,7 @@ function JorgePage() {
           </div>
 
           {/* Coluna foto recortada — alinhada à direita e ao rodapé */}
-          <div className="relative -mr-6 flex items-end justify-end self-end md:[margin-right:calc(-1*(max(1.5rem,(100vw-1360px)/2+1.5rem)))]">
+          <div className="relative -mr-6 flex items-end justify-end self-end md:absolute md:inset-y-0 md:right-0 md:mr-0 md:w-[48vw] md:min-w-[500px]">
             {/* filetes de composição */}
             <div
               aria-hidden="true"
@@ -152,7 +152,7 @@ function JorgePage() {
             <img
               src={jorgeCutout.url}
               alt="Jorge Ritzmann de Oliveira"
-              className="relative z-10 block h-[520px] w-auto object-contain object-right-bottom md:h-[640px] lg:h-[720px]"
+              className="relative z-10 block h-[520px] w-auto object-contain object-right-bottom md:absolute md:bottom-0 md:right-0 md:h-[720px] lg:h-[760px]"
               loading="eager"
               decoding="async"
             />
