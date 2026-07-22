@@ -167,12 +167,12 @@ function JorgePage() {
           className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-40 justify-center"
         >
           <svg
-            viewBox="0 0 80 80"
-            className="block h-10 w-10"
+            viewBox="0 0 120 40"
+            className="block h-6 w-24"
             aria-hidden="true"
           >
             <path
-              d="M0 0 H 40 A 40 40 0 0 1 40 80 H 0 Z"
+              d="M0 0 H 120 V 0 A 60 40 0 0 1 0 0 Z"
               fill="var(--gold)"
             />
           </svg>
