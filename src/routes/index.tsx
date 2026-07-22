@@ -444,6 +444,72 @@ function ManifestoFold() {
  */
 
 /**
+ * Transição verde → bege entre "Quem conduz o método" e "Em ponto".
+ * Faixa curta com gradiente diagonal e linhas douradas fluindo lentamente,
+ * criando um movimento sutil de passagem entre os dois fundos.
+ */
+function TransicaoParaEmPonto() {
+  return (
+    <section
+      aria-hidden="true"
+      className="relative w-full overflow-hidden"
+      style={{
+        height: "clamp(140px, 18vh, 220px)",
+        background:
+          "linear-gradient(180deg, var(--ink) 0%, color-mix(in oklch, var(--ink) 55%, var(--sand)) 45%, color-mix(in oklch, var(--sand) 80%, var(--ink)) 78%, var(--sand) 100%)",
+      }}
+    >
+      {/* Linhas douradas horizontais fluindo — evocam o "movimento" da referência Simmons. */}
+      <div className="pointer-events-none absolute inset-0">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <div
+            key={i}
+            className="absolute left-[-30%] right-[-30%]"
+            style={{
+              top: `${12 + i * 18}%`,
+              height: 1,
+              background:
+                "linear-gradient(90deg, transparent 0%, color-mix(in oklch, var(--gold) 85%, transparent) 40%, color-mix(in oklch, var(--gold) 95%, white) 50%, color-mix(in oklch, var(--gold) 85%, transparent) 60%, transparent 100%)",
+              opacity: 0.35 + (i % 2) * 0.2,
+              animation: `transicao-flow-${i % 2 === 0 ? "a" : "b"} ${18 + i * 3}s linear infinite`,
+              animationDelay: `${-i * 2.5}s`,
+              filter: "blur(0.4px)",
+            }}
+          />
+        ))}
+        {/* Mancha dourada difusa que atravessa lentamente */}
+        <div
+          className="absolute -top-[40%] left-[10%] h-[180%] w-[45%] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 55%, transparent), transparent 70%)",
+            opacity: 0.35,
+            animation: "transicao-glow 22s ease-in-out infinite alternate",
+          }}
+        />
+      </div>
+      <style>{`
+        @keyframes transicao-flow-a {
+          0%   { transform: translate3d(-15%, 0, 0); }
+          100% { transform: translate3d(15%, 0, 0); }
+        }
+        @keyframes transicao-flow-b {
+          0%   { transform: translate3d(15%, 0, 0); }
+          100% { transform: translate3d(-15%, 0, 0); }
+        }
+        @keyframes transicao-glow {
+          0%   { transform: translate3d(0,0,0) scale(1); }
+          100% { transform: translate3d(30vw, 0, 0) scale(1.15); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          section[aria-hidden="true"] * { animation: none !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/**
  * Dobra Publicações — "Em ponto. Informação que desperta. De segunda a sexta."
  *
  * Referência Simmons & Simmons: fundo cromático quente (ocre-terroso),
