@@ -261,7 +261,7 @@ function DireitoMedicoPage() {
                   </div>
                   {c.nome === "Jorge Ritzmann de Oliveira" && (
                     <div className="mt-5">
-                      <BrandLink href="/socios">Conhecer o time completo</BrandLink>
+                      <BrandLink href="/socios">Conhecer os advogados</BrandLink>
                     </div>
                   )}
                 </div>
