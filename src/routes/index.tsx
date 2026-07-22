@@ -178,7 +178,7 @@ const COMPETENCIAS: Competencia[] = [
     eyebrow: "",
     titulo: "Clientes Corporativos",
     descricao:
-      "Contencioso de massa e recuperação de crédito conduzidos com engenharia processual: previsibilidade em cada etapa, indicadores auditáveis e método replicável em qualquer jurisdição.",
+      "Carteiras de contencioso ativo e passivo conduzidas com método, em qualquer setor: previsibilidade em cada etapa, indicadores auditáveis e o mesmo padrão em todo o país, com estrutura própria.",
     imagem: imgCorporativos.url,
     href: "/atuacao/contencioso-de-volume",
   },
