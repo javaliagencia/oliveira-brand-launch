@@ -311,7 +311,7 @@ function CompetenciaCard({
         style={{ transform: isHovered ? "translateY(-2px)" : "translateY(0)" }}
       >
         <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
-          {data.index}{data.eyebrow ? ` — ${data.eyebrow}` : ""}
+          {data.eyebrow}
         </span>
         <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
           {data.titulo}
