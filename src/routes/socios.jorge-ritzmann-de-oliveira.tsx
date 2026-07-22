@@ -161,7 +161,7 @@ function JorgePage() {
       </section>
 
       {/* PULL QUOTE — dourado, uma sentença */}
-      <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] py-14 md:py-20">
+      <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] pt-8 pb-14 md:pt-10 md:pb-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24"
