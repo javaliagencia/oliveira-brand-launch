@@ -82,10 +82,11 @@ function HeroFold() {
       className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden text-sand"
       style={{ backgroundColor: "var(--ink)" }}
     >
-      {/* Vídeo em loop — camada 0 */}
+      {/* Vídeo em loop — camada 0. Escala + translate para cortar a marca d'água do canto inferior direito. */}
       <video
         ref={(el) => { if (el) el.playbackRate = 0.55; }}
         className="absolute inset-0 -z-20 h-full w-full object-cover"
+        style={{ transform: "scale(1.12) translate(-3%, -3%)", transformOrigin: "center" }}
         autoPlay
         muted
         loop
