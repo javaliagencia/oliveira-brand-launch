@@ -13,7 +13,7 @@ export function SectionEyebrow({
   className = "",
 }: {
   children: React.ReactNode;
-  tone?: "gold" | "ink" | "sand";
+  tone?: "gold" | "ink" | "sand" | "ink-2";
   className?: string;
 }) {
   const color =
@@ -21,7 +21,10 @@ export function SectionEyebrow({
       ? "var(--ink)"
       : tone === "sand"
       ? "var(--sand)"
+      : tone === "ink-2"
+      ? "var(--ink-2)"
       : "var(--gold)";
+  const rule = tone === "ink-2" ? "var(--ink-2)" : "var(--gold)";
   return (
     <div className={`flex flex-col items-start gap-3 ${className}`}>
       <span
@@ -33,7 +36,7 @@ export function SectionEyebrow({
       <span
         aria-hidden="true"
         className="block h-px w-10"
-        style={{ backgroundColor: "var(--gold)" }}
+        style={{ backgroundColor: rule }}
       />
     </div>
   );

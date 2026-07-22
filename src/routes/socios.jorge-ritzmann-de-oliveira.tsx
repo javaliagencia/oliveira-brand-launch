@@ -200,7 +200,7 @@ function JorgePage() {
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 md:grid-cols-[1.4fr_1fr] md:gap-20">
           {/* Bio */}
           <div>
-            <SectionEyebrow>Biografia</SectionEyebrow>
+            <SectionEyebrow tone="ink-2">Biografia</SectionEyebrow>
             <h2 className="mt-8 font-display text-[clamp(2rem,3.6vw,3rem)] font-medium leading-[1.1] tracking-[-0.02em] text-[var(--ink-2)]">
               Três décadas conduzindo decisões que exigem método e coragem em
               igual medida.
@@ -234,7 +234,7 @@ function JorgePage() {
             </div>
 
             <div className="mt-20">
-              <SectionEyebrow>Artigos relacionados</SectionEyebrow>
+              <SectionEyebrow tone="ink-2">Artigos relacionados</SectionEyebrow>
               <h3 className="mt-8 font-display text-[clamp(1.75rem,2.8vw,2.25rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
                 Leitura recente de Jorge
               </h3>
@@ -272,7 +272,7 @@ function JorgePage() {
 
           {/* Áreas de foco + credenciais */}
           <aside className="md:pl-10 md:border-l md:border-[var(--gold)]/25">
-            <SectionEyebrow>Áreas de foco</SectionEyebrow>
+            <SectionEyebrow tone="ink-2">Áreas de foco</SectionEyebrow>
             <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
               Onde Jorge atua
             </h2>
@@ -298,7 +298,7 @@ function JorgePage() {
             </ul>
 
             <div className="mt-14">
-              <SectionEyebrow>Credenciais</SectionEyebrow>
+              <SectionEyebrow tone="ink-2">Credenciais</SectionEyebrow>
               <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
                 Formação e trajetória
               </h2>
