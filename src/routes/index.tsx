@@ -696,9 +696,9 @@ function PublicacoesFold() {
             <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
             <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
               O mesmo método que conduz a operação,{" "}
-              <em className="font-normal italic" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
+              <span className="font-display font-medium" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
                 aplicado ao que está mudando no Direito.
-              </em>
+              </span>
             </h2>
           </div>
           <BrandLink href="/publicacoes">Ver todas as publicações</BrandLink>
