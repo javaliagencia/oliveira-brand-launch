@@ -86,7 +86,7 @@ function HeroFold() {
       <video
         ref={(el) => { if (el) el.playbackRate = 0.55; }}
         className="absolute inset-0 -z-20 h-full w-full object-cover"
-        style={{ transform: "scale(1.22) translate(-6%, -5%)", transformOrigin: "center" }}
+        style={{ transform: "scale(1.35) translate(-8%, -6%)", transformOrigin: "center", clipPath: "inset(0 4% 4% 0)" }}
         autoPlay
         muted
         loop
