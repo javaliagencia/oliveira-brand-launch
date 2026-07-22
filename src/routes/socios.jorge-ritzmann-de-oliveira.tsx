@@ -278,7 +278,7 @@ function JorgePage() {
                   Fale diretamente com o Jorge
                 </BrandLink>
                 <BrandLink href="/socios">
-                  Conhecer o time completo
+                  Conhecer os advogados
                 </BrandLink>
               </div>
             </div>
