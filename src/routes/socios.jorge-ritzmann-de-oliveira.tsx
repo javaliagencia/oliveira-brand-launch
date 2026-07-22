@@ -171,19 +171,16 @@ function JorgePage() {
             style={{ backgroundColor: "var(--gold)" }}
           />
           <svg
-            viewBox="0 0 48 24"
-            className="block h-3 w-12"
-            fill="none"
+            viewBox="0 0 80 40"
+            className="block h-6 w-20"
             aria-hidden="true"
           >
             <path
-              d="M2 0 A 22 22 0 0 0 46 0"
-              stroke="var(--gold)"
-              strokeWidth="1.5"
-              fill="none"
-              strokeLinecap="round"
+              d="M0 0 A 40 40 0 0 0 80 0 Z"
+              fill="var(--gold)"
             />
           </svg>
+
         </div>
 
         <div className="mx-auto max-w-[1200px] px-6">
