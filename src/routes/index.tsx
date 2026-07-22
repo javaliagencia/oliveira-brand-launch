@@ -568,64 +568,9 @@ function PublicacoesFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Animação de fundo — manchas orgânicas em tons de bege/dourado
-          se movendo lentamente, inspiradas na referência Simmons. */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -top-[20%] -left-[15%] h-[80vw] w-[80vw] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 55%, transparent), transparent 70%)",
-            opacity: 0.55,
-            animation: "publicacoes-drift-a 26s ease-in-out infinite alternate",
-          }}
-        />
-        <div
-          className="absolute top-[10%] -right-[20%] h-[70vw] w-[70vw] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 35%, transparent), transparent 70%)",
-            opacity: 0.5,
-            animation: "publicacoes-drift-b 32s ease-in-out infinite alternate",
-          }}
-        />
-        <div
-          className="absolute -bottom-[25%] left-[10%] h-[75vw] w-[75vw] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--ink) 30%, transparent), transparent 70%)",
-            opacity: 0.35,
-            animation: "publicacoes-drift-c 38s ease-in-out infinite alternate",
-          }}
-        />
-        <div
-          className="absolute top-[35%] left-[30%] h-[50vw] w-[50vw] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 45%, white), transparent 70%)",
-            opacity: 0.35,
-            animation: "publicacoes-drift-d 44s ease-in-out infinite alternate",
-          }}
-        />
-      </div>
-      <style>{`
-        @keyframes publicacoes-drift-a {
-          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
-          100% { transform: translate3d(10vw, 6vw, 0) scale(1.15) rotate(20deg); }
-        }
-        @keyframes publicacoes-drift-b {
-          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
-          100% { transform: translate3d(-8vw, 5vw, 0) scale(1.2) rotate(-25deg); }
-        }
-        @keyframes publicacoes-drift-c {
-          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
-          100% { transform: translate3d(6vw, -8vw, 0) scale(1.1) rotate(15deg); }
-        }
-        @keyframes publicacoes-drift-d {
-          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
-          100% { transform: translate3d(-6vw, -4vw, 0) scale(1.25) rotate(-15deg); }
-        }
-      `}</style>
+      {/* Campo de partículas — bolinhas douradas flutuando no fundo,
+          inspiradas na referência Simmons (grãos ao redor das imagens). */}
+      <ParticleField count={120} seed={7} />
 
       <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
         {/* Cabeçalho */}
