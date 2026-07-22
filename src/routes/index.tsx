@@ -843,17 +843,15 @@ function CarreiraFold() {
 
           <SectionEyebrow>Carreiras</SectionEyebrow>
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
-            Formar advogados que{" "}
+            Onde a advocacia{" "}
             <em className="font-normal italic" style={{ color: "var(--gold)" }}>
-              conduzem, não que executam.
+              se aprende com método.
             </em>
           </h2>
           <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.7] text-sand/80 md:text-[16px]">
-            Trinta anos formando profissionais que operam entre a disciplina do
-            contencioso de volume e a profundidade do empresarial estratégico.
-            O escritório procura quem assume rigor técnico, leitura técnica do
-            risco e responsabilidade pela relação, do primeiro contato ao
-            desfecho.
+            Trinta anos formando advogados. Estrutura de formação, sócio
+            acompanhando o trabalho e caminho de crescimento interno, em nove
+            praças do país.
           </p>
           <div className="mt-10">
             <BrandLink href="/carreira" invert>
