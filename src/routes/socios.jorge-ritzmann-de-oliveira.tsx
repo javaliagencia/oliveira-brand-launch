@@ -81,15 +81,15 @@ function JorgePage() {
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 items-end gap-10 px-6 pb-0 md:min-h-[720px] md:pt-16">
           {/* Coluna texto */}
           <div className="relative z-20 pb-16 md:max-w-[610px] md:pb-24">
-            <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--gold)]">
-              Sócio · Fundador
-            </p>
-
-            <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-medium leading-[1.02] tracking-[-0.02em] text-[var(--sand)]">
+            <h1 className="font-display text-[clamp(2.5rem,6vw,4.75rem)] font-medium leading-[1.02] tracking-[-0.02em] text-[var(--sand)]">
               Jorge Ritzmann
               <br />
               de Oliveira
             </h1>
+
+            <p className="mt-5 text-[11px] uppercase tracking-[0.28em] text-[var(--gold)]">
+              Sócio fundador
+            </p>
 
             <div
               aria-hidden="true"
