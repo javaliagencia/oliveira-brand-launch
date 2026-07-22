@@ -743,10 +743,7 @@ function PublicacoesFold() {
                   style={{ color: "var(--gold)" }}
                 >
                   Ler publicação
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.75">
-                    <path d="M7 17L17 7" strokeLinecap="square" />
-                    <path d="M9 7h8v8" strokeLinecap="square" />
-                  </svg>
+                  <BrandArrow size={14} />
                 </span>
               </div>
             </div>
