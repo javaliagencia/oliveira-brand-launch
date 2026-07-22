@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
+import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,30 +24,46 @@ const SociosJorgeRitzmannDeOliveiraRoute =
     path: '/socios/jorge-ritzmann-de-oliveira',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AreasDireitoMedicoRoute = AreasDireitoMedicoRouteImport.update({
+  id: '/areas/direito-medico',
+  path: '/areas/direito-medico',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/socios/jorge-ritzmann-de-oliveira'
+  fullPaths:
+    | '/'
+    | '/areas/direito-medico'
+    | '/socios/jorge-ritzmann-de-oliveira'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/socios/jorge-ritzmann-de-oliveira'
-  id: '__root__' | '/' | '/socios/jorge-ritzmann-de-oliveira'
+  to: '/' | '/areas/direito-medico' | '/socios/jorge-ritzmann-de-oliveira'
+  id:
+    | '__root__'
+    | '/'
+    | '/areas/direito-medico'
+    | '/socios/jorge-ritzmann-de-oliveira'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
 }
 
@@ -66,11 +83,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SociosJorgeRitzmannDeOliveiraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/direito-medico': {
+      id: '/areas/direito-medico'
+      path: '/areas/direito-medico'
+      fullPath: '/areas/direito-medico'
+      preLoaderRoute: typeof AreasDireitoMedicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
 }
 export const routeTree = rootRouteImport
