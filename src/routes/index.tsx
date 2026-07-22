@@ -102,7 +102,7 @@ function HeroFold() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(8,38,36,0.42) 0%, rgba(8,38,36,0.28) 45%, rgba(8,38,36,0.72) 100%)",
+            "linear-gradient(180deg, rgba(8,38,36,0.57) 0%, rgba(8,38,36,0.43) 45%, rgba(8,38,36,0.80) 100%)",
         }}
       />
 
