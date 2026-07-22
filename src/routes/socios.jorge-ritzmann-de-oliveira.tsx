@@ -233,7 +233,7 @@ function JorgePage() {
               </p>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-10">
               <SectionEyebrow tone="ink-2">Artigos relacionados</SectionEyebrow>
               <h3 className="mt-8 font-display text-[clamp(1.75rem,2.8vw,2.25rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
                 Leitura recente de Jorge
