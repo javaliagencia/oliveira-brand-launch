@@ -274,19 +274,8 @@ export function SiteFooter() {
       >
         <div className="mx-auto max-w-[1360px] px-6 py-16 md:py-20">
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
-            {/* Início */}
-            <div>
-              <p className="eyebrow">
-                <a href="/" className="transition-colors duration-200 hover:text-[var(--gold)]">
-                  Início
-                </a>
-              </p>
-              <span
-                aria-hidden="true"
-                className="mt-3 block h-px w-8"
-                style={{ backgroundColor: "var(--gold)" }}
-              />
-            </div>
+            {/* (Início removido — âncora está no header) */}
+
 
             {/* Oliveira Ritzmann */}
             <div>
