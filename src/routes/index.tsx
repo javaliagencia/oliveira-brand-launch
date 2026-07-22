@@ -847,9 +847,9 @@ function CarreiraFold() {
           <SectionEyebrow>Carreiras</SectionEyebrow>
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
             Onde a advocacia{" "}
-            <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
               se aprende com método.
-            </em>
+            </span>
           </h2>
           <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.7] text-sand/80 md:text-[16px]">
             Trinta anos formando advogados. Estrutura de formação, sócio
