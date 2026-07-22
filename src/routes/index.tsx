@@ -479,15 +479,19 @@ function ParticleField({
   // as partículas oscilam perpendicularmente à direção da onda e recebem
   // um delay proporcional à projeção ao longo do eixo, criando o efeito de
   // crista viajante — como uma onda de mar coordenada.
+  // Concentradas na faixa superior da seção, acima do link
+  // "Ver todas as publicações" e ao redor do cabeçalho — sem cobrir texto.
   const defaultClusters = [
-    // Faixa vertical entre o card destaque e a coluna da direita.
-    { x: 58, y: 32, weight: 0.30, radius: 5, angle: 90, dur: 5.5 },
-    { x: 58, y: 70, weight: 0.28, radius: 5, angle: 90, dur: 6.0 },
-    // Margem esquerda (fora dos cards).
-    { x: 2.5, y: 55, weight: 0.20, radius: 6, angle: 90, dur: 5.2 },
-    // Margem direita.
-    { x: 97.5, y: 62, weight: 0.22, radius: 6, angle: 90, dur: 5.8 },
+    // Acima do link "Ver todas as publicações" (canto superior direito).
+    { x: 82, y: 4, weight: 0.30, radius: 8, angle: 0, dur: 5.2 },
+    { x: 92, y: 10, weight: 0.22, radius: 6, angle: 0, dur: 5.8 },
+    // Faixa central do topo — entre o título e o link.
+    { x: 60, y: 6, weight: 0.22, radius: 7, angle: 0, dur: 5.5 },
+    // Um respingo mais leve à esquerda, acima do título.
+    { x: 20, y: 3, weight: 0.14, radius: 6, angle: 0, dur: 6.0 },
+    { x: 45, y: 2, weight: 0.12, radius: 5, angle: 0, dur: 5.4 },
   ];
+
   const cl = clusters ?? defaultClusters;
 
   const perCluster = cl.map((c) => Math.round(count * c.weight));
