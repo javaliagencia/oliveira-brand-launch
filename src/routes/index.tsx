@@ -732,7 +732,7 @@ function PublicacoesFold() {
               <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
                 {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
               </span>
-              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-medium leading-[1.15] tracking-[-0.01em] text-sand">
+              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-light leading-[1.15] tracking-[-0.02em] text-sand">
                 {PUBLICACOES[0].titulo}
               </h3>
               <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
