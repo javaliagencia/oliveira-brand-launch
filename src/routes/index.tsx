@@ -616,7 +616,7 @@ function PublicacoesFold() {
     >
       {/* Campo de partículas — bolinhas douradas flutuando no fundo,
           inspiradas na referência Simmons (grãos ao redor das imagens). */}
-      <ParticleField count={120} seed={7} />
+      <ParticleField count={260} seed={7} />
 
       <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
         {/* Cabeçalho */}
