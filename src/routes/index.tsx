@@ -120,9 +120,9 @@ function HeroFold() {
         </p>
         <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
           Advocacia com{" "}
-          <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+          <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
             profundidade
-          </em>{" "}
+          </span>{" "}
           em qualquer escala.
         </h1>
       </div>
@@ -220,9 +220,9 @@ function CompetenciasFold() {
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
           <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
             Volume e estratégia, conduzidos com o{" "}
-            <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
               mesmo método.
-            </em>
+            </span>
           </h2>
         </div>
       </div>
@@ -407,12 +407,12 @@ function ManifestoFold() {
               <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
-              <em
+              <span
                 className="font-display"
-                style={{ color: "var(--ink)", fontStyle: "italic", fontWeight: 500 }}
+                style={{ color: "var(--ink)", fontWeight: 600 }}
               >
                 É o método aplicado a ela.
-              </em>
+              </span>
             </h2>
           </div>
           <div className="md:col-span-6" />
@@ -696,9 +696,9 @@ function PublicacoesFold() {
             <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
             <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
               O mesmo método que conduz a operação,{" "}
-              <em className="font-normal italic" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
+              <span className="font-display font-medium" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
                 aplicado ao que está mudando no Direito.
-              </em>
+              </span>
             </h2>
           </div>
           <BrandLink href="/publicacoes">Ver todas as publicações</BrandLink>
@@ -847,9 +847,9 @@ function CarreiraFold() {
           <SectionEyebrow>Carreiras</SectionEyebrow>
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
             Onde a advocacia{" "}
-            <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
               se aprende com método.
-            </em>
+            </span>
           </h2>
           <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.7] text-sand/80 md:text-[16px]">
             Trinta anos formando advogados. Estrutura de formação, sócio
