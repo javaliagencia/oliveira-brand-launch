@@ -444,11 +444,18 @@ export function SiteFooter() {
 
           {/* Assinatura entre Navegação e Institucional */}
           <div className="mt-16 flex flex-col items-center gap-6">
-            <img
-              src={logoVerde.url}
-              alt="Oliveira Ritzmann Advogados"
-              className="h-10 w-auto opacity-95"
-            />
+            <div className="inline-flex items-center gap-2">
+              <img
+                src={logoVerde.url}
+                alt="Oliveira Ritzmann Advogados"
+                className="h-10 w-auto opacity-95"
+              />
+              <img
+                src={selo30.url}
+                alt="30 anos"
+                className="h-9 w-auto"
+              />
+            </div>
             <span
               aria-hidden="true"
               className="block h-px w-16"
