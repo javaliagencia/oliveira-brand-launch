@@ -275,10 +275,10 @@ function JorgePage() {
 
           {/* Áreas de foco + credenciais */}
           <aside className="md:pl-10 md:border-l md:border-[var(--gold)]/25">
-            <SectionEyebrow tone="ink-2">Áreas de foco</SectionEyebrow>
-            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
+            <h2 className="font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
               Onde Jorge atua
             </h2>
+
             <div
               aria-hidden="true"
               className="mt-5 h-[2px] w-16"
@@ -301,10 +301,10 @@ function JorgePage() {
             </ul>
 
             <div className="mt-14">
-              <SectionEyebrow tone="ink-2">Credenciais</SectionEyebrow>
-              <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
-                Formação e trajetória
+              <h2 className="font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
+                Formação e idiomas
               </h2>
+
               <div
                 aria-hidden="true"
                 className="mt-5 h-[2px] w-16"
