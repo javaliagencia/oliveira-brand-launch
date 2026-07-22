@@ -259,7 +259,13 @@ function DireitoMedicoPage() {
                       <Linkedin size={13} strokeWidth={1.5} /> LinkedIn
                     </a>
                   </div>
+                  {c.nome === "Jorge Ritzmann de Oliveira" && (
+                    <div className="mt-5">
+                      <BrandLink href="/socios">Conhecer o time completo</BrandLink>
+                    </div>
+                  )}
                 </div>
+
               </li>
             ))}
           </ul>
