@@ -383,8 +383,8 @@ function ManifestoFold() {
   // Each element slides in from the left with a small delay.
   const gold = "#8d8368";
   const baseTransition =
-    "transform 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 900ms cubic-bezier(0.22, 1, 0.36, 1)";
-  const off = "translateX(-140%)";
+    "transform 1400ms cubic-bezier(0.22, 1, 0.36, 1), opacity 1200ms ease-out";
+  const off = "translateX(-28px)";
   const on = "translateX(0)";
 
   return (
