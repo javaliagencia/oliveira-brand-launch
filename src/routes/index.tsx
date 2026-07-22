@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
-import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
+
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink } from "@/components/brand-ui";
@@ -358,29 +358,104 @@ function CompetenciaCard({
  * dobra de pessoas sem se comprometer com fotos ainda inexistentes.
  */
 function ManifestoFold() {
+  const [visible, setVisible] = useState(false);
+  const wrapRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.25 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Shapes match the OR monogram: full circle + two right-half discs, staggered.
+  // Each element slides in from the left with a small delay.
+  const gold = "#8d8368";
+  const baseTransition =
+    "transform 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 900ms cubic-bezier(0.22, 1, 0.36, 1)";
+  const off = "translateX(-140%)";
+  const on = "translateX(0)";
+
   return (
     <section
+      ref={wrapRef}
       id="manifesto"
       aria-label="Manifesto — trinta anos de método"
       className="relative w-full overflow-hidden"
     >
-      {/* Símbolo institucional — atravessa o fundo bege e extravasa
-          para dentro da faixa verde-profundo abaixo. Mesma cor dourada
-          nas duas metades: só o fundo muda. */}
-      <img
-        src={simboloDourado.url}
-        alt=""
+      {/* Símbolo institucional — três elementos animados, atravessando o
+          fundo bege e extravasando para dentro da faixa verde-profundo. */}
+      <div
+        className="pointer-events-none absolute hidden select-none md:block"
         aria-hidden="true"
-        className="pointer-events-none absolute select-none hidden md:block"
         style={{
           right: "-8%",
           top: "10%",
           width: "min(46vw, 560px)",
-          height: "auto",
-          opacity: 1,
           zIndex: 3,
         }}
-      />
+      >
+        <svg
+          viewBox="0 0 520 360"
+          width="100%"
+          height="auto"
+          style={{ display: "block", overflow: "visible" }}
+        >
+          {/* Full circle */}
+          <circle
+            cx="150"
+            cy="180"
+            r="150"
+            fill={gold}
+            style={{
+              transform: visible ? on : off,
+              opacity: visible ? 1 : 0,
+              transition: baseTransition,
+              transitionDelay: "0ms",
+              transformBox: "fill-box",
+              transformOrigin: "center",
+            }}
+          />
+          {/* Right half-disc 1 */}
+          <path
+            d="M 310 30 A 150 150 0 0 1 310 330 Z"
+            fill={gold}
+            style={{
+              transform: visible ? on : off,
+              opacity: visible ? 1 : 0,
+              transition: baseTransition,
+              transitionDelay: "160ms",
+              transformBox: "fill-box",
+              transformOrigin: "center",
+            }}
+          />
+          {/* Right half-disc 2 */}
+          <path
+            d="M 410 30 A 150 150 0 0 1 410 330 Z"
+            fill={gold}
+            style={{
+              transform: visible ? on : off,
+              opacity: visible ? 1 : 0,
+              transition: baseTransition,
+              transitionDelay: "320ms",
+              transformBox: "fill-box",
+              transformOrigin: "center",
+            }}
+          />
+        </svg>
+      </div>
+
 
       {/* Bloco 1 — Manifesto sobre branco */}
       <div
