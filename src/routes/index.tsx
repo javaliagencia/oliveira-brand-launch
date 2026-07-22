@@ -429,7 +429,7 @@ function ManifestoFold() {
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
               <SectionEyebrow>Quem conduz o método</SectionEyebrow>
-              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
+              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-[1.15] tracking-[-0.025em]" style={{ color: "var(--sand)" }}>
                 Sócio responsável na ponta de cada relação, do primeiro contato à decisão.
               </h3>
             </div>
