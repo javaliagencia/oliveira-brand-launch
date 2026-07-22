@@ -166,10 +166,8 @@ function JorgePage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-24 flex-col items-center"
         >
-          <span
-            className="block h-px w-24"
-            style={{ backgroundColor: "var(--gold)" }}
-          />
+
+
           <svg
             viewBox="0 0 80 40"
             className="block h-6 w-20"
