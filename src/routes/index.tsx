@@ -845,9 +845,9 @@ function CarreiraFold() {
 
 
           <SectionEyebrow>Carreiras</SectionEyebrow>
-          <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
+          <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-light leading-[1.08] tracking-[-0.03em] text-sand">
             Onde a advocacia{" "}
-            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
               se aprende com método.
             </span>
           </h2>
