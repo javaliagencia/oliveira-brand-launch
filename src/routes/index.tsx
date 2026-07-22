@@ -6,6 +6,9 @@ import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
+import pubContencioso from "@/assets/pub-contencioso.jpg.asset.json";
+import pubReforma from "@/assets/pub-reforma.jpg.asset.json";
+import pubCredito from "@/assets/pub-credito.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
@@ -625,7 +628,7 @@ const PUBLICACOES: Publicacao[] = [
     titulo: "Contencioso de massa: o que os indicadores de 2026 revelam",
     resumo:
       "Uma leitura do desempenho do contencioso de volume no primeiro semestre e o que mudou na engenharia processual das grandes carteiras.",
-    imagem: imgCorporativos.url,
+    imagem: pubContencioso.url,
     href: "/publicacoes/contencioso-massa-2026",
   },
   {
@@ -634,7 +637,7 @@ const PUBLICACOES: Publicacao[] = [
     titulo: "Reforma tributária: o que decidir agora",
     resumo:
       "Movimentos regulatórios que já exigem posicionamento das áreas jurídica e financeira das empresas.",
-    imagem: imgEmpresarial.url,
+    imagem: pubReforma.url,
     href: "/publicacoes/reforma-tributaria-agora",
   },
   {
@@ -643,7 +646,7 @@ const PUBLICACOES: Publicacao[] = [
     titulo: "Recuperação de crédito e o novo ciclo de juros",
     resumo:
       "Como calibrar estratégia, prazo e método diante da mudança de patamar da taxa básica.",
-    imagem: carreiraBg.url,
+    imagem: pubCredito.url,
     href: "/publicacoes/recuperacao-credito-juros",
   },
 ];
