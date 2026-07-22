@@ -822,6 +822,32 @@ function CarreiraFold() {
         style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
       />
 
+      {/* Faróis discretos em movimento — sugestão de tráfego na cidade */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        {[
+          { top: "58%", dir: "right", dur: 26, delay: 0, warm: true },
+          { top: "58%", dir: "right", dur: 30, delay: 11, warm: true },
+          { top: "60%", dir: "left", dur: 32, delay: 5, warm: false },
+          { top: "67%", dir: "right", dur: 22, delay: 3, warm: true },
+          { top: "69%", dir: "left", dur: 28, delay: 14, warm: false },
+          { top: "75%", dir: "right", dur: 24, delay: 8, warm: true },
+          { top: "78%", dir: "left", dur: 30, delay: 2, warm: false },
+          { top: "84%", dir: "right", dur: 27, delay: 17, warm: true },
+          { top: "88%", dir: "left", dur: 34, delay: 9, warm: false },
+        ].map((lane, i) => (
+          <div key={i} className="car-lane" style={{ top: lane.top }}>
+            <span
+              className={`car-light ${lane.warm ? "warm" : "cool"}`}
+              style={{
+                animation: `${lane.dir === "right" ? "car-drift-right" : "car-drift-left"} ${lane.dur}s linear ${lane.delay}s infinite`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+
+
 
 
       <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
