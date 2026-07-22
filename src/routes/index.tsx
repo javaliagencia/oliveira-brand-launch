@@ -645,9 +645,35 @@ function PublicacoesFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Campo de partículas — bolinhas douradas flutuando no fundo,
-          inspiradas na referência Simmons (grãos ao redor das imagens). */}
-      <ParticleField count={260} seed={7} />
+      {/* Ritmo de fundo — colunas hairline douradas fixas + scanner vertical
+          único (linha dourada horizontal deslizando de cima a baixo). Traz
+          cadência editorial sem competir com o texto. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Colunas verticais discretas alinhadas à grade */}
+        <div className="absolute inset-y-0 left-1/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
+        <div className="absolute inset-y-0 left-2/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
+        <div className="absolute inset-y-0 left-3/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
+        {/* Scanner vertical — hairline horizontal atravessando a seção */}
+        <div
+          className="absolute left-0 right-0 h-px"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent 0%, color-mix(in oklch, var(--gold) 85%, transparent) 50%, transparent 100%)",
+            animation: "empunto-scan 8s cubic-bezier(0.4,0,0.2,1) infinite",
+          }}
+        />
+        <style>{`
+          @keyframes empunto-scan {
+            0%   { transform: translateY(-10%); opacity: 0; }
+            50%  { opacity: 0.55; }
+            100% { transform: translateY(110%); opacity: 0; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            [style*="empunto-scan"] { animation: none !important; }
+          }
+        `}</style>
+      </div>
+
 
       <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
         {/* Cabeçalho */}
