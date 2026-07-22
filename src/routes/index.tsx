@@ -5,6 +5,7 @@ import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
+import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
@@ -804,15 +805,16 @@ function CarreiraFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--ink)" }}
     >
-      {/* Imagem de fundo full-bleed */}
-      <img
-        src={carreiraBg.url}
-        alt=""
+      {/* Vídeo de fundo full-bleed — cidade com movimento sutil de faróis */}
+      <video
+        src={carreiraVideo.url}
+        poster={carreiraBg.url}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
         aria-hidden="true"
-        width={1920}
-        height={1080}
-        loading="lazy"
-        decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
       {/* Leve escurecida geral — coesão sem tingir de verde */}
@@ -822,29 +824,7 @@ function CarreiraFold() {
         style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
       />
 
-      {/* Faróis discretos em movimento — sugestão de tráfego na cidade */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        {[
-          { top: "58%", dir: "right", dur: 26, delay: 0, warm: true },
-          { top: "58%", dir: "right", dur: 30, delay: 11, warm: true },
-          { top: "60%", dir: "left", dur: 32, delay: 5, warm: false },
-          { top: "67%", dir: "right", dur: 22, delay: 3, warm: true },
-          { top: "69%", dir: "left", dur: 28, delay: 14, warm: false },
-          { top: "75%", dir: "right", dur: 24, delay: 8, warm: true },
-          { top: "78%", dir: "left", dur: 30, delay: 2, warm: false },
-          { top: "84%", dir: "right", dur: 27, delay: 17, warm: true },
-          { top: "88%", dir: "left", dur: 34, delay: 9, warm: false },
-        ].map((lane, i) => (
-          <div key={i} className="car-lane" style={{ top: lane.top }}>
-            <span
-              className={`car-light ${lane.warm ? "warm" : "cool"}`}
-              style={{
-                animation: `${lane.dir === "right" ? "car-drift-right" : "car-drift-left"} ${lane.dur}s linear ${lane.delay}s infinite`,
-              }}
-            />
-          </div>
-        ))}
-      </div>
+
 
 
 
