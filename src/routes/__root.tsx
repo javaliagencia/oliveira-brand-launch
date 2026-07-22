@@ -80,21 +80,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Oliveira Ritzmann Advogados" },
+      { title: "Oliveira Ritzmann Advogados — Advocacia com profundidade em qualquer escala" },
       {
         name: "description",
         content:
-          "Trinta anos conduzindo operações que exigem escala e decisões que exigem profundidade. Método. Previsibilidade. Resultado.",
+          "Trinta anos conduzindo operações que exigem escala e decisões que exigem profundidade. Método, previsibilidade e resultado.",
       },
       { name: "author", content: "Oliveira Ritzmann Advogados" },
-      { property: "og:title", content: "Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Oliveira Ritzmann Advogados — Advocacia com profundidade em qualquer escala" },
       {
         property: "og:description",
         content:
-          "Advocacia com profundidade em qualquer escala. Método. Previsibilidade. Resultado.",
+          "Trinta anos conduzindo operações que exigem escala e decisões que exigem profundidade. Método, previsibilidade e resultado.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Oliveira Ritzmann Advogados — Advocacia com profundidade em qualquer escala" },
+      { name: "twitter:description", content: "Trinta anos conduzindo operações que exigem escala e decisões que exigem profundidade. Método, previsibilidade e resultado." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/16b2ec11-e97b-4c0c-b500-2b12a493dd98/id-preview-23a89547--04388e3e-a8cb-4aab-b77d-2e15b97f2ed7.lovable.app-1784752757839.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/16b2ec11-e97b-4c0c-b500-2b12a493dd98/id-preview-23a89547--04388e3e-a8cb-4aab-b77d-2e15b97f2ed7.lovable.app-1784752757839.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

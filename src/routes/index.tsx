@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Método, previsibilidade e resultado — do contencioso de volume ao empresarial estratégico.",
+          "Trinta anos conduzindo operações que exigem escala e decisões que exigem profundidade. Método, previsibilidade e resultado.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
