@@ -466,14 +466,20 @@ function ParticleField({
     const r2 = rand(i + 200);
     const r3 = rand(i + 400);
     const r4 = rand(i + 600);
-    const size = 1 + r1 * 3.2; // 1–4.2px
+    const size = 2 + r1 * 5; // 2–7px
     const left = r2 * 100;
     const top = r3 * 100;
     const dur = 8 + r4 * 14; // 8–22s
     const delay = -r1 * dur;
-    const drift = 8 + r2 * 22; // 8–30px
-    const opacity = 0.25 + r3 * 0.55;
-    const tone = r4 > 0.55 ? "var(--gold)" : "color-mix(in oklch, var(--gold) 55%, white)";
+    const drift = 12 + r2 * 28; // 12–40px
+    const opacity = 0.55 + r3 * 0.4; // 0.55–0.95
+    // Tons escuros (verde-profundo / dourado escuro) que contrastam no fundo bege.
+    const tone =
+      r4 > 0.6
+        ? "var(--ink)"
+        : r4 > 0.3
+          ? "color-mix(in oklch, var(--gold) 70%, var(--ink))"
+          : "var(--gold)";
     return { i, size, left, top, dur, delay, drift, opacity, tone };
   });
   return (
@@ -489,7 +495,7 @@ function ParticleField({
             height: d.size,
             backgroundColor: d.tone,
             opacity: d.opacity,
-            boxShadow: `0 0 ${d.size * 2}px color-mix(in oklch, ${d.tone} 60%, transparent)`,
+            boxShadow: `0 0 ${d.size * 1.2}px color-mix(in oklch, ${d.tone} 40%, transparent)`,
             animation: `particle-float ${d.dur}s ease-in-out ${d.delay}s infinite alternate`,
             // @ts-ignore custom prop
             "--drift": `${d.drift}px`,
