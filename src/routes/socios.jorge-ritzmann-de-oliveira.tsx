@@ -161,7 +161,7 @@ function JorgePage() {
       </section>
 
       {/* PULL QUOTE — dourado, uma sentença */}
-      <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] py-28 md:py-40">
+      <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] py-14 md:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24"
@@ -173,10 +173,10 @@ function JorgePage() {
           </p>
           <div
             aria-hidden="true"
-            className="mt-6 h-px w-16"
+            className="mt-4 h-px w-16"
             style={{ backgroundColor: "var(--gold)" }}
           />
-          <blockquote className="mt-10 font-display text-[clamp(2rem,4.6vw,3.75rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--gold)]">
+          <blockquote className="mt-6 font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-[1.2] tracking-[-0.015em] text-[var(--gold)]">
             <span
               aria-hidden="true"
               className="mr-2 font-display text-[1.1em] leading-none text-[var(--gold)]/60"
