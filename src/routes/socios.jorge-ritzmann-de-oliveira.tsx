@@ -141,8 +141,8 @@ function JorgePage() {
             </ul>
           </div>
 
-          {/* Coluna foto recortada — assenta no baseline do hero */}
-          <div className="relative">
+          {/* Coluna foto recortada — alinhada à direita e ao rodapé */}
+          <div className="relative flex items-end justify-end self-end">
             {/* filetes de composição */}
             <div
               aria-hidden="true"
@@ -152,7 +152,7 @@ function JorgePage() {
             <img
               src={jorgeCutout.url}
               alt="Jorge Ritzmann de Oliveira"
-              className="relative z-10 mx-auto block h-[520px] w-auto object-contain md:h-[640px] lg:h-[720px]"
+              className="relative z-10 block h-[520px] w-auto object-contain object-right-bottom md:h-[640px] lg:h-[720px]"
               loading="eager"
               decoding="async"
             />
