@@ -774,7 +774,7 @@ function PublicacoesFold() {
                   <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
                     {p.data} — {p.categoria}
                   </span>
-                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium leading-[1.2] tracking-[-0.005em]" style={{ color: "var(--ink)" }}>
+                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
                     {p.titulo}
                   </h3>
                   <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{p.resumo}</p>
