@@ -29,12 +29,13 @@ export function NewsletterCta() {
         {/* Coluna 1 — Assine */}
         <div>
           <h2 className="font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.01em]">
-            Receba nossas publicações
+            Assine as publicações do escritório
           </h2>
           <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-sand/80">
-            Análises e boletins do escritório sobre mudanças legislativas,
-            jurisprudência e método aplicado à prática empresarial.
+            Análises sobre mudanças na legislação e na jurisprudência, e o que
+            elas exigem de quem decide.
           </p>
+
 
           <form
             className="mt-8 flex w-full max-w-xl flex-col gap-3 sm:flex-row"
@@ -63,7 +64,7 @@ export function NewsletterCta() {
 
         {/* Coluna 2 — Conecte-se */}
         <div className="relative">
-          <p className="eyebrow">Conecte-se</p>
+          <p className="eyebrow">Redes</p>
           <span
             aria-hidden="true"
             className="mt-3 block h-px w-8"
