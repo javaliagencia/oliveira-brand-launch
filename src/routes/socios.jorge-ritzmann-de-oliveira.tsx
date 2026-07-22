@@ -201,13 +201,13 @@ function JorgePage() {
           {/* Bio */}
           <div>
             <SectionEyebrow>Biografia</SectionEyebrow>
-            <h2 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink)]">
+            <h2 className="mt-8 font-display text-[clamp(2rem,3.6vw,3rem)] font-medium leading-[1.1] tracking-[-0.02em] text-[var(--ink-2)]">
               Três décadas conduzindo decisões que exigem método e coragem em
               igual medida.
             </h2>
             <div
               aria-hidden="true"
-              className="mt-8 h-px w-16"
+              className="mt-8 h-[2px] w-20"
               style={{ backgroundColor: "var(--gold)" }}
             />
             <div className="mt-10 space-y-6 font-sans text-[17px] leading-[1.8] text-[var(--ink)]/85 md:text-[18px]">
@@ -235,7 +235,7 @@ function JorgePage() {
 
             <div className="mt-20">
               <SectionEyebrow>Artigos relacionados</SectionEyebrow>
-              <h3 className="mt-8 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink)]">
+              <h3 className="mt-8 font-display text-[clamp(1.75rem,2.8vw,2.25rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
                 Leitura recente de Jorge
               </h3>
               <ul className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
