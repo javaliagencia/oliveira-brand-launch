@@ -839,20 +839,21 @@ function CarreiraFold() {
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
             Formar advogados que{" "}
             <em className="font-normal italic" style={{ color: "var(--gold)" }}>
-              respondem pelo método.
+              conduzem, não que executam.
             </em>
           </h2>
           <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.7] text-sand/80 md:text-[16px]">
             Trinta anos formando profissionais que operam entre a disciplina do
             contencioso de volume e a profundidade do empresarial estratégico.
-            Buscamos quem se compromete com o rigor técnico, a leitura fina do
-            risco e a responsabilidade pelo caso do primeiro contato à decisão
-            final.
+            O escritório procura quem assume rigor técnico, leitura técnica do
+            risco e responsabilidade pela relação, do primeiro contato ao
+            desfecho.
           </p>
           <div className="mt-10">
             <BrandLink href="/carreira" invert>
-              Junte-se ao escritório
+              Ver oportunidades
             </BrandLink>
+
           </div>
         </div>
       </div>
