@@ -116,7 +116,7 @@ const SEGMENTOS_LINKS = [
   { label: "Concessionárias e serviços públicos", href: "/atuacao/segmentos/concessionarias-servicos-publicos" },
   { label: "Marketplaces e meios de pagamento", href: "/atuacao/segmentos/marketplaces-meios-de-pagamento" },
   { label: "Previdência complementar", href: "/atuacao/segmentos/previdencia-complementar" },
-  { label: "Saúde e Direito Médico", href: "/atuacao/segmentos/saude-direito-medico" },
+  { label: "Saúde e Direito Médico", href: "/areas/direito-medico" },
 ];
 
 const PUBLICACOES_LINKS = [
