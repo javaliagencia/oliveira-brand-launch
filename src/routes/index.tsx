@@ -443,45 +443,84 @@ function ManifestoFold() {
  */
 
 /**
- * Campo de partículas — nuvem de bolinhas douradas/bege que flutuam
- * suavemente. Usado como fundo animado da dobra "Em ponto", inspirado
- * na referência Simmons (grãos ao redor das imagens).
+ * Campo de partículas — nuvens coordenadas de bolinhas escuras que se
+ * agrupam nas bordas dos cards da grade "Em ponto", como grãos soprados
+ * ao redor das imagens (referência Simmons). Densidade cai do centro
+ * de cada nuvem para fora.
  */
 function ParticleField({
-  count = 90,
-  seed = 1,
+  count = 220,
+  seed = 7,
+  clusters,
   className = "",
 }: {
   count?: number;
   seed?: number;
+  /** Centros de nuvem em %. weight = fração das partículas; radius em % da largura/altura da caixa. */
+  clusters?: { x: number; y: number; weight: number; radius: number }[];
   className?: string;
 }) {
-  // PRNG determinístico para não gerar posições diferentes a cada render (evita hydration mismatch).
   const rand = (n: number) => {
-    const x = Math.sin(n * 9973 + seed * 131) * 43758.5453;
-    return x - Math.floor(x);
+    const v = Math.sin(n * 9973 + seed * 131) * 43758.5453;
+    return v - Math.floor(v);
   };
-  const dots = Array.from({ length: count }).map((_, i) => {
-    const r1 = rand(i + 1);
-    const r2 = rand(i + 200);
-    const r3 = rand(i + 400);
-    const r4 = rand(i + 600);
-    const size = 2 + r1 * 5; // 2–7px
-    const left = r2 * 100;
-    const top = r3 * 100;
-    const dur = 8 + r4 * 14; // 8–22s
-    const delay = -r1 * dur;
-    const drift = 12 + r2 * 28; // 12–40px
-    const opacity = 0.55 + r3 * 0.4; // 0.55–0.95
-    // Tons escuros (verde-profundo / dourado escuro) que contrastam no fundo bege.
-    const tone =
-      r4 > 0.6
-        ? "var(--ink)"
-        : r4 > 0.3
-          ? "color-mix(in oklch, var(--gold) 70%, var(--ink))"
-          : "var(--gold)";
-    return { i, size, left, top, dur, delay, drift, opacity, tone };
+  // Amostra gaussiana simples via Box-Muller.
+  const gauss = (a: number, b: number) => {
+    const u = Math.max(1e-6, a);
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * b);
+  };
+
+  const defaultClusters = [
+    // Cantos superiores dos cards de destaque + laterais dos cards menores.
+    { x: 6, y: 18, weight: 0.22, radius: 14 },
+    { x: 62, y: 10, weight: 0.18, radius: 12 },
+    { x: 94, y: 32, weight: 0.22, radius: 14 },
+    { x: 40, y: 62, weight: 0.16, radius: 12 },
+    { x: 88, y: 78, weight: 0.12, radius: 11 },
+    { x: 10, y: 88, weight: 0.10, radius: 10 },
+  ];
+  const cl = clusters ?? defaultClusters;
+
+  // Distribui a contagem entre os clusters pelo peso.
+  const perCluster = cl.map((c) => Math.round(count * c.weight));
+
+  const dots: {
+    i: number; size: number; left: number; top: number;
+    dur: number; delay: number; drift: number; opacity: number; tone: string;
+  }[] = [];
+
+  let idx = 0;
+  cl.forEach((c, ci) => {
+    const n = perCluster[ci];
+    for (let k = 0; k < n; k++) {
+      const r1 = rand(idx + 1);
+      const r2 = rand(idx + 200);
+      const r3 = rand(idx + 400);
+      const r4 = rand(idx + 600);
+      const r5 = rand(idx + 800);
+      // Deslocamento gaussiano em torno do centro do cluster.
+      const dx = gauss(r1, r2) * c.radius;
+      const dy = gauss(r3, r4) * c.radius * 0.75;
+      const left = Math.max(-4, Math.min(104, c.x + dx));
+      const top = Math.max(-4, Math.min(104, c.y + dy));
+      // Distância normalizada ao centro do cluster → controla tamanho/opacidade.
+      const dist = Math.min(1, Math.hypot(dx / c.radius, dy / (c.radius * 0.75)) / 2);
+      const size = 1.5 + (1 - dist) * 5.5 + r5 * 1.5; // 1.5–8px, mais gordos no núcleo
+      const dur = 9 + r4 * 13;
+      const delay = -r1 * dur;
+      const drift = 10 + r2 * 26;
+      const opacity = 0.35 + (1 - dist) * 0.55; // 0.35–0.9
+      const tone =
+        r5 > 0.65
+          ? "var(--ink)"
+          : r5 > 0.3
+            ? "color-mix(in oklch, var(--gold) 70%, var(--ink))"
+            : "var(--gold)";
+      dots.push({ i: idx, size, left, top, dur, delay, drift, opacity, tone });
+      idx++;
+    }
   });
+
   return (
     <div aria-hidden="true" className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
       {dots.map((d) => (
@@ -495,7 +534,7 @@ function ParticleField({
             height: d.size,
             backgroundColor: d.tone,
             opacity: d.opacity,
-            boxShadow: `0 0 ${d.size * 1.2}px color-mix(in oklch, ${d.tone} 40%, transparent)`,
+            boxShadow: `0 0 ${d.size * 1.1}px color-mix(in oklch, ${d.tone} 35%, transparent)`,
             animation: `particle-float ${d.dur}s ease-in-out ${d.delay}s infinite alternate`,
             // @ts-ignore custom prop
             "--drift": `${d.drift}px`,
@@ -505,8 +544,8 @@ function ParticleField({
       <style>{`
         @keyframes particle-float {
           0%   { transform: translate3d(0, 0, 0); }
-          50%  { transform: translate3d(calc(var(--drift) * 0.6), calc(var(--drift) * -0.8), 0); }
-          100% { transform: translate3d(calc(var(--drift) * -0.4), calc(var(--drift) * 0.7), 0); }
+          50%  { transform: translate3d(calc(var(--drift) * 0.55), calc(var(--drift) * -0.7), 0); }
+          100% { transform: translate3d(calc(var(--drift) * -0.4), calc(var(--drift) * 0.6), 0); }
         }
         @media (prefers-reduced-motion: reduce) {
           [style*="particle-float"] { animation: none !important; }
@@ -515,6 +554,7 @@ function ParticleField({
     </div>
   );
 }
+
 
 
 
@@ -576,7 +616,7 @@ function PublicacoesFold() {
     >
       {/* Campo de partículas — bolinhas douradas flutuando no fundo,
           inspiradas na referência Simmons (grãos ao redor das imagens). */}
-      <ParticleField count={120} seed={7} />
+      <ParticleField count={260} seed={7} />
 
       <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
         {/* Cabeçalho */}
