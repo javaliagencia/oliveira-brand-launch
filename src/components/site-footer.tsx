@@ -259,14 +259,11 @@ export function SiteFooter() {
 
         {/* Bloco 2 — Navegação */}
         <section aria-label="Navegação do rodapé" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
-          <LinkColumn title="Atuação" items={ATUACAO_LINKS} />
           <LinkColumn title="Áreas do Direito" items={AREAS_LINKS} />
-          <LinkColumn title="O escritório" items={[NAV_LINKS[0]]} />
-          <LinkColumn title="Sócios" items={[NAV_LINKS[1]]} />
-          <LinkColumn
-            title="Contato"
-            items={[NAV_LINKS[2], NAV_LINKS[3]]}
-          />
+          <LinkColumn title="Segmentos" items={SEGMENTOS_LINKS} />
+          <LinkColumn title="Publicações" items={PUBLICACOES_LINKS} />
+          <LinkColumn title="Oliveira Ritzmann" items={[NAV_LINKS[0], NAV_LINKS[1]]} />
+          <LinkColumn title="Contato" items={[NAV_LINKS[3]]} />
         </section>
 
         {/* Filete separador */}
