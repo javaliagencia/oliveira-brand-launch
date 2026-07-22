@@ -222,7 +222,7 @@ function LinkColumn({
 }
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
+  
 
   return (
     <footer
