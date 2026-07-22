@@ -120,9 +120,9 @@ function HeroFold() {
         </p>
         <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
           Advocacia com{" "}
-          <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+          <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
             profundidade
-          </em>{" "}
+          </span>{" "}
           em qualquer escala.
         </h1>
       </div>
