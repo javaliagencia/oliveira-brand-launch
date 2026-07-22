@@ -204,16 +204,21 @@ export function SiteHeader() {
                       </a>
                     </li>
                   ))}
-                  <li className="my-2 h-px w-16" style={{ backgroundColor: "var(--gold)" }} />
-                  <li>
-                    <a
-                      href={ATUACAO_SECONDARY.href}
-                      onClick={() => setOpen(false)}
-                      className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
-                    >
-                      {ATUACAO_SECONDARY.label}
-                    </a>
-                  </li>
+                </ul>
+
+                <p className="eyebrow mt-10">Publicações</p>
+                <ul className="mt-8 flex flex-col gap-3">
+                  {PUBLICACOES_LINKS.map((sub) => (
+                    <li key={sub.href}>
+                      <a
+                        href={sub.href}
+                        onClick={() => setOpen(false)}
+                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
+                      >
+                        {sub.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
