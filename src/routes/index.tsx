@@ -443,70 +443,74 @@ function ManifestoFold() {
  */
 
 /**
- * Transição verde → bege entre "Quem conduz o método" e "Em ponto".
- * Faixa curta com gradiente diagonal e linhas douradas fluindo lentamente,
- * criando um movimento sutil de passagem entre os dois fundos.
+ * Campo de partículas — nuvem de bolinhas douradas/bege que flutuam
+ * suavemente. Usado como fundo animado da dobra "Em ponto", inspirado
+ * na referência Simmons (grãos ao redor das imagens).
  */
-function TransicaoParaEmPonto() {
+function ParticleField({
+  count = 90,
+  seed = 1,
+  className = "",
+}: {
+  count?: number;
+  seed?: number;
+  className?: string;
+}) {
+  // PRNG determinístico para não gerar posições diferentes a cada render (evita hydration mismatch).
+  const rand = (n: number) => {
+    const x = Math.sin(n * 9973 + seed * 131) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const dots = Array.from({ length: count }).map((_, i) => {
+    const r1 = rand(i + 1);
+    const r2 = rand(i + 200);
+    const r3 = rand(i + 400);
+    const r4 = rand(i + 600);
+    const size = 1 + r1 * 3.2; // 1–4.2px
+    const left = r2 * 100;
+    const top = r3 * 100;
+    const dur = 8 + r4 * 14; // 8–22s
+    const delay = -r1 * dur;
+    const drift = 8 + r2 * 22; // 8–30px
+    const opacity = 0.25 + r3 * 0.55;
+    const tone = r4 > 0.55 ? "var(--gold)" : "color-mix(in oklch, var(--gold) 55%, white)";
+    return { i, size, left, top, dur, delay, drift, opacity, tone };
+  });
   return (
-    <section
-      aria-hidden="true"
-      className="relative w-full overflow-hidden"
-      style={{
-        height: "clamp(140px, 18vh, 220px)",
-        background:
-          "linear-gradient(180deg, var(--ink) 0%, color-mix(in oklch, var(--ink) 55%, var(--sand)) 45%, color-mix(in oklch, var(--sand) 80%, var(--ink)) 78%, var(--sand) 100%)",
-      }}
-    >
-      {/* Linhas douradas horizontais fluindo — evocam o "movimento" da referência Simmons. */}
-      <div className="pointer-events-none absolute inset-0">
-        {[0, 1, 2, 3, 4].map((i) => (
-          <div
-            key={i}
-            className="absolute left-[-30%] right-[-30%]"
-            style={{
-              top: `${12 + i * 18}%`,
-              height: 1,
-              background:
-                "linear-gradient(90deg, transparent 0%, color-mix(in oklch, var(--gold) 85%, transparent) 40%, color-mix(in oklch, var(--gold) 95%, white) 50%, color-mix(in oklch, var(--gold) 85%, transparent) 60%, transparent 100%)",
-              opacity: 0.35 + (i % 2) * 0.2,
-              animation: `transicao-flow-${i % 2 === 0 ? "a" : "b"} ${18 + i * 3}s linear infinite`,
-              animationDelay: `${-i * 2.5}s`,
-              filter: "blur(0.4px)",
-            }}
-          />
-        ))}
-        {/* Mancha dourada difusa que atravessa lentamente */}
-        <div
-          className="absolute -top-[40%] left-[10%] h-[180%] w-[45%] rounded-full blur-3xl"
+    <div aria-hidden="true" className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
+      {dots.map((d) => (
+        <span
+          key={d.i}
+          className="absolute rounded-full"
           style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 55%, transparent), transparent 70%)",
-            opacity: 0.35,
-            animation: "transicao-glow 22s ease-in-out infinite alternate",
-          }}
+            left: `${d.left}%`,
+            top: `${d.top}%`,
+            width: d.size,
+            height: d.size,
+            backgroundColor: d.tone,
+            opacity: d.opacity,
+            boxShadow: `0 0 ${d.size * 2}px color-mix(in oklch, ${d.tone} 60%, transparent)`,
+            animation: `particle-float ${d.dur}s ease-in-out ${d.delay}s infinite alternate`,
+            // @ts-ignore custom prop
+            "--drift": `${d.drift}px`,
+          } as React.CSSProperties}
         />
-      </div>
+      ))}
       <style>{`
-        @keyframes transicao-flow-a {
-          0%   { transform: translate3d(-15%, 0, 0); }
-          100% { transform: translate3d(15%, 0, 0); }
-        }
-        @keyframes transicao-flow-b {
-          0%   { transform: translate3d(15%, 0, 0); }
-          100% { transform: translate3d(-15%, 0, 0); }
-        }
-        @keyframes transicao-glow {
-          0%   { transform: translate3d(0,0,0) scale(1); }
-          100% { transform: translate3d(30vw, 0, 0) scale(1.15); }
+        @keyframes particle-float {
+          0%   { transform: translate3d(0, 0, 0); }
+          50%  { transform: translate3d(calc(var(--drift) * 0.6), calc(var(--drift) * -0.8), 0); }
+          100% { transform: translate3d(calc(var(--drift) * -0.4), calc(var(--drift) * 0.7), 0); }
         }
         @media (prefers-reduced-motion: reduce) {
-          section[aria-hidden="true"] * { animation: none !important; }
+          [style*="particle-float"] { animation: none !important; }
         }
       `}</style>
-    </section>
+    </div>
   );
 }
+
+
 
 /**
  * Dobra Publicações — "Em ponto. Informação que desperta. De segunda a sexta."
