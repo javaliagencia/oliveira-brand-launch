@@ -407,12 +407,12 @@ function ManifestoFold() {
               <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
-              <em
+              <span
                 className="font-display"
-                style={{ color: "var(--ink)", fontStyle: "italic", fontWeight: 500 }}
+                style={{ color: "var(--ink)", fontWeight: 600 }}
               >
                 É o método aplicado a ela.
-              </em>
+              </span>
             </h2>
           </div>
           <div className="md:col-span-6" />
