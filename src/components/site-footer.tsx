@@ -93,13 +93,6 @@ const SEDES: Sede[] = [
   },
 ];
 
-const ATUACAO_LINKS = [
-  { label: "Contencioso de volume", href: "/atuacao/contencioso-de-volume" },
-  { label: "Cooperativas de crédito", href: "/atuacao/cooperativas-de-credito" },
-  { label: "Empresarial estratégico", href: "/atuacao/empresarial-estrategico" },
-  { label: "Recuperação de créditos complexos", href: "/atuacao/recuperacao-de-creditos-complexos" },
-];
-
 const AREAS_LINKS = [
   { label: "Direito Médico", href: "/areas/direito-medico" },
   { label: "Tributário", href: "/areas/tributario" },
@@ -108,10 +101,21 @@ const AREAS_LINKS = [
   { label: "Cível", href: "/areas/civel" },
 ];
 
+const SEGMENTOS_LINKS = [
+  { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
+  { label: "Saúde", href: "/atuacao/segmentos/saude" },
+  { label: "Empresarial", href: "/atuacao/segmentos/empresarial" },
+];
+
+const PUBLICACOES_LINKS = [
+  { label: "Análises", href: "/publicacoes/analises" },
+  { label: "Notícias", href: "/publicacoes/noticias" },
+];
+
 const NAV_LINKS = [
-  { label: "O escritório", href: "/o-escritorio" },
-  { label: "Sócios", href: "/socios" },
-  { label: "Inteligência", href: "/inteligencia" },
+  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "Advogados", href: "/advogados" },
+  { label: "Publicações", href: "/publicacoes" },
   { label: "Contato", href: "/contato" },
 ];
 
@@ -255,14 +259,11 @@ export function SiteFooter() {
 
         {/* Bloco 2 — Navegação */}
         <section aria-label="Navegação do rodapé" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
-          <LinkColumn title="Atuação" items={ATUACAO_LINKS} />
           <LinkColumn title="Áreas do Direito" items={AREAS_LINKS} />
-          <LinkColumn title="O escritório" items={[NAV_LINKS[0]]} />
-          <LinkColumn title="Sócios" items={[NAV_LINKS[1]]} />
-          <LinkColumn
-            title="Contato"
-            items={[NAV_LINKS[2], NAV_LINKS[3]]}
-          />
+          <LinkColumn title="Segmentos" items={SEGMENTOS_LINKS} />
+          <LinkColumn title="Publicações" items={PUBLICACOES_LINKS} />
+          <LinkColumn title="Oliveira Ritzmann" items={[NAV_LINKS[0], NAV_LINKS[1]]} />
+          <LinkColumn title="Contato" items={[NAV_LINKS[3]]} />
         </section>
 
         {/* Filete separador */}

@@ -17,22 +17,22 @@ type NavItem = { label: string; href: string };
 
 const NAV: NavItem[] = [
   { label: "Início", href: "/" },
-  { label: "O escritório", href: "/o-escritorio" },
-  { label: "Sócios", href: "/socios" },
-  { label: "Inteligência", href: "/inteligencia" },
+  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "Atuação", href: "/atuacao" },
+  { label: "Advogados", href: "/advogados" },
+  { label: "Publicações", href: "/publicacoes" },
   { label: "Contato", href: "/contato" },
 ];
 
 const ATUACAO_PRIMARY: NavItem[] = [
-  { label: "Contencioso de volume", href: "/atuacao/contencioso-de-volume" },
-  { label: "Cooperativas de crédito", href: "/atuacao/cooperativas-de-credito" },
-  { label: "Empresarial estratégico", href: "/atuacao/empresarial-estrategico" },
+  { label: "Áreas do Direito", href: "/atuacao/areas-do-direito" },
+  { label: "Segmentos", href: "/atuacao/segmentos" },
 ];
 
-const ATUACAO_SECONDARY: NavItem = {
-  label: "Recuperação de créditos complexos",
-  href: "/atuacao/recuperacao-de-creditos-complexos",
-};
+const PUBLICACOES_LINKS: NavItem[] = [
+  { label: "Análises", href: "/publicacoes/analises" },
+  { label: "Notícias", href: "/publicacoes/noticias" },
+];
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -204,16 +204,21 @@ export function SiteHeader() {
                       </a>
                     </li>
                   ))}
-                  <li className="my-2 h-px w-16" style={{ backgroundColor: "var(--gold)" }} />
-                  <li>
-                    <a
-                      href={ATUACAO_SECONDARY.href}
-                      onClick={() => setOpen(false)}
-                      className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
-                    >
-                      {ATUACAO_SECONDARY.label}
-                    </a>
-                  </li>
+                </ul>
+
+                <p className="eyebrow mt-10">Publicações</p>
+                <ul className="mt-8 flex flex-col gap-3">
+                  {PUBLICACOES_LINKS.map((sub) => (
+                    <li key={sub.href}>
+                      <a
+                        href={sub.href}
+                        onClick={() => setOpen(false)}
+                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
+                      >
+                        {sub.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
