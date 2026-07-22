@@ -84,6 +84,7 @@ function HeroFold() {
     >
       {/* Vídeo em loop — camada 0 */}
       <video
+        ref={(el) => { if (el) el.playbackRate = 0.55; }}
         className="absolute inset-0 -z-20 h-full w-full object-cover"
         autoPlay
         muted
@@ -109,7 +110,10 @@ function HeroFold() {
 
       {/* Conteúdo */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-20 pt-32 md:pb-28 md:pt-40">
-        <p className="eyebrow text-[var(--gold)]">
+        <p
+          className="font-sans text-[13px] font-semibold uppercase leading-none text-sand"
+          style={{ letterSpacing: "0.32em", textShadow: "0 1px 12px rgba(8,38,36,0.55)" }}
+        >
           Método. Previsibilidade. Resultado.
         </p>
         <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-extralight leading-[1.02] tracking-[-0.03em] text-sand">
