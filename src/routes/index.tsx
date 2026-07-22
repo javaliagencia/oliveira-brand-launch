@@ -63,6 +63,7 @@ function Index() {
       <HeroFold />
       <CompetenciasFold />
       <ManifestoFold />
+      <TransicaoParaEmPonto />
       <PublicacoesFold />
       <CarreiraFold />
     </main>
