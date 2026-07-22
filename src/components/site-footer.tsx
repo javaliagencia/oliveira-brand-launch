@@ -45,6 +45,13 @@ const SEDES: Sede[] = [
     telefones: [],
   },
   {
+    cidade: "Rio de Janeiro",
+    uf: "RJ",
+    linhas: ["Rua Visconde de Inhaúma, 134", "Salas 2001 a 2004, Centro"],
+    cep: "20091-901",
+    telefones: [],
+  },
+  {
     cidade: "Curitiba",
     uf: "PR",
     linhas: ["Rua da Glória, 251", "Ed. NEO Corporate, Conj. 202", "Centro Cívico"],
@@ -56,13 +63,6 @@ const SEDES: Sede[] = [
     uf: "RS",
     linhas: ["Avenida Ipiranga, 40", "Conj. 603-604-605, Praia de Belas"],
     cep: "90160-090",
-    telefones: [],
-  },
-  {
-    cidade: "Rio de Janeiro",
-    uf: "RJ",
-    linhas: ["Rua Visconde de Inhaúma, 134", "Salas 2001 a 2004, Centro"],
-    cep: "20091-901",
     telefones: [],
   },
   {
