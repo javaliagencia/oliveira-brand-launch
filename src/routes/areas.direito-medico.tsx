@@ -296,15 +296,16 @@ function DireitoMedicoPage() {
             <h3 className="mt-6 font-display text-2xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-3xl">
               Segmentos com atuação recorrente.
             </h3>
-            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            <ul className="mt-8 divide-y divide-[color-mix(in_oklch,var(--ink)_10%,transparent)]">
               {SETORES.map((s) => (
-                <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-px w-4 shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <span>{s}</span>
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    className="group flex items-center justify-between py-4 text-[15px] text-[var(--ink)] transition-colors hover:text-[var(--gold)]"
+                  >
+                    <span>{s.label}</span>
+                    <BrandArrow />
+                  </a>
                 </li>
               ))}
             </ul>
@@ -325,32 +326,32 @@ function DireitoMedicoPage() {
             <BrandLink href="/inteligencia">Ver todas as publicações</BrandLink>
           </div>
 
-          <ul className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <ul className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {ARTIGOS.map((a) => (
               <li key={a.titulo}>
-                <a href={a.href} className="group flex h-full flex-col">
-                  <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-[var(--ink)]/60">
-                    <span style={{ color: "var(--gold)" }}>{a.categoria}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{a.data}</span>
+                <a
+                  href={a.href}
+                  className="group flex h-full flex-col justify-between gap-8 border border-[var(--ink)]/12 bg-[var(--sand)]/40 p-6 transition-colors hover:border-[var(--gold)] hover:bg-[var(--sand)]"
+                >
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]">
+                      {a.categoria} · {a.data}
+                    </p>
+                    <p className="mt-5 font-display text-[18px] leading-snug text-[var(--ink)] md:text-[20px]">
+                      {a.titulo}
+                    </p>
                   </div>
-                  <span
-                    aria-hidden="true"
-                    className="mt-4 block h-px w-8"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <h3 className="mt-5 font-display text-lg font-medium leading-snug text-[var(--ink-2)] transition-colors group-hover:text-[var(--gold)] md:text-xl">
-                    {a.titulo}
-                  </h3>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[13px] text-[var(--ink)]/80">
-                    Ler publicação <BrandArrow />
-                  </span>
+                  <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.24em] text-[var(--ink-2)]">
+                    Ler publicação
+                    <BrandArrow />
+                  </div>
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
     </article>
   );
 }
