@@ -45,6 +45,27 @@ const CREDENTIALS = [
   { label: "Idiomas", value: "Português · Inglês · Espanhol" },
 ];
 
+const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }[] = [
+  {
+    categoria: "Cooperativas de crédito",
+    data: "Jun · 2026",
+    titulo: "Governança cooperativa: os limites entre autonomia decisória e responsabilidade dos administradores",
+    href: "/inteligencia",
+  },
+  {
+    categoria: "Contencioso estratégico",
+    data: "Abr · 2026",
+    titulo: "Carteiras de alto volume: quando o método operacional vira vantagem processual",
+    href: "/inteligencia",
+  },
+  {
+    categoria: "Empresarial",
+    data: "Fev · 2026",
+    titulo: "Reestruturações societárias e a leitura empresarial de longo prazo",
+    href: "/inteligencia",
+  },
+];
+
 function JorgePage() {
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
