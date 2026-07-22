@@ -14,9 +14,10 @@
  *   sand       #e0d9c7  bege          — fundo claro
  *   white      #ffffff
  *
- * Tipografia
- *   Display: Instrument Serif (serif editorial, apenas 400 + itálico — usar só em headlines/ênfase pontual)
- *   Texto:   Work Sans (peso 300-400-500-600, corpo, UI, eyebrows)
+ * Tipografia (conforme Brandbook — família 100% sans)
+ *   Display: Manrope (proxy de Stack Sans — pesos 200/300 para escala grande, 500/600 para ênfase)
+ *   Texto:   DM Sans (pesos 300-400-500 — corpo, UI, eyebrows)
+ *   Contraste tipográfico via peso e escala, nunca via serif.
  *   Entrelinha ampla (1.65-1.75). Respiro generoso.
  *
  * Cantos praticamente retos: máx. 4px de radius.
@@ -76,8 +77,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Famílias tipográficas */
-  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   /* Duração e easing — motion contido */
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
