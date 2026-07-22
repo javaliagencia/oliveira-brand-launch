@@ -827,7 +827,7 @@ function CarreiraFold() {
         <div
           className="max-w-[560px] p-8 backdrop-blur-2xl backdrop-saturate-150 md:p-12"
           style={{
-            backgroundColor: "rgba(8, 38, 36, 0.22)",
+            backgroundColor: "rgba(8, 38, 36, 0.12)",
             border: "1px solid color-mix(in oklch, var(--gold) 40%, transparent)",
             borderRadius: 4,
           }}
