@@ -223,22 +223,24 @@ function LinkColumn({
 }
 
 export function SiteFooter() {
-  
-
   return (
     <footer
       className="w-full text-sand"
-      style={{ backgroundColor: "var(--ink)" }}
       aria-labelledby="footer-heading"
     >
+      <h2 id="footer-heading" className="sr-only">
+        Rodapé — presença, navegação e informações institucionais
+      </h2>
 
-      <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
-        <h2 id="footer-heading" className="sr-only">
-          Rodapé — sedes, navegação e informações institucionais
-        </h2>
-
-        {/* Bloco 1 — Sedes próprias */}
-        <section aria-labelledby="sedes-heading">
+      {/* ============================================================
+          Faixa 1 — PRESENÇA (sedes)
+          Fundo --ink (verde-profundo)
+         ============================================================ */}
+      <section
+        aria-labelledby="sedes-heading"
+        style={{ backgroundColor: "var(--ink)" }}
+      >
+        <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
           <p className="eyebrow">Presença</p>
           <span
             aria-hidden="true"
@@ -257,145 +259,303 @@ export function SiteFooter() {
               <SedeCard key={sede.cidade} sede={sede} />
             ))}
           </ul>
-        </section>
+        </div>
+      </section>
 
-        {/* Filete separador */}
-        <span
-          aria-hidden="true"
-          className="my-16 block h-px w-full"
-          style={{ backgroundColor: "color-mix(in oklch, var(--gold) 32%, transparent)" }}
-        />
+      {/* ============================================================
+          Faixa 2 — NAVEGAÇÃO COMPLETA (SEO: espelha o menu sanduíche)
+          Fundo --ink-2 (verde-escuro médio)
+          Ordem: Início · Oliveira Ritzmann · Atuação · Advogados ·
+                 Publicações · Contato
+         ============================================================ */}
+      <nav
+        aria-label="Navegação do rodapé"
+        style={{ backgroundColor: "var(--ink-2)" }}
+      >
+        <div className="mx-auto max-w-[1360px] px-6 py-16 md:py-20">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
+            {/* Início */}
+            <div>
+              <p className="eyebrow">
+                <a href="/" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                  Início
+                </a>
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+            </div>
 
-        {/* Bloco 2 — Navegação */}
-        <section aria-label="Navegação do rodapé" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
-          <LinkColumn title="Áreas do Direito" items={AREAS_LINKS} />
-          <LinkColumn title="Segmentos" items={SEGMENTOS_LINKS} />
-          <LinkColumn title="Publicações" items={PUBLICACOES_LINKS} />
-          <LinkColumn title="O escritório" items={ESCRITORIO_LINKS} />
-          <div>
-            <p className="eyebrow">Contato</p>
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-px w-8"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {CONTATO_LINKS.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-                  >
-                    {item.label}
+            {/* Oliveira Ritzmann */}
+            <div>
+              <p className="eyebrow">
+                <a href="/oliveira-ritzmann" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                  Oliveira Ritzmann
+                </a>
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+              <ul className="mt-4 flex flex-col gap-2.5">
+                <li>
+                  <a href="/metodo" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Método
                   </a>
                 </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-[13px] leading-relaxed text-sand/70">
-              <a
-                href={`tel:+5547${TELEFONE_INSTITUCIONAL.replace(/\D/g, "").slice(2)}`}
-                className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-              >
-                {TELEFONE_INSTITUCIONAL}
-              </a>
+                <li>
+                  <a href="/presenca" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Presença
+                  </a>
+                </li>
+                <li>
+                  <a href="/carreiras" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Carreiras
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Atuação — Áreas do Direito + Segmentos */}
+            <div className="col-span-2">
+              <p className="eyebrow">Atuação</p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+              <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55">
+                    Áreas do Direito
+                  </p>
+                  <ul className="mt-3 flex flex-col gap-2">
+                    {AREAS_LINKS.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55">
+                    Segmentos
+                  </p>
+                  <ul className="mt-3 flex flex-col gap-2">
+                    {SEGMENTOS_LINKS.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Advogados */}
+            <div>
+              <p className="eyebrow">
+                <a href="/advogados" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                  Advogados
+                </a>
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+              <ul className="mt-4 flex flex-col gap-2.5">
+                <li>
+                  <a href="/advogados" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Sócios
+                  </a>
+                </li>
+                <li>
+                  <a href="/advogados/associados" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Associados
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Publicações */}
+            <div>
+              <p className="eyebrow">
+                <a href="/publicacoes" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                  Publicações
+                </a>
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {PUBLICACOES_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contato */}
+            <div>
+              <p className="eyebrow">
+                <a href="/contato" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                  Contato
+                </a>
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-px w-8"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {CONTATO_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[13px] leading-relaxed text-sand/70">
+                <a
+                  href={`tel:+5547${TELEFONE_INSTITUCIONAL.replace(/\D/g, "").slice(2)}`}
+                  className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                >
+                  {TELEFONE_INSTITUCIONAL}
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Assinatura entre Navegação e Institucional */}
+          <div className="mt-16 flex flex-col items-center gap-6">
+            <img
+              src={logoVerde.url}
+              alt="Oliveira Ritzmann Advogados"
+              className="h-10 w-auto opacity-95"
+            />
+            <span
+              aria-hidden="true"
+              className="block h-px w-16"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <p
+              className="font-display text-[13px] uppercase tracking-[0.32em]"
+              style={{ color: "var(--gold)" }}
+            >
+              Método. Previsibilidade. Resultado.
             </p>
           </div>
-        </section>
+        </div>
+      </nav>
 
-        {/* Filete separador */}
-        <span
-          aria-hidden="true"
-          className="my-16 block h-px w-full"
-          style={{ backgroundColor: "color-mix(in oklch, var(--gold) 32%, transparent)" }}
-        />
-
-        {/* Bloco 3 — Institucional */}
-        <section
-          aria-label="Informações institucionais"
-          className="grid grid-cols-1 gap-10 md:grid-cols-2"
-        >
-
-
-          <div>
-            <p className="eyebrow">Conformidade</p>
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-px w-8"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {INSTITUCIONAL_LINKS.map((item) => (
-                <li key={item.href}>
+      {/* ============================================================
+          Faixa 3 — INSTITUCIONAL (Conformidade + Redes + copyright)
+          Fundo mais escuro (mistura de --ink com preto)
+         ============================================================ */}
+      <section
+        aria-label="Informações institucionais"
+        style={{ backgroundColor: "color-mix(in oklch, var(--ink) 70%, #000)" }}
+      >
+        <div className="mx-auto max-w-[1360px] px-6 py-10 md:py-12">
+          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
+            {/* Conformidade — esquerda */}
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55">
+                Conformidade
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                {INSTITUCIONAL_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+                <li>
                   <a
-                    href={item.href}
-                    className="text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                    href="/etica"
+                    className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
                   >
-                    {item.label}
+                    Canal de ética
                   </a>
                 </li>
-              ))}
-            </ul>
+              </ul>
+            </div>
+
+            {/* Redes — direita */}
+            <div className="md:justify-self-end">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55 md:text-right">
+                Redes
+              </p>
+              <ul className="mt-3 flex gap-4 md:justify-end">
+                <li>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="LinkedIn"
+                    className="inline-flex h-9 w-9 items-center justify-center border transition-colors duration-200 hover:text-[var(--gold)] hover:border-[var(--gold)] focus-visible:text-[var(--gold)] focus-visible:border-[var(--gold)]"
+                    style={{ borderColor: "color-mix(in oklch, var(--sand) 25%, transparent)" }}
+                  >
+                    <Linkedin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Instagram"
+                    className="inline-flex h-9 w-9 items-center justify-center border transition-colors duration-200 hover:text-[var(--gold)] hover:border-[var(--gold)] focus-visible:text-[var(--gold)] focus-visible:border-[var(--gold)]"
+                    style={{ borderColor: "color-mix(in oklch, var(--sand) 25%, transparent)" }}
+                  >
+                    <Instagram className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div>
-            <p className="eyebrow">Redes</p>
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-px w-8"
-              style={{ backgroundColor: "var(--gold)" }}
-            />
-            <ul className="mt-4 flex flex-col gap-2.5">
-              <li>
-                <a
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="LinkedIn"
-                  className="inline-flex items-center gap-2 text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-                >
-                  <Linkedin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="Instagram"
-                  className="inline-flex items-center gap-2 text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-                >
-                  <Instagram className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Assinatura */}
-        <div className="mt-20 flex flex-col items-center gap-6">
-          <img
-            src={logoVerde.url}
-            alt="Oliveira Ritzmann Advogados"
-            className="h-10 w-auto opacity-95"
-          />
+          {/* Filete + copyright */}
           <span
             aria-hidden="true"
-            className="block h-px w-16"
-            style={{ backgroundColor: "var(--gold)" }}
+            className="mt-8 block h-px w-full"
+            style={{ backgroundColor: "color-mix(in oklch, var(--sand) 12%, transparent)" }}
           />
-          <p
-            className="font-display text-[13px] uppercase tracking-[0.32em]"
-            style={{ color: "var(--gold)" }}
-          >
-            Método. Previsibilidade. Resultado.
-          </p>
-          <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-sand/45">
+          <p className="mt-6 text-center text-[11px] uppercase tracking-[0.2em] text-sand/45">
             © 2026 Oliveira Ritzmann Advogados
           </p>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }
