@@ -33,94 +33,110 @@ const SEDES: Sede[] = [
     matriz: true,
     linhas: ["Rua Frederico Guilherme Busch, 87", "Jardim Blumenau"],
     cep: "89010-360",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "São Paulo",
     uf: "SP",
     linhas: ["Avenida Paulista, 1636", "Conj. 1507-1509, Bela Vista"],
     cep: "01310-200",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Curitiba",
     uf: "PR",
     linhas: ["Rua da Glória, 251", "Ed. NEO Corporate, Conj. 202", "Centro Cívico"],
     cep: "80030-060",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Porto Alegre",
     uf: "RS",
     linhas: ["Avenida Ipiranga, 40", "Conj. 603-604-605, Praia de Belas"],
     cep: "90160-090",
-    telefones: ["(51) 3407-2284", "(51) 3519-2284"],
+    telefones: [],
   },
   {
     cidade: "Rio de Janeiro",
     uf: "RJ",
     linhas: ["Rua Visconde de Inhaúma, 134", "Salas 2001 a 2004, Centro"],
     cep: "20091-901",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Salvador",
     uf: "BA",
     linhas: ["Avenida Tancredo Neves, 450", "23º andar, Caminho das Árvores"],
     cep: "41820-901",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Goiânia",
     uf: "GO",
     linhas: ["Avenida 136, Quadra F44, nº 761", "Sala A1, Setor Sul"],
     cep: "74093-250",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Maceió",
     uf: "AL",
     linhas: ["Rua José Maia Gomes, 258", "SL 5, CXPST 264, Jatiúca"],
     cep: "57036-240",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Aracaju",
     uf: "SE",
     linhas: ["Rua Manoel Espírito Santo, 165", "Sala 201, Pavimento Superior", "Grageru"],
     cep: "49025-440",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
 ];
 
+const TELEFONE_INSTITUCIONAL = "(47) 3041-9565";
+
 const AREAS_LINKS = [
-  { label: "Direito Médico", href: "/areas/direito-medico" },
+  { label: "Bancário", href: "/areas/bancario" },
+  { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
+  { label: "Cível", href: "/areas/civel" },
+  { label: "Consumidor", href: "/areas/consumidor" },
+  { label: "Trabalhista", href: "/areas/trabalhista" },
   { label: "Tributário", href: "/areas/tributario" },
   { label: "Societário", href: "/areas/societario" },
-  { label: "Trabalhista", href: "/areas/trabalhista" },
-  { label: "Cível", href: "/areas/civel" },
+  { label: "Sucessório e Planejamento Patrimonial", href: "/areas/sucessorio-planejamento-patrimonial" },
+  { label: "Previdenciário", href: "/areas/previdenciario" },
 ];
 
 const SEGMENTOS_LINKS = [
+  { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
   { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
-  { label: "Saúde", href: "/atuacao/segmentos/saude" },
-  { label: "Empresarial", href: "/atuacao/segmentos/empresarial" },
+  { label: "Seguradoras", href: "/atuacao/segmentos/seguradoras" },
+  { label: "Concessionárias e serviços públicos", href: "/atuacao/segmentos/concessionarias-servicos-publicos" },
+  { label: "Marketplaces e meios de pagamento", href: "/atuacao/segmentos/marketplaces-meios-de-pagamento" },
+  { label: "Previdência complementar", href: "/atuacao/segmentos/previdencia-complementar" },
+  { label: "Saúde e Direito Médico", href: "/atuacao/segmentos/saude-direito-medico" },
 ];
 
 const PUBLICACOES_LINKS = [
   { label: "Análises", href: "/publicacoes/analises" },
   { label: "Notícias", href: "/publicacoes/noticias" },
+  { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
 ];
 
-const NAV_LINKS = [
-  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
-  { label: "Advogados", href: "/advogados" },
-  { label: "Publicações", href: "/publicacoes" },
-  { label: "Contato", href: "/contato" },
+const ESCRITORIO_LINKS = [
+  { label: "O Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "Método", href: "/metodo" },
+  { label: "Presença", href: "/presenca" },
+  { label: "Sócios", href: "/advogados" },
+  { label: "Carreiras", href: "/carreiras" },
+];
+
+const CONTATO_LINKS = [
+  { label: "Falar com o escritório", href: "/contato" },
+  { label: "Canal de ética", href: "/etica" },
 ];
 
 const INSTITUCIONAL_LINKS = [
-  { label: "Canal de ética", href: "/etica" },
   { label: "Política de privacidade", href: "/privacidade" },
   { label: "Termos de uso", href: "/termos" },
 ];
