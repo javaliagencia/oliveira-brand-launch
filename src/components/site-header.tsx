@@ -91,10 +91,24 @@ export function SiteHeader() {
             href="https://intranet.oliveiraritzmann.com.br"
             target="_blank"
             rel="noreferrer noopener"
-            className="hidden text-[11px] uppercase tracking-[0.24em] text-sand/80 transition-colors hover:text-[var(--gold)] md:inline-flex"
+            className="hidden items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-sand/80 transition-colors hover:text-[var(--gold)] md:inline-flex"
           >
-            Intranet
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-[18px] w-[18px]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="8.5" r="3.6" />
+              <path d="M4.8 20c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4" />
+            </svg>
+            Login
           </a>
+
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -203,8 +217,12 @@ export function SiteHeader() {
                 </ul>
 
                 <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
-                  <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
-                    Intranet
+                  <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 hover:text-[var(--gold)]">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[16px] w-[16px]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8.5" r="3.6" />
+                      <path d="M4.8 20c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4" />
+                    </svg>
+                    Login
                   </a>
                   <span aria-hidden="true" className="text-sand/30">·</span>
                   <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
