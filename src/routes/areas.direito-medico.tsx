@@ -97,15 +97,16 @@ const OUTRAS_AREAS = [
 ];
 
 const SETORES = [
-  "Hospitais e day-hospitals",
-  "Clínicas e centros médicos",
-  "Operadoras de saúde suplementar",
-  "Cooperativas médicas",
-  "Laboratórios e diagnóstico por imagem",
-  "Indústria farmacêutica e dispositivos médicos",
-  "Telemedicina e healthtechs",
-  "Profissionais autônomos e sociedades unipessoais",
+  { label: "Hospitais e day-hospitals", href: "#" },
+  { label: "Clínicas e centros médicos", href: "#" },
+  { label: "Operadoras de saúde suplementar", href: "#" },
+  { label: "Cooperativas médicas", href: "#" },
+  { label: "Laboratórios e diagnóstico por imagem", href: "#" },
+  { label: "Indústria farmacêutica e dispositivos médicos", href: "#" },
+  { label: "Telemedicina e healthtechs", href: "#" },
+  { label: "Profissionais autônomos e sociedades unipessoais", href: "#" },
 ];
+
 
 const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }[] = [
   {
@@ -170,45 +171,47 @@ function DireitoMedicoPage() {
 
       {/* VISÃO GERAL */}
       <section className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-4">
-            <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
-          </div>
-          <div className="md:col-span-8">
-            <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
-              A prática médica exige advocacia que compreenda ciência, ética e regulação —
-              e que traduza tudo isso em decisão segura.
+        <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
+        <div className="mt-8 max-w-[900px]">
+          <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
+            A prática médica exige advocacia que compreenda ciência, ética e regulação —
+            e que traduza tudo isso em decisão segura.
+          </p>
+          <div
+            aria-hidden="true"
+            className="mt-8 h-[2px] w-16"
+            style={{ backgroundColor: "var(--gold)" }}
+          />
+          <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
+            <p>
+              Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
+              a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
+              contencioso individual à estruturação de grandes operadoras, o método é o
+              mesmo: leitura profunda do caso, definição clara da estratégia e execução
+              previsível.
             </p>
-            <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
-              <p>
-                Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
-                a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
-                contencioso individual à estruturação de grandes operadoras, o método é o
-                mesmo: leitura profunda do caso, definição clara da estratégia e execução
-                previsível.
-              </p>
-              <p>
-                A equipe integra sócios com atuação consolidada em responsabilidade civil,
-                regulação sanitária, direito societário e contratos empresariais — condição
-                necessária para tratar a saúde como o setor multidisciplinar que ela é.
-              </p>
-            </div>
-
-            <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
-              {SERVICOS.map((s) => (
-                <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-px w-4 shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
+            <p>
+              A equipe integra sócios com atuação consolidada em responsabilidade civil,
+              regulação sanitária, direito societário e contratos empresariais — condição
+              necessária para tratar a saúde como o setor multidisciplinar que ela é.
+            </p>
           </div>
+
+          <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            {SERVICOS.map((s) => (
+              <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
+                <span
+                  aria-hidden="true"
+                  className="mt-2 h-px w-4 shrink-0"
+                  style={{ backgroundColor: "var(--gold)" }}
+                />
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+
 
       {/* PRINCIPAIS CONTATOS */}
       <section className="border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] bg-[color-mix(in_oklch,var(--sand)_60%,white)]">
@@ -223,7 +226,7 @@ function DireitoMedicoPage() {
             <BrandLink href="/socios">Conhecer o time completo</BrandLink>
           </div>
 
-          <ul className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {CONTATOS.map((c) => (
               <li key={c.nome} className="group flex flex-col">
                 <Link to={c.href as any} className="block overflow-hidden bg-[var(--ink)]">
@@ -236,17 +239,17 @@ function DireitoMedicoPage() {
                     />
                   </div>
                 </Link>
-                <div className="mt-5">
-                  <p className="font-display text-lg font-medium leading-tight text-[var(--ink-2)]">
+                <div className="mt-4">
+                  <p className="font-display text-[15px] font-medium leading-tight text-[var(--ink-2)]">
                     {c.nome}
                   </p>
-                  <p className="mt-1 text-[13px] leading-snug text-[var(--ink)]/70">{c.cargo}</p>
-                  <div className="mt-4 flex items-center gap-4 text-[13px] text-[var(--ink)]/80">
+                  <p className="mt-1 text-[12px] leading-snug text-[var(--ink)]/70">{c.cargo}</p>
+                  <div className="mt-3 flex items-center gap-3 text-[12px] text-[var(--ink)]/80">
                     <a
                       href={`mailto:${c.email}`}
                       className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--gold)]"
                     >
-                      <Mail size={14} strokeWidth={1.5} /> E-mail
+                      <Mail size={13} strokeWidth={1.5} /> E-mail
                     </a>
                     <a
                       href={c.linkedin}
@@ -254,13 +257,14 @@ function DireitoMedicoPage() {
                       rel="noreferrer noopener"
                       className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--gold)]"
                     >
-                      <Linkedin size={14} strokeWidth={1.5} /> LinkedIn
+                      <Linkedin size={13} strokeWidth={1.5} /> LinkedIn
                     </a>
                   </div>
                 </div>
               </li>
             ))}
           </ul>
+
         </div>
       </section>
 
@@ -292,15 +296,16 @@ function DireitoMedicoPage() {
             <h3 className="mt-6 font-display text-2xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-3xl">
               Segmentos com atuação recorrente.
             </h3>
-            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            <ul className="mt-8 divide-y divide-[color-mix(in_oklch,var(--ink)_10%,transparent)]">
               {SETORES.map((s) => (
-                <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-px w-4 shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <span>{s}</span>
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    className="group flex items-center justify-between py-4 text-[15px] text-[var(--ink)] transition-colors hover:text-[var(--gold)]"
+                  >
+                    <span>{s.label}</span>
+                    <BrandArrow />
+                  </a>
                 </li>
               ))}
             </ul>
@@ -321,32 +326,32 @@ function DireitoMedicoPage() {
             <BrandLink href="/inteligencia">Ver todas as publicações</BrandLink>
           </div>
 
-          <ul className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <ul className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {ARTIGOS.map((a) => (
               <li key={a.titulo}>
-                <a href={a.href} className="group flex h-full flex-col">
-                  <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-[var(--ink)]/60">
-                    <span style={{ color: "var(--gold)" }}>{a.categoria}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{a.data}</span>
+                <a
+                  href={a.href}
+                  className="group flex h-full flex-col justify-between gap-8 border border-[var(--ink)]/12 bg-[var(--sand)]/40 p-6 transition-colors hover:border-[var(--gold)] hover:bg-[var(--sand)]"
+                >
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]">
+                      {a.categoria} · {a.data}
+                    </p>
+                    <p className="mt-5 font-display text-[18px] leading-snug text-[var(--ink)] md:text-[20px]">
+                      {a.titulo}
+                    </p>
                   </div>
-                  <span
-                    aria-hidden="true"
-                    className="mt-4 block h-px w-8"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <h3 className="mt-5 font-display text-lg font-medium leading-snug text-[var(--ink-2)] transition-colors group-hover:text-[var(--gold)] md:text-xl">
-                    {a.titulo}
-                  </h3>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[13px] text-[var(--ink)]/80">
-                    Ler publicação <BrandArrow />
-                  </span>
+                  <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.24em] text-[var(--ink-2)]">
+                    Ler publicação
+                    <BrandArrow />
+                  </div>
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
     </article>
   );
 }
