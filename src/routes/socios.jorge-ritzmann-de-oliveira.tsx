@@ -181,8 +181,33 @@ function JorgePage() {
               </p>
             </div>
 
-            <div className="mt-10">
-              <BrandLink href="/contato">Falar com o gabinete do Jorge</BrandLink>
+            <div className="mt-12">
+              <SectionEyebrow>Artigos relacionados</SectionEyebrow>
+              <ul className="mt-8 divide-y divide-[var(--ink)]/10 border-t border-[var(--ink)]/10">
+                {ARTIGOS.map((a) => (
+                  <li key={a.titulo}>
+                    <a
+                      href={a.href}
+                      className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-[var(--ink-2)]"
+                    >
+                      <div className="min-w-0">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--ink)]/55">
+                          {a.categoria} · {a.data}
+                        </p>
+                        <p className="mt-2 font-display text-[17px] leading-snug text-[var(--ink)] md:text-[19px]">
+                          {a.titulo}
+                        </p>
+                      </div>
+                      <BrandArrow className="mt-2 shrink-0" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <BrandLink href={`mailto:jorge@oliveiraritzmann.com.br`}>
+                  Fale diretamente com o Jorge
+                </BrandLink>
+              </div>
             </div>
           </div>
 
