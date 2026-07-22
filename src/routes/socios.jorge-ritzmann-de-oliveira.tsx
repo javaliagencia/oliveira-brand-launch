@@ -164,9 +164,28 @@ function JorgePage() {
       <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] pt-8 pb-14 md:pt-10 md:pb-20">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24"
-          style={{ backgroundColor: "var(--gold)" }}
-        />
+          className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-24 flex-col items-center"
+        >
+          <span
+            className="block h-px w-24"
+            style={{ backgroundColor: "var(--gold)" }}
+          />
+          <svg
+            viewBox="0 0 48 24"
+            className="block h-3 w-12"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 0 A 22 22 0 0 0 46 0"
+              stroke="var(--gold)"
+              strokeWidth="1.5"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
         <div className="mx-auto max-w-[1200px] px-6">
           <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--gold)]">
             Em uma frase
