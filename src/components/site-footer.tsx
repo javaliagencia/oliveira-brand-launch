@@ -101,6 +101,7 @@ const ATUACAO_LINKS = [
 ];
 
 const AREAS_LINKS = [
+  { label: "Direito Médico", href: "/areas/direito-medico" },
   { label: "Tributário", href: "/areas/tributario" },
   { label: "Societário", href: "/areas/societario" },
   { label: "Trabalhista", href: "/areas/trabalhista" },
