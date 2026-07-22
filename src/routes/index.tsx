@@ -689,7 +689,7 @@ function PublicacoesFold() {
         {/* Cabeçalho */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
-            <SectionEyebrow tone="ink">Em ponto</SectionEyebrow>
+            <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
             <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
               Informação que{" "}
               <em className="font-normal italic" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
