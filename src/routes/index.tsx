@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import imgCorporativos from "@/assets/clientes-corporativos.jpg.asset.json";
-import imgEmpresarial from "@/assets/empresarial-estrategico.png.asset.json";
+import imgEmpresarial from "@/assets/empresarial-estrategico.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
