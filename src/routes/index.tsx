@@ -317,7 +317,7 @@ function CompetenciaCard({
         <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
           {data.eyebrow}
         </span>
-        <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+        <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em]">
           {data.titulo}
         </h3>
 
