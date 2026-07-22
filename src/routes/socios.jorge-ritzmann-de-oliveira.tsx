@@ -266,7 +266,7 @@ function JorgePage() {
                         </p>
                       </div>
                       <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.24em] text-[var(--ink-2)]">
-                        Ler publicação
+                        Ler
                         <BrandArrow />
                       </div>
                     </a>
