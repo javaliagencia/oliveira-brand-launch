@@ -170,7 +170,8 @@ function DireitoMedicoPage() {
       </section>
 
       {/* VISÃO GERAL */}
-      <section className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-[1360px] px-6 py-12 md:py-16">
+
         <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
         <div className="mt-8 max-w-[900px]">
           <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
@@ -215,16 +216,14 @@ function DireitoMedicoPage() {
 
       {/* PRINCIPAIS CONTATOS */}
       <section className="border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] bg-[color-mix(in_oklch,var(--sand)_60%,white)]">
-        <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <SectionEyebrow tone="ink-2">Principais contatos</SectionEyebrow>
-              <h2 className="mt-6 max-w-2xl font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
-                Quem conduz a prática de Direito Médico.
-              </h2>
-            </div>
-            <BrandLink href="/socios">Conhecer o time completo</BrandLink>
+        <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-16">
+          <div>
+            <SectionEyebrow tone="ink-2">Principais contatos</SectionEyebrow>
+            <h2 className="mt-6 max-w-2xl font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
+              Quem conduz a prática de Direito Médico.
+            </h2>
           </div>
+
 
           <ul className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {CONTATOS.map((c) => (
@@ -260,7 +259,13 @@ function DireitoMedicoPage() {
                       <Linkedin size={13} strokeWidth={1.5} /> LinkedIn
                     </a>
                   </div>
+                  {c.nome === "Jorge Ritzmann de Oliveira" && (
+                    <div className="mt-5">
+                      <BrandLink href="/socios">Conhecer o time completo</BrandLink>
+                    </div>
+                  )}
                 </div>
+
               </li>
             ))}
           </ul>
