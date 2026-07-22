@@ -16,6 +16,7 @@ import socioJuliano from "@/assets/socios/juliano-schmitt.png.asset.json";
 import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
+import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
 
 
 
@@ -379,13 +380,8 @@ function ManifestoFold() {
     return () => io.disconnect();
   }, []);
 
-  // Shapes match the OR monogram: full circle + two right-half discs, staggered.
-  // Each element slides in from the left with a small delay.
-  const gold = "#8d8368";
-  const baseTransition =
-    "transform 1400ms cubic-bezier(0.22, 1, 0.36, 1), opacity 1200ms ease-out";
-  const off = "translateX(-28px)";
-  const on = "translateX(0)";
+  const symbolTransition =
+    "clip-path 1800ms cubic-bezier(0.22, 1, 0.36, 1), transform 1800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 1100ms ease-out, filter 1600ms ease-out";
 
   return (
     <section
@@ -406,54 +402,28 @@ function ManifestoFold() {
           zIndex: 3,
         }}
       >
-        <svg
-          viewBox="0 0 520 360"
-          width="100%"
-          height="auto"
-          style={{ display: "block", overflow: "visible" }}
+        <div
+          style={{
+            clipPath: visible
+              ? "inset(-2% -2% -2% -2%)"
+              : "inset(-2% 104% -2% -2%)",
+            filter: visible ? "blur(0)" : "blur(0.8px)",
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translate3d(0, 0, 0)" : "translate3d(-18px, 0, 0)",
+            transition: symbolTransition,
+            willChange: "clip-path, transform, opacity, filter",
+          }}
         >
-          {/* Full circle */}
-          <circle
-            cx="150"
-            cy="180"
-            r="150"
-            fill={gold}
-            style={{
-              transform: visible ? on : off,
-              opacity: visible ? 1 : 0,
-              transition: baseTransition,
-              transitionDelay: "0ms",
-              transformBox: "fill-box",
-              transformOrigin: "center",
-            }}
+          <img
+            src={simboloDourado.url}
+            alt=""
+            width={969}
+            height={600}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full select-none"
           />
-          {/* Right half-disc 1 */}
-          <path
-            d="M 310 30 A 150 150 0 0 1 310 330 Z"
-            fill={gold}
-            style={{
-              transform: visible ? on : off,
-              opacity: visible ? 1 : 0,
-              transition: baseTransition,
-              transitionDelay: "160ms",
-              transformBox: "fill-box",
-              transformOrigin: "center",
-            }}
-          />
-          {/* Right half-disc 2 */}
-          <path
-            d="M 410 30 A 150 150 0 0 1 410 330 Z"
-            fill={gold}
-            style={{
-              transform: visible ? on : off,
-              opacity: visible ? 1 : 0,
-              transition: baseTransition,
-              transitionDelay: "320ms",
-              transformBox: "fill-box",
-              transformOrigin: "center",
-            }}
-          />
-        </svg>
+        </div>
       </div>
 
 
