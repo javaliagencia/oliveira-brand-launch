@@ -173,10 +173,10 @@ function JorgePage() {
           </p>
           <div
             aria-hidden="true"
-            className="mt-4 h-px w-16"
+            className="mt-3 h-px w-16"
             style={{ backgroundColor: "var(--gold)" }}
           />
-          <blockquote className="mt-6 font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-[1.2] tracking-[-0.015em] text-[var(--gold)]">
+          <blockquote className="mt-4 font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-[1.2] tracking-[-0.015em] text-[var(--gold)]">
             <span
               aria-hidden="true"
               className="mr-2 font-display text-[1.1em] leading-none text-[var(--gold)]/60"
