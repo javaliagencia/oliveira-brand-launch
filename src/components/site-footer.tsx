@@ -387,7 +387,7 @@ export function SiteFooter() {
             Método. Previsibilidade. Resultado.
           </p>
           <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-sand/45">
-            © {year} Oliveira Ritzmann Advogados
+            © 2026 Oliveira Ritzmann Advogados
           </p>
         </div>
       </div>
