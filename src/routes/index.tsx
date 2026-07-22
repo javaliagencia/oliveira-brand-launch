@@ -863,16 +863,16 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS: { nome: string; foto: string | null; objectPosition?: string }[] = [
-  { nome: "Jorge Ritzmann de Oliveira", foto: socioJorge.url },
-  { nome: "Juliano Schmitt", foto: socioJuliano.url },
-  { nome: "Tatiane Bittencourt", foto: socioTatiane.url },
-  { nome: "Cintia Carla Senem", foto: socioCintia.url },
-  { nome: "Carolina Schmidt", foto: socioCarolina.url, objectPosition: "50% 20%" },
-  { nome: "Sonia Angulski", foto: socioSonia.url },
-  { nome: "Mariana Hillesheim", foto: socioMariana.url },
-  { nome: "Bruna Schmitt", foto: socioBruna.url },
-  { nome: "Guilherme Otte", foto: socioGuilherme.url },
+const SOCIOS: { nome: string; cargo: string; foto: string | null; href?: string; objectPosition?: string }[] = [
+  { nome: "Jorge Ritzmann de Oliveira", cargo: "Sócio-fundador", foto: socioJorge.url, href: "/socios/jorge-ritzmann-de-oliveira" },
+  { nome: "Juliano Schmitt", cargo: "Sócio", foto: socioJuliano.url },
+  { nome: "Tatiane Bittencourt", cargo: "Sócia", foto: socioTatiane.url },
+  { nome: "Cintia Carla Senem", cargo: "Sócia", foto: socioCintia.url },
+  { nome: "Carolina Schmidt", cargo: "Sócia", foto: socioCarolina.url, objectPosition: "50% 20%" },
+  { nome: "Sonia Angulski", cargo: "Sócia", foto: socioSonia.url },
+  { nome: "Mariana Hillesheim", cargo: "Sócia", foto: socioMariana.url },
+  { nome: "Bruna Schmitt", cargo: "Sócia", foto: socioBruna.url },
+  { nome: "Guilherme Otte", cargo: "Sócio", foto: socioGuilherme.url },
 ];
 
 function SociosCarousel() {
@@ -923,7 +923,7 @@ function SociosCarousel() {
           {LOOP.map((socio, i) => (
             <a
               key={`${socio.nome}-${i}`}
-              href="/socios"
+              href={socio.href ?? "/socios"}
               className="relative aspect-[3/4] shrink-0 overflow-hidden group"
               style={{
                 width: `${100 / LOOP.length}%`,
@@ -940,9 +940,9 @@ function SociosCarousel() {
                   loading="lazy"
                 />
               ) : null}
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-center gap-2 p-5">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end gap-1.5 p-5 text-center">
                 <span
-                  className="font-display text-[15px] leading-tight whitespace-nowrap text-center inline-flex items-center gap-2"
+                  className="font-display text-[15px] leading-tight whitespace-nowrap inline-flex items-center gap-2"
                   style={{
                     color: "var(--sand)",
                     textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
@@ -967,6 +967,15 @@ function SociosCarousel() {
                     <path d="M7 17L17 7" strokeLinecap="square" />
                     <path d="M9 7h8v8" strokeLinecap="square" />
                   </svg>
+                </span>
+                <span
+                  className="text-[10.5px] uppercase tracking-[0.22em]"
+                  style={{
+                    color: "var(--gold)",
+                    textShadow: "0 1px 10px rgba(8,38,36,0.9)",
+                  }}
+                >
+                  {socio.cargo}
                 </span>
               </div>
             </a>
