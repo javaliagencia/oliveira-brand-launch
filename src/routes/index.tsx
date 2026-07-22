@@ -6,7 +6,7 @@ import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
-import { BrandLink } from "@/components/brand-ui";
+import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
