@@ -14,6 +14,7 @@
  * Endereços e telefones ficam ⟨PENDENTE⟩ visíveis — a definir com o
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
+import { Linkedin, Instagram } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 
 
