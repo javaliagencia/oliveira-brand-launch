@@ -6,7 +6,7 @@ import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
-import { BrandLink } from "@/components/brand-ui";
+import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
@@ -743,10 +743,7 @@ function PublicacoesFold() {
                   style={{ color: "var(--gold)" }}
                 >
                   Ler publicação
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.75">
-                    <path d="M7 17L17 7" strokeLinecap="square" />
-                    <path d="M9 7h8v8" strokeLinecap="square" />
-                  </svg>
+                  <BrandArrow size={14} />
                 </span>
               </div>
             </div>
@@ -786,10 +783,7 @@ function PublicacoesFold() {
                       style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
                     >
                       Ler
-                      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.75">
-                        <path d="M7 17L17 7" strokeLinecap="square" />
-                        <path d="M9 7h8v8" strokeLinecap="square" />
-                      </svg>
+                      <BrandArrow size={12} />
                     </span>
                   </div>
                 </div>
