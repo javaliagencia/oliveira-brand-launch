@@ -320,7 +320,7 @@ function DireitoMedicoPage() {
 
       {/* PUBLICAÇÕES RELACIONADAS */}
       <section className="border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] bg-[color-mix(in_oklch,var(--sand)_60%,white)]">
-        <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-16">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <SectionEyebrow tone="ink-2">Publicações relacionadas</SectionEyebrow>
