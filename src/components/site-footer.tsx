@@ -270,8 +270,35 @@ export function SiteFooter() {
           <LinkColumn title="Áreas do Direito" items={AREAS_LINKS} />
           <LinkColumn title="Segmentos" items={SEGMENTOS_LINKS} />
           <LinkColumn title="Publicações" items={PUBLICACOES_LINKS} />
-          <LinkColumn title="Oliveira Ritzmann" items={[NAV_LINKS[0], NAV_LINKS[1]]} />
-          <LinkColumn title="Contato" items={[NAV_LINKS[3]]} />
+          <LinkColumn title="O escritório" items={ESCRITORIO_LINKS} />
+          <div>
+            <p className="eyebrow">Contato</p>
+            <span
+              aria-hidden="true"
+              className="mt-3 block h-px w-8"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {CONTATO_LINKS.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-[13px] leading-relaxed text-sand/70">
+              <a
+                href={`tel:+5547${TELEFONE_INSTITUCIONAL.replace(/\D/g, "").slice(2)}`}
+                className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+              >
+                {TELEFONE_INSTITUCIONAL}
+              </a>
+            </p>
+          </div>
         </section>
 
         {/* Filete separador */}
