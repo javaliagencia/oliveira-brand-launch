@@ -161,76 +161,114 @@ function JorgePage() {
       </section>
 
       {/* PULL QUOTE — dourado, uma sentença */}
-      <section className="border-y border-[var(--gold)]/25 bg-[var(--ink-2)] py-16 md:py-24">
-        <div className="mx-auto max-w-[1100px] px-6">
-          <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--gold)]">
+      <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] py-28 md:py-40">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24"
+          style={{ backgroundColor: "var(--gold)" }}
+        />
+        <div className="mx-auto max-w-[1200px] px-6">
+          <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--gold)]">
             Em uma frase
           </p>
-          <blockquote className="mt-6 font-display text-[clamp(1.6rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-[var(--gold)]">
-            “Jorge é o estrategista a quem lideranças recorrem quando a decisão precisa
-            de método — e coragem para sustentá-lo até o resultado.”
+          <div
+            aria-hidden="true"
+            className="mt-6 h-px w-16"
+            style={{ backgroundColor: "var(--gold)" }}
+          />
+          <blockquote className="mt-10 font-display text-[clamp(2rem,4.6vw,3.75rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--gold)]">
+            <span
+              aria-hidden="true"
+              className="mr-2 font-display text-[1.1em] leading-none text-[var(--gold)]/60"
+            >
+              “
+            </span>
+            Jorge é o estrategista a quem lideranças recorrem quando a decisão
+            precisa de método — e coragem para sustentá-lo até o resultado.
+            <span
+              aria-hidden="true"
+              className="ml-1 font-display text-[1.1em] leading-none text-[var(--gold)]/60"
+            >
+              ”
+            </span>
           </blockquote>
         </div>
       </section>
 
       {/* BIO + ÁREAS DE FOCO */}
-      <section className="py-20 md:py-28">
+      <section className="py-24 md:py-36">
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 md:grid-cols-[1.4fr_1fr] md:gap-20">
           {/* Bio */}
           <div>
             <SectionEyebrow>Biografia</SectionEyebrow>
-            <div className="mt-8 space-y-6 font-sans text-[16px] leading-[1.75] text-[var(--ink)]/85 md:text-[17px]">
-              <p>
-                Sócio-fundador do Oliveira Ritzmann Advogados, Jorge conduz há três
-                décadas operações que exigem escala industrial de execução e, ao mesmo
-                tempo, a profundidade estratégica que separa uma decisão bem tomada de
-                um passivo evitável.
+            <h2 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink)]">
+              Três décadas conduzindo decisões que exigem método e coragem em
+              igual medida.
+            </h2>
+            <div
+              aria-hidden="true"
+              className="mt-8 h-px w-16"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <div className="mt-10 space-y-6 font-sans text-[17px] leading-[1.8] text-[var(--ink)]/85 md:text-[18px]">
+              <p className="text-[19px] leading-[1.7] text-[var(--ink)] md:text-[21px]">
+                Sócio-fundador do Oliveira Ritzmann Advogados, Jorge conduz há
+                três décadas operações que exigem escala industrial de execução
+                e, ao mesmo tempo, a profundidade estratégica que separa uma
+                decisão bem tomada de um passivo evitável.
               </p>
               <p>
-                Sua atuação combina o rigor do contencioso de volume — carteiras com
-                milhares de processos ativos — à mesa das decisões empresariais mais
-                sensíveis: reestruturações, disputas societárias, recuperação de
-                créditos complexos e a arquitetura jurídica de cooperativas de crédito
-                em todo o país.
+                Sua atuação combina o rigor do contencioso de volume — carteiras
+                com milhares de processos ativos — à mesa das decisões
+                empresariais mais sensíveis: reestruturações, disputas
+                societárias, recuperação de créditos complexos e a arquitetura
+                jurídica de cooperativas de crédito em todo o país.
               </p>
               <p>
                 É reconhecido pela combinação rara entre método operacional
-                mensurável e leitura empresarial de longo prazo. Palestrante frequente
-                em fóruns de cooperativismo e advocacia contenciosa, publica
-                regularmente sobre governança, gestão de contencioso e estratégia
-                jurídica corporativa.
+                mensurável e leitura empresarial de longo prazo. Palestrante
+                frequente em fóruns de cooperativismo e advocacia contenciosa,
+                publica regularmente sobre governança, gestão de contencioso e
+                estratégia jurídica corporativa.
               </p>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-20">
               <SectionEyebrow>Artigos relacionados</SectionEyebrow>
-              <ul className="mt-8 divide-y divide-[var(--ink)]/10 border-t border-[var(--ink)]/10">
+              <h3 className="mt-8 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink)]">
+                Leitura recente de Jorge
+              </h3>
+              <ul className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
                 {ARTIGOS.map((a) => (
                   <li key={a.titulo}>
                     <a
                       href={a.href}
-                      className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-[var(--ink-2)]"
+                      className="group flex h-full flex-col justify-between gap-8 border border-[var(--ink)]/12 bg-[var(--sand)]/40 p-6 transition-colors hover:border-[var(--gold)] hover:bg-[var(--sand)]"
                     >
-                      <div className="min-w-0">
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--ink)]/55">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]">
                           {a.categoria} · {a.data}
                         </p>
-                        <p className="mt-2 font-display text-[17px] leading-snug text-[var(--ink)] md:text-[19px]">
+                        <p className="mt-5 font-display text-[18px] leading-snug text-[var(--ink)] md:text-[20px]">
                           {a.titulo}
                         </p>
                       </div>
-                      <BrandArrow className="mt-2 shrink-0" />
+                      <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.24em] text-[var(--ink-2)]">
+                        Ler publicação
+                        <BrandArrow />
+                      </div>
                     </a>
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="mt-10">
                 <BrandLink href={`mailto:jorge@oliveiraritzmann.com.br`}>
                   Fale diretamente com o Jorge
                 </BrandLink>
               </div>
             </div>
           </div>
+
 
           {/* Áreas de foco + credenciais */}
           <aside className="md:pl-10 md:border-l md:border-[var(--gold)]/25">
