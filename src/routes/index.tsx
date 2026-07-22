@@ -118,9 +118,9 @@ function HeroFold() {
         <p className="eyebrow text-[var(--gold)]">
           Método. Previsibilidade. Resultado.
         </p>
-        <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-medium leading-[1.02] tracking-[-0.015em] text-sand">
+        <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-extralight leading-[1.02] tracking-[-0.03em] text-sand">
           Advocacia com{" "}
-          <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
+          <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
             profundidade
           </span>{" "}
           em qualquer escala.
@@ -218,9 +218,9 @@ function CompetenciasFold() {
       >
         <div className="mx-auto max-w-[1360px] px-6 pt-14 pb-10 md:pt-20 md:pb-14">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
-          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
+          <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-light leading-[1.05] tracking-[-0.025em]">
             Volume e estratégia, conduzidos com o{" "}
-            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
               mesmo método.
             </span>
           </h2>
@@ -317,7 +317,7 @@ function CompetenciaCard({
         <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
           {data.eyebrow}
         </span>
-        <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
+        <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-light leading-[1.1] tracking-[-0.02em]">
           {data.titulo}
         </h3>
 
@@ -403,8 +403,8 @@ function ManifestoFold() {
       >
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 pb-20 pt-16 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-20">
           <div className="md:col-span-6">
-            <h2 className="font-display text-[clamp(1.5rem,2.6vw,2.35rem)] font-normal leading-[1.28] tracking-[-0.005em]">
-              <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
+            <h2 className="font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-extralight leading-[1.24] tracking-[-0.02em]">
+              <span style={{ color: "color-mix(in oklch, var(--ink) 42%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
               <span
@@ -429,7 +429,7 @@ function ManifestoFold() {
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
               <SectionEyebrow>Quem conduz o método</SectionEyebrow>
-              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-[-0.01em]" style={{ color: "var(--sand)" }}>
+              <h3 className="mt-8 font-display text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-[1.15] tracking-[-0.025em]" style={{ color: "var(--sand)" }}>
                 Sócio responsável na ponta de cada relação, do primeiro contato à decisão.
               </h3>
             </div>
@@ -694,9 +694,9 @@ function PublicacoesFold() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
             <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
-            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
+            <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em]" style={{ color: "var(--ink)" }}>
               O mesmo método que conduz a operação,{" "}
-              <span className="font-display font-medium" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
+              <span className="font-display font-semibold" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
                 aplicado ao que está mudando no Direito.
               </span>
             </h2>
@@ -732,7 +732,7 @@ function PublicacoesFold() {
               <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
                 {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
               </span>
-              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-medium leading-[1.15] tracking-[-0.01em] text-sand">
+              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-light leading-[1.15] tracking-[-0.02em] text-sand">
                 {PUBLICACOES[0].titulo}
               </h3>
               <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
@@ -774,7 +774,7 @@ function PublicacoesFold() {
                   <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
                     {p.data} — {p.categoria}
                   </span>
-                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium leading-[1.2] tracking-[-0.005em]" style={{ color: "var(--ink)" }}>
+                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
                     {p.titulo}
                   </h3>
                   <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{p.resumo}</p>
@@ -845,9 +845,9 @@ function CarreiraFold() {
 
 
           <SectionEyebrow>Carreiras</SectionEyebrow>
-          <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
+          <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-light leading-[1.08] tracking-[-0.03em] text-sand">
             Onde a advocacia{" "}
-            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
               se aprende com método.
             </span>
           </h2>
