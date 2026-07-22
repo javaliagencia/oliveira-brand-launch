@@ -694,9 +694,9 @@ function PublicacoesFold() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
             <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
-            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
+            <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em]" style={{ color: "var(--ink)" }}>
               O mesmo método que conduz a operação,{" "}
-              <span className="font-display font-medium" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
+              <span className="font-display font-semibold" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
                 aplicado ao que está mudando no Direito.
               </span>
             </h2>
