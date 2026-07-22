@@ -196,7 +196,7 @@ function JorgePage() {
       </section>
 
       {/* BIO + ÁREAS DE FOCO */}
-      <section className="pt-12 pb-24 md:pt-16 md:pb-36">
+      <section className="pt-12 pb-12 md:pt-16 md:pb-16">
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-16 px-6 md:grid-cols-[1.4fr_1fr] md:gap-20">
           {/* Bio */}
           <div>
