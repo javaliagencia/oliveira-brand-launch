@@ -273,11 +273,19 @@ function JorgePage() {
           {/* Áreas de foco + credenciais */}
           <aside className="md:pl-10 md:border-l md:border-[var(--gold)]/25">
             <SectionEyebrow>Áreas de foco</SectionEyebrow>
+            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
+              Onde Jorge atua
+            </h2>
+            <div
+              aria-hidden="true"
+              className="mt-5 h-[2px] w-16"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
             <ul className="mt-8 flex flex-col gap-3">
               {FOCUS.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 font-display text-[15px] leading-snug text-[var(--ink)]"
+                  className="flex items-start gap-3 font-display text-[16px] leading-snug text-[var(--ink)]"
                 >
                   <span
                     aria-hidden="true"
@@ -289,8 +297,16 @@ function JorgePage() {
               ))}
             </ul>
 
-            <div className="mt-12">
+            <div className="mt-14">
               <SectionEyebrow>Credenciais</SectionEyebrow>
+              <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-[var(--ink-2)]">
+                Formação e trajetória
+              </h2>
+              <div
+                aria-hidden="true"
+                className="mt-5 h-[2px] w-16"
+                style={{ backgroundColor: "var(--gold)" }}
+              />
               <dl className="mt-8 grid grid-cols-1 gap-x-6 gap-y-5">
                 {CREDENTIALS.map((c) => (
                   <div key={c.label} className="flex flex-col gap-1">
