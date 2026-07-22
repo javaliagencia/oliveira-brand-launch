@@ -496,47 +496,64 @@ function PublicacoesFold() {
       id="publicacoes"
       aria-label="Publicações — Em ponto"
       className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
+      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Animação de fundo — manchas verde/bege em movimento lento */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+      {/* Animação de fundo — manchas orgânicas em tons de bege/dourado
+          se movendo lentamente, inspiradas na referência Simmons. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className="absolute -top-1/3 -left-1/4 h-[70vw] w-[70vw] rounded-full opacity-40 mix-blend-screen"
+          className="absolute -top-[20%] -left-[15%] h-[80vw] w-[80vw] rounded-full blur-3xl"
           style={{
             background:
               "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 55%, transparent), transparent 70%)",
-            animation: "publicacoes-drift-a 22s ease-in-out infinite alternate",
+            opacity: 0.55,
+            animation: "publicacoes-drift-a 26s ease-in-out infinite alternate",
           }}
         />
         <div
-          className="absolute top-1/4 -right-1/4 h-[60vw] w-[60vw] rounded-full opacity-25 mix-blend-screen"
+          className="absolute top-[10%] -right-[20%] h-[70vw] w-[70vw] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--sand) 70%, transparent), transparent 70%)",
-            animation: "publicacoes-drift-b 28s ease-in-out infinite alternate",
+              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 35%, transparent), transparent 70%)",
+            opacity: 0.5,
+            animation: "publicacoes-drift-b 32s ease-in-out infinite alternate",
           }}
         />
         <div
-          className="absolute -bottom-1/4 left-1/3 h-[55vw] w-[55vw] rounded-full opacity-30 mix-blend-screen"
+          className="absolute -bottom-[25%] left-[10%] h-[75vw] w-[75vw] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 40%, transparent), transparent 70%)",
-            animation: "publicacoes-drift-c 34s ease-in-out infinite alternate",
+              "radial-gradient(closest-side, color-mix(in oklch, var(--ink) 30%, transparent), transparent 70%)",
+            opacity: 0.35,
+            animation: "publicacoes-drift-c 38s ease-in-out infinite alternate",
+          }}
+        />
+        <div
+          className="absolute top-[35%] left-[30%] h-[50vw] w-[50vw] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 45%, white), transparent 70%)",
+            opacity: 0.35,
+            animation: "publicacoes-drift-d 44s ease-in-out infinite alternate",
           }}
         />
       </div>
       <style>{`
         @keyframes publicacoes-drift-a {
-          0%   { transform: translate3d(0,0,0) scale(1); }
-          100% { transform: translate3d(6vw, 4vw, 0) scale(1.08); }
+          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+          100% { transform: translate3d(10vw, 6vw, 0) scale(1.15) rotate(20deg); }
         }
         @keyframes publicacoes-drift-b {
-          0%   { transform: translate3d(0,0,0) scale(1); }
-          100% { transform: translate3d(-5vw, 3vw, 0) scale(1.1); }
+          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+          100% { transform: translate3d(-8vw, 5vw, 0) scale(1.2) rotate(-25deg); }
         }
         @keyframes publicacoes-drift-c {
-          0%   { transform: translate3d(0,0,0) scale(1); }
-          100% { transform: translate3d(3vw, -4vw, 0) scale(1.06); }
+          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+          100% { transform: translate3d(6vw, -8vw, 0) scale(1.1) rotate(15deg); }
+        }
+        @keyframes publicacoes-drift-d {
+          0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+          100% { transform: translate3d(-6vw, -4vw, 0) scale(1.25) rotate(-15deg); }
         }
       `}</style>
 
@@ -544,20 +561,18 @@ function PublicacoesFold() {
         {/* Cabeçalho */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
-            <SectionEyebrow>Em ponto</SectionEyebrow>
-            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand">
+            <SectionEyebrow tone="ink">Em ponto</SectionEyebrow>
+            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]" style={{ color: "var(--ink)" }}>
               Informação que{" "}
-              <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+              <em className="font-normal italic" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
                 desperta.
               </em>{" "}
-              <span style={{ color: "color-mix(in oklch, var(--sand) 75%, transparent)" }}>
+              <span style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
                 De segunda a sexta.
               </span>
             </h2>
           </div>
-          <BrandLink href="/publicacoes" invert>
-            Ver todas as publicações
-          </BrandLink>
+          <BrandLink href="/publicacoes">Ver todas as publicações</BrandLink>
         </div>
 
         {/* Grade — 1 destaque + 3 cards */}
@@ -567,7 +582,7 @@ function PublicacoesFold() {
             href={PUBLICACOES[0].href}
             className="group relative col-span-1 block aspect-[16/10] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[340px]"
             style={{
-              border: "1px solid color-mix(in oklch, var(--gold) 45%, transparent)",
+              border: "1px solid color-mix(in oklch, var(--ink) 30%, transparent)",
               borderRadius: 4,
             }}
           >
@@ -581,7 +596,7 @@ function PublicacoesFold() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(20,10,5,0.15) 0%, rgba(20,10,5,0.55) 55%, rgba(20,10,5,0.9) 100%)",
+                  "linear-gradient(180deg, rgba(8,38,36,0.05) 0%, rgba(8,38,36,0.5) 55%, rgba(8,38,36,0.9) 100%)",
               }}
             />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
@@ -617,8 +632,8 @@ function PublicacoesFold() {
                 href={p.href}
                 className="group flex flex-col overflow-hidden"
                 style={{
-                  backgroundColor: "color-mix(in oklch, var(--ink) 60%, transparent)",
-                  border: "1px solid color-mix(in oklch, var(--gold) 35%, transparent)",
+                  backgroundColor: "color-mix(in oklch, white 65%, var(--sand))",
+                  border: "1px solid color-mix(in oklch, var(--ink) 20%, transparent)",
                   borderRadius: 4,
                 }}
               >
@@ -630,17 +645,17 @@ function PublicacoesFold() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
-                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
+                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
                     {p.data} — {p.categoria}
                   </span>
-                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium leading-[1.2] tracking-[-0.005em] text-sand">
+                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium leading-[1.2] tracking-[-0.005em]" style={{ color: "var(--ink)" }}>
                     {p.titulo}
                   </h3>
-                  <p className="text-[14px] leading-[1.6] text-sand/80">{p.resumo}</p>
+                  <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{p.resumo}</p>
                   <div className="mt-auto pt-3">
                     <span
                       className="eyebrow inline-flex items-center gap-2"
-                      style={{ color: "var(--gold)" }}
+                      style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
                     >
                       Ler
                       <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.75">
