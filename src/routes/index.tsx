@@ -456,8 +456,12 @@ function ParticleField({
 }: {
   count?: number;
   seed?: number;
-  /** Centros de nuvem em %. weight = fração das partículas; radius em % da largura/altura da caixa. */
-  clusters?: { x: number; y: number; weight: number; radius: number }[];
+  /** Centros de nuvem em %. weight = fração das partículas; radius em % da caixa;
+   *  angle em graus (direção da onda); dur em segundos (período da onda). */
+  clusters?: {
+    x: number; y: number; weight: number; radius: number;
+    angle?: number; dur?: number;
+  }[];
   className?: string;
 }) {
   const rand = (n: number) => {
@@ -470,60 +474,72 @@ function ParticleField({
     return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * b);
   };
 
+  // Poucos clusters, mais densos, em zonas livres de texto.
+  // Cada cluster tem uma "onda" com direção (angle) e período (dur) próprios;
+  // as partículas oscilam perpendicularmente à direção da onda e recebem
+  // um delay proporcional à projeção ao longo do eixo, criando o efeito de
+  // crista viajante — como uma onda de mar coordenada.
   const defaultClusters = [
-    // Zonas "seguras" — margens laterais e vãos entre cards, longe de texto.
-    // Faixa vertical entre o card destaque (col 1–7) e os cards menores (col 8–12).
-    { x: 58, y: 22, weight: 0.16, radius: 6 },
-    { x: 58, y: 50, weight: 0.16, radius: 6 },
-    { x: 58, y: 78, weight: 0.14, radius: 6 },
-    // Margem esquerda (fora da coluna dos cards).
-    { x: 2, y: 40, weight: 0.14, radius: 7 },
-    { x: 2, y: 80, weight: 0.10, radius: 7 },
+    // Faixa vertical entre o card destaque e a coluna da direita.
+    { x: 58, y: 32, weight: 0.30, radius: 5, angle: 90, dur: 5.5 },
+    { x: 58, y: 70, weight: 0.28, radius: 5, angle: 90, dur: 6.0 },
+    // Margem esquerda (fora dos cards).
+    { x: 2.5, y: 55, weight: 0.20, radius: 6, angle: 90, dur: 5.2 },
     // Margem direita.
-    { x: 98, y: 45, weight: 0.14, radius: 7 },
-    { x: 98, y: 85, weight: 0.10, radius: 7 },
-    // Faixa inferior, abaixo dos cards.
-    { x: 30, y: 98, weight: 0.03, radius: 6 },
-    { x: 82, y: 98, weight: 0.03, radius: 6 },
+    { x: 97.5, y: 62, weight: 0.22, radius: 6, angle: 90, dur: 5.8 },
   ];
   const cl = clusters ?? defaultClusters;
 
-  // Distribui a contagem entre os clusters pelo peso.
   const perCluster = cl.map((c) => Math.round(count * c.weight));
 
   const dots: {
     i: number; size: number; left: number; top: number;
-    dur: number; delay: number; drift: number; opacity: number; tone: string;
+    dur: number; delay: number; ax: number; ay: number;
+    opacity: number; tone: string;
   }[] = [];
 
   let idx = 0;
   cl.forEach((c, ci) => {
     const n = perCluster[ci];
+    const angleRad = ((c.angle ?? 90) * Math.PI) / 180;
+    const dirX = Math.cos(angleRad);
+    const dirY = Math.sin(angleRad);
+    // Vetor perpendicular à direção da onda — eixo de oscilação das partículas.
+    const perpX = -dirY;
+    const perpY = dirX;
+    const dur = c.dur ?? 6;
+
     for (let k = 0; k < n; k++) {
       const r1 = rand(idx + 1);
       const r2 = rand(idx + 200);
       const r3 = rand(idx + 400);
       const r4 = rand(idx + 600);
       const r5 = rand(idx + 800);
-      // Deslocamento gaussiano — alongado na vertical (faixas estreitas).
-      const dx = gauss(r1, r2) * c.radius;
-      const dy = gauss(r3, r4) * c.radius * 1.4;
+      // Distribuição concentrada: núcleo denso, poucas nas bordas.
+      const gx = gauss(r1, r2) * 0.55;
+      const gy = gauss(r3, r4) * 0.55;
+      const dx = gx * c.radius;
+      const dy = gy * c.radius * 1.6; // faixas alongadas
       const left = Math.max(-2, Math.min(102, c.x + dx));
       const top = Math.max(-2, Math.min(102, c.y + dy));
-      const dist = Math.min(1, Math.hypot(dx / c.radius, dy / (c.radius * 1.4)) / 2);
-      const size = 1.5 + (1 - dist) * 5.5 + r5 * 1.5;
-      // Movimento mais rápido e coordenado: durações curtas e próximas.
-      const dur = 3.2 + r4 * 2.8; // 3.2–6.0s
-      const delay = -r1 * dur;
-      const drift = 18 + r2 * 22;
-      const opacity = 0.35 + (1 - dist) * 0.55;
+      const dist = Math.min(1, Math.hypot(gx, gy));
+      const size = 2 + (1 - dist) * 5 + r5 * 1.2; // 2–8px
+      const opacity = 0.45 + (1 - dist) * 0.5;
+      // Amplitude perpendicular à onda (em px).
+      const amp = 10 + (1 - dist) * 14 + r5 * 4; // 10–28px
+      const ax = perpX * amp;
+      const ay = perpY * amp;
+      // Fase = projeção da posição no eixo da onda → crista viaja pelo cluster.
+      const proj = dx * dirX + dy * dirY; // em % da caixa
+      const phase = (proj / (c.radius * 2)) * Math.PI * 2;
+      const delay = -((phase / (2 * Math.PI)) * dur);
       const tone =
         r5 > 0.65
           ? "var(--ink)"
           : r5 > 0.3
             ? "color-mix(in oklch, var(--gold) 70%, var(--ink))"
             : "var(--gold)";
-      dots.push({ i: idx, size, left, top, dur, delay, drift, opacity, tone });
+      dots.push({ i: idx, size, left, top, dur, delay, ax, ay, opacity, tone });
       idx++;
     }
   });
@@ -542,25 +558,29 @@ function ParticleField({
             backgroundColor: d.tone,
             opacity: d.opacity,
             boxShadow: `0 0 ${d.size * 1.1}px color-mix(in oklch, ${d.tone} 35%, transparent)`,
-            animation: `particle-float ${d.dur}s ease-in-out ${d.delay}s infinite alternate`,
-            // @ts-ignore custom prop
-            "--drift": `${d.drift}px`,
+            animation: `particle-wave ${d.dur}s ease-in-out ${d.delay}s infinite`,
+            // @ts-ignore custom props usados pelo keyframe
+            "--ax": `${d.ax}px`,
+            "--ay": `${d.ay}px`,
           } as React.CSSProperties}
         />
       ))}
       <style>{`
-        @keyframes particle-float {
+        @keyframes particle-wave {
           0%   { transform: translate3d(0, 0, 0); }
-          50%  { transform: translate3d(calc(var(--drift) * 0.55), calc(var(--drift) * -0.7), 0); }
-          100% { transform: translate3d(calc(var(--drift) * -0.4), calc(var(--drift) * 0.6), 0); }
+          25%  { transform: translate3d(var(--ax), var(--ay), 0); }
+          50%  { transform: translate3d(0, 0, 0); }
+          75%  { transform: translate3d(calc(var(--ax) * -1), calc(var(--ay) * -1), 0); }
+          100% { transform: translate3d(0, 0, 0); }
         }
         @media (prefers-reduced-motion: reduce) {
-          [style*="particle-float"] { animation: none !important; }
+          [style*="particle-wave"] { animation: none !important; }
         }
       `}</style>
     </div>
   );
 }
+
 
 
 
