@@ -261,9 +261,12 @@ function JorgePage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10">
+              <div className="mt-10 flex flex-col gap-4">
                 <BrandLink href={`mailto:jorge@oliveiraritzmann.com.br`}>
                   Fale diretamente com o Jorge
+                </BrandLink>
+                <BrandLink href="/socios">
+                  Conhecer o time completo
                 </BrandLink>
               </div>
             </div>
@@ -324,18 +327,6 @@ function JorgePage() {
         </div>
       </section>
 
-      {/* CTA rodapé */}
-      <section className="border-t border-[var(--ink)]/10 bg-[var(--sand)] py-16 md:py-20">
-        <div className="mx-auto max-w-[1360px] px-6">
-          <a
-            href="/socios"
-            className="group inline-flex items-center gap-3 font-display text-[clamp(1.35rem,2.2vw,1.9rem)] font-medium tracking-[-0.01em] text-[var(--ink)] transition-colors hover:text-[var(--ink-2)]"
-          >
-            Conhecer o time completo
-            <BrandArrow />
-          </a>
-        </div>
-      </section>
     </article>
   );
 }
