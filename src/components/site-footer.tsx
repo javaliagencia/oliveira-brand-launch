@@ -14,6 +14,7 @@
  * Endereços e telefones ficam ⟨PENDENTE⟩ visíveis — a definir com o
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
+import { Linkedin, Instagram } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 
 
@@ -349,8 +350,10 @@ export function SiteFooter() {
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  aria-label="LinkedIn"
+                  className="inline-flex items-center gap-2 text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
                 >
+                  <Linkedin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>
               </li>
@@ -359,8 +362,10 @@ export function SiteFooter() {
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  aria-label="Instagram"
+                  className="inline-flex items-center gap-2 text-[13px] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
                 >
+                  <Instagram className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   Instagram
                 </a>
               </li>
