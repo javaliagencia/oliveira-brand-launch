@@ -187,7 +187,7 @@ const COMPETENCIAS: Competencia[] = [
     eyebrow: "Decisão e profundidade",
     titulo: "Empresarial Estratégico",
     descricao:
-      "Consultivo e contencioso de alta complexidade, para operações que exigem leitura fina do risco, sofisticação técnica e a mesma disciplina que estrutura o volume.",
+      "Consultivo e contencioso para decisões de peso no negócio. O escritório estrutura antes do litígio e conduz o que já virou disputa, com a mesma disciplina que sustenta operações de escala nacional.",
     imagem: imgEmpresarial.url,
     href: "/atuacao/empresarial-estrategico",
   },
