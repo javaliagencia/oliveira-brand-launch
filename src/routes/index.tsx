@@ -825,9 +825,9 @@ function CarreiraFold() {
 
       <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
         <div
-          className="max-w-[560px] p-8 backdrop-blur-2xl backdrop-saturate-150 md:p-12"
+          className="max-w-[560px] p-8 backdrop-blur-2xl backdrop-saturate-100 md:p-12"
           style={{
-            backgroundColor: "rgba(8, 38, 36, 0.12)",
+            backgroundColor: "rgba(8, 38, 36, 0.06)",
             border: "1px solid color-mix(in oklch, var(--gold) 40%, transparent)",
             borderRadius: 4,
           }}
