@@ -310,7 +310,7 @@ function JorgePage() {
               <dl className="mt-8 grid grid-cols-1 gap-x-6 gap-y-5">
                 {CREDENTIALS.map((c) => (
                   <div key={c.label} className="flex flex-col gap-1">
-                    <dt className="text-[11px] uppercase tracking-[0.24em] text-[var(--ink)]/55">
+                    <dt className="text-[11px] uppercase tracking-[0.24em] text-[var(--ink-2)]">
                       {c.label}
                     </dt>
                     <dd className="font-display text-[15px] leading-snug text-[var(--ink)]">
