@@ -274,7 +274,7 @@ function DireitoMedicoPage() {
       </section>
 
       {/* OUTRAS ÁREAS + SETORES */}
-      <section className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-[1360px] px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <div>
             <SectionEyebrow tone="ink-2">Outras áreas</SectionEyebrow>
