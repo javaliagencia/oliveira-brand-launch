@@ -923,7 +923,7 @@ function SociosCarousel() {
           {LOOP.map((socio, i) => (
             <a
               key={`${socio.nome}-${i}`}
-              href="/socios"
+              href={socio.href ?? "/socios"}
               className="relative aspect-[3/4] shrink-0 overflow-hidden group"
               style={{
                 width: `${100 / LOOP.length}%`,
@@ -940,9 +940,9 @@ function SociosCarousel() {
                   loading="lazy"
                 />
               ) : null}
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-center gap-2 p-5">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end gap-1.5 p-5 text-center">
                 <span
-                  className="font-display text-[15px] leading-tight whitespace-nowrap text-center inline-flex items-center gap-2"
+                  className="font-display text-[15px] leading-tight whitespace-nowrap inline-flex items-center gap-2"
                   style={{
                     color: "var(--sand)",
                     textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
@@ -967,6 +967,15 @@ function SociosCarousel() {
                     <path d="M7 17L17 7" strokeLinecap="square" />
                     <path d="M9 7h8v8" strokeLinecap="square" />
                   </svg>
+                </span>
+                <span
+                  className="text-[10.5px] uppercase tracking-[0.22em]"
+                  style={{
+                    color: "var(--gold)",
+                    textShadow: "0 1px 10px rgba(8,38,36,0.9)",
+                  }}
+                >
+                  {socio.cargo}
                 </span>
               </div>
             </a>
