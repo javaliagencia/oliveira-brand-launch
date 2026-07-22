@@ -403,8 +403,8 @@ function ManifestoFold() {
       >
         <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 pb-20 pt-16 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-20">
           <div className="md:col-span-6">
-            <h2 className="font-display text-[clamp(1.5rem,2.6vw,2.35rem)] font-normal leading-[1.28] tracking-[-0.005em]">
-              <span style={{ color: "color-mix(in oklch, var(--ink) 45%, white)" }}>
+            <h2 className="font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-extralight leading-[1.24] tracking-[-0.02em]">
+              <span style={{ color: "color-mix(in oklch, var(--ink) 42%, white)" }}>
                 Trinta anos de advocacia ensinam uma coisa: o que sustenta uma operação não é o tamanho dela.
               </span>{" "}
               <span
