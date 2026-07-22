@@ -142,7 +142,7 @@ function JorgePage() {
           </div>
 
           {/* Coluna foto recortada — alinhada à direita e ao rodapé */}
-          <div className="relative flex items-end justify-end self-end">
+          <div className="relative -mr-6 flex items-end justify-end self-end md:[margin-right:calc(-1*(max(1.5rem,(100vw-1360px)/2+1.5rem)))]">
             {/* filetes de composição */}
             <div
               aria-hidden="true"
