@@ -220,9 +220,9 @@ function CompetenciasFold() {
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
           <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.015em]">
             Volume e estratégia, conduzidos com o{" "}
-            <em className="font-normal italic" style={{ color: "var(--gold)" }}>
+            <span className="font-display font-medium" style={{ color: "var(--gold)" }}>
               mesmo método.
-            </em>
+            </span>
           </h2>
         </div>
       </div>
