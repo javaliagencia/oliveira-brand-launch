@@ -164,22 +164,20 @@ function JorgePage() {
       <section className="relative border-y border-[var(--gold)]/40 bg-[var(--ink-2)] pt-8 pb-14 md:pt-10 md:pb-20">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-24 flex-col items-center"
+          className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-40 justify-center"
         >
-
-
           <svg
-            viewBox="0 0 80 40"
-            className="block h-6 w-20"
+            viewBox="0 0 80 80"
+            className="block h-10 w-10"
             aria-hidden="true"
           >
             <path
-              d="M0 0 A 40 40 0 0 0 80 0 Z"
+              d="M0 0 H 40 A 40 40 0 0 1 40 80 H 0 Z"
               fill="var(--gold)"
             />
           </svg>
-
         </div>
+
 
         <div className="mx-auto max-w-[1200px] px-6">
           <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--gold)]">
