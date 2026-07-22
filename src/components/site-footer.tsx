@@ -186,14 +186,6 @@ function SedeCard({ sede }: { sede: Sede }) {
         ))}
         <p itemProp="postalCode">CEP {sede.cep}</p>
       </div>
-      <p className="mt-2 text-[13px] leading-relaxed text-sand/70">
-        {sede.telefones.map((tel, i) => (
-          <span key={tel} itemProp="telephone">
-            {i > 0 && <span className="text-sand/40"> · </span>}
-            {tel}
-          </span>
-        ))}
-      </p>
     </li>
   );
 }
