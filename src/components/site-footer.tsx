@@ -16,6 +16,7 @@
  */
 import { Linkedin, Instagram } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
+import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
 
 
 type Sede = {
