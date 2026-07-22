@@ -33,94 +33,110 @@ const SEDES: Sede[] = [
     matriz: true,
     linhas: ["Rua Frederico Guilherme Busch, 87", "Jardim Blumenau"],
     cep: "89010-360",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "São Paulo",
     uf: "SP",
     linhas: ["Avenida Paulista, 1636", "Conj. 1507-1509, Bela Vista"],
     cep: "01310-200",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Curitiba",
     uf: "PR",
     linhas: ["Rua da Glória, 251", "Ed. NEO Corporate, Conj. 202", "Centro Cívico"],
     cep: "80030-060",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Porto Alegre",
     uf: "RS",
     linhas: ["Avenida Ipiranga, 40", "Conj. 603-604-605, Praia de Belas"],
     cep: "90160-090",
-    telefones: ["(51) 3407-2284", "(51) 3519-2284"],
+    telefones: [],
   },
   {
     cidade: "Rio de Janeiro",
     uf: "RJ",
     linhas: ["Rua Visconde de Inhaúma, 134", "Salas 2001 a 2004, Centro"],
     cep: "20091-901",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Salvador",
     uf: "BA",
     linhas: ["Avenida Tancredo Neves, 450", "23º andar, Caminho das Árvores"],
     cep: "41820-901",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Goiânia",
     uf: "GO",
     linhas: ["Avenida 136, Quadra F44, nº 761", "Sala A1, Setor Sul"],
     cep: "74093-250",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Maceió",
     uf: "AL",
     linhas: ["Rua José Maia Gomes, 258", "SL 5, CXPST 264, Jatiúca"],
     cep: "57036-240",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
   {
     cidade: "Aracaju",
     uf: "SE",
     linhas: ["Rua Manoel Espírito Santo, 165", "Sala 201, Pavimento Superior", "Grageru"],
     cep: "49025-440",
-    telefones: ["(47) 3041-9565"],
+    telefones: [],
   },
 ];
 
+const TELEFONE_INSTITUCIONAL = "(47) 3041-9565";
+
 const AREAS_LINKS = [
-  { label: "Direito Médico", href: "/areas/direito-medico" },
+  { label: "Bancário", href: "/areas/bancario" },
+  { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
+  { label: "Cível", href: "/areas/civel" },
+  { label: "Consumidor", href: "/areas/consumidor" },
+  { label: "Trabalhista", href: "/areas/trabalhista" },
   { label: "Tributário", href: "/areas/tributario" },
   { label: "Societário", href: "/areas/societario" },
-  { label: "Trabalhista", href: "/areas/trabalhista" },
-  { label: "Cível", href: "/areas/civel" },
+  { label: "Sucessório e Planejamento Patrimonial", href: "/areas/sucessorio-planejamento-patrimonial" },
+  { label: "Previdenciário", href: "/areas/previdenciario" },
 ];
 
 const SEGMENTOS_LINKS = [
+  { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
   { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
-  { label: "Saúde", href: "/atuacao/segmentos/saude" },
-  { label: "Empresarial", href: "/atuacao/segmentos/empresarial" },
+  { label: "Seguradoras", href: "/atuacao/segmentos/seguradoras" },
+  { label: "Concessionárias e serviços públicos", href: "/atuacao/segmentos/concessionarias-servicos-publicos" },
+  { label: "Marketplaces e meios de pagamento", href: "/atuacao/segmentos/marketplaces-meios-de-pagamento" },
+  { label: "Previdência complementar", href: "/atuacao/segmentos/previdencia-complementar" },
+  { label: "Saúde e Direito Médico", href: "/atuacao/segmentos/saude-direito-medico" },
 ];
 
 const PUBLICACOES_LINKS = [
   { label: "Análises", href: "/publicacoes/analises" },
   { label: "Notícias", href: "/publicacoes/noticias" },
+  { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
 ];
 
-const NAV_LINKS = [
-  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
-  { label: "Advogados", href: "/advogados" },
-  { label: "Publicações", href: "/publicacoes" },
-  { label: "Contato", href: "/contato" },
+const ESCRITORIO_LINKS = [
+  { label: "O Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "Método", href: "/metodo" },
+  { label: "Presença", href: "/presenca" },
+  { label: "Sócios", href: "/advogados" },
+  { label: "Carreiras", href: "/carreiras" },
+];
+
+const CONTATO_LINKS = [
+  { label: "Falar com o escritório", href: "/contato" },
+  { label: "Canal de ética", href: "/etica" },
 ];
 
 const INSTITUCIONAL_LINKS = [
-  { label: "Canal de ética", href: "/etica" },
   { label: "Política de privacidade", href: "/privacidade" },
   { label: "Termos de uso", href: "/termos" },
 ];
@@ -170,14 +186,6 @@ function SedeCard({ sede }: { sede: Sede }) {
         ))}
         <p itemProp="postalCode">CEP {sede.cep}</p>
       </div>
-      <p className="mt-2 text-[13px] leading-relaxed text-sand/70">
-        {sede.telefones.map((tel, i) => (
-          <span key={tel} itemProp="telephone">
-            {i > 0 && <span className="text-sand/40"> · </span>}
-            {tel}
-          </span>
-        ))}
-      </p>
     </li>
   );
 }
@@ -214,7 +222,7 @@ function LinkColumn({
 }
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
+  
 
   return (
     <footer
@@ -240,7 +248,7 @@ export function SiteFooter() {
             id="sedes-heading"
             className="mt-6 max-w-3xl font-display text-3xl font-medium leading-[1.2] tracking-tight text-sand md:text-[40px]"
           >
-            Nove sedes próprias. Atuação em 27 unidades da federação.
+            Estrutura própria em nove praças. Atuação em todo o país.
           </h3>
 
           <ul className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -262,8 +270,35 @@ export function SiteFooter() {
           <LinkColumn title="Áreas do Direito" items={AREAS_LINKS} />
           <LinkColumn title="Segmentos" items={SEGMENTOS_LINKS} />
           <LinkColumn title="Publicações" items={PUBLICACOES_LINKS} />
-          <LinkColumn title="Oliveira Ritzmann" items={[NAV_LINKS[0], NAV_LINKS[1]]} />
-          <LinkColumn title="Contato" items={[NAV_LINKS[3]]} />
+          <LinkColumn title="O escritório" items={ESCRITORIO_LINKS} />
+          <div>
+            <p className="eyebrow">Contato</p>
+            <span
+              aria-hidden="true"
+              className="mt-3 block h-px w-8"
+              style={{ backgroundColor: "var(--gold)" }}
+            />
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {CONTATO_LINKS.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-[13px] leading-relaxed text-sand/70">
+              <a
+                href={`tel:+5547${TELEFONE_INSTITUCIONAL.replace(/\D/g, "").slice(2)}`}
+                className="transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+              >
+                {TELEFONE_INSTITUCIONAL}
+              </a>
+            </p>
+          </div>
         </section>
 
         {/* Filete separador */}
@@ -352,7 +387,7 @@ export function SiteFooter() {
             Método. Previsibilidade. Resultado.
           </p>
           <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-sand/45">
-            © {year} Oliveira Ritzmann Advogados
+            © 2026 Oliveira Ritzmann Advogados
           </p>
         </div>
       </div>
