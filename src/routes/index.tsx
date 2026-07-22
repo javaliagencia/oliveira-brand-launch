@@ -430,7 +430,7 @@ function ManifestoFold() {
               </h3>
             </div>
             <BrandLink href="/socios" invert>
-              Conhecer o time
+              Conhecer os advogados
             </BrandLink>
           </div>
 
