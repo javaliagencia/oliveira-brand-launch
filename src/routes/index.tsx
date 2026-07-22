@@ -495,7 +495,7 @@ function ParticleField({
             height: d.size,
             backgroundColor: d.tone,
             opacity: d.opacity,
-            boxShadow: `0 0 ${d.size * 2}px color-mix(in oklch, ${d.tone} 60%, transparent)`,
+            boxShadow: `0 0 ${d.size * 1.2}px color-mix(in oklch, ${d.tone} 40%, transparent)`,
             animation: `particle-float ${d.dur}s ease-in-out ${d.delay}s infinite alternate`,
             // @ts-ignore custom prop
             "--drift": `${d.drift}px`,
