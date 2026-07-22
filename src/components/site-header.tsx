@@ -17,22 +17,22 @@ type NavItem = { label: string; href: string };
 
 const NAV: NavItem[] = [
   { label: "Início", href: "/" },
-  { label: "O escritório", href: "/o-escritorio" },
-  { label: "Sócios", href: "/socios" },
-  { label: "Inteligência", href: "/inteligencia" },
+  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "Atuação", href: "/atuacao" },
+  { label: "Advogados", href: "/advogados" },
+  { label: "Publicações", href: "/publicacoes" },
   { label: "Contato", href: "/contato" },
 ];
 
 const ATUACAO_PRIMARY: NavItem[] = [
-  { label: "Contencioso de volume", href: "/atuacao/contencioso-de-volume" },
-  { label: "Cooperativas de crédito", href: "/atuacao/cooperativas-de-credito" },
-  { label: "Empresarial estratégico", href: "/atuacao/empresarial-estrategico" },
+  { label: "Áreas do Direito", href: "/atuacao/areas-do-direito" },
+  { label: "Segmentos", href: "/atuacao/segmentos" },
 ];
 
-const ATUACAO_SECONDARY: NavItem = {
-  label: "Recuperação de créditos complexos",
-  href: "/atuacao/recuperacao-de-creditos-complexos",
-};
+const PUBLICACOES_LINKS: NavItem[] = [
+  { label: "Análises", href: "/publicacoes/analises" },
+  { label: "Notícias", href: "/publicacoes/noticias" },
+];
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
