@@ -835,7 +835,7 @@ function CarreiraFold() {
         >
 
 
-          <SectionEyebrow>Carreira</SectionEyebrow>
+          <SectionEyebrow>Carreiras</SectionEyebrow>
           <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.08] tracking-[-0.015em] text-sand">
             Formar advogados que{" "}
             <em className="font-normal italic" style={{ color: "var(--gold)" }}>
