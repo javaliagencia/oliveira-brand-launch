@@ -739,7 +739,7 @@ function PublicacoesFold() {
                   className="eyebrow inline-flex items-center gap-2"
                   style={{ color: "var(--gold)" }}
                 >
-                  Ler publicação
+                  Ler
                   <BrandArrow size={14} />
                 </span>
               </div>
