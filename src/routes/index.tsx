@@ -175,7 +175,7 @@ type Competencia = {
 const COMPETENCIAS: Competencia[] = [
   {
     index: "01",
-    eyebrow: "Escala e volume",
+    eyebrow: "",
     titulo: "Clientes Corporativos",
     descricao:
       "Contencioso de massa e recuperação de crédito conduzidos com engenharia processual: previsibilidade em cada etapa, indicadores auditáveis e método replicável em qualquer jurisdição.",
@@ -184,7 +184,7 @@ const COMPETENCIAS: Competencia[] = [
   },
   {
     index: "02",
-    eyebrow: "Decisão e profundidade",
+    eyebrow: "",
     titulo: "Empresarial Estratégico",
     descricao:
       "Consultivo e contencioso para decisões de peso no negócio. O escritório estrutura antes do litígio e conduz o que já virou disputa, com a mesma disciplina que sustenta operações de escala nacional.",
@@ -311,7 +311,7 @@ function CompetenciaCard({
         style={{ transform: isHovered ? "translateY(-2px)" : "translateY(0)" }}
       >
         <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
-          {data.index} — {data.eyebrow}
+          {data.index}{data.eyebrow ? ` — ${data.eyebrow}` : ""}
         </span>
         <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em]">
           {data.titulo}
