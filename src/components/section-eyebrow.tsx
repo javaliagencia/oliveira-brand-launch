@@ -26,16 +26,16 @@ export function SectionEyebrow({
       : "var(--gold)";
   const rule = tone === "ink-2" ? "var(--ink-2)" : "var(--gold)";
   return (
-    <div className={`flex flex-col items-start gap-3 ${className}`}>
+    <div className={`flex flex-col items-start gap-4 ${className}`}>
       <span
-        className="text-[11px] font-medium uppercase leading-none"
-        style={{ color, letterSpacing: "0.28em" }}
+        className="text-[13px] font-medium uppercase leading-none"
+        style={{ color, letterSpacing: "0.32em" }}
       >
         {children}
       </span>
       <span
         aria-hidden="true"
-        className="block h-px w-10"
+        className="block h-px w-14"
         style={{ backgroundColor: rule }}
       />
     </div>
