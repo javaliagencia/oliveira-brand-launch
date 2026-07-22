@@ -248,7 +248,7 @@ export function SiteFooter() {
             id="sedes-heading"
             className="mt-6 max-w-3xl font-display text-3xl font-medium leading-[1.2] tracking-tight text-sand md:text-[40px]"
           >
-            Nove sedes próprias. Atuação em 27 unidades da federação.
+            Estrutura própria em nove praças. Atuação em todo o país.
           </h3>
 
           <ul className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
