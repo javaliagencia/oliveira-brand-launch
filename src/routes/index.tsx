@@ -359,29 +359,7 @@ function CompetenciaCard({
  * dobra de pessoas sem se comprometer com fotos ainda inexistentes.
  */
 function ManifestoFold() {
-  const [visible, setVisible] = useState(false);
   const wrapRef = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    const el = wrapRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-            break;
-          }
-        }
-      },
-      { threshold: 0.25 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  const symbolTransition =
-    "clip-path 1800ms cubic-bezier(0.22, 1, 0.36, 1), transform 1800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 1100ms ease-out, filter 1600ms ease-out";
 
   return (
     <section
@@ -390,8 +368,7 @@ function ManifestoFold() {
       aria-label="Manifesto — trinta anos de método"
       className="relative w-full overflow-hidden"
     >
-      {/* Símbolo institucional — três elementos animados, atravessando o
-          fundo bege e extravasando para dentro da faixa verde-profundo. */}
+      {/* Símbolo institucional — estático, extravasando entre os blocos. */}
       <div
         className="pointer-events-none absolute hidden select-none md:block"
         aria-hidden="true"
@@ -402,29 +379,17 @@ function ManifestoFold() {
           zIndex: 3,
         }}
       >
-        <div
-          style={{
-            clipPath: visible
-              ? "inset(-2% -2% -2% -2%)"
-              : "inset(-2% 104% -2% -2%)",
-            filter: visible ? "blur(0)" : "blur(0.8px)",
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translate3d(0, 0, 0)" : "translate3d(-18px, 0, 0)",
-            transition: symbolTransition,
-            willChange: "clip-path, transform, opacity, filter",
-          }}
-        >
-          <img
-            src={simboloDourado.url}
-            alt=""
-            width={969}
-            height={600}
-            loading="lazy"
-            decoding="async"
-            className="block h-auto w-full select-none"
-          />
-        </div>
+        <img
+          src={simboloDourado.url}
+          alt=""
+          width={969}
+          height={600}
+          loading="lazy"
+          decoding="async"
+          className="block h-auto w-full select-none"
+        />
       </div>
+
 
 
       {/* Bloco 1 — Manifesto sobre branco */}
