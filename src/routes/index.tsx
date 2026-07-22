@@ -175,7 +175,7 @@ type Competencia = {
 const COMPETENCIAS: Competencia[] = [
   {
     index: "01",
-    eyebrow: "Escala e volume",
+    eyebrow: "",
     titulo: "Clientes Corporativos",
     descricao:
       "Contencioso de massa e recuperação de crédito conduzidos com engenharia processual: previsibilidade em cada etapa, indicadores auditáveis e método replicável em qualquer jurisdição.",
@@ -184,7 +184,7 @@ const COMPETENCIAS: Competencia[] = [
   },
   {
     index: "02",
-    eyebrow: "Decisão e profundidade",
+    eyebrow: "",
     titulo: "Empresarial Estratégico",
     descricao:
       "Consultivo e contencioso para decisões de peso no negócio. O escritório estrutura antes do litígio e conduz o que já virou disputa, com a mesma disciplina que sustenta operações de escala nacional.",
