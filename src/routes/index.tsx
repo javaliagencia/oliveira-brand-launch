@@ -5,6 +5,7 @@ import imgCorporativos from "@/assets/fold2-corporativos.jpg.asset.json";
 import imgEmpresarial from "@/assets/fold2-empresarial.jpg.asset.json";
 
 import carreiraBg from "@/assets/carreira-bg.jpg.asset.json";
+import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
