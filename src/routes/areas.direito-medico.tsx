@@ -226,7 +226,7 @@ function DireitoMedicoPage() {
             <BrandLink href="/socios">Conhecer o time completo</BrandLink>
           </div>
 
-          <ul className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {CONTATOS.map((c) => (
               <li key={c.nome} className="group flex flex-col">
                 <Link to={c.href as any} className="block overflow-hidden bg-[var(--ink)]">
@@ -239,17 +239,17 @@ function DireitoMedicoPage() {
                     />
                   </div>
                 </Link>
-                <div className="mt-5">
-                  <p className="font-display text-lg font-medium leading-tight text-[var(--ink-2)]">
+                <div className="mt-4">
+                  <p className="font-display text-[15px] font-medium leading-tight text-[var(--ink-2)]">
                     {c.nome}
                   </p>
-                  <p className="mt-1 text-[13px] leading-snug text-[var(--ink)]/70">{c.cargo}</p>
-                  <div className="mt-4 flex items-center gap-4 text-[13px] text-[var(--ink)]/80">
+                  <p className="mt-1 text-[12px] leading-snug text-[var(--ink)]/70">{c.cargo}</p>
+                  <div className="mt-3 flex items-center gap-3 text-[12px] text-[var(--ink)]/80">
                     <a
                       href={`mailto:${c.email}`}
                       className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--gold)]"
                     >
-                      <Mail size={14} strokeWidth={1.5} /> E-mail
+                      <Mail size={13} strokeWidth={1.5} /> E-mail
                     </a>
                     <a
                       href={c.linkedin}
@@ -257,13 +257,14 @@ function DireitoMedicoPage() {
                       rel="noreferrer noopener"
                       className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--gold)]"
                     >
-                      <Linkedin size={14} strokeWidth={1.5} /> LinkedIn
+                      <Linkedin size={13} strokeWidth={1.5} /> LinkedIn
                     </a>
                   </div>
                 </div>
               </li>
             ))}
           </ul>
+
         </div>
       </section>
 
