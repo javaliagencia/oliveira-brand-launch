@@ -469,7 +469,7 @@ export function SiteFooter() {
          ============================================================ */}
       <section
         aria-label="Informações institucionais"
-        style={{ backgroundColor: "color-mix(in oklch, var(--ink) 70%, #000)" }}
+        style={{ backgroundColor: "var(--ink)" }}
       >
         <div className="mx-auto max-w-[1360px] px-6 py-10 md:py-12">
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
