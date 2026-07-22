@@ -170,7 +170,8 @@ function DireitoMedicoPage() {
       </section>
 
       {/* VISÃO GERAL */}
-      <section className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-[1360px] px-6 py-12 md:py-16">
+
         <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
         <div className="mt-8 max-w-[900px]">
           <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
