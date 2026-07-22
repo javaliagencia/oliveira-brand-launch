@@ -471,13 +471,20 @@ function ParticleField({
   };
 
   const defaultClusters = [
-    // Cantos superiores dos cards de destaque + laterais dos cards menores.
-    { x: 6, y: 18, weight: 0.22, radius: 14 },
-    { x: 62, y: 10, weight: 0.18, radius: 12 },
-    { x: 94, y: 32, weight: 0.22, radius: 14 },
-    { x: 40, y: 62, weight: 0.16, radius: 12 },
-    { x: 88, y: 78, weight: 0.12, radius: 11 },
-    { x: 10, y: 88, weight: 0.10, radius: 10 },
+    // Zonas "seguras" — margens laterais e vãos entre cards, longe de texto.
+    // Faixa vertical entre o card destaque (col 1–7) e os cards menores (col 8–12).
+    { x: 58, y: 22, weight: 0.16, radius: 6 },
+    { x: 58, y: 50, weight: 0.16, radius: 6 },
+    { x: 58, y: 78, weight: 0.14, radius: 6 },
+    // Margem esquerda (fora da coluna dos cards).
+    { x: 2, y: 40, weight: 0.14, radius: 7 },
+    { x: 2, y: 80, weight: 0.10, radius: 7 },
+    // Margem direita.
+    { x: 98, y: 45, weight: 0.14, radius: 7 },
+    { x: 98, y: 85, weight: 0.10, radius: 7 },
+    // Faixa inferior, abaixo dos cards.
+    { x: 30, y: 98, weight: 0.03, radius: 6 },
+    { x: 82, y: 98, weight: 0.03, radius: 6 },
   ];
   const cl = clusters ?? defaultClusters;
 
@@ -498,18 +505,18 @@ function ParticleField({
       const r3 = rand(idx + 400);
       const r4 = rand(idx + 600);
       const r5 = rand(idx + 800);
-      // Deslocamento gaussiano em torno do centro do cluster.
+      // Deslocamento gaussiano — alongado na vertical (faixas estreitas).
       const dx = gauss(r1, r2) * c.radius;
-      const dy = gauss(r3, r4) * c.radius * 0.75;
-      const left = Math.max(-4, Math.min(104, c.x + dx));
-      const top = Math.max(-4, Math.min(104, c.y + dy));
-      // Distância normalizada ao centro do cluster → controla tamanho/opacidade.
-      const dist = Math.min(1, Math.hypot(dx / c.radius, dy / (c.radius * 0.75)) / 2);
-      const size = 1.5 + (1 - dist) * 5.5 + r5 * 1.5; // 1.5–8px, mais gordos no núcleo
-      const dur = 9 + r4 * 13;
+      const dy = gauss(r3, r4) * c.radius * 1.4;
+      const left = Math.max(-2, Math.min(102, c.x + dx));
+      const top = Math.max(-2, Math.min(102, c.y + dy));
+      const dist = Math.min(1, Math.hypot(dx / c.radius, dy / (c.radius * 1.4)) / 2);
+      const size = 1.5 + (1 - dist) * 5.5 + r5 * 1.5;
+      // Movimento mais rápido e coordenado: durações curtas e próximas.
+      const dur = 3.2 + r4 * 2.8; // 3.2–6.0s
       const delay = -r1 * dur;
-      const drift = 10 + r2 * 26;
-      const opacity = 0.35 + (1 - dist) * 0.55; // 0.35–0.9
+      const drift = 18 + r2 * 22;
+      const opacity = 0.35 + (1 - dist) * 0.55;
       const tone =
         r5 > 0.65
           ? "var(--ink)"
