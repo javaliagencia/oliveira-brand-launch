@@ -39,7 +39,7 @@ const FOCUS = [
 ];
 
 const CREDENTIALS = [
-  { label: "OAB/SC", value: "⟨PENDENTE⟩" },
+  
   { label: "Formação", value: "Direito — Universidade Federal de Santa Catarina" },
   { label: "Pós-graduação", value: "Direito Empresarial" },
   { label: "Idiomas", value: "Português · Inglês · Espanhol" },
