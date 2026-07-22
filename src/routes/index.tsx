@@ -106,12 +106,6 @@ function HeroFold() {
         }}
       />
 
-      {/* Grão sutil dourado — hairline horizontal decorativa */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-1/2 h-px opacity-30"
-        style={{ backgroundColor: "var(--gold)" }}
-      />
 
       {/* Conteúdo */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-20 pt-32 md:pb-28 md:pt-40">
