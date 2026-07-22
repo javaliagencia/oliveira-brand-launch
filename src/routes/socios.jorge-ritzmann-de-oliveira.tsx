@@ -310,23 +310,14 @@ function JorgePage() {
 
       {/* CTA rodapé */}
       <section className="border-t border-[var(--ink)]/10 bg-[var(--sand)] py-16 md:py-20">
-        <div className="mx-auto flex max-w-[1360px] flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-end">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--ink)]/60">
-              Voltar
-            </p>
-            <a
-              href="/socios"
-              className="group mt-4 inline-flex items-center gap-3 font-display text-[clamp(1.35rem,2.2vw,1.9rem)] font-medium tracking-[-0.01em] text-[var(--ink)] transition-colors hover:text-[var(--ink-2)]"
-            >
-              Conhecer o time completo
-              <BrandArrow />
-            </a>
-          </div>
-          <p className="max-w-[420px] text-[13px] leading-[1.7] text-[var(--ink)]/70">
-            Método. Previsibilidade. Resultado — os três compromissos que atravessam
-            cada mandato conduzido pelo escritório.
-          </p>
+        <div className="mx-auto max-w-[1360px] px-6">
+          <a
+            href="/socios"
+            className="group inline-flex items-center gap-3 font-display text-[clamp(1.35rem,2.2vw,1.9rem)] font-medium tracking-[-0.01em] text-[var(--ink)] transition-colors hover:text-[var(--ink-2)]"
+          >
+            Conhecer o time completo
+            <BrandArrow />
+          </a>
         </div>
       </section>
     </article>
