@@ -97,15 +97,16 @@ const OUTRAS_AREAS = [
 ];
 
 const SETORES = [
-  "Hospitais e day-hospitals",
-  "Clínicas e centros médicos",
-  "Operadoras de saúde suplementar",
-  "Cooperativas médicas",
-  "Laboratórios e diagnóstico por imagem",
-  "Indústria farmacêutica e dispositivos médicos",
-  "Telemedicina e healthtechs",
-  "Profissionais autônomos e sociedades unipessoais",
+  { label: "Hospitais e day-hospitals", href: "#" },
+  { label: "Clínicas e centros médicos", href: "#" },
+  { label: "Operadoras de saúde suplementar", href: "#" },
+  { label: "Cooperativas médicas", href: "#" },
+  { label: "Laboratórios e diagnóstico por imagem", href: "#" },
+  { label: "Indústria farmacêutica e dispositivos médicos", href: "#" },
+  { label: "Telemedicina e healthtechs", href: "#" },
+  { label: "Profissionais autônomos e sociedades unipessoais", href: "#" },
 ];
+
 
 const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }[] = [
   {
