@@ -496,40 +496,32 @@ function PublicacoesFold() {
       id="publicacoes"
       aria-label="Publicações — Em ponto"
       className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "#8a4a2e", color: "var(--sand)" }}
+      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
-      {/* Animação de fundo — manchas quentes em movimento lento */}
+      {/* Animação de fundo — manchas verde/bege em movimento lento */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div
           className="absolute -top-1/3 -left-1/4 h-[70vw] w-[70vw] rounded-full opacity-40 mix-blend-screen"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(220,140,80,0.55), rgba(220,140,80,0) 70%)",
+              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 55%, transparent), transparent 70%)",
             animation: "publicacoes-drift-a 22s ease-in-out infinite alternate",
           }}
         />
         <div
-          className="absolute top-1/4 -right-1/4 h-[60vw] w-[60vw] rounded-full opacity-30 mix-blend-screen"
+          className="absolute top-1/4 -right-1/4 h-[60vw] w-[60vw] rounded-full opacity-25 mix-blend-screen"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(180,60,40,0.55), rgba(180,60,40,0) 70%)",
+              "radial-gradient(closest-side, color-mix(in oklch, var(--sand) 70%, transparent), transparent 70%)",
             animation: "publicacoes-drift-b 28s ease-in-out infinite alternate",
           }}
         />
         <div
-          className="absolute bottom--1/4 left-1/3 h-[55vw] w-[55vw] rounded-full opacity-30 mix-blend-screen"
+          className="absolute -bottom-1/4 left-1/3 h-[55vw] w-[55vw] rounded-full opacity-30 mix-blend-screen"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(240,180,110,0.5), rgba(240,180,110,0) 70%)",
+              "radial-gradient(closest-side, color-mix(in oklch, var(--gold) 40%, transparent), transparent 70%)",
             animation: "publicacoes-drift-c 34s ease-in-out infinite alternate",
-          }}
-        />
-        {/* Vinheta sutil para sustentar o contraste da tipografia */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(60,20,10,0.15) 0%, rgba(60,20,10,0) 25%, rgba(60,20,10,0) 75%, rgba(60,20,10,0.25) 100%)",
           }}
         />
       </div>
@@ -548,12 +540,12 @@ function PublicacoesFold() {
         }
       `}</style>
 
-      <div className="relative mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
+      <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
         {/* Cabeçalho */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
             <SectionEyebrow>Em ponto</SectionEyebrow>
-            <h2 className="mt-8 font-display text-[clamp(1.9rem,3.4vw,3rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand">
+            <h2 className="mt-6 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand">
               Informação que{" "}
               <em className="font-normal italic" style={{ color: "var(--gold)" }}>
                 desperta.
@@ -569,11 +561,11 @@ function PublicacoesFold() {
         </div>
 
         {/* Grade — 1 destaque + 3 cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-12">
-          {/* Destaque — imagem full com texto e CTA por dentro */}
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-12">
+          {/* Destaque — imagem menor com texto e CTA por dentro */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative col-span-1 block aspect-[16/10] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[520px]"
+            className="group relative col-span-1 block aspect-[16/10] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[340px]"
             style={{
               border: "1px solid color-mix(in oklch, var(--gold) 45%, transparent)",
               borderRadius: 4,
