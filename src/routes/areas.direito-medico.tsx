@@ -170,45 +170,47 @@ function DireitoMedicoPage() {
 
       {/* VISÃO GERAL */}
       <section className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-4">
-            <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
-          </div>
-          <div className="md:col-span-8">
-            <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
-              A prática médica exige advocacia que compreenda ciência, ética e regulação —
-              e que traduza tudo isso em decisão segura.
+        <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
+        <div className="mt-8 max-w-[900px]">
+          <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
+            A prática médica exige advocacia que compreenda ciência, ética e regulação —
+            e que traduza tudo isso em decisão segura.
+          </p>
+          <div
+            aria-hidden="true"
+            className="mt-8 h-[2px] w-16"
+            style={{ backgroundColor: "var(--gold)" }}
+          />
+          <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
+            <p>
+              Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
+              a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
+              contencioso individual à estruturação de grandes operadoras, o método é o
+              mesmo: leitura profunda do caso, definição clara da estratégia e execução
+              previsível.
             </p>
-            <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
-              <p>
-                Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
-                a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
-                contencioso individual à estruturação de grandes operadoras, o método é o
-                mesmo: leitura profunda do caso, definição clara da estratégia e execução
-                previsível.
-              </p>
-              <p>
-                A equipe integra sócios com atuação consolidada em responsabilidade civil,
-                regulação sanitária, direito societário e contratos empresariais — condição
-                necessária para tratar a saúde como o setor multidisciplinar que ela é.
-              </p>
-            </div>
-
-            <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
-              {SERVICOS.map((s) => (
-                <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-px w-4 shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  />
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
+            <p>
+              A equipe integra sócios com atuação consolidada em responsabilidade civil,
+              regulação sanitária, direito societário e contratos empresariais — condição
+              necessária para tratar a saúde como o setor multidisciplinar que ela é.
+            </p>
           </div>
+
+          <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            {SERVICOS.map((s) => (
+              <li key={s} className="flex gap-3 text-[14px] leading-relaxed text-[var(--ink)]/85">
+                <span
+                  aria-hidden="true"
+                  className="mt-2 h-px w-4 shrink-0"
+                  style={{ backgroundColor: "var(--gold)" }}
+                />
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+
 
       {/* PRINCIPAIS CONTATOS */}
       <section className="border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] bg-[color-mix(in_oklch,var(--sand)_60%,white)]">
