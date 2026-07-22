@@ -64,7 +64,7 @@ export function NewsletterCta() {
 
         {/* Coluna 2 — Conecte-se */}
         <div className="relative">
-          <p className="eyebrow">Conecte-se</p>
+          <p className="eyebrow">Redes</p>
           <span
             aria-hidden="true"
             className="mt-3 block h-px w-8"
