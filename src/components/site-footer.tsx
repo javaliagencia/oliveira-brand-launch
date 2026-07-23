@@ -292,8 +292,8 @@ export function SiteFooter() {
               />
               <ul className="mt-4 flex flex-col gap-2.5">
                 <li>
-                  <a href="/metodo" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
-                    Método
+                  <a href="/historia" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    História
                   </a>
                 </li>
                 <li>
