@@ -994,16 +994,6 @@ function CarreiraFold() {
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-9%] top-[-96px] z-[1] hidden select-none lg:block"
-        style={{
-          width: "min(42vw, 540px)",
-          aspectRatio: "1 / 1",
-        }}
-      >
-        <PublicacoesMonogramOutline className="h-full w-full opacity-[0.48]" />
-      </div>
 
 
 
