@@ -132,7 +132,7 @@ function HeroFold() {
       <a
         href="#competencias"
         aria-label="Continuar para a próxima seção"
-        className="group absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-10"
+        className="group absolute inset-x-0 bottom-4 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-6"
       >
         <svg
           width="44"
