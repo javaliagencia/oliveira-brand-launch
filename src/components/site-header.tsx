@@ -306,6 +306,10 @@ export function SiteHeader() {
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
                   Instagram
                 </a>
+                <span aria-hidden="true" className="text-sand/30">·</span>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
+                  Facebook
+                </a>
               </div>
             </div>
 
