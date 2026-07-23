@@ -744,7 +744,17 @@ function PublicacoesFold() {
         style={{
           backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
           boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-          border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+        }}
+      >
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <img
+            src={pub.imagem}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+          />
+        </div>
+        <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+
         }}
       >
         <div className="relative aspect-[4/3] overflow-hidden">
