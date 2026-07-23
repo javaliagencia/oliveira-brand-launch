@@ -898,16 +898,16 @@ function PublicacoesFold() {
                     "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.92) 100%)",
                 }}
               />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-4 p-8 md:p-10">
                 <span
-                  className="eyebrow"
+                  className="eyebrow inline-flex items-center gap-3 rounded-full px-3.5 py-1.5 backdrop-blur-md"
                   style={{
                     color: "var(--gold)",
-                    fontWeight: 700,
-                    letterSpacing: "0.34em",
-                    textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)",
+                    background: "rgba(8,38,36,0.55)",
+                    border: "1px solid color-mix(in oklch, var(--gold) 40%, transparent)",
                   }}
                 >
+                  <span aria-hidden style={{ width: 6, height: 6, borderRadius: 999, background: "var(--gold)" }} />
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
                 </span>
                 <h3
