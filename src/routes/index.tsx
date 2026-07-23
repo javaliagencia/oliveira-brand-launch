@@ -1135,15 +1135,16 @@ function SociosCarousel() {
                   loading="lazy"
                 />
               ) : null}
-              {/* Leve equalização à esquerda para atenuar a parede escura sem esbranquiçar */}
+              {/* Leve equalização só no topo esquerdo, para atenuar a parede escura sem desbotar embaixo */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+                className="pointer-events-none absolute left-0 top-0 h-1/2 w-1/4"
                 style={{
                   background:
-                    "linear-gradient(90deg, rgba(15,64,60,0.28) 0%, rgba(15,64,60,0.10) 55%, rgba(15,64,60,0) 100%)",
+                    "radial-gradient(ellipse at top left, rgba(15,64,60,0.22) 0%, rgba(15,64,60,0) 70%)",
                 }}
               />
+
 
 
               {/* Vinheta inferior discreta para garantir leitura do nome */}
