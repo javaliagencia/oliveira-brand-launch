@@ -953,10 +953,9 @@ function PublicacoesFold() {
           </a>
 
             {renderPublicacaoCard(2)}
-            {renderPublicacaoCompact(4)}
           </div>
 
-          <div className="flex min-w-0 flex-col gap-7 md:gap-8">
+          <div className="flex min-w-0 flex-col gap-5 md:gap-6">
             {renderPublicacaoCard(1)}
             {renderPublicacaoCard(3)}
           </div>
