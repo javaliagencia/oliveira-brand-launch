@@ -752,7 +752,7 @@ function PublicacoesFold() {
             }}
           >
             <div
-              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]"
+              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
               style={{
                 boxShadow:
                   "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
