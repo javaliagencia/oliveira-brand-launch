@@ -782,28 +782,31 @@ function PublicacoesFold() {
       <a
         key={pub.href}
         href={pub.href}
-        className="group relative flex gap-4 self-start"
+        className="group relative flex gap-5 self-start"
         style={{
           backgroundColor: "color-mix(in oklch, white 60%, var(--sand))",
           boxShadow: "0 16px 40px -28px rgba(8,38,36,0.45)",
           border: "1px solid color-mix(in oklch, var(--ink) 18%, transparent)",
         }}
       >
-        <div className="relative aspect-square w-[38%] shrink-0 overflow-hidden">
+        <div className="relative aspect-[4/5] w-[42%] shrink-0 overflow-hidden">
           <img
             src={pub.imagem}
             alt=""
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
           />
         </div>
-        <div className="flex flex-1 flex-col gap-2 py-4 pr-5 md:py-5">
+        <div className="flex flex-1 flex-col gap-3 py-6 pr-6 md:py-7">
           <span className="eyebrow text-[10px]" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
             {pub.data} — {pub.categoria}
           </span>
-          <h3 className="font-display text-[clamp(0.98rem,1.15vw,1.1rem)] font-normal leading-[1.25] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+          <h3 className="font-display text-[clamp(1.05rem,1.3vw,1.25rem)] font-normal leading-[1.25] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
             {pub.titulo}
           </h3>
-          <div className="mt-auto pt-1">
+          <p className="text-[13px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 72%, transparent)" }}>
+            {pub.resumo}
+          </p>
+          <div className="mt-auto pt-2">
             <span
               className="eyebrow inline-flex items-center gap-2 text-[10px]"
               style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
