@@ -305,6 +305,18 @@ function CompetenciaCard({
         }}
       />
 
+      {/* Tint verde no hover — efeito Machado Meyer (amarelo → aqui em pine/moss) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[1] transition-opacity duration-[600ms] ease-[cubic-bezier(0.16,0.84,0.24,1)]"
+        style={{
+          backgroundColor: "var(--ink-2)",
+          mixBlendMode: "multiply",
+          opacity: isHovered ? 0.85 : 0,
+        }}
+      />
+
+
       {!isLast ? (
         <div
           aria-hidden="true"
