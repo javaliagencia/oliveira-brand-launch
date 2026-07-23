@@ -1130,21 +1130,21 @@ function SociosCarousel() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{
                     objectPosition: socio.objectPosition ?? "50% 50%",
-                    filter: "brightness(1.28) contrast(0.92) saturate(1.05)",
+                    filter: "brightness(1.14) contrast(0.98) saturate(1.03)",
                   }}
                   loading="lazy"
                 />
               ) : null}
-              {/* Suaviza a parede escura à esquerda das fotos, harmonizando o carrossel */}
+              {/* Leve equalização à esquerda para atenuar a parede escura sem esbranquiçar */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
+                className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
                 style={{
                   background:
-                    "linear-gradient(90deg, rgba(224,217,199,0.32) 0%, rgba(224,217,199,0.14) 35%, rgba(224,217,199,0) 65%)",
-                  mixBlendMode: "screen",
+                    "linear-gradient(90deg, rgba(15,64,60,0.28) 0%, rgba(15,64,60,0.10) 55%, rgba(15,64,60,0) 100%)",
                 }}
               />
+
 
               {/* Vinheta inferior discreta para garantir leitura do nome */}
               <div
