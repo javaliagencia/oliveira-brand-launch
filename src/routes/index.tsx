@@ -1044,7 +1044,7 @@ function CarreiraFold() {
             praças do país.
           </p>
           <div className="mt-10">
-            <BrandLink href="/carreira" invert>
+            <BrandLink href="/carreiras" invert>
               Ver oportunidades
             </BrandLink>
 
