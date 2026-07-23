@@ -215,7 +215,7 @@ function CompetenciasFold() {
           color: "var(--ink)",
         }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 pt-14 pb-10 md:pt-20 md:pb-14">
+        <div className="mx-auto max-w-[1360px] px-6 pt-8 pb-10 md:pt-12 md:pb-14">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
           <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-light leading-[1.05] tracking-[-0.025em]">
             Volume e estratégia, conduzidos com o{" "}
@@ -431,7 +431,7 @@ function ManifestoFold() {
         className="relative"
         style={{ backgroundColor: "#ffffff", color: "var(--ink)", zIndex: 2 }}
       >
-        <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 pb-20 pt-16 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-20">
+        <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 pb-20 pt-10 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-12">
           <div className="md:col-span-6">
             <h2 className="font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-extralight leading-[1.24] tracking-[-0.02em]">
               <span style={{ color: "color-mix(in oklch, var(--ink) 42%, white)" }}>
@@ -455,7 +455,7 @@ function ManifestoFold() {
         className="relative"
         style={{ backgroundColor: "var(--ink)", color: "var(--sand)", zIndex: 0 }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-20 md:pb-28 md:pt-24">
+        <div className="mx-auto max-w-[1360px] px-6 pb-24 pt-12 md:pb-28 md:pt-14">
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between" style={{ zIndex: 2 }}>
             <div className="max-w-[52ch]">
               <SectionEyebrow>Quem conduz o método</SectionEyebrow>
@@ -719,7 +719,7 @@ function PublicacoesFold() {
       </div>
 
 
-      <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-14 md:pb-20 md:pt-16">
+      <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-8 md:pb-20 md:pt-10">
         {/* Cabeçalho */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[52ch]">
@@ -863,7 +863,7 @@ function CarreiraFold() {
 
 
 
-      <div className="relative mx-auto max-w-[1360px] px-6 py-24 md:py-36">
+      <div className="relative mx-auto max-w-[1360px] px-6 pt-14 pb-24 md:pt-20 md:pb-36">
         <div
           className="max-w-[560px] p-8 backdrop-blur-3xl backdrop-saturate-100 md:p-12"
           style={{
