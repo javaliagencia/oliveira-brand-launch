@@ -724,6 +724,49 @@ function PublicacoesMonogramOutline({ className = "" }: { className?: string }) 
 }
 
 function PublicacoesFold() {
+  const renderPublicacaoCard = (idx: number) => {
+    const pub = PUBLICACOES[idx];
+
+    return (
+      <a
+        key={pub.href}
+        href={pub.href}
+        className="group relative flex flex-col self-start"
+        style={{
+          backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
+          boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
+          border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+        }}
+      >
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <img
+            src={pub.imagem}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+          />
+        </div>
+        <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+          <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
+            {pub.data} — {pub.categoria}
+          </span>
+          <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+            {pub.titulo}
+          </h3>
+          <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{pub.resumo}</p>
+          <div className="mt-auto pt-3">
+            <span
+              className="eyebrow inline-flex items-center gap-2"
+              style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
+            >
+              Ler
+              <BrandArrow size={12} />
+            </span>
+          </div>
+        </div>
+      </a>
+    );
+  };
+
   return (
     <section
       id="publicacoes"
@@ -731,21 +774,6 @@ function PublicacoesFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Monograma outline — atravessa a transição entre a faixa escura e o bege,
-          ancorado à direita. Escondido em telas pequenas para não competir com o conteúdo. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute z-[1] hidden select-none lg:block"
-        style={{
-          right: "-6%",
-          top: "18%",
-          width: "min(38vw, 460px)",
-          aspectRatio: "1 / 1",
-        }}
-      >
-        <PublicacoesMonogramOutline className="h-full w-full opacity-[0.55]" />
-      </div>
-
       {/* Header band — vídeo de partículas em fundo escuro (referência Simmons & Simmons) */}
       <div
         className="relative w-full overflow-hidden"
@@ -787,12 +815,12 @@ function PublicacoesFold() {
 
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
       <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
-        {/* Grade responsiva: 1 coluna no mobile (empilhado, sem sobreposição), 12 colunas 2x2 no desktop */}
-        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-x-10 md:gap-y-5">
-          {/* Destaque — cols 1..7, linha 1 (desktop) */}
+        {/* Grade responsiva: colunas independentes no desktop para eliminar o vão entre o destaque e a notícia abaixo. */}
+        <div className="relative grid grid-cols-1 gap-7 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:items-start md:gap-x-10">
+          <div className="flex min-w-0 flex-col gap-5 md:gap-6">
           <a
             href={PUBLICACOES[0].href}
-            className="group relative block self-start md:col-span-7 md:col-start-1 md:row-start-1"
+            className="group relative block self-start"
           >
             <div
               className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
@@ -848,54 +876,13 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartões 2, 3 e 4 — posicionados no desktop; empilhados no mobile */}
-          {[1, 2, 3].map((idx) => {
-            const pub = PUBLICACOES[idx];
-            const placement =
-              idx === 1
-                ? "md:col-span-5 md:col-start-8 md:row-start-1"
-                : idx === 2
-                ? "md:col-span-7 md:col-start-1 md:row-start-2"
-                : "md:col-span-5 md:col-start-8 md:row-start-2";
-            return (
-              <a
-                key={pub.href}
-                href={pub.href}
-                className={`group relative flex flex-col self-start ${placement}`}
-                style={{
-                  backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
-                  boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-                  border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-                }}
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={pub.imagem}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
-                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-                    {pub.data} — {pub.categoria}
-                  </span>
-                  <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
-                    {pub.titulo}
-                  </h3>
-                  <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{pub.resumo}</p>
-                  <div className="mt-auto pt-3">
-                    <span
-                      className="eyebrow inline-flex items-center gap-2"
-                      style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
-                    >
-                      Ler
-                      <BrandArrow size={12} />
-                    </span>
-                  </div>
-                </div>
-              </a>
-            );
-          })}
+            {renderPublicacaoCard(2)}
+          </div>
+
+          <div className="flex min-w-0 flex-col gap-7 md:gap-8">
+            {renderPublicacaoCard(1)}
+            {renderPublicacaoCard(3)}
+          </div>
         </div>
 
         {/* CTA final — alinhado à esquerda, na coluna do destaque */}
@@ -950,6 +937,16 @@ function CarreiraFold() {
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-9%] top-[-96px] z-[1] hidden select-none lg:block"
+        style={{
+          width: "min(42vw, 540px)",
+          aspectRatio: "1 / 1",
+        }}
+      >
+        <PublicacoesMonogramOutline className="h-full w-full opacity-[0.48]" />
+      </div>
 
 
 
@@ -957,7 +954,7 @@ function CarreiraFold() {
 
 
 
-      <div className="relative mx-auto max-w-[1360px] px-6 pt-14 pb-24 md:pt-20 md:pb-36">
+      <div className="relative z-[2] mx-auto max-w-[1360px] px-6 pt-14 pb-24 md:pt-20 md:pb-36">
         <div
           className="max-w-[560px] p-8 backdrop-blur-3xl backdrop-saturate-100 md:p-12"
           style={{
