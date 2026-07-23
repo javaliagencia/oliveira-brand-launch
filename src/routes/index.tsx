@@ -821,12 +821,6 @@ function PublicacoesFold() {
               alignSelf: "stretch",
             }}
           >
-              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
-              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              alignSelf: "start",
-            }}
-          >
             <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={PUBLICACOES[1].imagem}
