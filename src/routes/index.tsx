@@ -732,98 +732,187 @@ function PublicacoesFold() {
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-[1360px] px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+      <div className="relative mx-auto max-w-[1360px] px-6 pt-16 pb-20 md:pt-20 md:pb-28">
+        {/* Marcas decorativas de "colagem" — papel milimetrado sutil no fundo */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage:
+              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+          }}
+        />
 
-
-        {/* Grade — 1 destaque + 3 cards */}
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-12">
-          {/* Destaque — imagem menor com texto e CTA por dentro */}
+        {/* Grade em colagem — cartões deslocados, com leve rotação e sobreposição */}
+        <div className="relative grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-x-6 md:gap-y-16">
+          {/* Destaque — coluna 1..8, rotação -0.6deg, mais alto */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative col-span-1 block aspect-[16/10] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[340px]"
+            className="group relative col-span-1 block md:col-span-8 md:-mt-6"
+            style={{ transform: "rotate(-0.6deg)" }}
+          >
+            <div
+              className="relative aspect-[16/10] overflow-hidden md:aspect-[16/9]"
+              style={{
+                boxShadow:
+                  "0 24px 60px -30px rgba(8,38,36,0.55), 0 2px 0 rgba(8,38,36,0.08)",
+                border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+                backgroundColor: "white",
+              }}
+            >
+              <img
+                src={PUBLICACOES[0].imagem}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(8,38,36,0.05) 0%, rgba(8,38,36,0.5) 55%, rgba(8,38,36,0.92) 100%)",
+                }}
+              />
+              {/* "Fita" superior */}
+              <span
+                aria-hidden="true"
+                className="absolute -top-3 left-10 h-6 w-24"
+                style={{
+                  backgroundColor: "color-mix(in oklch, var(--gold) 55%, white)",
+                  opacity: 0.7,
+                  transform: "rotate(-4deg)",
+                  boxShadow: "0 6px 12px -6px rgba(8,38,36,0.35)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
+                <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
+                  {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
+                </span>
+                <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-light leading-[1.15] tracking-[-0.02em] text-sand">
+                  {PUBLICACOES[0].titulo}
+                </h3>
+                <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
+                  {PUBLICACOES[0].resumo}
+                </p>
+                <div className="mt-2">
+                  <span
+                    className="eyebrow inline-flex items-center gap-2"
+                    style={{ color: "var(--gold)" }}
+                  >
+                    Ler
+                    <BrandArrow size={14} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          {/* Cartão 2 — coluna 8..12, empurrado para baixo, leve rotação positiva, sobrepõe canto do destaque */}
+          <a
+            href={PUBLICACOES[1].href}
+            className="group relative col-span-1 flex flex-col md:col-span-5 md:col-start-8 md:mt-24 md:-ml-10"
             style={{
-              border: "1px solid color-mix(in oklch, var(--ink) 30%, transparent)",
-              borderRadius: 4,
+              transform: "rotate(0.8deg)",
+              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
+              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
+              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
             }}
           >
-            <img
-              src={PUBLICACOES[0].imagem}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(8,38,36,0.05) 0%, rgba(8,38,36,0.5) 55%, rgba(8,38,36,0.9) 100%)",
-              }}
-            />
-            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
-              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
-                {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <img
+                src={PUBLICACOES[1].imagem}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+              />
+              {/* Selo/etiqueta canto */}
+              <span
+                aria-hidden="true"
+                className="absolute right-4 top-4 px-2 py-1 text-[10px] uppercase tracking-[0.28em]"
+                style={{
+                  backgroundColor: "var(--sand)",
+                  color: "var(--ink)",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+                }}
+              >
+                Nota
               </span>
-              <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-light leading-[1.15] tracking-[-0.02em] text-sand">
-                {PUBLICACOES[0].titulo}
+            </div>
+            <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
+                {PUBLICACOES[1].data} — {PUBLICACOES[1].categoria}
+              </span>
+              <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+                {PUBLICACOES[1].titulo}
               </h3>
-              <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
-                {PUBLICACOES[0].resumo}
-              </p>
-              <div className="mt-2">
+              <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{PUBLICACOES[1].resumo}</p>
+              <div className="mt-auto pt-3">
                 <span
                   className="eyebrow inline-flex items-center gap-2"
-                  style={{ color: "var(--gold)" }}
+                  style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
                 >
                   Ler
-                  <BrandArrow size={14} />
+                  <BrandArrow size={12} />
                 </span>
               </div>
             </div>
           </a>
 
-          {/* Cards menores — imagem no topo, texto abaixo, CTA no fim */}
-          <div className="col-span-1 grid grid-cols-1 gap-6 md:col-span-5 sm:grid-cols-2 md:grid-cols-1">
-            {PUBLICACOES.slice(1).map((p) => (
-              <a
-                key={p.href}
-                href={p.href}
-                className="group flex flex-col overflow-hidden"
+          {/* Cartão 3 — coluna 2..7, mais estreito, rotação negativa, empurrado à direita */}
+          <a
+            href={PUBLICACOES[2].href}
+            className="group relative col-span-1 flex flex-col md:col-span-5 md:col-start-3 md:-mt-4"
+            style={{
+              transform: "rotate(-0.5deg)",
+              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
+              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
+              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+            }}
+          >
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <img
+                src={PUBLICACOES[2].imagem}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+              />
+              {/* Fita canto */}
+              <span
+                aria-hidden="true"
+                className="absolute -top-2 right-8 h-5 w-20"
                 style={{
-                  backgroundColor: "color-mix(in oklch, white 65%, var(--sand))",
-                  border: "1px solid color-mix(in oklch, var(--ink) 20%, transparent)",
-                  borderRadius: 4,
+                  backgroundColor: "color-mix(in oklch, var(--ink) 20%, var(--sand))",
+                  opacity: 0.75,
+                  transform: "rotate(6deg)",
+                  boxShadow: "0 4px 10px -4px rgba(8,38,36,0.3)",
                 }}
-              >
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <img
-                    src={p.imagem}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col gap-3 p-6">
-                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-                    {p.data} — {p.categoria}
-                  </span>
-                  <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.35rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
-                    {p.titulo}
-                  </h3>
-                  <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{p.resumo}</p>
-                  <div className="mt-auto pt-3">
-                    <span
-                      className="eyebrow inline-flex items-center gap-2"
-                      style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
-                    >
-                      Ler
-                      <BrandArrow size={12} />
-                    </span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
+                {PUBLICACOES[2].data} — {PUBLICACOES[2].categoria}
+              </span>
+              <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+                {PUBLICACOES[2].titulo}
+              </h3>
+              <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{PUBLICACOES[2].resumo}</p>
+              <div className="mt-auto pt-3">
+                <span
+                  className="eyebrow inline-flex items-center gap-2"
+                  style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
+                >
+                  Ler
+                  <BrandArrow size={12} />
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
+
     </section>
   );
 }
