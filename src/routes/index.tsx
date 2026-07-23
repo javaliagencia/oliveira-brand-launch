@@ -907,7 +907,6 @@ function PublicacoesFold() {
                     border: "1px solid color-mix(in oklch, var(--gold) 40%, transparent)",
                   }}
                 >
-                  <span aria-hidden style={{ width: 6, height: 6, borderRadius: 999, background: "var(--gold)" }} />
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
                 </span>
                 <h3
