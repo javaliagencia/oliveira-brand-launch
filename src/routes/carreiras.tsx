@@ -9,7 +9,7 @@
  *  5. Oportunidades — CTA para o portal de vagas.
  */
 import { createFileRoute } from "@tanstack/react-router";
-import bannerImg from "@/assets/carreira-bg.jpg.asset.json";
+import bannerImg from "@/assets/carreiras-hero.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
 
