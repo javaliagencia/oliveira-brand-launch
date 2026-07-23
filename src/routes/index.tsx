@@ -9,6 +9,7 @@ import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
 import pubContencioso from "@/assets/pub-contencioso.jpg.asset.json";
 import pubReforma from "@/assets/pub-reforma.jpg.asset.json";
 import pubCredito from "@/assets/pub-credito.jpg.asset.json";
+import pubGovernanca from "@/assets/pub-governanca.jpg.asset.json";
 import pubParticles from "@/assets/pub-particles.mp4.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
