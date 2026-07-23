@@ -102,45 +102,62 @@ function NoticiaPage() {
 
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
-      {/* HERO — bloco editorial escuro + imagem em destaque */}
-      <section className="relative bg-[var(--sand)] pt-28 md:pt-32">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-px"
-          style={{ backgroundColor: "var(--gold)" }}
-        />
-        <div className="mx-auto max-w-[1360px] px-6">
-          <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
-            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-6 md:px-12 md:py-16 md:-mr-8 md:mt-16">
-              <SectionEyebrow tone="gold">{CATEGORIA}</SectionEyebrow>
-              <h1 className="mt-6 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-[42px]">
+      {/* HERO — banner jornalístico (padrão Simmons) */}
+      <section className="relative">
+        {/* Faixa de metadados no topo */}
+        <div className="bg-[var(--ink)] pt-24 md:pt-28">
+          <div className="mx-auto flex max-w-[1360px] flex-wrap items-center gap-x-6 gap-y-2 px-6 pb-4 text-[11px] uppercase tracking-[0.28em] text-[color-mix(in_oklch,var(--sand)_70%,transparent)]">
+            <span className="text-[var(--gold)]">{CATEGORIA}</span>
+            <span aria-hidden="true" className="opacity-40">·</span>
+            <time dateTime={DATA_ISO}>{DATA_LABEL}</time>
+          </div>
+        </div>
+
+        {/* Imagem em largura total */}
+        <div className="relative aspect-[21/9] w-full overflow-hidden bg-[var(--ink)] md:aspect-[21/8]">
+          <img
+            src={bannerUrl}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="eager"
+            width={2100}
+            height={900}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, color-mix(in oklch, var(--ink) 20%, transparent) 0%, transparent 40%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* Barra dourada de separação */}
+        <div aria-hidden="true" className="h-[3px] w-full bg-[var(--gold)]" />
+
+        {/* Título e resumo abaixo do banner */}
+        <div className="bg-[var(--sand)]">
+          <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-20">
+            <div className="max-w-[900px]">
+              <h1 className="font-display text-3xl font-medium leading-[1.05] tracking-tight text-[var(--ink-2)] md:text-[52px]">
                 {TITULO}
               </h1>
-              <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
+              <p className="mt-8 max-w-[720px] text-[17px] leading-relaxed text-[var(--ink)]/80 md:text-[19px]">
                 {DESCRICAO}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] uppercase tracking-[0.22em] text-[color-mix(in_oklch,var(--sand)_70%,transparent)]">
-                <time dateTime={DATA_ISO}>{DATA_LABEL}</time>
-                <span aria-hidden="true">·</span>
-                <span>{AUTOR}</span>
-              </div>
-            </div>
-
-            <div className="order-1 md:order-2 md:col-span-6">
-              <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/12]">
-                <img
-                  src={bannerUrl}
-                  alt=""
-                  className="h-full w-full object-cover"
-                  loading="eager"
-                  width={1600}
-                  height={1100}
-                />
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[color-mix(in_oklch,var(--ink)_12%,transparent)] pt-6 text-[12px] uppercase tracking-[0.24em] text-[var(--ink)]/70">
+                <span>
+                  Por <span className="text-[var(--ink-2)]">{AUTOR}</span>
+                </span>
+                <span aria-hidden="true" className="opacity-40">·</span>
+                <span>{AUTOR_CARGO}</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* CORPO */}
       <section className="mx-auto max-w-[1360px] px-6 py-12 md:py-20">
