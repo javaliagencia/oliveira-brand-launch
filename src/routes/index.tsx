@@ -280,7 +280,9 @@ function CompetenciaCard({
         flexGrow,
         transition: "flex-grow 800ms cubic-bezier(0.16,0.84,0.24,1)",
         backgroundColor: "var(--ink)",
-        
+        border: "0",
+        boxShadow: "none",
+        marginLeft: isLast ? "-10px" : undefined,
       }}
       aria-label={data.titulo}
     >
@@ -294,13 +296,30 @@ function CompetenciaCard({
         loading="lazy"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,0.84,0.24,1)]"
-        style={{ transform: isHovered ? "scale(1.06)" : "scale(1)" }}
+        style={{
+          width: "calc(100% + 28px)",
+          maxWidth: "none",
+          transform: isHovered ? "scale(1.1)" : "scale(1.06)",
+          transformOrigin: isLast ? "right center" : "left center",
+          left: isLast ? "-18px" : "0",
+        }}
       />
+
+      {!isLast ? (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-[-12px] z-[1] hidden w-8 md:block"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.46) 42%, rgba(8,38,36,0.36) 58%, rgba(8,38,36,0) 100%)",
+          }}
+        />
+      ) : null}
 
       {/* Overscura — mais forte no hover para dar suporte ao texto */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 transition-opacity duration-[600ms]"
+        className="absolute inset-0 z-[2] transition-opacity duration-[600ms]"
         style={{
           background:
             "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.92) 100%)",
@@ -310,7 +329,7 @@ function CompetenciaCard({
 
       {/* Rótulo permanente (01/02 + área + título) — sobe um pouco no hover para dar lugar à descrição */}
       <div
-        className="absolute inset-x-0 bottom-0 flex flex-col gap-3 px-8 pb-8 text-sand transition-[padding,transform] duration-[600ms] md:px-12 md:pb-10"
+        className="absolute inset-x-0 bottom-0 z-[3] flex flex-col gap-3 px-8 pb-8 text-sand transition-[padding,transform] duration-[600ms] md:px-12 md:pb-10"
         style={{ transform: isHovered ? "translateY(-2px)" : "translateY(0)" }}
       >
         <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
