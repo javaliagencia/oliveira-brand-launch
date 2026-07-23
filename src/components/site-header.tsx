@@ -76,9 +76,9 @@ const NAV_SECTIONS: NavSection[] = [
     label: "Publicações",
     href: "/publicacoes",
     children: [
-      { label: "Análises", href: "/publicacoes/analises" },
       { label: "Notícias", href: "/publicacoes/noticias/cvm-atualizacao-ofertas-publicas" },
-      { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
+      { label: "Análises", href: "/publicacoes/analises" },
+      { label: "Estudos", href: "/publicacoes/estudos-materiais" },
     ],
   },
   {
