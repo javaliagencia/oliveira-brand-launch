@@ -448,12 +448,12 @@ export function SiteFooter() {
               <img
                 src={logoVerde.url}
                 alt="Oliveira Ritzmann Advogados"
-                className="h-14 w-auto opacity-95"
+                className="h-16 w-auto opacity-95"
               />
               <img
                 src={selo30.url}
                 alt="30 anos"
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </div>
             <span
