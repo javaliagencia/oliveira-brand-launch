@@ -121,9 +121,9 @@ const SEGMENTOS_LINKS = [
 ];
 
 const PUBLICACOES_LINKS = [
-  { label: "Análises", href: "/publicacoes/analises" },
   { label: "Notícias", href: "/publicacoes/noticias/cvm-atualizacao-ofertas-publicas" },
-  { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
+  { label: "Análises", href: "/publicacoes/analises" },
+  { label: "Estudos", href: "/publicacoes/estudos-materiais" },
 ];
 
 const ESCRITORIO_LINKS = [
