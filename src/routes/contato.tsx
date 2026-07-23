@@ -266,29 +266,6 @@ function ContatoPage() {
         </div>
       </section>
 
-      {/* SEDES — remissão ao rodapé de presença */}
-      <section className="border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] bg-[color-mix(in_oklch,var(--sand)_60%,white)]">
-        <div className="mx-auto max-w-[1360px] px-6 py-16 md:py-20">
-          <SectionEyebrow tone="ink-2">Presença</SectionEyebrow>
-          <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-12">
-            <p className="md:col-span-7 font-display text-2xl font-light leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[30px]">
-              Blumenau, São Paulo, Rio de Janeiro, Curitiba, Porto Alegre,
-              Salvador, Goiânia, Maceió e Aracaju — nove praças com o mesmo
-              padrão técnico.
-            </p>
-            <div className="md:col-span-5 text-[15px] leading-relaxed text-[var(--ink)]/80">
-              Endereços completos das sedes disponíveis na área de{" "}
-              <a
-                href="#presenca"
-                className="underline decoration-[var(--gold)] underline-offset-4 transition-colors hover:text-[var(--gold)]"
-              >
-                Presença
-              </a>{" "}
-              ao final desta página.
-            </div>
-          </div>
-        </div>
-      </section>
     </article>
   );
 }
