@@ -139,10 +139,6 @@ function ContatoPage() {
             </h2>
             <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-[var(--ink)]/80">
               <p>
-                Se você já é cliente do escritório, procure diretamente o
-                advogado que conduz o seu caso.
-              </p>
-              <p>
                 Para candidaturas a vagas, acesse a página de{" "}
                 <a
                   href="/carreiras"
