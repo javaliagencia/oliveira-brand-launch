@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
 import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
 
+const CarreirasRoute = CarreirasRouteImport.update({
+  id: '/carreiras',
+  path: '/carreiras',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -39,12 +45,14 @@ const AtuacaoSegmentosInstituicoesFinanceirasRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carreiras': typeof CarreirasRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carreiras': typeof CarreirasRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -52,6 +60,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carreiras': typeof CarreirasRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -60,18 +69,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/carreiras'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/carreiras'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
   id:
     | '__root__'
     | '/'
+    | '/carreiras'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
@@ -79,6 +91,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarreirasRoute: typeof CarreirasRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosInstituicoesFinanceirasRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -86,6 +99,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/carreiras': {
+      id: '/carreiras'
+      path: '/carreiras'
+      fullPath: '/carreiras'
+      preLoaderRoute: typeof CarreirasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -119,6 +139,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarreirasRoute: CarreirasRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosInstituicoesFinanceirasRoute:
