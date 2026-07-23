@@ -786,7 +786,6 @@ function PublicacoesFold() {
         style={{
           backgroundColor: "color-mix(in oklch, white 60%, var(--sand))",
           boxShadow: "0 16px 40px -28px rgba(8,38,36,0.45)",
-          border: "1px solid color-mix(in oklch, var(--ink) 18%, transparent)",
         }}
       >
         <div className="relative aspect-[4/5] w-[42%] shrink-0 overflow-hidden">
