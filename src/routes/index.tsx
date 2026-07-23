@@ -821,7 +821,7 @@ function PublicacoesFold() {
               alignSelf: "stretch",
             }}
           >
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden md:aspect-[3/4]">
               <img
                 src={PUBLICACOES[1].imagem}
                 alt=""
