@@ -14,16 +14,13 @@ import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
  */
 
 type NavItem = { label: string; href: string };
-
-const NAV: NavItem[] = [
-  { label: "Início", href: "/" },
-  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
-  { label: "Atuação", href: "/atuacao" },
-  { label: "Advogados", href: "/advogados" },
-  { label: "Publicações", href: "/publicacoes" },
-  { label: "Carreiras", href: "/carreiras" },
-  { label: "Contato", href: "/contato" },
-];
+type NavGroup = { title: string; items: NavItem[] };
+type NavSection = {
+  label: string;
+  href: string;
+  children?: NavItem[];
+  groups?: NavGroup[];
+};
 
 const AREAS_LINKS: NavItem[] = [
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
@@ -38,9 +35,60 @@ const AREAS_LINKS: NavItem[] = [
   { label: "Direito Médico", href: "/areas/direito-medico" },
 ];
 
-const PUBLICACOES_LINKS: NavItem[] = [
-  { label: "Análises", href: "/publicacoes/analises" },
-  { label: "Notícias", href: "/publicacoes/noticias" },
+const SEGMENTOS_LINKS: NavItem[] = [
+  { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
+  { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
+  { label: "Seguradoras", href: "/atuacao/segmentos/seguradoras" },
+  { label: "Concessionárias e serviços públicos", href: "/atuacao/segmentos/concessionarias-servicos-publicos" },
+  { label: "Marketplaces e meios de pagamento", href: "/atuacao/segmentos/marketplaces-meios-de-pagamento" },
+  { label: "Previdência complementar", href: "/atuacao/segmentos/previdencia-complementar" },
+  { label: "Saúde e Direito Médico", href: "/areas/direito-medico" },
+];
+
+const NAV_SECTIONS: NavSection[] = [
+  { label: "Início", href: "/" },
+  {
+    label: "Oliveira Ritzmann",
+    href: "/oliveira-ritzmann",
+    children: [
+      { label: "História", href: "/historia" },
+      { label: "Presença", href: "/presenca" },
+      { label: "Carreiras", href: "/carreiras" },
+    ],
+  },
+  {
+    label: "Atuação",
+    href: "/atuacao",
+    groups: [
+      { title: "Áreas do Direito", items: AREAS_LINKS },
+      { title: "Segmentos", items: SEGMENTOS_LINKS },
+    ],
+  },
+  {
+    label: "Advogados",
+    href: "/advogados",
+    children: [
+      { label: "Sócios", href: "/advogados" },
+      { label: "Associados", href: "/advogados/associados" },
+    ],
+  },
+  {
+    label: "Publicações",
+    href: "/publicacoes",
+    children: [
+      { label: "Análises", href: "/publicacoes/analises" },
+      { label: "Notícias", href: "/publicacoes/noticias/cvm-atualizacao-ofertas-publicas" },
+      { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
+    ],
+  },
+  {
+    label: "Contato",
+    href: "/contato",
+    children: [
+      { label: "Falar com o escritório", href: "/contato" },
+      { label: "Canal de ética", href: "/etica" },
+    ],
+  },
 ];
 
 export function SiteHeader() {
