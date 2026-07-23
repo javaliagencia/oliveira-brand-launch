@@ -898,11 +898,12 @@ function PublicacoesFold() {
             className="group relative block w-full"
           >
             <div
-              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
+              className="relative overflow-hidden"
               style={{
                 boxShadow:
                   "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
                 backgroundColor: "var(--ink)",
+                minHeight: "clamp(360px, 42vw, 560px)",
               }}
             >
               <img
@@ -918,7 +919,7 @@ function PublicacoesFold() {
                     "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.92) 100%)",
                 }}
               />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-4 p-8 md:p-10">
+              <div className="relative flex min-h-[inherit] flex-col items-start justify-end gap-4 p-8 md:p-10">
                 <span
                   className="eyebrow inline-flex items-center gap-3 rounded-full px-3.5 py-1.5 backdrop-blur-md"
                   style={{
