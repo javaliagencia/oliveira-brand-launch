@@ -681,6 +681,15 @@ const PUBLICACOES: Publicacao[] = [
     imagem: pubCredito.url,
     href: "/publicacoes/recuperacao-credito-juros",
   },
+  {
+    data: "10 jul 2026",
+    categoria: "Publicação",
+    titulo: "Governança contratual: cláusulas que sustentam operações longas",
+    resumo:
+      "O que a auditoria de contratos revela sobre risco, revisão e o desenho das relações que precisam durar.",
+    imagem: pubGovernancaUrl,
+    href: "/publicacoes/governanca-contratual",
+  },
 ];
 
 function PublicacoesFold() {
