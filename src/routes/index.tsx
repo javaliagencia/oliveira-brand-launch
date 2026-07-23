@@ -732,20 +732,8 @@ function PublicacoesFold() {
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
       <div className="relative mx-auto max-w-[1360px] px-6 pb-20 md:pb-28" style={{ marginTop: "-180px" }}>
 
-        {/* Marcas decorativas de "colagem" — papel milimetrado sutil no fundo */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage:
-              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          }}
-        />
+
+
 
         {/* Grade em colagem — cartões lado a lado, sem sobreposição; profundidade via rotação, sombra e staggered translateY */}
         <div
@@ -819,20 +807,21 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 (Nota) — cols 8..12, ao lado do destaque, ligeiramente abaixo */}
+          {/* Cartão 2 (Nota) — cols 8..12, coluna direita alta cobrindo as duas linhas */}
           <a
             href={PUBLICACOES[1].href}
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              transform: "rotate(0.6deg) translateY(56px)",
+              gridRow: "1 / span 2",
+              transform: "rotate(0.5deg)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              alignSelf: "start",
+              alignSelf: "stretch",
             }}
           >
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden md:aspect-[3/4]">
               <img
                 src={PUBLICACOES[1].imagem}
                 alt=""
@@ -870,17 +859,19 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 3 — segunda linha, cols 8..12, alinhado à direita abaixo da Nota */}
+          {/* Cartão 3 — segunda linha, cols 1..7, à esquerda abaixo do destaque */}
           <a
             href={PUBLICACOES[2].href}
-            className="group relative col-span-1 flex flex-col md:col-span-5"
+            className="group relative col-span-1 flex flex-col md:col-span-7"
             style={{
-              gridColumn: "8 / span 5",
-              transform: "rotate(-0.4deg) translateY(120px)",
+              gridColumn: "1 / span 7",
+              gridRow: 2,
+              transform: "rotate(-0.4deg)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
               alignSelf: "start",
+              marginTop: 40,
             }}
           >
             <div className="relative aspect-[16/10] overflow-hidden">
@@ -922,7 +913,7 @@ function PublicacoesFold() {
         </div>
 
         {/* CTA final — botão centralizado abaixo dos artigos */}
-        <div className="mt-56 flex justify-center md:mt-64">
+        <div className="mt-20 flex justify-center md:mt-24">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
