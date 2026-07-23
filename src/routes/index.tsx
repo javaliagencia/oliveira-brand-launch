@@ -732,20 +732,8 @@ function PublicacoesFold() {
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
       <div className="relative mx-auto max-w-[1360px] px-6 pb-20 md:pb-28" style={{ marginTop: "-180px" }}>
 
-        {/* Marcas decorativas de "colagem" — papel milimetrado sutil no fundo */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--ink) 6%, transparent) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage:
-              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          }}
-        />
+
+
 
         {/* Grade em colagem — cartões lado a lado, sem sobreposição; profundidade via rotação, sombra e staggered translateY */}
         <div
