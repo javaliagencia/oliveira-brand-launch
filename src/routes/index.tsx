@@ -1130,7 +1130,7 @@ function SociosCarousel() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{
                     objectPosition: socio.objectPosition ?? "50% 50%",
-                    filter: "brightness(1.14) contrast(0.97) saturate(1.03)",
+                    filter: "brightness(1.28) contrast(0.92) saturate(1.05)",
                   }}
                   loading="lazy"
                 />
@@ -1141,10 +1141,11 @@ function SociosCarousel() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(90deg, rgba(224,217,199,0.22) 0%, rgba(224,217,199,0.06) 30%, rgba(224,217,199,0) 60%)",
-                  mixBlendMode: "soft-light",
+                    "linear-gradient(90deg, rgba(224,217,199,0.32) 0%, rgba(224,217,199,0.14) 35%, rgba(224,217,199,0) 65%)",
+                  mixBlendMode: "screen",
                 }}
               />
+
               {/* Vinheta inferior discreta para garantir leitura do nome */}
               <div
                 aria-hidden="true"
