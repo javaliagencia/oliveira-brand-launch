@@ -1162,9 +1162,10 @@ function SociosCarousel() {
                 <span
                   className="font-display text-[15px] leading-tight whitespace-nowrap inline-flex items-center gap-2"
                   style={{
-                    color: "#ffffff",
+                    color: "var(--sand)",
                     textShadow: "0 1px 14px rgba(8,38,36,0.95), 0 0 3px rgba(0,0,0,0.7)",
                   }}
+
                 >
                   <span
                     className="bg-no-repeat bg-[image:linear-gradient(currentColor,currentColor)] transition-[background-size] duration-300 ease-out"
@@ -1192,9 +1193,10 @@ function SociosCarousel() {
                 <span
                   className="text-[10.5px] uppercase tracking-[0.22em] font-medium"
                   style={{
-                    color: "#e8c98a",
+                    color: "var(--gold)",
                     textShadow: "0 1px 12px rgba(8,38,36,0.95), 0 0 2px rgba(0,0,0,0.7)",
                   }}
+
                 >
                   {socio.cargo}
                 </span>
