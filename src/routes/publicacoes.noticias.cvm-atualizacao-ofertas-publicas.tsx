@@ -128,7 +128,15 @@ function NoticiaPage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, color-mix(in oklch, var(--ink) 20%, transparent) 0%, transparent 40%, transparent 100%)",
+                "linear-gradient(to bottom, color-mix(in oklch, var(--ink) 55%, transparent) 0%, color-mix(in oklch, var(--ink) 35%, transparent) 60%, color-mix(in oklch, var(--ink) 50%, transparent) 100%)",
+              mixBlendMode: "multiply",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{
+              backgroundColor: "color-mix(in oklch, var(--ink-2) 25%, transparent)",
             }}
           />
         </div>
