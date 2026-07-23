@@ -9,6 +9,7 @@ import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
 import pubContencioso from "@/assets/pub-contencioso.jpg.asset.json";
 import pubReforma from "@/assets/pub-reforma.jpg.asset.json";
 import pubCredito from "@/assets/pub-credito.jpg.asset.json";
+import pubGovernancaUrl from "@/assets/pub-governanca.jpg";
 import pubParticles from "@/assets/pub-particles.mp4.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
@@ -680,6 +681,15 @@ const PUBLICACOES: Publicacao[] = [
     imagem: pubCredito.url,
     href: "/publicacoes/recuperacao-credito-juros",
   },
+  {
+    data: "10 jul 2026",
+    categoria: "Publicação",
+    titulo: "Governança contratual: cláusulas que sustentam operações longas",
+    resumo:
+      "O que a auditoria de contratos revela sobre risco, revisão e o desenho das relações que precisam durar.",
+    imagem: pubGovernancaUrl,
+    href: "/publicacoes/governanca-contratual",
+  },
 ];
 
 function PublicacoesFold() {
@@ -735,21 +745,18 @@ function PublicacoesFold() {
 
 
 
-        {/* Grade em colagem — cartões lado a lado, sem sobreposição; profundidade via rotação, sombra e staggered translateY */}
+        {/* Grade 2x2 — alinhada, sem rotações; profundidade via sombra e sutil translateY entre linhas */}
         <div
           className="relative grid grid-cols-1 gap-8 md:gap-10"
           style={{
             gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
           }}
         >
-          {/* Destaque — cols 1..7 */}
+          {/* Destaque — cols 1..7, linha 1 */}
           <a
             href={PUBLICACOES[0].href}
             className="group relative col-span-1 block md:col-span-7"
-            style={{
-              gridColumn: "1 / span 7",
-              transform: "rotate(-0.5deg)",
-            }}
+            style={{ gridColumn: "1 / span 7", gridRow: 1 }}
           >
             <div
               className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
@@ -771,17 +778,6 @@ function PublicacoesFold() {
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.72) 55%, rgba(8,38,36,0.98) 100%)",
-                }}
-              />
-              {/* "Fita" superior */}
-              <span
-                aria-hidden="true"
-                className="absolute -top-3 left-10 h-6 w-24"
-                style={{
-                  backgroundColor: "color-mix(in oklch, var(--gold) 55%, white)",
-                  opacity: 0.7,
-                  transform: "rotate(-4deg)",
-                  boxShadow: "0 6px 12px -6px rgba(8,38,36,0.35)",
                 }}
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
@@ -816,109 +812,59 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 (Nota) — cols 8..12, coluna direita alta cobrindo as duas linhas */}
-          <a
-            href={PUBLICACOES[1].href}
-            className="group relative col-span-1 flex flex-col md:col-span-5"
-            style={{
-              gridColumn: "8 / span 5",
-              transform: "rotate(0deg)",
-              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
-              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              alignSelf: "start",
-            }}
-          >
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <img
-                src={PUBLICACOES[1].imagem}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute right-4 top-4 px-2 py-1 text-[10px] uppercase tracking-[0.28em]"
+          {/* Cartão 2 — Reforma, cols 8..12, linha 1 */}
+          {[1, 2, 3].map((idx) => {
+            const pub = PUBLICACOES[idx];
+            const pos =
+              idx === 1
+                ? { col: "8 / span 5", row: 1 }
+                : idx === 2
+                ? { col: "1 / span 7", row: 2 }
+                : { col: "8 / span 5", row: 2 };
+            return (
+              <a
+                key={pub.href}
+                href={pub.href}
+                className="group relative col-span-1 flex flex-col md:col-span-5"
                 style={{
-                  backgroundColor: "var(--sand)",
-                  color: "var(--ink)",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+                  gridColumn: pos.col,
+                  gridRow: pos.row,
+                  backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
+                  boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
+                  border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+                  alignSelf: "start",
                 }}
               >
-                Nota
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
-              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-                {PUBLICACOES[1].data} — {PUBLICACOES[1].categoria}
-              </span>
-              <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
-                {PUBLICACOES[1].titulo}
-              </h3>
-              <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{PUBLICACOES[1].resumo}</p>
-              <div className="mt-auto pt-3">
-                <span
-                  className="eyebrow inline-flex items-center gap-2"
-                  style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
-                >
-                  Ler
-                  <BrandArrow size={12} />
-                </span>
-              </div>
-            </div>
-          </a>
-
-          {/* Cartão 3 — segunda linha, cols 1..7, à esquerda abaixo do destaque */}
-          <a
-            href={PUBLICACOES[2].href}
-            className="group relative col-span-1 flex flex-col md:col-span-7"
-            style={{
-              gridColumn: "1 / span 7",
-              gridRow: 2,
-              transform: "rotate(-0.4deg)",
-              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
-              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              alignSelf: "start",
-              marginTop: -12,
-            }}
-          >
-            <div className="relative aspect-[16/10] overflow-hidden">
-              <img
-                src={PUBLICACOES[2].imagem}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute -top-2 right-8 h-5 w-20"
-                style={{
-                  backgroundColor: "color-mix(in oklch, var(--ink) 20%, var(--sand))",
-                  opacity: 0.75,
-                  transform: "rotate(6deg)",
-                  boxShadow: "0 4px 10px -4px rgba(8,38,36,0.3)",
-                }}
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
-              <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-                {PUBLICACOES[2].data} — {PUBLICACOES[2].categoria}
-              </span>
-              <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
-                {PUBLICACOES[2].titulo}
-              </h3>
-              <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{PUBLICACOES[2].resumo}</p>
-              <div className="mt-auto pt-3">
-                <span
-                  className="eyebrow inline-flex items-center gap-2"
-                  style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
-                >
-                  Ler
-                  <BrandArrow size={12} />
-                </span>
-              </div>
-            </div>
-          </a>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={pub.imagem}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+                  <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
+                    {pub.data} — {pub.categoria}
+                  </span>
+                  <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+                    {pub.titulo}
+                  </h3>
+                  <p className="text-[14px] leading-[1.6]" style={{ color: "color-mix(in oklch, var(--ink) 75%, transparent)" }}>{pub.resumo}</p>
+                  <div className="mt-auto pt-3">
+                    <span
+                      className="eyebrow inline-flex items-center gap-2"
+                      style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
+                    >
+                      Ler
+                      <BrandArrow size={12} />
+                    </span>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
         </div>
+
 
         {/* CTA final — botão centralizado abaixo dos artigos */}
         <div className="mt-20 flex justify-center md:mt-24">
