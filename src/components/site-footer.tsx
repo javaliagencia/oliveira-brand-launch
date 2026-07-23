@@ -241,7 +241,7 @@ export function SiteFooter() {
         aria-labelledby="sedes-heading"
         style={{ backgroundColor: "var(--ink)" }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-[1360px] px-6 pb-20 pt-10 md:pb-24 md:pt-12">
           <p className="eyebrow">Presença</p>
           <span
             aria-hidden="true"
