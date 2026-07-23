@@ -655,14 +655,15 @@ type Publicacao = {
 
 const PUBLICACOES: Publicacao[] = [
   {
-    data: "21 jul 2026",
-    categoria: "Publicação",
-    titulo: "Contencioso de massa: o que os indicadores de 2026 revelam",
+    data: "22 jul 2026",
+    categoria: "Notícia",
+    titulo: "CVM atualiza regras de ofertas públicas: o que muda para emissores",
     resumo:
-      "Uma leitura do desempenho do contencioso de volume no primeiro semestre e o que mudou na engenharia processual das grandes carteiras.",
+      "A autarquia publicou atualização normativa que afeta o desenho de ofertas públicas e reforça a agenda de compliance dos emissores.",
     imagem: pubContencioso.url,
-    href: "/publicacoes/contencioso-massa-2026",
+    href: "/publicacoes/noticias/cvm-atualizacao-ofertas-publicas",
   },
+
   {
     data: "18 jul 2026",
     categoria: "Publicação",
