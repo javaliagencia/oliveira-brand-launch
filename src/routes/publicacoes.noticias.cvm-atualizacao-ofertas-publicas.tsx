@@ -201,20 +201,7 @@ function NoticiaPage() {
                 </div>
               </div>
 
-              <div
-                aria-hidden="true"
-                className="h-px w-16"
-                style={{ backgroundColor: "var(--gold)" }}
-              />
 
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--ink)]/60">
-                  Publicado em
-                </p>
-                <p className="mt-3 text-[14px] text-[var(--ink)]/85">
-                  <time dateTime={DATA_ISO}>{DATA_LABEL}</time>
-                </p>
-              </div>
 
               <div className="flex items-center gap-3 pt-2 print:hidden">
                 <button
