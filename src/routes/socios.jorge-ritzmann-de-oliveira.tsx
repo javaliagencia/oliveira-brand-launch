@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Linkedin, Mail, Phone, Contact, ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, Phone, Contact, ArrowRight } from "lucide-react";
 import jorgeCutout from "@/assets/socios/jorge-ritzmann-de-oliveira-cutout.png.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
@@ -126,7 +126,7 @@ function JorgePage() {
                 >
                   <Linkedin size={15} strokeWidth={1.5} className="text-[var(--gold)]" />
                   LinkedIn
-                  <ArrowUpRight size={13} strokeWidth={1.5} className="opacity-60" />
+                  <ArrowRight size={13} strokeWidth={1.5} className="opacity-60" />
                 </a>
               </li>
               <li>
