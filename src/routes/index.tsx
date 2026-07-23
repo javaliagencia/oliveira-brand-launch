@@ -913,7 +913,7 @@ function PublicacoesFold() {
         </div>
 
         {/* CTA final — botão centralizado abaixo dos artigos */}
-        <div className="mt-56 flex justify-center md:mt-64">
+        <div className="mt-20 flex justify-center md:mt-24">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
