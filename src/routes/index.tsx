@@ -788,11 +788,11 @@ function PublicacoesFold() {
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
       <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
         {/* Grade responsiva: 1 coluna no mobile (empilhado, sem sobreposição), 12 colunas 2x2 no desktop */}
-        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
+        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-x-10 md:gap-y-5">
           {/* Destaque — cols 1..7, linha 1 (desktop) */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative block md:col-span-7 md:col-start-1 md:row-start-1"
+            className="group relative block self-start md:col-span-7 md:col-start-1 md:row-start-1"
           >
             <div
               className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
