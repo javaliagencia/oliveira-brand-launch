@@ -272,8 +272,9 @@ function NoticiaPage() {
               </p>
             </div>
 
-            {/* Segmentos de foco · Serviços · Contato */}
-            <div className="mt-16 grid grid-cols-1 gap-10 border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] pt-12 md:grid-cols-3">
+            {/* Segmentos de foco · Serviços */}
+            <div className="mt-16 grid grid-cols-1 gap-10 border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] pt-12 md:grid-cols-2">
+
               <div>
                 <SectionEyebrow tone="ink-2">Segmentos de foco</SectionEyebrow>
                 <ul className="mt-6 divide-y divide-[color-mix(in_oklch,var(--ink)_10%,transparent)]">
@@ -308,33 +309,6 @@ function NoticiaPage() {
                 </ul>
               </div>
 
-              <div>
-                <SectionEyebrow tone="ink-2">Contato</SectionEyebrow>
-                <div className="mt-6 flex items-start gap-4">
-                  <Link
-                    to="/socios/jorge-ritzmann-de-oliveira"
-                    className="block h-16 w-16 shrink-0 overflow-hidden bg-[var(--ink)]"
-                  >
-                    <img
-                      src={socioJorge.url}
-                      alt={AUTOR}
-                      className="h-full w-full object-cover object-top"
-                      loading="lazy"
-                    />
-                  </Link>
-                  <div>
-                    <p className="font-display text-[15px] font-medium leading-tight text-[var(--ink-2)]">
-                      {AUTOR}
-                    </p>
-                    <p className="mt-1 text-[12px] leading-snug text-[var(--ink)]/70">
-                      {AUTOR_CARGO}
-                    </p>
-                    <div className="mt-3">
-                      <BrandLink href="/contato">Fale com o autor</BrandLink>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
