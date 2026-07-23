@@ -10,7 +10,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import bannerImg from "@/assets/carreiras-hero.jpg.asset.json";
+import bannerImg from "@/assets/contato-hero.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow } from "@/components/brand-ui";
 
