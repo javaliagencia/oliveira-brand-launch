@@ -132,40 +132,40 @@ const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }
 function DireitoMedicoPage() {
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
-      {/* HERO — banner discreto */}
-      <section className="relative overflow-hidden bg-[var(--ink)] text-[var(--sand)] pt-28 md:pt-32">
+      {/* HERO — imagem em destaque + bloco editorial (referência Gowling) */}
+      <section className="relative bg-[var(--sand)] pt-28 md:pt-32">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-0 h-px"
           style={{ backgroundColor: "var(--gold)" }}
         />
-        <div className="absolute inset-0">
-          <img
-            src={bannerImg.url}
-            alt=""
-            className="h-full w-full object-cover opacity-40"
-            loading="eager"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg, var(--ink) 0%, color-mix(in oklch, var(--ink) 80%, transparent) 55%, color-mix(in oklch, var(--ink) 40%, transparent) 100%)",
-            }}
-          />
-        </div>
+        <div className="mx-auto max-w-[1360px] px-6">
+          <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
+            {/* Bloco editorial escuro */}
+            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-5 md:px-12 md:py-16 md:-mr-8 md:mt-16">
+              <SectionEyebrow tone="gold">Área de atuação</SectionEyebrow>
+              <h1 className="mt-6 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
+                Direito Médico
+              </h1>
+              <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
+                Assessoria integral a médicos, clínicas, hospitais, operadoras e cooperativas.
+                Defesa técnica, regulação e governança conduzidas com o mesmo método que
+                sustenta trinta anos de atuação em decisões que exigem profundidade.
+              </p>
+            </div>
 
-        <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-16 md:pb-24 md:pt-20">
-          <SectionEyebrow tone="gold">Área de atuação</SectionEyebrow>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
-            Direito Médico
-          </h1>
-          <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[17px]">
-            Assessoria integral a médicos, clínicas, hospitais, operadoras e cooperativas.
-            Defesa técnica, regulação e governança conduzidas com o mesmo método que sustenta
-            trinta anos de atuação em decisões que exigem profundidade.
-          </p>
+            {/* Imagem em destaque */}
+            <div className="order-1 md:order-2 md:col-span-7">
+              <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
+                <img
+                  src={bannerImg.url}
+                  alt="Direito Médico — ambiente clínico"
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
