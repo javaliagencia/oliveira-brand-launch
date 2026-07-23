@@ -21,6 +21,7 @@ const NAV: NavItem[] = [
   { label: "Atuação", href: "/atuacao" },
   { label: "Advogados", href: "/advogados" },
   { label: "Publicações", href: "/publicacoes" },
+  { label: "Carreiras", href: "/carreiras" },
   { label: "Contato", href: "/contato" },
 ];
 
