@@ -201,8 +201,7 @@ function NoticiaPage() {
                 </div>
               </div>
 
-                </p>
-              </div>
+
 
               <div className="flex items-center gap-3 pt-2 print:hidden">
                 <button
