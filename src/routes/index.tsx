@@ -879,7 +879,7 @@ function PublicacoesFold() {
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
               alignSelf: "start",
-              marginTop: 40,
+              marginTop: -12,
             }}
           >
             <div className="relative aspect-[16/10] overflow-hidden">
