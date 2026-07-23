@@ -1060,7 +1060,7 @@ const SOCIOS: { nome: string; cargo: string; foto: string | null; href?: string;
   { nome: "Juliano Schmitt", cargo: "Sócio", foto: socioJuliano.url },
   { nome: "Tatiane Bittencourt", cargo: "Sócia", foto: socioTatiane.url },
   { nome: "Cintia Carla Senem", cargo: "Sócia", foto: socioCintia.url },
-  { nome: "Carolina Schmidt", cargo: "Sócia", foto: socioCarolina.url, objectPosition: "50% 20%" },
+  { nome: "Carolina Schmidt", cargo: "Sócia", foto: socioCarolina.url, objectPosition: "50% 8%" },
   { nome: "Sonia Angulski", cargo: "Sócia", foto: socioSonia.url },
   { nome: "Mariana Hillesheim", cargo: "Sócia", foto: socioMariana.url },
   { nome: "Bruna Schmitt", cargo: "Sócia", foto: socioBruna.url },
