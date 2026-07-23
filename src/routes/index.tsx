@@ -1137,8 +1137,9 @@ function SociosCarousel() {
                     strokeWidth="1.75"
                     style={{ color: "var(--gold)" }}
                   >
-                    <path d="M7 17L17 7" strokeLinecap="square" />
-                    <path d="M9 7h8v8" strokeLinecap="square" />
+                    <path d="M5 12h14" strokeLinecap="square" />
+                    <path d="M13 6l6 6-6 6" strokeLinecap="square" />
+
                   </svg>
                 </span>
                 <span
