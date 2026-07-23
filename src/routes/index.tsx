@@ -744,7 +744,6 @@ function PublicacoesFold() {
         style={{
           backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
           boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
-          border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
         }}
       >
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -755,6 +754,7 @@ function PublicacoesFold() {
           />
         </div>
         <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
+
           <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
             {pub.data} — {pub.categoria}
           </span>
@@ -786,7 +786,6 @@ function PublicacoesFold() {
         style={{
           backgroundColor: "color-mix(in oklch, white 60%, var(--sand))",
           boxShadow: "0 16px 40px -28px rgba(8,38,36,0.45)",
-          border: "1px solid color-mix(in oklch, var(--ink) 18%, transparent)",
         }}
       >
         <div className="relative aspect-[4/5] w-[42%] shrink-0 overflow-hidden">
@@ -902,8 +901,7 @@ function PublicacoesFold() {
               style={{
                 boxShadow:
                   "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
-                border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-                backgroundColor: "white",
+                backgroundColor: "var(--ink)",
               }}
             >
               <img
