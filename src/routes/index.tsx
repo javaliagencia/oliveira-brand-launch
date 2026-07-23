@@ -807,13 +807,20 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 (Nota) — cols 8..12, ao lado do destaque, ligeiramente abaixo */}
+          {/* Cartão 2 (Nota) — cols 8..12, coluna direita alta cobrindo as duas linhas */}
           <a
             href={PUBLICACOES[1].href}
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              transform: "rotate(0.6deg) translateY(56px)",
+              gridRow: "1 / span 2",
+              transform: "rotate(0.5deg)",
+              backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
+              boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
+              border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+              alignSelf: "stretch",
+            }}
+          >
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
