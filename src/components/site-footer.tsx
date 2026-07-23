@@ -98,15 +98,16 @@ const SEDES: Sede[] = [
 const TELEFONE_INSTITUCIONAL = "(47) 3041-9565";
 
 const AREAS_LINKS = [
-  { label: "Bancário", href: "/areas/bancario" },
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
-  { label: "Cível", href: "/areas/civel" },
-  { label: "Consumidor", href: "/areas/consumidor" },
-  { label: "Trabalhista", href: "/areas/trabalhista" },
-  { label: "Tributário", href: "/areas/tributario" },
+  { label: "Contencioso de Volume", href: "/areas/contencioso-de-volume" },
+  { label: "Contencioso Estratégico", href: "/areas/contencioso-estrategico" },
+  { label: "Direito Cível", href: "/areas/civel" },
+  { label: "Direito Tributário", href: "/areas/tributario" },
+  { label: "Direito Trabalhista", href: "/areas/trabalhista" },
   { label: "Societário", href: "/areas/societario" },
-  { label: "Sucessório e Planejamento Patrimonial", href: "/areas/sucessorio-planejamento-patrimonial" },
-  { label: "Previdenciário", href: "/areas/previdenciario" },
+  { label: "Planejamento Patrimonial e Sucessório", href: "/areas/planejamento-patrimonial-sucessorio" },
+  { label: "Contratos", href: "/areas/contratos" },
+  { label: "Direito Médico", href: "/areas/direito-medico" },
 ];
 
 const SEGMENTOS_LINKS = [
