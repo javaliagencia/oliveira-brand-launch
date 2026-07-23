@@ -716,23 +716,22 @@ function PublicacoesFold() {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1360px] px-6 pt-12 pb-14 md:pt-16 md:pb-20">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-[52ch]">
-              <SectionEyebrow>Publicações</SectionEyebrow>
-              <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em] text-sand">
-                O mesmo método que conduz a operação,{" "}
-                <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
-                  aplicado ao que está mudando no Direito.
-                </span>
-              </h2>
-            </div>
-            <BrandLink href="/publicacoes" invert>Ver todas as publicações</BrandLink>
+        <div className="relative mx-auto max-w-[1360px] px-6 pt-12 pb-40 md:pt-16 md:pb-56">
+          <div className="max-w-[62ch]">
+            <SectionEyebrow>Publicações</SectionEyebrow>
+            <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em] text-sand">
+              O mesmo método que conduz a operação,{" "}
+              <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
+                aplicado ao que está mudando no Direito.
+              </span>
+            </h2>
           </div>
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-[1360px] px-6 pt-16 pb-20 md:pt-20 md:pb-28">
+      {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
+      <div className="relative mx-auto max-w-[1360px] px-6 pb-20 md:pb-28" style={{ marginTop: "-180px" }}>
+
         {/* Marcas decorativas de "colagem" — papel milimetrado sutil no fundo */}
         <div
           aria-hidden="true"
@@ -928,7 +927,23 @@ function PublicacoesFold() {
           </a>
         </div>
 
+        {/* CTA final — botão centralizado abaixo dos artigos */}
+        <div className="mt-16 flex justify-center md:mt-20">
+          <a
+            href="/publicacoes"
+            className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
+            style={{
+              color: "var(--ink)",
+              border: "1px solid color-mix(in oklch, var(--ink) 55%, transparent)",
+              backgroundColor: "transparent",
+            }}
+          >
+            Ver todas as publicações
+            <BrandArrow size={14} />
+          </a>
+        </div>
       </div>
+
 
     </section>
   );
