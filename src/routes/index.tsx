@@ -687,48 +687,53 @@ function PublicacoesFold() {
     <section
       id="publicacoes"
       aria-label="Publicações — Em ponto"
-      className="relative w-full overflow-hidden"
+      className="relative w-full"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Fundo — vídeo de partículas em movimento (referência Simmons & Simmons),
-          com véu bege para preservar legibilidade e coesão com o design system. */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* Header band — vídeo de partículas em fundo escuro (referência Simmons & Simmons) */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
+      >
         <video
           src={pubParticles.url}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
+          aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: 0.55 }}
+          style={{ opacity: 0.75 }}
         />
-        {/* Véu bege — mantém a base sand e garante contraste do texto ink */}
+        {/* Véu escuro suave para contraste do texto */}
         <div
+          aria-hidden="true"
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, color-mix(in oklch, var(--sand) 82%, transparent) 0%, color-mix(in oklch, var(--sand) 88%, transparent) 100%)",
+              "linear-gradient(180deg, rgba(8,38,36,0.55) 0%, rgba(8,38,36,0.7) 100%)",
           }}
         />
+
+        <div className="relative mx-auto max-w-[1360px] px-6 pt-12 pb-14 md:pt-16 md:pb-20">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-[52ch]">
+              <SectionEyebrow>Publicações</SectionEyebrow>
+              <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em] text-sand">
+                O mesmo método que conduz a operação,{" "}
+                <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
+                  aplicado ao que está mudando no Direito.
+                </span>
+              </h2>
+            </div>
+            <BrandLink href="/publicacoes" invert>Ver todas as publicações</BrandLink>
+          </div>
+        </div>
       </div>
 
+      <div className="relative mx-auto max-w-[1360px] px-6 pt-10 pb-16 md:pt-14 md:pb-20">
 
-
-      <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-8 md:pb-20 md:pt-10">
-        {/* Cabeçalho */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-[52ch]">
-            <SectionEyebrow tone="ink">Publicações</SectionEyebrow>
-            <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em]" style={{ color: "var(--ink)" }}>
-              O mesmo método que conduz a operação,{" "}
-              <span className="font-display font-semibold" style={{ color: "color-mix(in oklch, var(--gold) 70%, var(--ink))" }}>
-                aplicado ao que está mudando no Direito.
-              </span>
-            </h2>
-          </div>
-          <BrandLink href="/publicacoes">Ver todas as publicações</BrandLink>
-        </div>
 
         {/* Grade — 1 destaque + 3 cards */}
         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-12">
