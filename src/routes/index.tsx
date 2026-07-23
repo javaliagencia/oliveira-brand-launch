@@ -747,29 +747,27 @@ function PublicacoesFold() {
           }}
         />
 
-        {/* Grade em colagem — cartões deslocados, com leve rotação e sobreposição */}
+        {/* Grade em colagem — cartões lado a lado, sem sobreposição; profundidade via rotação, sombra e staggered translateY */}
         <div
-          className="relative grid grid-cols-1 gap-8 md:gap-0"
+          className="relative grid grid-cols-1 gap-8 md:gap-10"
           style={{
             gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
           }}
         >
-          {/* Destaque — cols 1..8, row 1 */}
+          {/* Destaque — cols 1..7 */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative col-span-1 block md:col-span-8"
+            className="group relative col-span-1 block md:col-span-7"
             style={{
-              gridColumn: "1 / span 8",
-              gridRow: 1,
-              transform: "rotate(-0.6deg)",
-              zIndex: 2,
+              gridColumn: "1 / span 7",
+              transform: "rotate(-0.5deg)",
             }}
           >
             <div
-              className="relative aspect-[16/10] overflow-hidden md:aspect-[16/9]"
+              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]"
               style={{
                 boxShadow:
-                  "0 24px 60px -30px rgba(8,38,36,0.55), 0 2px 0 rgba(8,38,36,0.08)",
+                  "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
                 border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
                 backgroundColor: "white",
               }}
@@ -821,15 +819,13 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 (Nota) — cols 8..13 row 1, sobrepõe canto direito do destaque */}
+          {/* Cartão 2 (Nota) — cols 8..12, ao lado do destaque, ligeiramente abaixo */}
           <a
             href={PUBLICACOES[1].href}
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              gridRow: 1,
-              transform: "rotate(0.8deg) translateY(56px)",
-              zIndex: 3,
+              transform: "rotate(0.6deg) translateY(56px)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
@@ -874,22 +870,20 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 3 — cols 3..9 row 2, sobe pra sobrepor o rodapé do destaque */}
+          {/* Cartão 3 — segunda linha, cols 8..12, alinhado à direita abaixo da Nota */}
           <a
             href={PUBLICACOES[2].href}
-            className="group relative col-span-1 flex flex-col md:col-span-6"
+            className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
-              gridColumn: "3 / span 7",
-              gridRow: 2,
-              transform: "rotate(-0.5deg) translateY(-48px)",
-              zIndex: 1,
+              gridColumn: "8 / span 5",
+              transform: "rotate(-0.4deg) translateY(120px)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              marginTop: 32,
+              alignSelf: "start",
             }}
           >
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={PUBLICACOES[2].imagem}
                 alt=""
@@ -928,7 +922,7 @@ function PublicacoesFold() {
         </div>
 
         {/* CTA final — botão centralizado abaixo dos artigos */}
-        <div className="mt-16 flex justify-center md:mt-20">
+        <div className="mt-56 flex justify-center md:mt-64">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
