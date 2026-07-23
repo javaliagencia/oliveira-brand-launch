@@ -895,28 +895,38 @@ function PublicacoesFold() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(8,38,36,0.25) 0%, rgba(8,38,36,0.85) 50%, rgba(8,38,36,1) 100%)",
+                    "linear-gradient(180deg, rgba(8,38,36,0.38) 0%, rgba(8,38,36,0.82) 46%, rgba(8,38,36,1) 100%)",
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-[76%]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(8,38,36,0.98) 0%, rgba(8,38,36,0.94) 58%, rgba(8,38,36,0.62) 82%, rgba(8,38,36,0.18) 100%)",
+                  boxShadow: "0 -28px 64px rgba(8,38,36,0.45)",
                 }}
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
                 <span
-                  className="eyebrow"
+                  className="eyebrow w-fit px-3 py-2"
                   style={{
-                    color: "var(--gold)",
-                    fontWeight: 600,
+                    backgroundColor: "color-mix(in oklch, var(--sand) 92%, white)",
+                    color: "var(--ink)",
+                    fontWeight: 700,
                     letterSpacing: "0.34em",
-                    textShadow: "0 2px 14px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.6)",
+                    textShadow: "none",
                   }}
                 >
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
                 </span>
                 <h3
-                  className="max-w-[24ch] font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-normal leading-[1.15] tracking-[-0.02em] text-white"
-                  style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}
+                  className="max-w-[24ch] font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-medium leading-[1.15] tracking-[-0.02em]"
+                  style={{ color: "var(--sand)", textShadow: "0 3px 20px rgba(0,0,0,0.82), 0 1px 2px rgba(0,0,0,0.95)" }}
                 >
                   {PUBLICACOES[0].titulo}
                 </h3>
-                <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/95 md:text-[16px]" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}>
+                <p className="max-w-[54ch] text-[15px] font-medium leading-[1.65] text-sand md:text-[16px]" style={{ textShadow: "0 2px 14px rgba(0,0,0,0.74), 0 1px 2px rgba(0,0,0,0.9)" }}>
                   {PUBLICACOES[0].resumo}
                 </p>
                 <div className="mt-2">
