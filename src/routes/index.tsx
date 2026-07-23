@@ -901,8 +901,7 @@ function PublicacoesFold() {
               style={{
                 boxShadow:
                   "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
-                border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-                backgroundColor: "white",
+                backgroundColor: "var(--ink)",
               }}
             >
               <img
