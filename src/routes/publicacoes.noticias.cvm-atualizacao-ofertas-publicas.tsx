@@ -154,13 +154,6 @@ function NoticiaPage() {
               <p className="mt-8 max-w-[720px] text-[17px] leading-relaxed text-[var(--ink)]/80 md:text-[19px]">
                 {DESCRICAO}
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[color-mix(in_oklch,var(--ink)_12%,transparent)] pt-6 text-[12px] uppercase tracking-[0.24em] text-[var(--ink)]/70">
-                <span>
-                  Por <span className="text-[var(--ink-2)]">{AUTOR}</span>
-                </span>
-                <span aria-hidden="true" className="opacity-40">·</span>
-                <span>{AUTOR_CARGO}</span>
-              </div>
             </div>
           </div>
         </div>
