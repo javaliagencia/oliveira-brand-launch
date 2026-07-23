@@ -282,7 +282,7 @@ function CompetenciaCard({
         backgroundColor: "var(--ink)",
         border: "0",
         boxShadow: "none",
-        marginLeft: isLast ? "-3px" : undefined,
+        marginLeft: isLast ? "-10px" : undefined,
       }}
       aria-label={data.titulo}
     >
@@ -297,8 +297,11 @@ function CompetenciaCard({
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,0.84,0.24,1)]"
         style={{
-          transform: isHovered ? "scale(1.09)" : "scale(1.045)",
+          width: "calc(100% + 28px)",
+          maxWidth: "none",
+          transform: isHovered ? "scale(1.1)" : "scale(1.06)",
           transformOrigin: isLast ? "right center" : "left center",
+          left: isLast ? "-18px" : "0",
         }}
       />
 
