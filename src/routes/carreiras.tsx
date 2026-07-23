@@ -41,12 +41,12 @@ const PILARES: { titulo: string; texto: string }[] = [
   {
     titulo: "Estrutura de formação",
     texto:
-      "Trilha desenhada por sócios: leitura de caso, redação técnica, sustentação oral e condução de audiências acompanhadas desde o primeiro ano.",
+      "Trilha desenhada por sócios: leitura de processo, redação técnica, sustentação oral e condução de audiências acompanhadas desde o primeiro ano.",
   },
   {
     titulo: "Sócio acompanhando o trabalho",
     texto:
-      "Nenhum caso corre solto. O sócio responsável está na ponta da relação com o cliente e na revisão do que sai do escritório.",
+      "Nenhum processo corre sem supervisão. O sócio responsável está na ponta da relação com o cliente e na revisão do que sai do escritório.",
   },
   {
     titulo: "Caminho interno de crescimento",
@@ -125,11 +125,11 @@ function CarreirasPage() {
 
       {/* MANIFESTO */}
       <section className="mx-auto max-w-[1360px] px-6 py-16 md:py-24">
-        <SectionEyebrow tone="ink-2">Como pensamos formação</SectionEyebrow>
+        <SectionEyebrow tone="ink-2">Formação</SectionEyebrow>
         <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-12">
           <p className="md:col-span-7 font-display text-2xl font-light leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[34px]">
-            Advocacia se aprende fazendo — perto de quem já fez, com o mesmo
-            padrão técnico que sustenta operações de escala nacional.
+            Formar advogado é trabalho de sócio — com o mesmo padrão técnico
+            que sustenta operações de escala nacional.
           </p>
           <div className="md:col-span-5">
             <div
@@ -139,9 +139,9 @@ function CarreirasPage() {
             />
             <div className="space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
               <p>
-                Contratamos por curiosidade técnica, rigor de leitura e
-                disposição para conduzir o caso — do primeiro contato até a
-                decisão. É o mesmo método que aplicamos aos nossos clientes.
+                O escritório procura curiosidade técnica, rigor de leitura e
+                disposição para assumir responsabilidade. A formação acontece
+                na operação, com acompanhamento desde o primeiro ano.
               </p>
               <p>
                 O escritório se organiza para que cada advogado tenha um sócio
@@ -159,7 +159,7 @@ function CarreirasPage() {
           <div className="max-w-2xl">
             <SectionEyebrow tone="ink-2">O que sustenta a carreira aqui</SectionEyebrow>
             <h2 className="mt-6 font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
-              Quatro compromissos que atravessam cada praça.
+              Quatro coisas que valem em todas as praças.
             </h2>
           </div>
 
