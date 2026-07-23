@@ -886,6 +886,7 @@ function PublicacoesFold() {
           </a>
 
             {renderPublicacaoCard(2)}
+            {renderPublicacaoCompact(4)}
           </div>
 
           <div className="flex min-w-0 flex-col gap-7 md:gap-8">
@@ -894,8 +895,8 @@ function PublicacoesFold() {
           </div>
         </div>
 
-        {/* CTA final — alinhado à esquerda, na coluna do destaque */}
-        <div className="mt-16 flex justify-start md:mt-20">
+        {/* CTA final — centralizado */}
+        <div className="mt-16 flex justify-center md:mt-20">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
