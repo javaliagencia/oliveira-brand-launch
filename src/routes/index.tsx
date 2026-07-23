@@ -9,6 +9,7 @@ import carreiraVideo from "@/assets/carreira-bg.mp4.asset.json";
 import pubContencioso from "@/assets/pub-contencioso.jpg.asset.json";
 import pubReforma from "@/assets/pub-reforma.jpg.asset.json";
 import pubCredito from "@/assets/pub-credito.jpg.asset.json";
+import pubParticles from "@/assets/pub-particles.mp4.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandLink, BrandArrow } from "@/components/brand-ui";
 import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
@@ -689,34 +690,29 @@ function PublicacoesFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
-      {/* Ritmo de fundo — colunas hairline douradas fixas + scanner vertical
-          único (linha dourada horizontal deslizando de cima a baixo). Traz
-          cadência editorial sem competir com o texto. */}
+      {/* Fundo — vídeo de partículas em movimento (referência Simmons & Simmons),
+          com véu bege para preservar legibilidade e coesão com o design system. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Colunas verticais discretas alinhadas à grade */}
-        <div className="absolute inset-y-0 left-1/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
-        <div className="absolute inset-y-0 left-2/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
-        <div className="absolute inset-y-0 left-3/4 w-px" style={{ backgroundColor: "color-mix(in oklch, var(--gold) 35%, transparent)" }} />
-        {/* Scanner vertical — hairline horizontal atravessando a seção */}
+        <video
+          src={pubParticles.url}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ opacity: 0.55 }}
+        />
+        {/* Véu bege — mantém a base sand e garante contraste do texto ink */}
         <div
-          className="absolute left-0 right-0 h-px"
+          className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, transparent 0%, color-mix(in oklch, var(--gold) 85%, transparent) 50%, transparent 100%)",
-            animation: "empunto-scan 8s cubic-bezier(0.4,0,0.2,1) infinite",
+              "linear-gradient(180deg, color-mix(in oklch, var(--sand) 82%, transparent) 0%, color-mix(in oklch, var(--sand) 88%, transparent) 100%)",
           }}
         />
-        <style>{`
-          @keyframes empunto-scan {
-            0%   { transform: translateY(-10%); opacity: 0; }
-            50%  { opacity: 0.55; }
-            100% { transform: translateY(110%); opacity: 0; }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            [style*="empunto-scan"] { animation: none !important; }
-          }
-        `}</style>
       </div>
+
 
 
       <div className="relative mx-auto max-w-[1360px] px-6 pb-16 pt-8 md:pb-20 md:pt-10">
