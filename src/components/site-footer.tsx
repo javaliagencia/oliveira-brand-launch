@@ -506,6 +506,14 @@ export function SiteFooter() {
                     Canal de ética
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/transparencia"
+                    className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  >
+                    Portal da Transparência
+                  </a>
+                </li>
               </ul>
             </div>
 
