@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
 import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
 
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CarreirasRoute = CarreirasRouteImport.update({
   id: '/carreiras',
   path: '/carreiras',
@@ -46,6 +52,7 @@ const AtuacaoSegmentosInstituicoesFinanceirasRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
+  '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -53,6 +60,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
+  '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
+  '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/carreiras'
+    | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/carreiras'
+    | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/carreiras'
+    | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
@@ -92,6 +104,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CarreirasRoute: typeof CarreirasRoute
+  ContatoRoute: typeof ContatoRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosInstituicoesFinanceirasRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
@@ -99,6 +112,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/carreiras': {
       id: '/carreiras'
       path: '/carreiras'
@@ -140,6 +160,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CarreirasRoute: CarreirasRoute,
+  ContatoRoute: ContatoRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosInstituicoesFinanceirasRoute:
