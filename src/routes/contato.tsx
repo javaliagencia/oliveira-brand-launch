@@ -110,12 +110,6 @@ function ContatoPage() {
                 Envie sua mensagem pelo formulário. O contato é direcionado à
                 área responsável, em qualquer uma das praças do país.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <a href="#formulario" className="btn btn-outline-invert">
-                  Ir para o formulário
-                  <BrandArrow />
-                </a>
-              </div>
             </div>
 
             <div className="order-1 md:order-2 md:col-span-7">
