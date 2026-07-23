@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
+import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,22 +30,31 @@ const AreasDireitoMedicoRoute = AreasDireitoMedicoRouteImport.update({
   path: '/areas/direito-medico',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtuacaoSegmentosInstituicoesFinanceirasRoute =
+  AtuacaoSegmentosInstituicoesFinanceirasRouteImport.update({
+    id: '/atuacao/segmentos/instituicoes-financeiras',
+    path: '/atuacao/segmentos/instituicoes-financeiras',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -52,19 +62,26 @@ export interface FileRouteTypes {
     | '/'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/instituicoes-financeiras'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/areas/direito-medico' | '/socios/jorge-ritzmann-de-oliveira'
+  to:
+    | '/'
+    | '/areas/direito-medico'
+    | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/instituicoes-financeiras'
   id:
     | '__root__'
     | '/'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/instituicoes-financeiras'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
+  AtuacaoSegmentosInstituicoesFinanceirasRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -90,6 +107,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDireitoMedicoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atuacao/segmentos/instituicoes-financeiras': {
+      id: '/atuacao/segmentos/instituicoes-financeiras'
+      path: '/atuacao/segmentos/instituicoes-financeiras'
+      fullPath: '/atuacao/segmentos/instituicoes-financeiras'
+      preLoaderRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -97,6 +121,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
+  AtuacaoSegmentosInstituicoesFinanceirasRoute:
+    AtuacaoSegmentosInstituicoesFinanceirasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
