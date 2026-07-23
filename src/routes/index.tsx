@@ -1193,9 +1193,10 @@ function SociosCarousel() {
                 <span
                   className="text-[10.5px] uppercase tracking-[0.22em] font-medium"
                   style={{
-                    color: "#e8c98a",
+                    color: "var(--gold)",
                     textShadow: "0 1px 12px rgba(8,38,36,0.95), 0 0 2px rgba(0,0,0,0.7)",
                   }}
+
                 >
                   {socio.cargo}
                 </span>
