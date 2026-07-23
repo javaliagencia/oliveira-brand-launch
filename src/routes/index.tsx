@@ -749,12 +749,22 @@ function PublicacoesFold() {
         />
 
         {/* Grade em colagem — cartões deslocados, com leve rotação e sobreposição */}
-        <div className="relative grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-x-6 md:gap-y-16">
-          {/* Destaque — coluna 1..8, rotação -0.6deg, mais alto */}
+        <div
+          className="relative grid grid-cols-1 gap-8 md:gap-0"
+          style={{
+            gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
+          }}
+        >
+          {/* Destaque — cols 1..8, row 1 */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative col-span-1 block md:col-span-8 md:-mt-6"
-            style={{ transform: "rotate(-0.6deg)" }}
+            className="group relative col-span-1 block md:col-span-8"
+            style={{
+              gridColumn: "1 / span 8",
+              gridRow: 1,
+              transform: "rotate(-0.6deg)",
+              zIndex: 2,
+            }}
           >
             <div
               className="relative aspect-[16/10] overflow-hidden md:aspect-[16/9]"
@@ -812,15 +822,19 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 — coluna 8..12, empurrado para baixo, leve rotação positiva, sobrepõe canto do destaque */}
+          {/* Cartão 2 (Nota) — cols 8..13 row 1, sobrepõe canto direito do destaque */}
           <a
             href={PUBLICACOES[1].href}
-            className="group relative col-span-1 flex flex-col md:col-span-5 md:col-start-8 md:mt-24 md:-ml-10"
+            className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
-              transform: "rotate(0.8deg)",
+              gridColumn: "8 / span 5",
+              gridRow: 1,
+              transform: "rotate(0.8deg) translateY(56px)",
+              zIndex: 3,
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+              alignSelf: "start",
             }}
           >
             <div className="relative aspect-[16/10] overflow-hidden">
@@ -829,7 +843,6 @@ function PublicacoesFold() {
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
               />
-              {/* Selo/etiqueta canto */}
               <span
                 aria-hidden="true"
                 className="absolute right-4 top-4 px-2 py-1 text-[10px] uppercase tracking-[0.28em]"
@@ -862,15 +875,19 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 3 — coluna 2..7, mais estreito, rotação negativa, empurrado à direita */}
+          {/* Cartão 3 — cols 3..9 row 2, sobe pra sobrepor o rodapé do destaque */}
           <a
             href={PUBLICACOES[2].href}
-            className="group relative col-span-1 flex flex-col md:col-span-5 md:col-start-3 md:-mt-4"
+            className="group relative col-span-1 flex flex-col md:col-span-6"
             style={{
-              transform: "rotate(-0.5deg)",
+              gridColumn: "3 / span 7",
+              gridRow: 2,
+              transform: "rotate(-0.5deg) translateY(-48px)",
+              zIndex: 1,
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
+              marginTop: 32,
             }}
           >
             <div className="relative aspect-[16/9] overflow-hidden">
@@ -879,7 +896,6 @@ function PublicacoesFold() {
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
               />
-              {/* Fita canto */}
               <span
                 aria-hidden="true"
                 className="absolute -top-2 right-8 h-5 w-20"
@@ -911,6 +927,7 @@ function PublicacoesFold() {
             </div>
           </a>
         </div>
+
       </div>
 
     </section>
