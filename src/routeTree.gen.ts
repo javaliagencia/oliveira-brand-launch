@@ -14,6 +14,7 @@ import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
+import { Route as PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRouteImport } from './routes/publicacoes.noticias.cvm-atualizacao-ofertas-publicas'
 import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
 
 const ContatoRoute = ContatoRouteImport.update({
@@ -42,6 +43,12 @@ const AreasDireitoMedicoRoute = AreasDireitoMedicoRouteImport.update({
   path: '/areas/direito-medico',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute =
+  PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRouteImport.update({
+    id: '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas',
+    path: '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AtuacaoSegmentosInstituicoesFinanceirasRoute =
   AtuacaoSegmentosInstituicoesFinanceirasRouteImport.update({
     id: '/atuacao/segmentos/instituicoes-financeiras',
@@ -56,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
+  '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -64,6 +72,7 @@ export interface FileRoutesByTo {
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
+  '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -73,6 +82,7 @@ export interface FileRoutesById {
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
+  '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -83,6 +93,7 @@ export interface FileRouteTypes {
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
+    | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -91,6 +102,7 @@ export interface FileRouteTypes {
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
+    | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   id:
     | '__root__'
     | '/'
@@ -99,6 +111,7 @@ export interface FileRouteTypes {
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/instituicoes-financeiras'
+    | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -108,6 +121,7 @@ export interface RootRouteChildren {
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosInstituicoesFinanceirasRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
+  PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute: typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -147,6 +161,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDireitoMedicoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': {
+      id: '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
+      path: '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
+      fullPath: '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
+      preLoaderRoute: typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/atuacao/segmentos/instituicoes-financeiras': {
       id: '/atuacao/segmentos/instituicoes-financeiras'
       path: '/atuacao/segmentos/instituicoes-financeiras'
@@ -165,6 +186,8 @@ const rootRouteChildren: RootRouteChildren = {
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosInstituicoesFinanceirasRoute:
     AtuacaoSegmentosInstituicoesFinanceirasRoute,
+  PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute:
+    PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
