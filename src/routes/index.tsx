@@ -902,8 +902,10 @@ function PublicacoesFold() {
                 <span
                   className="eyebrow"
                   style={{
-                    color: "color-mix(in oklch, var(--gold) 92%, white)",
-                    textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+                    color: "var(--gold)",
+                    fontWeight: 600,
+                    letterSpacing: "0.34em",
+                    textShadow: "0 2px 14px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.6)",
                   }}
                 >
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
