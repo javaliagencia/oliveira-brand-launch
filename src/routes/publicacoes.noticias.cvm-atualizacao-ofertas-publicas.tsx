@@ -272,8 +272,9 @@ function NoticiaPage() {
               </p>
             </div>
 
-            {/* Segmentos de foco · Serviços · Contato */}
-            <div className="mt-16 grid grid-cols-1 gap-10 border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] pt-12 md:grid-cols-3">
+            {/* Segmentos de foco · Serviços */}
+            <div className="mt-16 grid grid-cols-1 gap-10 border-t border-[color-mix(in_oklch,var(--ink)_10%,transparent)] pt-12 md:grid-cols-2">
+
               <div>
                 <SectionEyebrow tone="ink-2">Segmentos de foco</SectionEyebrow>
                 <ul className="mt-6 divide-y divide-[color-mix(in_oklch,var(--ink)_10%,transparent)]">
