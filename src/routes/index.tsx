@@ -112,7 +112,7 @@ function HeroFold() {
 
 
       {/* Conteúdo */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-10 pt-32 md:pb-14 md:pt-40">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-24 pt-32 md:pb-28 md:pt-40">
         <p
           className="font-sans text-[13px] font-semibold uppercase leading-none text-sand"
           style={{ letterSpacing: "0.32em", textShadow: "0 1px 12px rgba(8,38,36,0.55)" }}
@@ -132,7 +132,7 @@ function HeroFold() {
       <a
         href="#competencias"
         aria-label="Continuar para a próxima seção"
-        className="group absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-10"
+        className="group absolute inset-x-0 bottom-4 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-sand/80 transition-colors hover:text-sand focus-visible:outline-none md:bottom-6"
       >
         <svg
           width="44"
