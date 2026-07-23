@@ -692,14 +692,60 @@ const PUBLICACOES: Publicacao[] = [
   },
 ];
 
+function PublicacoesMonogramOutline({ className = "" }: { className?: string }) {
+  // Monograma OR reconstruído como contorno — quartos de círculo hairline em ouro.
+  // Segue a mesma malha 2x2 do símbolo institucional, agora só com traços.
+  return (
+    <svg
+      viewBox="0 0 400 400"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+      stroke="var(--gold)"
+      strokeWidth="1.1"
+      strokeLinecap="square"
+    >
+      {/* Quadrante 1 — canto superior-esquerdo: L retangular */}
+      <path d="M 40 200 L 40 40 L 200 40" />
+      {/* Quadrante 2 — canto superior-direito: quarto de círculo */}
+      <path d="M 400 40 A 160 160 0 0 1 240 200" />
+      <path d="M 200 40 L 400 40" opacity="0.6" />
+      {/* Quadrante 3 — canto inferior-esquerdo: dois arcos opostos */}
+      <path d="M 40 400 A 160 160 0 0 0 200 240" />
+      <path d="M 200 200 A 160 160 0 0 1 40 360" opacity="0.7" />
+      {/* Quadrante 4 — canto inferior-direito: L com arco */}
+      <path d="M 200 400 L 360 400 L 360 240" />
+      <path d="M 240 240 A 120 120 0 0 1 360 360" opacity="0.7" />
+      {/* Cruz central que segura a composição */}
+      <path d="M 200 0 L 200 400" opacity="0.35" />
+      <path d="M 0 200 L 400 200" opacity="0.35" />
+    </svg>
+  );
+}
+
 function PublicacoesFold() {
   return (
     <section
       id="publicacoes"
       aria-label="Publicações — Em ponto"
-      className="relative w-full"
+      className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
+      {/* Monograma outline — atravessa a transição entre a faixa escura e o bege,
+          ancorado à direita. Escondido em telas pequenas para não competir com o conteúdo. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute z-[1] hidden select-none lg:block"
+        style={{
+          right: "-6%",
+          top: "18%",
+          width: "min(38vw, 460px)",
+          aspectRatio: "1 / 1",
+        }}
+      >
+        <PublicacoesMonogramOutline className="h-full w-full opacity-[0.55]" />
+      </div>
+
       {/* Header band — vídeo de partículas em fundo escuro (referência Simmons & Simmons) */}
       <div
         className="relative w-full overflow-hidden"
@@ -740,23 +786,13 @@ function PublicacoesFold() {
       </div>
 
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
-      <div className="relative mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
-
-
-
-
-        {/* Grade 2x2 — alinhada, sem rotações; profundidade via sombra e sutil translateY entre linhas */}
-        <div
-          className="relative grid grid-cols-1 gap-8 md:gap-10"
-          style={{
-            gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
-          }}
-        >
-          {/* Destaque — cols 1..7, linha 1 */}
+      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
+        {/* Grade responsiva: 1 coluna no mobile (empilhado, sem sobreposição), 12 colunas 2x2 no desktop */}
+        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
+          {/* Destaque — cols 1..7, linha 1 (desktop) */}
           <a
             href={PUBLICACOES[0].href}
-            className="group relative col-span-1 block md:col-span-7"
-            style={{ gridColumn: "1 / span 7", gridRow: 1 }}
+            className="group relative block md:col-span-7 md:col-start-1 md:row-start-1"
           >
             <div
               className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
@@ -812,27 +848,24 @@ function PublicacoesFold() {
             </div>
           </a>
 
-          {/* Cartão 2 — Reforma, cols 8..12, linha 1 */}
+          {/* Cartões 2, 3 e 4 — posicionados no desktop; empilhados no mobile */}
           {[1, 2, 3].map((idx) => {
             const pub = PUBLICACOES[idx];
-            const pos =
+            const placement =
               idx === 1
-                ? { col: "8 / span 5", row: 1 }
+                ? "md:col-span-5 md:col-start-8 md:row-start-1"
                 : idx === 2
-                ? { col: "1 / span 7", row: 2 }
-                : { col: "8 / span 5", row: 2 };
+                ? "md:col-span-7 md:col-start-1 md:row-start-2"
+                : "md:col-span-5 md:col-start-8 md:row-start-2";
             return (
               <a
                 key={pub.href}
                 href={pub.href}
-                className="group relative col-span-1 flex flex-col md:col-span-5"
+                className={`group relative flex flex-col self-start ${placement}`}
                 style={{
-                  gridColumn: pos.col,
-                  gridRow: pos.row,
                   backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
                   boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
                   border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-                  alignSelf: "start",
                 }}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -865,9 +898,8 @@ function PublicacoesFold() {
           })}
         </div>
 
-
-        {/* CTA final — botão centralizado abaixo dos artigos */}
-        <div className="mt-20 flex justify-center md:mt-24">
+        {/* CTA final — alinhado à esquerda, na coluna do destaque */}
+        <div className="mt-16 flex justify-start md:mt-20">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
@@ -887,6 +919,7 @@ function PublicacoesFold() {
     </section>
   );
 }
+
 
 /**
  * Dobra 4 — Carreira.
