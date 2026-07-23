@@ -730,7 +730,7 @@ function PublicacoesFold() {
       </div>
 
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
-      <div className="relative mx-auto max-w-[1360px] px-6 pb-20 md:pb-28" style={{ marginTop: "-180px" }}>
+      <div className="relative mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
 
 
 
@@ -752,7 +752,7 @@ function PublicacoesFold() {
             }}
           >
             <div
-              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/11]"
+              className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
               style={{
                 boxShadow:
                   "0 30px 70px -32px rgba(8,38,36,0.6), 0 2px 0 rgba(8,38,36,0.08)",
@@ -813,15 +813,14 @@ function PublicacoesFold() {
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              gridRow: "1 / span 2",
               transform: "rotate(0.5deg)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
-              alignSelf: "stretch",
+              alignSelf: "start",
             }}
           >
-            <div className="relative aspect-[4/5] overflow-hidden md:aspect-[3/4]">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <img
                 src={PUBLICACOES[1].imagem}
                 alt=""
