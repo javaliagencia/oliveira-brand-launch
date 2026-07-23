@@ -128,7 +128,7 @@ function CarreirasPage() {
         <SectionEyebrow tone="ink-2">Formação</SectionEyebrow>
         <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-12">
           <p className="md:col-span-7 font-display text-2xl font-light leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[34px]">
-            Formar advogado é trabalho de sócio — com o mesmo padrão técnico
+            Formar advogado é trabalho de sócio, com o mesmo padrão técnico
             que sustenta operações de escala nacional.
           </p>
           <div className="md:col-span-5">
