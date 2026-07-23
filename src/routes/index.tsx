@@ -895,27 +895,17 @@ function PublicacoesFold() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(8,38,36,0.38) 0%, rgba(8,38,36,0.82) 46%, rgba(8,38,36,1) 100%)",
-                }}
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-[76%]"
-                style={{
-                  background:
-                    "linear-gradient(90deg, rgba(8,38,36,0.98) 0%, rgba(8,38,36,0.94) 58%, rgba(8,38,36,0.62) 82%, rgba(8,38,36,0.18) 100%)",
-                  boxShadow: "0 -28px 64px rgba(8,38,36,0.45)",
+                    "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.55) 55%, rgba(8,38,36,0.92) 100%)",
                 }}
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
                 <span
-                  className="eyebrow w-fit px-3 py-2"
+                  className="eyebrow"
                   style={{
-                    backgroundColor: "color-mix(in oklch, var(--sand) 92%, white)",
-                    color: "var(--ink)",
+                    color: "#E8C77A",
                     fontWeight: 700,
                     letterSpacing: "0.34em",
-                    textShadow: "none",
+                    textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)",
                   }}
                 >
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
@@ -929,6 +919,7 @@ function PublicacoesFold() {
                 <p className="max-w-[54ch] text-[15px] font-medium leading-[1.65] text-sand md:text-[16px]" style={{ textShadow: "0 2px 14px rgba(0,0,0,0.74), 0 1px 2px rgba(0,0,0,0.9)" }}>
                   {PUBLICACOES[0].resumo}
                 </p>
+
                 <div className="mt-2">
                   <span
                     className="eyebrow inline-flex items-center gap-2"
