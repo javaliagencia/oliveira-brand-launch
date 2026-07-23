@@ -868,7 +868,7 @@ function PublicacoesFold() {
       </div>
 
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
-      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
+      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-10 md:pb-14" style={{ marginTop: "-60px" }}>
         {/* Grade responsiva: colunas independentes no desktop para eliminar o vão entre o destaque e a notícia abaixo. */}
         <div className="relative grid grid-cols-1 gap-7 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:items-start md:gap-x-10">
           <div className="flex min-w-0 flex-col gap-5 md:gap-6">
@@ -943,7 +943,7 @@ function PublicacoesFold() {
         </div>
 
         {/* CTA final — centralizado */}
-        <div className="mt-16 flex justify-center md:mt-20">
+        <div className="mt-10 flex justify-center md:mt-12">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
