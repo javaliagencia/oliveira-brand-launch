@@ -6,7 +6,7 @@
  *  2. Visão geral (texto editorial)
  *  3. Principais contatos (advogados vinculados)
  *  4. Outras áreas do escritório
- *  5. Setores econômicos correlatos
+ *  5. Segmentos correlatos
  *  6. Publicações relacionadas
  */
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -297,7 +297,7 @@ function DireitoMedicoPage() {
           </div>
 
           <div>
-            <SectionEyebrow tone="ink-2">Setores econômicos</SectionEyebrow>
+            <SectionEyebrow tone="ink-2">Segmentos</SectionEyebrow>
             <h3 className="mt-6 font-display text-2xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-3xl">
               Segmentos com atuação recorrente.
             </h3>
