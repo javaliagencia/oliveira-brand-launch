@@ -820,7 +820,7 @@ function PublicacoesFold() {
           <div className="flex min-w-0 flex-col gap-5 md:gap-6">
           <a
             href={PUBLICACOES[0].href}
-            className="group relative block self-start"
+            className="group relative block w-full"
           >
             <div
               className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9]"
