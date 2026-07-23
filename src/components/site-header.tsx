@@ -200,14 +200,14 @@ export function SiteHeader() {
               </nav>
 
               <div className="flex flex-col">
-                <p className="eyebrow">Atuação</p>
+                <p className="eyebrow">Áreas do Direito</p>
                 <ul className="mt-8 flex flex-col gap-3">
-                  {ATUACAO_PRIMARY.map((sub) => (
+                  {AREAS_LINKS.map((sub) => (
                     <li key={sub.href}>
                       <a
                         href={sub.href}
                         onClick={() => setOpen(false)}
-                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
+                        className="block font-display text-[clamp(1rem,1.3vw,1.2rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
                       >
                         {sub.label}
                       </a>
