@@ -25,7 +25,7 @@ export function NewsletterCta() {
       />
 
 
-      <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-16 md:py-20">
+      <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-10 px-6 py-10 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-12">
         {/* Coluna 1 — Assine */}
         <div>
           <h2 className="font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.01em]">
