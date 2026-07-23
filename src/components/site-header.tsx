@@ -14,16 +14,13 @@ import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
  */
 
 type NavItem = { label: string; href: string };
-
-const NAV: NavItem[] = [
-  { label: "Início", href: "/" },
-  { label: "Oliveira Ritzmann", href: "/oliveira-ritzmann" },
-  { label: "Atuação", href: "/atuacao" },
-  { label: "Advogados", href: "/advogados" },
-  { label: "Publicações", href: "/publicacoes" },
-  { label: "Carreiras", href: "/carreiras" },
-  { label: "Contato", href: "/contato" },
-];
+type NavGroup = { title: string; items: NavItem[] };
+type NavSection = {
+  label: string;
+  href: string;
+  children?: NavItem[];
+  groups?: NavGroup[];
+};
 
 const AREAS_LINKS: NavItem[] = [
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
@@ -38,9 +35,60 @@ const AREAS_LINKS: NavItem[] = [
   { label: "Direito Médico", href: "/areas/direito-medico" },
 ];
 
-const PUBLICACOES_LINKS: NavItem[] = [
-  { label: "Análises", href: "/publicacoes/analises" },
-  { label: "Notícias", href: "/publicacoes/noticias" },
+const SEGMENTOS_LINKS: NavItem[] = [
+  { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
+  { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
+  { label: "Seguradoras", href: "/atuacao/segmentos/seguradoras" },
+  { label: "Concessionárias e serviços públicos", href: "/atuacao/segmentos/concessionarias-servicos-publicos" },
+  { label: "Marketplaces e meios de pagamento", href: "/atuacao/segmentos/marketplaces-meios-de-pagamento" },
+  { label: "Previdência complementar", href: "/atuacao/segmentos/previdencia-complementar" },
+  { label: "Saúde e Direito Médico", href: "/areas/direito-medico" },
+];
+
+const NAV_SECTIONS: NavSection[] = [
+  { label: "Início", href: "/" },
+  {
+    label: "Oliveira Ritzmann",
+    href: "/oliveira-ritzmann",
+    children: [
+      { label: "História", href: "/historia" },
+      { label: "Presença", href: "/presenca" },
+      { label: "Carreiras", href: "/carreiras" },
+    ],
+  },
+  {
+    label: "Atuação",
+    href: "/atuacao",
+    groups: [
+      { title: "Áreas do Direito", items: AREAS_LINKS },
+      { title: "Segmentos", items: SEGMENTOS_LINKS },
+    ],
+  },
+  {
+    label: "Advogados",
+    href: "/advogados",
+    children: [
+      { label: "Sócios", href: "/advogados" },
+      { label: "Associados", href: "/advogados/associados" },
+    ],
+  },
+  {
+    label: "Publicações",
+    href: "/publicacoes",
+    children: [
+      { label: "Análises", href: "/publicacoes/analises" },
+      { label: "Notícias", href: "/publicacoes/noticias/cvm-atualizacao-ofertas-publicas" },
+      { label: "Estudos e materiais", href: "/publicacoes/estudos-materiais" },
+    ],
+  },
+  {
+    label: "Contato",
+    href: "/contato",
+    children: [
+      { label: "Falar com o escritório", href: "/contato" },
+      { label: "Canal de ética", href: "/etica" },
+    ],
+  },
 ];
 
 export function SiteHeader() {
@@ -181,72 +229,83 @@ export function SiteHeader() {
               <div className="h-px w-full" style={{ backgroundColor: "var(--gold)" }} />
             </div>
 
-            <div className="mx-auto grid w-full max-w-[1360px] flex-1 grid-cols-1 gap-16 px-6 py-16 md:grid-cols-[1.15fr_1fr] md:py-24">
-              <nav aria-label="Navegação principal" className="flex flex-col">
+            <div className="mx-auto w-full max-w-[1360px] flex-1 overflow-y-auto px-6 py-12 md:py-16">
+              <nav aria-label="Navegação principal">
                 <p className="eyebrow">Navegação</p>
-                <ul className="mt-8 flex flex-col gap-4">
-                  {NAV.map((item) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="font-display text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand transition-colors hover:text-[var(--gold)]"
-                      >
-                        {item.label}
-                      </a>
+                <ul className="mt-8 flex flex-col divide-y divide-sand/10">
+                  {NAV_SECTIONS.map((section) => (
+                    <li key={section.href} className="py-6 md:py-7">
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-12">
+                        <a
+                          href={section.href}
+                          onClick={() => setOpen(false)}
+                          className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand transition-colors hover:text-[var(--gold)]"
+                        >
+                          {section.label}
+                        </a>
+
+                        {section.children && (
+                          <ul className="flex flex-col gap-2">
+                            {section.children.map((sub) => (
+                              <li key={sub.href}>
+                                <a
+                                  href={sub.href}
+                                  onClick={() => setOpen(false)}
+                                  className="block text-[14px] leading-relaxed text-sand/80 transition-colors hover:text-[var(--gold)]"
+                                >
+                                  {sub.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {section.groups && (
+                          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                            {section.groups.map((group) => (
+                              <div key={group.title}>
+                                <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55">
+                                  {group.title}
+                                </p>
+                                <ul className="mt-3 flex flex-col gap-2">
+                                  {group.items.map((sub) => (
+                                    <li key={sub.href}>
+                                      <a
+                                        href={sub.href}
+                                        onClick={() => setOpen(false)}
+                                        className="block text-[13.5px] leading-relaxed text-sand/80 transition-colors hover:text-[var(--gold)]"
+                                      >
+                                        {sub.label}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </li>
                   ))}
                 </ul>
               </nav>
 
-              <div className="flex flex-col">
-                <p className="eyebrow">Áreas do Direito</p>
-                <ul className="mt-8 flex flex-col gap-3">
-                  {AREAS_LINKS.map((sub) => (
-                    <li key={sub.href}>
-                      <a
-                        href={sub.href}
-                        onClick={() => setOpen(false)}
-                        className="block font-display text-[clamp(1rem,1.3vw,1.2rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
-                      >
-                        {sub.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="eyebrow mt-10">Publicações</p>
-                <ul className="mt-8 flex flex-col gap-3">
-                  {PUBLICACOES_LINKS.map((sub) => (
-                    <li key={sub.href}>
-                      <a
-                        href={sub.href}
-                        onClick={() => setOpen(false)}
-                        className="block font-display text-[clamp(1.125rem,1.5vw,1.4rem)] font-medium text-sand/90 transition-colors hover:text-[var(--gold)]"
-                      >
-                        {sub.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
-                  <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 hover:text-[var(--gold)]">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[16px] w-[16px]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="8.5" r="3.6" />
-                      <path d="M4.8 20c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4" />
-                    </svg>
-                    Login
-                  </a>
-                  <span aria-hidden="true" className="text-sand/30">·</span>
-                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
-                    LinkedIn
-                  </a>
-                  <span aria-hidden="true" className="text-sand/30">·</span>
-                  <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
-                    Instagram
-                  </a>
-                </div>
+              <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.2em] text-sand/70">
+                <a href="https://intranet.oliveiraritzmann.com.br" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 hover:text-[var(--gold)]">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[16px] w-[16px]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8.5" r="3.6" />
+                    <path d="M4.8 20c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4" />
+                  </svg>
+                  Login
+                </a>
+                <span aria-hidden="true" className="text-sand/30">·</span>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
+                  LinkedIn
+                </a>
+                <span aria-hidden="true" className="text-sand/30">·</span>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener" className="hover:text-[var(--gold)]">
+                  Instagram
+                </a>
               </div>
             </div>
 
