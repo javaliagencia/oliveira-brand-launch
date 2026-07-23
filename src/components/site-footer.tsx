@@ -500,14 +500,6 @@ export function SiteFooter() {
                 ))}
                 <li>
                   <a
-                    href="/etica"
-                    className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
-                  >
-                    Canal de ética
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="/transparencia"
                     className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
                   >
