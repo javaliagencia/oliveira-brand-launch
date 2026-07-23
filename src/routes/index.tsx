@@ -930,7 +930,7 @@ function PublicacoesFold() {
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
                 </span>
                 <h3
-                  className="max-w-[24ch] font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-medium leading-[1.15] tracking-[-0.02em]"
+                  className="font-display text-[clamp(1.25rem,2vw,1.9rem)] font-medium leading-[1.2] tracking-[-0.02em]"
                   style={{ color: "var(--sand)", textShadow: "0 3px 20px rgba(0,0,0,0.82), 0 1px 2px rgba(0,0,0,0.95)" }}
                 >
                   {PUBLICACOES[0].titulo}
