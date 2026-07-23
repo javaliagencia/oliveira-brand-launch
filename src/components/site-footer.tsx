@@ -514,6 +514,14 @@ export function SiteFooter() {
                     Portal da Transparência
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/politica-da-qualidade"
+                    className="text-[13px] text-sand/80 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+                  >
+                    Política da Qualidade
+                  </a>
+                </li>
               </ul>
             </div>
 
