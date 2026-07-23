@@ -822,7 +822,7 @@ function PublicacoesFold() {
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              transform: "rotate(0.5deg)",
+              transform: "rotate(0deg)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
