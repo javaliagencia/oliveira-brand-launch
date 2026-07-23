@@ -730,7 +730,7 @@ function PublicacoesFold() {
       </div>
 
       {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
-      <div className="relative mx-auto max-w-[1360px] px-6 pb-20 md:pb-28" style={{ marginTop: "-180px" }}>
+      <div className="relative mx-auto max-w-[1200px] px-6 pb-20 md:pb-28" style={{ marginTop: "-60px" }}>
 
 
 
