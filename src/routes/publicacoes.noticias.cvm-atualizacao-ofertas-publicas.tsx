@@ -321,7 +321,7 @@ function NoticiaPage() {
             <div>
               <SectionEyebrow tone="ink-2">Artigos relacionados</SectionEyebrow>
               <h2 className="mt-6 max-w-2xl font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
-                Continue a leitura.
+                Continue a leitura
               </h2>
             </div>
             <BrandLink href="/publicacoes">Ver todas as publicações</BrandLink>
