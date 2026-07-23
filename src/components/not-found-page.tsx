@@ -41,22 +41,8 @@ export function NotFoundPage() {
               className="absolute inset-0 block font-extralight leading-none tracking-tighter text-[clamp(12rem,28vw,22rem)] text-[var(--gold)] opacity-20 blur-[2px]"
             >
               404
-            </span>
-            {/* Selo circular */}
-            <div
-              aria-hidden
-              className="absolute -top-4 -right-4 flex h-24 w-24 items-center justify-center rounded-full border border-[var(--gold)]/40 bg-[var(--ink)]/60 backdrop-blur-sm md:h-28 md:w-28"
-            >
-              <div className="text-center">
-                <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--gold)]">
-                  Erro
-                </div>
-                <div className="mt-1 text-[11px] font-light text-[var(--sand)]/80">
-                  fora de rota
-                </div>
-              </div>
-            </div>
           </div>
+
         </div>
 
         {/* Coluna editorial */}
