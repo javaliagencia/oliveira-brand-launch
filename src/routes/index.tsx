@@ -856,7 +856,28 @@ function PublicacoesFold() {
 
         <div className="relative mx-auto max-w-[1360px] px-6 pt-12 pb-40 md:pt-16 md:pb-56">
           <div className="max-w-[62ch]">
-            <SectionEyebrow>Publicações</SectionEyebrow>
+            <div className="flex flex-col items-start gap-5">
+              <span
+                className="text-[15px] font-semibold uppercase leading-none"
+                style={{
+                  color: "var(--gold)",
+                  letterSpacing: "0.38em",
+                  textShadow:
+                    "0 1px 14px rgba(8,38,36,0.95), 0 0 2px rgba(0,0,0,0.8)",
+                }}
+              >
+                Publicações
+              </span>
+              <span
+                aria-hidden="true"
+                className="block w-24"
+                style={{
+                  height: "2px",
+                  backgroundColor: "var(--gold)",
+                  boxShadow: "0 1px 10px rgba(8,38,36,0.9)",
+                }}
+              />
+            </div>
             <h2 className="mt-6 font-display text-[clamp(1.6rem,2.9vw,2.6rem)] font-light leading-[1.12] tracking-[-0.025em] text-sand">
               O mesmo método que conduz a operação,{" "}
               <span className="font-display font-semibold" style={{ color: "var(--gold)" }}>
