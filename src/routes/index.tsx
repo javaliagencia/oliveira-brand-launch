@@ -690,6 +690,15 @@ const PUBLICACOES: Publicacao[] = [
     imagem: pubGovernancaUrl,
     href: "/publicacoes/governanca-contratual",
   },
+  {
+    data: "05 jul 2026",
+    categoria: "Nota",
+    titulo: "Compliance trabalhista: o que muda em 2026",
+    resumo:
+      "Ajustes regulatórios recentes e o impacto direto nas políticas internas das empresas de grande porte.",
+    imagem: pubReforma.url,
+    href: "/publicacoes/compliance-trabalhista-2026",
+  },
 ];
 
 function PublicacoesMonogramOutline({ className = "" }: { className?: string }) {
