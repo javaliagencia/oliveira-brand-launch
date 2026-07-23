@@ -895,7 +895,7 @@ function PublicacoesFold() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.72) 55%, rgba(8,38,36,0.98) 100%)",
+                    "linear-gradient(180deg, rgba(8,38,36,0.25) 0%, rgba(8,38,36,0.85) 50%, rgba(8,38,36,1) 100%)",
                 }}
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
