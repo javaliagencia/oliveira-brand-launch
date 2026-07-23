@@ -280,7 +280,7 @@ function CompetenciaCard({
         flexGrow,
         transition: "flex-grow 800ms cubic-bezier(0.16,0.84,0.24,1)",
         backgroundColor: "var(--ink)",
-        borderRight: isLast ? undefined : "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
+        
       }}
       aria-label={data.titulo}
     >
