@@ -727,7 +727,7 @@ function PublicacoesFold() {
                 </span>
               </h2>
             </div>
-            <BrandLink href="/publicacoes" tone="sand">Ver todas as publicações</BrandLink>
+            <BrandLink href="/publicacoes" invert>Ver todas as publicações</BrandLink>
           </div>
         </div>
       </div>
