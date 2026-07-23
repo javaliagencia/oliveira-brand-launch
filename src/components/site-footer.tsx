@@ -111,6 +111,8 @@ const AREAS_LINKS = [
 ];
 
 const SEGMENTOS_LINKS = [
+  { label: "Clientes corporativos", href: "/atuacao/segmentos/clientes-corporativos" },
+  { label: "Empresarial estratégico", href: "/atuacao/segmentos/empresarial-estrategico" },
   { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
   { label: "Cooperativas de crédito", href: "/atuacao/segmentos/cooperativas-de-credito" },
   { label: "Seguradoras", href: "/atuacao/segmentos/seguradoras" },

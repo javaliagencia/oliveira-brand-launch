@@ -16,6 +16,8 @@ import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/soci
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
 import { Route as PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRouteImport } from './routes/publicacoes.noticias.cvm-atualizacao-ofertas-publicas'
 import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
+import { Route as AtuacaoSegmentosEmpresarialEstrategicoRouteImport } from './routes/atuacao.segmentos.empresarial-estrategico'
+import { Route as AtuacaoSegmentosClientesCorporativosRouteImport } from './routes/atuacao.segmentos.clientes-corporativos'
 
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
@@ -55,6 +57,18 @@ const AtuacaoSegmentosInstituicoesFinanceirasRoute =
     path: '/atuacao/segmentos/instituicoes-financeiras',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AtuacaoSegmentosEmpresarialEstrategicoRoute =
+  AtuacaoSegmentosEmpresarialEstrategicoRouteImport.update({
+    id: '/atuacao/segmentos/empresarial-estrategico',
+    path: '/atuacao/segmentos/empresarial-estrategico',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AtuacaoSegmentosClientesCorporativosRoute =
+  AtuacaoSegmentosClientesCorporativosRouteImport.update({
+    id: '/atuacao/segmentos/clientes-corporativos',
+    path: '/atuacao/segmentos/clientes-corporativos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -62,6 +76,8 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
+  '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
   '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
@@ -71,6 +87,8 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
+  '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
   '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
@@ -81,6 +99,8 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
+  '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
+  '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
   '/atuacao/segmentos/instituicoes-financeiras': typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
   '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
@@ -92,6 +112,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/clientes-corporativos'
+    | '/atuacao/segmentos/empresarial-estrategico'
     | '/atuacao/segmentos/instituicoes-financeiras'
     | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   fileRoutesByTo: FileRoutesByTo
@@ -101,6 +123,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/clientes-corporativos'
+    | '/atuacao/segmentos/empresarial-estrategico'
     | '/atuacao/segmentos/instituicoes-financeiras'
     | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   id:
@@ -110,6 +134,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
+    | '/atuacao/segmentos/clientes-corporativos'
+    | '/atuacao/segmentos/empresarial-estrategico'
     | '/atuacao/segmentos/instituicoes-financeiras'
     | '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas'
   fileRoutesById: FileRoutesById
@@ -120,6 +146,8 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
+  AtuacaoSegmentosClientesCorporativosRoute: typeof AtuacaoSegmentosClientesCorporativosRoute
+  AtuacaoSegmentosEmpresarialEstrategicoRoute: typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
   AtuacaoSegmentosInstituicoesFinanceirasRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRoute
   PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute: typeof PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute
 }
@@ -175,6 +203,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AtuacaoSegmentosInstituicoesFinanceirasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atuacao/segmentos/empresarial-estrategico': {
+      id: '/atuacao/segmentos/empresarial-estrategico'
+      path: '/atuacao/segmentos/empresarial-estrategico'
+      fullPath: '/atuacao/segmentos/empresarial-estrategico'
+      preLoaderRoute: typeof AtuacaoSegmentosEmpresarialEstrategicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atuacao/segmentos/clientes-corporativos': {
+      id: '/atuacao/segmentos/clientes-corporativos'
+      path: '/atuacao/segmentos/clientes-corporativos'
+      fullPath: '/atuacao/segmentos/clientes-corporativos'
+      preLoaderRoute: typeof AtuacaoSegmentosClientesCorporativosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -184,6 +226,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
+  AtuacaoSegmentosClientesCorporativosRoute:
+    AtuacaoSegmentosClientesCorporativosRoute,
+  AtuacaoSegmentosEmpresarialEstrategicoRoute:
+    AtuacaoSegmentosEmpresarialEstrategicoRoute,
   AtuacaoSegmentosInstituicoesFinanceirasRoute:
     AtuacaoSegmentosInstituicoesFinanceirasRoute,
   PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute:
