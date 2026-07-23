@@ -902,7 +902,7 @@ function PublicacoesFold() {
                 <span
                   className="eyebrow"
                   style={{
-                    color: "#E8C77A",
+                    color: "var(--gold)",
                     fontWeight: 700,
                     letterSpacing: "0.34em",
                     textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)",
