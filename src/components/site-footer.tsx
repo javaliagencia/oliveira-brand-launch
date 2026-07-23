@@ -273,7 +273,7 @@ export function SiteFooter() {
         aria-label="Navegação do rodapé"
         style={{ backgroundColor: "var(--ink-2)" }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1360px] px-6 pt-8 pb-16 md:pt-10 md:pb-20">
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
             {/* (Início removido — âncora está no header) */}
 
