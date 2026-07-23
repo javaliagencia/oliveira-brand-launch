@@ -699,19 +699,20 @@ function PublicacoesFold() {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: 0.55 }}
+          style={{ mixBlendMode: "screen", opacity: 0.9 }}
         />
-        {/* Véu bege — mantém a base sand e garante contraste do texto ink */}
+        {/* Véu bege muito leve — apenas empurra o contraste do texto sem apagar as partículas */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, color-mix(in oklch, var(--sand) 82%, transparent) 0%, color-mix(in oklch, var(--sand) 88%, transparent) 100%)",
+              "linear-gradient(180deg, color-mix(in oklch, var(--sand) 25%, transparent) 0%, color-mix(in oklch, var(--sand) 45%, transparent) 100%)",
           }}
         />
       </div>
+
 
 
 
