@@ -112,7 +112,7 @@ function HeroFold() {
 
 
       {/* Conteúdo */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-20 pt-32 md:pb-28 md:pt-40">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1360px] flex-col justify-end px-6 pb-10 pt-32 md:pb-14 md:pt-40">
         <p
           className="font-sans text-[13px] font-semibold uppercase leading-none text-sand"
           style={{ letterSpacing: "0.32em", textShadow: "0 1px 12px rgba(8,38,36,0.55)" }}
@@ -217,7 +217,7 @@ function CompetenciasFold() {
           color: "var(--ink)",
         }}
       >
-        <div className="mx-auto max-w-[1360px] px-6 pt-8 pb-10 md:pt-12 md:pb-14">
+        <div className="mx-auto max-w-[1360px] px-6 pt-4 pb-8 md:pt-6 md:pb-10">
           <SectionEyebrow tone="ink">Duas competências, um método</SectionEyebrow>
           <h2 className="mt-8 max-w-[22ch] font-display text-[clamp(2.1rem,4.6vw,3.75rem)] font-light leading-[1.05] tracking-[-0.025em]">
             Volume e estratégia, conduzidos com o{" "}
