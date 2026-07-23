@@ -41,7 +41,9 @@ export function NotFoundPage() {
               className="absolute inset-0 block font-extralight leading-none tracking-tighter text-[clamp(12rem,28vw,22rem)] text-[var(--gold)] opacity-20 blur-[2px]"
             >
               404
+            </span>
           </div>
+
 
         </div>
 
