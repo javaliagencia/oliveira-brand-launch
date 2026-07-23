@@ -755,16 +755,6 @@ function PublicacoesFold() {
         </div>
         <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
 
-        }}
-      >
-        <div className="relative aspect-[4/3] overflow-hidden">
-          <img
-            src={pub.imagem}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-          />
-        </div>
-        <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
           <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
             {pub.data} — {pub.categoria}
           </span>
