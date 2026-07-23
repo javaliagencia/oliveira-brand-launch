@@ -293,7 +293,7 @@ function NoticiaPage() {
               </div>
 
               <div>
-                <SectionEyebrow tone="ink-2">Serviços</SectionEyebrow>
+                <SectionEyebrow tone="ink-2">Áreas do Direito</SectionEyebrow>
                 <ul className="mt-6 divide-y divide-[color-mix(in_oklch,var(--ink)_10%,transparent)]">
                   {SERVICOS.map((s) => (
                     <li key={s.label}>
