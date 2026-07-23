@@ -280,7 +280,9 @@ function CompetenciaCard({
         flexGrow,
         transition: "flex-grow 800ms cubic-bezier(0.16,0.84,0.24,1)",
         backgroundColor: "var(--ink)",
-        
+        border: "0",
+        boxShadow: "none",
+        marginLeft: isLast ? "-3px" : undefined,
       }}
       aria-label={data.titulo}
     >
@@ -294,7 +296,10 @@ function CompetenciaCard({
         loading="lazy"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,0.84,0.24,1)]"
-        style={{ transform: isHovered ? "scale(1.06)" : "scale(1)" }}
+        style={{
+          transform: isHovered ? "scale(1.09)" : "scale(1.045)",
+          transformOrigin: isLast ? "right center" : "left center",
+        }}
       />
 
       {/* Overscura — mais forte no hover para dar suporte ao texto */}
