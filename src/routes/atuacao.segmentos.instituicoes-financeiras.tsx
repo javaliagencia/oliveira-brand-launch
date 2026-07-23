@@ -143,7 +143,7 @@ function InstituicoesFinanceirasPage() {
         <div className="mx-auto max-w-[1360px] px-6">
           <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
             {/* Bloco editorial escuro */}
-            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-5 md:px-12 md:py-16 md:-mr-8 md:mt-16">
+            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-5 md:px-12 md:py-16">
               <SectionEyebrow tone="gold">Segmento</SectionEyebrow>
               <h1 className="mt-6 font-display text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
                 Instituições Financeiras
