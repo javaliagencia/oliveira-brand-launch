@@ -690,6 +690,15 @@ const PUBLICACOES: Publicacao[] = [
     imagem: pubGovernancaUrl,
     href: "/publicacoes/governanca-contratual",
   },
+  {
+    data: "05 jul 2026",
+    categoria: "Nota",
+    titulo: "Compliance trabalhista: o que muda em 2026",
+    resumo:
+      "Ajustes regulatórios recentes e o impacto direto nas políticas internas das empresas de grande porte.",
+    imagem: pubReforma.url,
+    href: "/publicacoes/compliance-trabalhista-2026",
+  },
 ];
 
 function PublicacoesMonogramOutline({ className = "" }: { className?: string }) {
@@ -766,6 +775,48 @@ function PublicacoesFold() {
       </a>
     );
   };
+
+  const renderPublicacaoCompact = (idx: number) => {
+    const pub = PUBLICACOES[idx];
+    return (
+      <a
+        key={pub.href}
+        href={pub.href}
+        className="group relative flex gap-4 self-start"
+        style={{
+          backgroundColor: "color-mix(in oklch, white 60%, var(--sand))",
+          boxShadow: "0 16px 40px -28px rgba(8,38,36,0.45)",
+          border: "1px solid color-mix(in oklch, var(--ink) 18%, transparent)",
+        }}
+      >
+        <div className="relative aspect-square w-[38%] shrink-0 overflow-hidden">
+          <img
+            src={pub.imagem}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+          />
+        </div>
+        <div className="flex flex-1 flex-col gap-2 py-4 pr-5 md:py-5">
+          <span className="eyebrow text-[10px]" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
+            {pub.data} — {pub.categoria}
+          </span>
+          <h3 className="font-display text-[clamp(0.98rem,1.15vw,1.1rem)] font-normal leading-[1.25] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
+            {pub.titulo}
+          </h3>
+          <div className="mt-auto pt-1">
+            <span
+              className="eyebrow inline-flex items-center gap-2 text-[10px]"
+              style={{ color: "color-mix(in oklch, var(--gold) 60%, var(--ink))" }}
+            >
+              Ler
+              <BrandArrow size={11} />
+            </span>
+          </div>
+        </div>
+      </a>
+    );
+  };
+
 
   return (
     <section
@@ -877,6 +928,7 @@ function PublicacoesFold() {
           </a>
 
             {renderPublicacaoCard(2)}
+            {renderPublicacaoCompact(4)}
           </div>
 
           <div className="flex min-w-0 flex-col gap-7 md:gap-8">
@@ -885,8 +937,8 @@ function PublicacoesFold() {
           </div>
         </div>
 
-        {/* CTA final — alinhado à esquerda, na coluna do destaque */}
-        <div className="mt-16 flex justify-start md:mt-20">
+        {/* CTA final — centralizado */}
+        <div className="mt-16 flex justify-center md:mt-20">
           <a
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
