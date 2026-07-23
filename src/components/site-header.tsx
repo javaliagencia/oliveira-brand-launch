@@ -73,14 +73,14 @@ export function SiteHeader() {
           <img
             src={logoVerde.url}
             alt="Oliveira Ritzmann Advogados"
-            className="h-14 w-auto md:h-16"
+            className="h-16 w-auto md:h-20"
             loading="eager"
             decoding="async"
           />
           <img
             src={selo30.url}
             alt="30 anos"
-            className="h-12 w-auto md:h-14"
+            className="h-14 w-auto md:h-16"
             loading="eager"
             decoding="async"
           />
