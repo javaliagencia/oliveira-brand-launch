@@ -770,7 +770,7 @@ function PublicacoesFold() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(8,38,36,0.05) 0%, rgba(8,38,36,0.5) 55%, rgba(8,38,36,0.92) 100%)",
+                    "linear-gradient(180deg, rgba(8,38,36,0.15) 0%, rgba(8,38,36,0.72) 55%, rgba(8,38,36,0.98) 100%)",
                 }}
               />
               {/* "Fita" superior */}
@@ -785,13 +785,22 @@ function PublicacoesFold() {
                 }}
               />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-8 md:p-10">
-                <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--gold) 85%, white)" }}>
+                <span
+                  className="eyebrow"
+                  style={{
+                    color: "color-mix(in oklch, var(--gold) 92%, white)",
+                    textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+                  }}
+                >
                   {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
                 </span>
-                <h3 className="max-w-[24ch] font-display text-[clamp(1.5rem,2.4vw,2.15rem)] font-light leading-[1.15] tracking-[-0.02em] text-sand">
+                <h3
+                  className="max-w-[24ch] font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-normal leading-[1.15] tracking-[-0.02em] text-white"
+                  style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}
+                >
                   {PUBLICACOES[0].titulo}
                 </h3>
-                <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/85 md:text-[16px]">
+                <p className="max-w-[54ch] text-[15px] leading-[1.65] text-sand/95 md:text-[16px]" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}>
                   {PUBLICACOES[0].resumo}
                 </p>
                 <div className="mt-2">
@@ -813,7 +822,7 @@ function PublicacoesFold() {
             className="group relative col-span-1 flex flex-col md:col-span-5"
             style={{
               gridColumn: "8 / span 5",
-              transform: "rotate(0.5deg)",
+              transform: "rotate(0deg)",
               backgroundColor: "color-mix(in oklch, white 72%, var(--sand))",
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
@@ -870,7 +879,7 @@ function PublicacoesFold() {
               boxShadow: "0 22px 50px -28px rgba(8,38,36,0.5)",
               border: "1px solid color-mix(in oklch, var(--ink) 22%, transparent)",
               alignSelf: "start",
-              marginTop: 40,
+              marginTop: -12,
             }}
           >
             <div className="relative aspect-[16/10] overflow-hidden">
