@@ -14,7 +14,7 @@
  * Endereços e telefones ficam ⟨PENDENTE⟩ visíveis — a definir com o
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
 
@@ -536,6 +536,18 @@ export function SiteFooter() {
                     style={{ borderColor: "color-mix(in oklch, var(--sand) 25%, transparent)" }}
                   >
                     <Instagram className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Facebook"
+                    className="inline-flex h-9 w-9 items-center justify-center border transition-colors duration-200 hover:text-[var(--gold)] hover:border-[var(--gold)] focus-visible:text-[var(--gold)] focus-visible:border-[var(--gold)]"
+                    style={{ borderColor: "color-mix(in oklch, var(--sand) 25%, transparent)" }}
+                  >
+                    <Facebook className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   </a>
                 </li>
               </ul>
