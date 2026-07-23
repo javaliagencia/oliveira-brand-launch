@@ -1055,10 +1055,10 @@ function CarreiraFold() {
   );
 }
 
-const SOCIOS: { nome: string; cargo: string; foto: string | null; href?: string; objectPosition?: string }[] = [
+const SOCIOS: { nome: string; cargo: string; foto: string | null; href?: string; objectPosition?: string; filter?: string }[] = [
   { nome: "Jorge Ritzmann de Oliveira", cargo: "Sócio-fundador", foto: socioJorge.url, href: "/socios/jorge-ritzmann-de-oliveira" },
   { nome: "Juliano Schmitt", cargo: "Sócio", foto: socioJuliano.url },
-  { nome: "Tatiane Bittencourt", cargo: "Sócia", foto: socioTatiane.url },
+  { nome: "Tatiane Bittencourt", cargo: "Sócia", foto: socioTatiane.url, filter: "brightness(1.02) contrast(1.12) saturate(1.15)" },
   { nome: "Cintia Carla Senem", cargo: "Sócia", foto: socioCintia.url },
   { nome: "Carolina Schmidt", cargo: "Sócia", foto: socioCarolina.url, objectPosition: "50% 8%" },
   { nome: "Sonia Angulski", cargo: "Sócia", foto: socioSonia.url },
@@ -1066,6 +1066,7 @@ const SOCIOS: { nome: string; cargo: string; foto: string | null; href?: string;
   { nome: "Bruna Schmitt", cargo: "Sócia", foto: socioBruna.url },
   { nome: "Guilherme Otte", cargo: "Sócio", foto: socioGuilherme.url },
 ];
+
 
 function SociosCarousel() {
   const VISIBLE = 5;
@@ -1130,7 +1131,7 @@ function SociosCarousel() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{
                     objectPosition: socio.objectPosition ?? "50% 50%",
-                    filter: "brightness(1.14) contrast(0.98) saturate(1.03)",
+                    filter: socio.filter ?? "brightness(1.14) contrast(0.98) saturate(1.03)",
                   }}
                   loading="lazy"
                 />
