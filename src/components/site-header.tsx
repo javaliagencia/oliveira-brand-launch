@@ -25,9 +25,17 @@ const NAV: NavItem[] = [
   { label: "Contato", href: "/contato" },
 ];
 
-const ATUACAO_PRIMARY: NavItem[] = [
-  { label: "Áreas do Direito", href: "/atuacao/areas-do-direito" },
-  { label: "Segmentos", href: "/atuacao/segmentos" },
+const AREAS_LINKS: NavItem[] = [
+  { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
+  { label: "Contencioso de Volume", href: "/areas/contencioso-de-volume" },
+  { label: "Contencioso Estratégico", href: "/areas/contencioso-estrategico" },
+  { label: "Direito Cível", href: "/areas/civel" },
+  { label: "Direito Tributário", href: "/areas/tributario" },
+  { label: "Direito Trabalhista", href: "/areas/trabalhista" },
+  { label: "Societário", href: "/areas/societario" },
+  { label: "Planejamento Patrimonial e Sucessório", href: "/areas/planejamento-patrimonial-sucessorio" },
+  { label: "Contratos", href: "/areas/contratos" },
+  { label: "Direito Médico", href: "/areas/direito-medico" },
 ];
 
 const PUBLICACOES_LINKS: NavItem[] = [
