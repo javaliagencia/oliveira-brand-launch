@@ -107,9 +107,8 @@ function ContatoPage() {
                 </span>
               </h1>
               <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
-                Envie sua mensagem pelo formulário abaixo. O sócio responsável
-                pela área correspondente retorna o contato, em qualquer uma das
-                nove praças do país.
+                Envie sua mensagem pelo formulário. O contato é direcionado à
+                área responsável, em qualquer uma das praças do país.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a href="#formulario" className="btn btn-outline-invert">
