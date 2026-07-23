@@ -1148,22 +1148,22 @@ function SociosCarousel() {
 
 
 
-              {/* Vinheta inferior discreta para garantir leitura do nome */}
+              {/* Gradiente inferior reforçado para leitura sobre qualquer foto */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.55) 100%)",
+                    "linear-gradient(180deg, rgba(8,38,36,0) 0%, rgba(8,38,36,0.55) 45%, rgba(8,38,36,0.92) 100%)",
                 }}
               />
 
-              <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end gap-1.5 p-5 text-center">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end gap-1.5 px-5 pb-5 pt-6 text-center">
                 <span
                   className="font-display text-[15px] leading-tight whitespace-nowrap inline-flex items-center gap-2"
                   style={{
-                    color: "var(--sand)",
-                    textShadow: "0 1px 12px rgba(8,38,36,0.9), 0 0 2px rgba(0,0,0,0.6)",
+                    color: "#ffffff",
+                    textShadow: "0 1px 14px rgba(8,38,36,0.95), 0 0 3px rgba(0,0,0,0.7)",
                   }}
                 >
                   <span
@@ -1179,24 +1179,27 @@ function SociosCarousel() {
                     className="h-[14px] w-[14px] shrink-0"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.75"
-                    style={{ color: "var(--gold)" }}
+                    strokeWidth="2"
+                    style={{
+                      color: "var(--gold)",
+                      filter: "drop-shadow(0 1px 3px rgba(8,38,36,0.9))",
+                    }}
                   >
                     <path d="M5 12h14" strokeLinecap="square" />
                     <path d="M13 6l6 6-6 6" strokeLinecap="square" />
-
                   </svg>
                 </span>
                 <span
-                  className="text-[10.5px] uppercase tracking-[0.22em]"
+                  className="text-[10.5px] uppercase tracking-[0.22em] font-medium"
                   style={{
-                    color: "var(--gold)",
-                    textShadow: "0 1px 10px rgba(8,38,36,0.9)",
+                    color: "#e8c98a",
+                    textShadow: "0 1px 12px rgba(8,38,36,0.95), 0 0 2px rgba(0,0,0,0.7)",
                   }}
                 >
                   {socio.cargo}
                 </span>
               </div>
+
             </a>
           ))}
         </div>
