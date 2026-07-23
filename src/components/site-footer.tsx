@@ -127,7 +127,7 @@ const PUBLICACOES_LINKS = [
 
 const ESCRITORIO_LINKS = [
   { label: "O Oliveira Ritzmann", href: "/oliveira-ritzmann" },
-  { label: "Método", href: "/metodo" },
+  { label: "História", href: "/historia" },
   { label: "Presença", href: "/presenca" },
   { label: "Sócios", href: "/advogados" },
   { label: "Carreiras", href: "/carreiras" },
