@@ -1131,7 +1131,7 @@ function SociosCarousel() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{
                     objectPosition: socio.objectPosition ?? "50% 50%",
-                    filter: "brightness(1.14) contrast(0.98) saturate(1.03)",
+                    filter: socio.filter ?? "brightness(1.14) contrast(0.98) saturate(1.03)",
                   }}
                   loading="lazy"
                 />
