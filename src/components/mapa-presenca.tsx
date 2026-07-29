@@ -198,6 +198,14 @@ export function MapaPresenca({
   ativa: string | null;
   onAtivar: (cidade: string | null) => void;
 }) {
+  const ufsAtivas = React.useMemo(() => {
+    const set = new Set<string>();
+    if (ativa) {
+      for (const p of INTERIOR) if (p.sede === ativa) set.add(p.uf);
+    }
+    return set;
+  }, [ativa]);
+
   return (
     <div className="relative w-full">
       <svg
