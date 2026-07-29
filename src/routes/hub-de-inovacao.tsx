@@ -179,7 +179,7 @@ function HubInovacaoPage() {
       {/* FECHAMENTO */}
       <section className="relative overflow-hidden bg-[var(--ink)] text-[var(--sand)]">
         <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-start">
             <div className="md:col-span-7">
               <SectionEyebrow tone="gold">Experiência</SectionEyebrow>
               <h2 className="mt-6 font-display text-3xl font-light leading-tight tracking-[-0.02em] text-[var(--sand)] md:text-[44px]">
