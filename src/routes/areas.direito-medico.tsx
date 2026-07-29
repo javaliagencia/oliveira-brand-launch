@@ -15,6 +15,7 @@ import bannerImg from "@/assets/areas/direito-medico.jpg.asset.json";
 import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
+import socioGuilherme from "@/assets/socios/guilherme-otte.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
 
@@ -74,6 +75,14 @@ const CONTATOS: Contato[] = [
     foto: socioSonia.url,
     href: "#",
     email: "sonia@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+  {
+    nome: "Guilherme Otte",
+    cargo: "Sócio · Tributário e consultivo",
+    foto: socioGuilherme.url,
+    href: "#",
+    email: "guilherme@oliveiraritzmann.com.br",
     linkedin: "https://www.linkedin.com",
   },
 ];
