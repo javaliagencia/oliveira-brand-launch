@@ -321,6 +321,55 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
+
+  trabalhista: {
+    banner: bannerTrabalhista,
+    hero: "Consultivo e contencioso trabalhista para empresas com operação intensiva em pessoas. Prevenção de passivos, negociação sindical e defesa técnica conduzidas com previsibilidade de custo e de prazo.",
+    lead: "Passivo trabalhista raramente nasce no processo. Nasce na rotina — e é lá que ele se resolve.",
+    paragrafos: [
+      "Atuamos junto a áreas de RH e diretorias na revisão de jornadas, enquadramentos, políticas internas e terceirizações, antes que a divergência vire reclamatória. Quando o litígio é inevitável, a defesa já encontra documentação organizada e tese definida.",
+      "No contencioso, a operação combina padronização de teses, acompanhamento por indicadores e presença regional nas varas em que o cliente tem exposição. A leitura do risco é feita em número: probabilidade, provisão e curva de encerramento.",
+    ],
+    servicos: [
+      "Consultivo preventivo: jornadas, enquadramento, políticas internas e compliance trabalhista.",
+      "Defesa em reclamatórias individuais e ações civis públicas.",
+      "Negociação coletiva, acordos e relacionamento sindical.",
+      "Auditoria de passivo trabalhista e provisionamento contábil.",
+      "Saúde e segurança do trabalho, insalubridade e periculosidade.",
+      "Terceirização, contratos de prestação de serviços e responsabilidade subsidiária.",
+    ],
+    setores: [
+      { label: "Indústria", href: H },
+      { label: "Varejo e serviços", href: H },
+      { label: "Clientes corporativos", href: "/atuacao/segmentos/clientes-corporativos" },
+      { label: "Transporte e logística", href: H },
+      { label: "Construção e incorporação", href: H },
+      { label: "Saúde", href: "/areas/direito-medico" },
+      { label: "Agronegócio", href: H },
+      { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
+    ],
+    publicacoesTitulo: "Inteligência aplicada às relações de trabalho.",
+    artigos: [
+      {
+        categoria: "Trabalhista",
+        data: "Jul · 2026",
+        titulo: "Jornada e controle híbrido: o que a fiscalização tem exigido das empresas",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Negociação Coletiva",
+        data: "Mai · 2026",
+        titulo: "Acordo coletivo bem desenhado: previsibilidade antes da campanha salarial",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Passivo",
+        data: "Fev · 2026",
+        titulo: "Provisionamento trabalhista: como transformar risco difuso em número gerenciável",
+        href: "/inteligencia",
+      },
+    ],
+  },
 };
 
 export function getAreaContent(slug?: string): AreaContent {
