@@ -123,6 +123,9 @@ const CONTATOS_POR_AREA: Record<string, Contato[]> = {
   civel: [PESSOAS.carolina],
   "contencioso-de-volume": CONTENCIOSO,
   "contencioso-estrategico": CONTENCIOSO,
+  societario: [PESSOAS.guilherme, PESSOAS.jorge],
+  "planejamento-patrimonial-sucessorio": [PESSOAS.guilherme],
+  contratos: [PESSOAS.sonia, PESSOAS.carolina],
 };
 
 const AREAS = [
@@ -132,6 +135,13 @@ const AREAS = [
   { label: "Direito Cível", href: "/areas/civel" },
   { label: "Direito Tributário", href: "/areas/tributario" },
   { label: "Direito Médico", href: "/areas/direito-medico" },
+  { label: "Direito Trabalhista", href: "/areas/trabalhista" },
+  { label: "Societário", href: "/areas/societario" },
+  {
+    label: "Planejamento Patrimonial e Sucessório",
+    href: "/areas/planejamento-patrimonial-sucessorio",
+  },
+  { label: "Contratos", href: "/areas/contratos" },
 ];
 
 

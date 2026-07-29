@@ -9,6 +9,9 @@ import bannerEstrategico from "@/assets/areas/contencioso-estrategico.jpg.asset.
 import bannerCivel from "@/assets/areas/civel.jpg.asset.json";
 import bannerTributario from "@/assets/areas/tributario.jpg.asset.json";
 import bannerTrabalhista from "@/assets/areas/trabalhista.jpg.asset.json";
+import bannerSocietario from "@/assets/areas/societario.jpg.asset.json";
+import bannerPatrimonial from "@/assets/areas/planejamento-patrimonial-sucessorio.jpg.asset.json";
+import bannerContratos from "@/assets/areas/contratos.jpg.asset.json";
 
 export type AreaContent = {
   banner: string;
@@ -367,6 +370,153 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
         categoria: "Passivo",
         data: "Fev · 2026",
         titulo: "Provisionamento trabalhista: como transformar risco difuso em número gerenciável",
+        href: "/inteligencia",
+      },
+    ],
+  },
+
+  societario: {
+    banner: bannerSocietario.url,
+    hero: "Estruturação, governança e reorganização de sociedades. Do desenho societário que sustenta o crescimento ao acordo que evita a disputa, a decisão é tomada com leitura jurídica, econômica e familiar do negócio.",
+    lead: "Sociedade bem estruturada é a que resiste ao sucesso e ao desentendimento.",
+    paragrafos: [
+      "Atuamos na constituição, reorganização e reestruturação de empresas e grupos econômicos, com atenção ao controle, à distribuição de resultados e aos mecanismos de saída. O documento societário só cumpre sua função quando antecipa o conflito que ainda não aconteceu.",
+      "A equipe reúne experiência em contencioso e em consultivo. Quem redige o acordo de sócios conhece o litígio que ele precisa evitar, e essa é a diferença prática entre um contrato formal e um contrato que funciona.",
+    ],
+    servicos: [
+      "Constituição de sociedades, holdings e grupos econômicos.",
+      "Acordos de sócios, quotistas e acionistas.",
+      "Reorganizações societárias: cisão, fusão, incorporação e transformação.",
+      "Governança corporativa, conselhos e políticas internas.",
+      "Operações de compra e venda de participações e due diligence.",
+      "Dissolução parcial, apuração de haveres e disputas entre sócios.",
+    ],
+    setores: [
+      { label: "Clientes corporativos", href: "/atuacao/segmentos/clientes-corporativos" },
+      { label: "Empresarial estratégico", href: "/atuacao/segmentos/empresarial-estrategico" },
+      { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
+      { label: "Indústria", href: H },
+      { label: "Varejo e serviços", href: H },
+      { label: "Saúde", href: "/areas/direito-medico" },
+      { label: "Agronegócio", href: H },
+      { label: "Empresas familiares", href: H },
+    ],
+    publicacoesTitulo: "Inteligência aplicada à vida societária.",
+    artigos: [
+      {
+        categoria: "Societário",
+        data: "Jul · 2026",
+        titulo: "Acordo de sócios: as cláusulas que decidem o futuro da empresa antes da briga",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Governança",
+        data: "Abr · 2026",
+        titulo: "Conselho consultivo em empresa familiar: quando ele deixa de ser formalidade",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Reorganização",
+        data: "Jan · 2026",
+        titulo: "Apuração de haveres: o critério que define o valor da saída de um sócio",
+        href: "/inteligencia",
+      },
+    ],
+  },
+
+  "planejamento-patrimonial-sucessorio": {
+    banner: bannerPatrimonial.url,
+    hero: "Organização patrimonial e sucessória de famílias empresárias. Estruturas que protegem o patrimônio, ordenam a transmissão e preservam a convivência entre as gerações.",
+    lead: "Sucessão planejada é decisão tomada em vida, com serenidade, e não disputa herdada depois.",
+    paragrafos: [
+      "Estruturamos holdings familiares, doações com reserva de usufruto, testamentos e pactos que traduzem a vontade da família em instrumentos jurídicos válidos e eficientes. O ponto de partida é sempre o diagnóstico: composição do patrimônio, perfil dos herdeiros e custo tributário de cada caminho.",
+      "O trabalho é conduzido junto ao tributário e ao societário, porque proteção patrimonial mal calculada gera imposto, e transmissão mal desenhada gera inventário longo. A recomendação só é feita depois de medir os dois efeitos.",
+    ],
+    servicos: [
+      "Holdings patrimoniais e familiares.",
+      "Planejamento sucessório: doações, usufruto e testamentos.",
+      "Pactos antenupciais, regime de bens e proteção patrimonial.",
+      "Inventários, partilhas e arrolamentos.",
+      "Governança familiar e protocolo de família.",
+      "Eficiência tributária na transmissão de bens (ITCMD e ganho de capital).",
+    ],
+    setores: [
+      { label: "Famílias empresárias", href: H },
+      { label: "Clientes corporativos", href: "/atuacao/segmentos/clientes-corporativos" },
+      { label: "Empresarial estratégico", href: "/atuacao/segmentos/empresarial-estrategico" },
+      { label: "Agronegócio", href: H },
+      { label: "Imobiliário", href: H },
+      { label: "Saúde", href: "/areas/direito-medico" },
+      { label: "Indústria", href: H },
+      { label: "Investidores pessoa física", href: H },
+    ],
+    publicacoesTitulo: "Inteligência aplicada ao patrimônio e à sucessão.",
+    artigos: [
+      {
+        categoria: "Sucessório",
+        data: "Jun · 2026",
+        titulo: "Holding familiar: o que ela resolve e o que ela definitivamente não resolve",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Tributário",
+        data: "Mar · 2026",
+        titulo: "ITCMD progressivo: o custo de adiar a decisão sucessória",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Governança familiar",
+        data: "Dez · 2025",
+        titulo: "Protocolo de família: regras claras para quando o afeto não bastar",
+        href: "/inteligencia",
+      },
+    ],
+  },
+
+  contratos: {
+    banner: bannerContratos.url,
+    hero: "Negociação, redação e revisão de contratos empresariais. Documentos escritos para funcionar na execução e para sustentar a posição do cliente quando o negócio sai do previsto.",
+    lead: "Contrato bom não é o mais longo. É o que responde à pergunta certa no dia difícil.",
+    paragrafos: [
+      "Trabalhamos da negociação preliminar à assinatura, com atenção a prazos, garantias, reajustes, hipóteses de rescisão e resolução de disputas. Cada cláusula é avaliada pelo efeito prático que produz, não pela tradição de formulário.",
+      "Como o escritório litiga em larga escala, a redação incorpora a experiência de quem já viu essas cláusulas serem interpretadas em juízo. É essa memória de contencioso que transforma o consultivo em prevenção real.",
+    ],
+    servicos: [
+      "Contratos empresariais: fornecimento, distribuição, prestação de serviços e representação.",
+      "Contratos financeiros, garantias reais e fidejussórias.",
+      "Contratos imobiliários, locação e construção.",
+      "Contratos de tecnologia, licenciamento e proteção de dados.",
+      "Memorandos de entendimento, cartas de intenção e acordos de confidencialidade.",
+      "Gestão de carteira contratual, padronização de minutas e playbooks de negociação.",
+    ],
+    setores: [
+      { label: "Clientes corporativos", href: "/atuacao/segmentos/clientes-corporativos" },
+      { label: "Instituições financeiras", href: "/atuacao/segmentos/instituicoes-financeiras" },
+      { label: "Empresarial estratégico", href: "/atuacao/segmentos/empresarial-estrategico" },
+      { label: "Indústria", href: H },
+      { label: "Varejo e serviços", href: H },
+      { label: "Construção e incorporação", href: H },
+      { label: "Tecnologia", href: H },
+      { label: "Saúde", href: "/areas/direito-medico" },
+    ],
+    publicacoesTitulo: "Inteligência aplicada às relações contratuais.",
+    artigos: [
+      {
+        categoria: "Contratos",
+        data: "Jul · 2026",
+        titulo: "Cláusula de rescisão: o custo de sair está escrito antes de entrar",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Garantias",
+        data: "Abr · 2026",
+        titulo: "Garantias contratuais que resistem à execução: o que a prática mostra",
+        href: "/inteligencia",
+      },
+      {
+        categoria: "Negociação",
+        data: "Fev · 2026",
+        titulo: "Playbook contratual: padronizar o comum para negociar bem o excepcional",
         href: "/inteligencia",
       },
     ],
