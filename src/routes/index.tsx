@@ -806,6 +806,38 @@ function PublicacoesMonogramOutline({ className = "" }: { className?: string }) 
 }
 
 function PublicacoesFold() {
+  // Parallax: o vídeo de fundo caminha junto com a rolagem, passando por baixo
+  // da colagem de notícias (referência Simmons & Simmons).
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const el = sectionRef.current;
+      const vid = videoRef.current;
+      if (!el || !vid) return;
+      const rect = el.getBoundingClientRect();
+      const total = rect.height + window.innerHeight;
+      const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
+      // O vídeo é 40% mais alto que a viewport e desliza dentro dela.
+      vid.style.transform = `translate3d(0, ${-progress * 28}%, 0)`;
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+
   const renderPublicacaoCard = (idx: number) => {
     const pub = PUBLICACOES[idx];
 
