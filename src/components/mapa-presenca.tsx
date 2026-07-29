@@ -220,17 +220,31 @@ export function MapaPresenca({
 
         {/* Contorno dos estados */}
         <g className="mapa-estados">
-          {Object.entries(BRASIL_ESTADOS).map(([uf, d], i) => (
-            <path
-              key={uf}
-              d={d}
-              fill="color-mix(in oklab, var(--sand) 55%, transparent)"
-              stroke="color-mix(in oklab, var(--ink) 22%, transparent)"
-              strokeWidth={0.8}
-              strokeLinejoin="round"
-              style={{ animationDelay: `${i * 26}ms` }}
-            />
-          ))}
+          {Object.entries(BRASIL_ESTADOS).map(([uf, d], i) => {
+            const coberto = ativa !== null && ufsAtivas.has(uf);
+            return (
+              <path
+                key={uf}
+                d={d}
+                fill={
+                  coberto
+                    ? "color-mix(in oklab, var(--gold) 16%, color-mix(in oklab, var(--sand) 55%, transparent))"
+                    : "color-mix(in oklab, var(--sand) 55%, transparent)"
+                }
+                stroke={
+                  coberto
+                    ? "color-mix(in oklab, var(--gold) 55%, transparent)"
+                    : "color-mix(in oklab, var(--ink) 22%, transparent)"
+                }
+                strokeWidth={coberto ? 1 : 0.8}
+                strokeLinejoin="round"
+                style={{
+                  animationDelay: `${i * 26}ms`,
+                  transition: "fill 420ms ease, stroke 420ms ease",
+                }}
+              />
+            );
+          })}
         </g>
 
         {/* Arcos da matriz para as demais unidades */}
@@ -252,6 +266,46 @@ export function MapaPresenca({
             );
           })}
         </g>
+
+        {/* Interiorização: capilaridade a partir da unidade acionada */}
+        <g>
+          {INTERIOR.map((p, i) => {
+            const origem = SEDES.find((s) => s.cidade === p.sede) ?? MATRIZ;
+            const on = ativa === p.sede;
+            return (
+              <g
+                key={`${p.uf}-${i}`}
+                style={{
+                  opacity: on ? 1 : ativa === null ? 0.28 : 0.08,
+                  transition: `opacity 420ms ease ${on ? (i % 12) * 45 : 0}ms`,
+                }}
+              >
+                {on && (
+                  <line
+                    x1={origem.x}
+                    y1={origem.y}
+                    x2={p.x}
+                    y2={p.y}
+                    stroke="color-mix(in oklab, var(--gold) 70%, transparent)"
+                    strokeWidth={0.6}
+                  />
+                )}
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r={on ? 2.4 : 1.5}
+                  fill={
+                    on
+                      ? "var(--gold)"
+                      : "color-mix(in oklab, var(--ink) 45%, transparent)"
+                  }
+                  style={{ transition: "r 300ms ease, fill 300ms ease" }}
+                />
+              </g>
+            );
+          })}
+        </g>
+
 
         {/* Pontos */}
         <g>
