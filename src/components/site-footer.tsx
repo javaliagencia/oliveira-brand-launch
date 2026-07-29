@@ -321,6 +321,12 @@ export function SiteFooter() {
                     Carreiras
                   </a>
                 </li>
+                <li>
+                  <a href="/hub-de-inovacao" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                    Hub de Inovação
+                  </a>
+                </li>
+
               </ul>
             </div>
 
