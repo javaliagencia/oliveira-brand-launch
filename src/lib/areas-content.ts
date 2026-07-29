@@ -78,7 +78,7 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
 
   "recuperacao-de-credito": {
     banner: bannerCredito.url,
-    hero: "Recuperação de crédito conduzida como operação: inteligência de carteira, escala tecnológica e execução disciplinada. Do crédito pulverizado à dívida estruturada, a régua é a mesma, previsibilidade de resultado.",
+    hero: "Recuperação de crédito conduzida como operação: inteligência de carteira, escala tecnológica e execução disciplinada. Do crédito pulverizado à dívida estruturada, a régua é a mesma: previsibilidade de resultado.",
     lead: "Recuperar crédito não é insistir. É saber onde há patrimônio, quando agir e qual caminho encerra o caso mais rápido.",
     paragrafos: [
       "Trabalhamos carteiras de todos os portes com leitura analítica prévia: segmentação por perfil de devedor, probabilidade de êxito e custo processual. Essa triagem define o que vai para negociação, o que vai para execução e o que deve ser encerrado, decisão que preserva caixa e tempo do cliente.",
