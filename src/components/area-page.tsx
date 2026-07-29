@@ -105,8 +105,7 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
         <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
         <div className="mt-8 max-w-[900px]">
           <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
-            A prática médica exige advocacia que compreenda ciência, ética e regulação —
-            e que traduza tudo isso em decisão segura.
+            {conteudo.lead}
           </p>
           <div
             aria-hidden="true"
@@ -114,18 +113,9 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
             style={{ backgroundColor: "var(--gold)" }}
           />
           <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
-            <p>
-              Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
-              a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
-              contencioso individual à estruturação de grandes operadoras, o método é o
-              mesmo: leitura profunda do caso, definição clara da estratégia e execução
-              previsível.
-            </p>
-            <p>
-              A equipe integra sócios com atuação consolidada em responsabilidade civil,
-              regulação sanitária, direito societário e contratos empresariais — condição
-              necessária para tratar a saúde como o setor multidisciplinar que ela é.
-            </p>
+            {conteudo.paragrafos.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
 
           <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
