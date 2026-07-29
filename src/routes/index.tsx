@@ -44,15 +44,11 @@ function ReconhecimentosFold() {
       <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-14">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-4">
-            <h2
-              id="reconhecimentos-heading"
-              className="font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-light leading-[1.15] tracking-[-0.025em]"
-              style={{ color: "var(--ink)" }}
-            >
-              Prêmios e reconhecimentos
+            <h2 id="reconhecimentos-heading">
+              <SectionEyebrow tone="ink">Prêmios e reconhecimentos</SectionEyebrow>
             </h2>
             <p
-              className="mt-5 max-w-[38ch] text-[15px] leading-relaxed"
+              className="mt-6 max-w-[38ch] text-[15px] leading-relaxed"
               style={{ color: "color-mix(in oklch, var(--ink) 72%, transparent)" }}
             >
               Trinta anos de método reconhecidos por publicações e entidades
@@ -64,11 +60,6 @@ function ReconhecimentosFold() {
           </div>
 
           <div className="md:col-span-8">
-            <span
-              aria-hidden="true"
-              className="mb-10 -ml-12 hidden h-px w-[calc(100%+3rem)] md:block"
-              style={{ backgroundColor: "color-mix(in oklch, var(--ink) 12%, transparent)" }}
-            />
             <ul className="flex flex-wrap items-center gap-x-14 gap-y-10 md:justify-between">
               <li>
                 <img
