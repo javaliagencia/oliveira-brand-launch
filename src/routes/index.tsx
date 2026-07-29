@@ -41,7 +41,7 @@ function ReconhecimentosFold() {
       className="w-full"
       style={{ backgroundColor: "color-mix(in oklch, var(--sand) 45%, white)" }}
     >
-      <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
+      <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-14">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-4">
             <h2
