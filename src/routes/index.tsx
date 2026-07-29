@@ -927,6 +927,7 @@ function PublicacoesFold() {
 
   return (
     <section
+      ref={sectionRef}
       id="publicacoes"
       aria-label="Publicações, Em ponto"
       className="relative w-full overflow-hidden"
@@ -936,24 +937,26 @@ function PublicacoesFold() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           <video
+            ref={videoRef}
             src={pubParticles.url}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ opacity: 0.75 }}
+            className="absolute left-0 top-0 w-full object-cover will-change-transform"
+            style={{ opacity: 0.8, height: "140%" }}
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(8,38,36,0.55) 0%, rgba(8,38,36,0.72) 45%, rgba(8,38,36,0.82) 100%)",
+                "linear-gradient(180deg, rgba(8,38,36,0.5) 0%, rgba(8,38,36,0.66) 45%, rgba(8,38,36,0.78) 100%)",
             }}
           />
         </div>
       </div>
+
 
       {/* Header band */}
       <div className="relative z-[2] w-full">
