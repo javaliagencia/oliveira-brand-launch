@@ -812,18 +812,23 @@ function PublicacoesFold() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
     const update = () => {
       frame = 0;
       const el = sectionRef.current;
       const vid = videoRef.current;
       if (!el || !vid) return;
+      if (reduced) {
+        vid.style.transform = "translate3d(0,0,0)";
+        return;
+      }
       const rect = el.getBoundingClientRect();
-      const travel = Math.max(window.innerHeight * 0.36, rect.height * 0.16);
       const total = Math.max(1, rect.height + window.innerHeight);
       const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
-      // Começa levemente acima do título e desce conforme a página rola.
-      vid.style.transform = `translate3d(0, ${progress * travel}px, 0)`;
+      // Deriva suave: o fundo desce junto com a rolagem, sem ampliar o quadro.
+      const travel = window.innerHeight * 0.12;
+      vid.style.transform = `translate3d(0, ${(progress - 0.5) * 2 * travel}px, 0)`;
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -837,6 +842,7 @@ function PublicacoesFold() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
 
 
   const renderPublicacaoCard = (idx: number) => {
