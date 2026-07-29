@@ -133,7 +133,7 @@ const ESCRITORIO_LINKS = [
   { label: "O Oliveira Ritzmann", href: "/presenca" },
   { label: "História", href: "/historia" },
   { label: "Presença", href: "/presenca" },
-  { label: "Sócios", href: "/advogados" },
+  { label: "Sócios", href: "/socios/jorge-ritzmann-de-oliveira" },
   { label: "Carreiras", href: "/carreiras" },
   { label: "Hub de Inovação", href: "/hub-de-inovacao" },
 
@@ -390,12 +390,12 @@ export function SiteFooter() {
               />
               <ul className="mt-4 flex flex-col gap-2.5">
                 <li>
-                  <a href="/advogados" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                  <a href="/socios/jorge-ritzmann-de-oliveira" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
                     Sócios
                   </a>
                 </li>
                 <li>
-                  <a href="/advogados/associados" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
+                  <a href="/socios/jorge-ritzmann-de-oliveira" className="text-[13px] leading-relaxed text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]">
                     Associados
                   </a>
                 </li>
