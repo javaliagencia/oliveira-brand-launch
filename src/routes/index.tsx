@@ -1011,7 +1011,7 @@ function PublicacoesFold() {
         </div>
       </div>
 
-      </div>
+
 
       {/* Grade das publicações — rola sobre o vídeo */}
       <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28">
