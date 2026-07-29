@@ -9,6 +9,11 @@ import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.jso
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import socioGuilherme from "@/assets/socios/guilherme-otte.jpg.asset.json";
+import socioJuliano from "@/assets/socios/juliano-schmitt.png.asset.json";
+import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
+import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
+import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
+import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
 import { getAreaContent } from "@/lib/areas-content";
@@ -58,9 +63,57 @@ const PESSOAS = {
     email: "guilherme@oliveiraritzmann.com.br",
     linkedin: "https://www.linkedin.com",
   },
+  juliano: {
+    nome: "Juliano Schmitt",
+    cargo: "Sócio · Contencioso",
+    foto: socioJuliano.url,
+    href: "#",
+    email: "juliano@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+  tatiane: {
+    nome: "Tatiane Bittencourt",
+    cargo: "Sócia · Contencioso",
+    foto: socioTatiane.url,
+    href: "#",
+    email: "tatiane@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+  mariana: {
+    nome: "Mariana Hillesheim",
+    cargo: "Sócia · Contencioso",
+    foto: socioMariana.url,
+    href: "#",
+    email: "mariana@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+  cintia: {
+    nome: "Cintia Carla Senem",
+    cargo: "Sócia · Contencioso",
+    foto: socioCintia.url,
+    href: "#",
+    email: "cintia@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+  bruna: {
+    nome: "Bruna Schmitt",
+    cargo: "Sócia · Contencioso",
+    foto: socioBruna.url,
+    href: "#",
+    email: "bruna@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
 } satisfies Record<string, Contato>;
 
 const CONTATOS_PADRAO: Contato[] = [PESSOAS.jorge, PESSOAS.carolina, PESSOAS.sonia];
+
+const CONTENCIOSO: Contato[] = [
+  PESSOAS.juliano,
+  PESSOAS.tatiane,
+  PESSOAS.mariana,
+  PESSOAS.cintia,
+  PESSOAS.bruna,
+];
 
 /** Advogados responsáveis por área. */
 const CONTATOS_POR_AREA: Record<string, Contato[]> = {
@@ -68,7 +121,8 @@ const CONTATOS_POR_AREA: Record<string, Contato[]> = {
   tributario: [PESSOAS.jorge, PESSOAS.guilherme],
   trabalhista: [PESSOAS.sonia],
   civel: [PESSOAS.carolina],
-  "contencioso-de-volume": [PESSOAS.jorge],
+  "contencioso-de-volume": CONTENCIOSO,
+  "contencioso-estrategico": CONTENCIOSO,
 };
 
 const AREAS = [
