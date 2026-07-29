@@ -15,7 +15,11 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
+import { Route as AreasRecuperacaoDeCreditoRouteImport } from './routes/areas.recuperacao-de-credito'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
+import { Route as AreasContenciosoEstrategicoRouteImport } from './routes/areas.contencioso-estrategico'
+import { Route as AreasContenciosoDeVolumeRouteImport } from './routes/areas.contencioso-de-volume'
+import { Route as AreasCivelRouteImport } from './routes/areas.civel'
 import { Route as PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRouteImport } from './routes/publicacoes.noticias.cvm-atualizacao-ofertas-publicas'
 import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './routes/atuacao.segmentos.instituicoes-financeiras'
 import { Route as AtuacaoSegmentosEmpresarialEstrategicoRouteImport } from './routes/atuacao.segmentos.empresarial-estrategico'
@@ -52,9 +56,32 @@ const SociosJorgeRitzmannDeOliveiraRoute =
     path: '/socios/jorge-ritzmann-de-oliveira',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AreasRecuperacaoDeCreditoRoute =
+  AreasRecuperacaoDeCreditoRouteImport.update({
+    id: '/areas/recuperacao-de-credito',
+    path: '/areas/recuperacao-de-credito',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AreasDireitoMedicoRoute = AreasDireitoMedicoRouteImport.update({
   id: '/areas/direito-medico',
   path: '/areas/direito-medico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasContenciosoEstrategicoRoute =
+  AreasContenciosoEstrategicoRouteImport.update({
+    id: '/areas/contencioso-estrategico',
+    path: '/areas/contencioso-estrategico',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AreasContenciosoDeVolumeRoute =
+  AreasContenciosoDeVolumeRouteImport.update({
+    id: '/areas/contencioso-de-volume',
+    path: '/areas/contencioso-de-volume',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AreasCivelRoute = AreasCivelRouteImport.update({
+  id: '/areas/civel',
+  path: '/areas/civel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicacoesNoticiasCvmAtualizacaoOfertasPublicasRoute =
@@ -88,7 +115,11 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
+  '/areas/civel': typeof AreasCivelRoute
+  '/areas/contencioso-de-volume': typeof AreasContenciosoDeVolumeRoute
+  '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
+  '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
   '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
@@ -101,7 +132,11 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
+  '/areas/civel': typeof AreasCivelRoute
+  '/areas/contencioso-de-volume': typeof AreasContenciosoDeVolumeRoute
+  '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
+  '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
   '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
@@ -115,7 +150,11 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
+  '/areas/civel': typeof AreasCivelRoute
+  '/areas/contencioso-de-volume': typeof AreasContenciosoDeVolumeRoute
+  '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
+  '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
   '/atuacao/segmentos/empresarial-estrategico': typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
@@ -130,7 +169,11 @@ export interface FileRouteTypes {
     | '/contato'
     | '/hub-de-inovacao'
     | '/presenca'
+    | '/areas/civel'
+    | '/areas/contencioso-de-volume'
+    | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
+    | '/areas/recuperacao-de-credito'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
     | '/atuacao/segmentos/empresarial-estrategico'
@@ -143,7 +186,11 @@ export interface FileRouteTypes {
     | '/contato'
     | '/hub-de-inovacao'
     | '/presenca'
+    | '/areas/civel'
+    | '/areas/contencioso-de-volume'
+    | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
+    | '/areas/recuperacao-de-credito'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
     | '/atuacao/segmentos/empresarial-estrategico'
@@ -156,7 +203,11 @@ export interface FileRouteTypes {
     | '/contato'
     | '/hub-de-inovacao'
     | '/presenca'
+    | '/areas/civel'
+    | '/areas/contencioso-de-volume'
+    | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
+    | '/areas/recuperacao-de-credito'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
     | '/atuacao/segmentos/empresarial-estrategico'
@@ -170,7 +221,11 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   HubDeInovacaoRoute: typeof HubDeInovacaoRoute
   PresencaRoute: typeof PresencaRoute
+  AreasCivelRoute: typeof AreasCivelRoute
+  AreasContenciosoDeVolumeRoute: typeof AreasContenciosoDeVolumeRoute
+  AreasContenciosoEstrategicoRoute: typeof AreasContenciosoEstrategicoRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
+  AreasRecuperacaoDeCreditoRoute: typeof AreasRecuperacaoDeCreditoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosClientesCorporativosRoute: typeof AtuacaoSegmentosClientesCorporativosRoute
   AtuacaoSegmentosEmpresarialEstrategicoRoute: typeof AtuacaoSegmentosEmpresarialEstrategicoRoute
@@ -222,11 +277,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SociosJorgeRitzmannDeOliveiraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/recuperacao-de-credito': {
+      id: '/areas/recuperacao-de-credito'
+      path: '/areas/recuperacao-de-credito'
+      fullPath: '/areas/recuperacao-de-credito'
+      preLoaderRoute: typeof AreasRecuperacaoDeCreditoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/direito-medico': {
       id: '/areas/direito-medico'
       path: '/areas/direito-medico'
       fullPath: '/areas/direito-medico'
       preLoaderRoute: typeof AreasDireitoMedicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/contencioso-estrategico': {
+      id: '/areas/contencioso-estrategico'
+      path: '/areas/contencioso-estrategico'
+      fullPath: '/areas/contencioso-estrategico'
+      preLoaderRoute: typeof AreasContenciosoEstrategicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/contencioso-de-volume': {
+      id: '/areas/contencioso-de-volume'
+      path: '/areas/contencioso-de-volume'
+      fullPath: '/areas/contencioso-de-volume'
+      preLoaderRoute: typeof AreasContenciosoDeVolumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/civel': {
+      id: '/areas/civel'
+      path: '/areas/civel'
+      fullPath: '/areas/civel'
+      preLoaderRoute: typeof AreasCivelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publicacoes/noticias/cvm-atualizacao-ofertas-publicas': {
@@ -266,7 +349,11 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   HubDeInovacaoRoute: HubDeInovacaoRoute,
   PresencaRoute: PresencaRoute,
+  AreasCivelRoute: AreasCivelRoute,
+  AreasContenciosoDeVolumeRoute: AreasContenciosoDeVolumeRoute,
+  AreasContenciosoEstrategicoRoute: AreasContenciosoEstrategicoRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
+  AreasRecuperacaoDeCreditoRoute: AreasRecuperacaoDeCreditoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosClientesCorporativosRoute:
     AtuacaoSegmentosClientesCorporativosRoute,
