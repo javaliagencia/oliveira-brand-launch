@@ -64,7 +64,7 @@ function ReconhecimentosFold() {
               <li>
                 <img
                   src={seloTopLawyers.url}
-                  alt="Selo Top Lawyers 2025–2026 — O Livro de Ouro dos Escritórios de Advocacia do Brasil"
+                  alt="Selo Top Lawyers 2025-2026, O Livro de Ouro dos Escritórios de Advocacia do Brasil"
                   loading="lazy"
                   className="h-24 w-auto md:h-28"
                 />
@@ -72,7 +72,7 @@ function ReconhecimentosFold() {
               <li>
                 <img
                   src={seloAb2l.url}
-                  alt="Certificado AB2L Infinite de Inovação Jurídica — Escritório 2026"
+                  alt="Certificado AB2L Infinite de Inovação Jurídica, Escritório 2026"
                   loading="lazy"
                   className="h-20 w-auto rounded-sm md:h-24"
                 />
@@ -103,7 +103,7 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Oliveira Ritzmann Advogados — Advocacia com profundidade em qualquer escala",
+          "Oliveira Ritzmann Advogados, Advocacia com profundidade em qualquer escala",
       },
       {
         name: "description",
@@ -113,7 +113,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:title",
         content:
-          "Oliveira Ritzmann Advogados — Advocacia com profundidade em qualquer escala",
+          "Oliveira Ritzmann Advogados, Advocacia com profundidade em qualquer escala",
       },
       {
         property: "og:description",
@@ -473,7 +473,7 @@ function ManifestoFold() {
     <section
       ref={wrapRef}
       id="manifesto"
-      aria-label="Manifesto — trinta anos de método"
+      aria-label="Manifesto, trinta anos de método"
       className="relative w-full overflow-hidden"
     >
       {/* Símbolo institucional — estático, extravasando entre os blocos. */}
@@ -645,10 +645,10 @@ function ParticleField({
       const left = Math.max(-2, Math.min(102, c.x + dx));
       const top = Math.max(-2, Math.min(102, c.y + dy));
       const dist = Math.min(1, Math.hypot(gx, gy));
-      const size = 2 + (1 - dist) * 5 + r5 * 1.2; // 2–8px
+      const size = 2 + (1 - dist) * 5 + r5 * 1.2; // 2-8px
       const opacity = 0.45 + (1 - dist) * 0.5;
       // Amplitude perpendicular à onda (em px).
-      const amp = 10 + (1 - dist) * 14 + r5 * 4; // 10–28px
+      const amp = 10 + (1 - dist) * 14 + r5 * 4; // 10-28px
       const ax = perpX * amp;
       const ay = perpY * amp;
       // Fase = projeção da posição no eixo da onda → crista viaja pelo cluster.
@@ -829,7 +829,7 @@ function PublicacoesFold() {
         <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
 
           <span className="eyebrow" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-            {pub.data} — {pub.categoria}
+            {pub.data}, {pub.categoria}
           </span>
           <h3 className="font-display text-[clamp(1.15rem,1.6vw,1.45rem)] font-normal leading-[1.2] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
             {pub.titulo}
@@ -870,7 +870,7 @@ function PublicacoesFold() {
         </div>
         <div className="flex flex-1 flex-col gap-3 py-6 pr-6 md:py-7">
           <span className="eyebrow text-[10px]" style={{ color: "color-mix(in oklch, var(--ink) 65%, transparent)" }}>
-            {pub.data} — {pub.categoria}
+            {pub.data}, {pub.categoria}
           </span>
           <h3 className="font-display text-[clamp(1.05rem,1.3vw,1.25rem)] font-normal leading-[1.25] tracking-[-0.015em]" style={{ color: "var(--ink)" }}>
             {pub.titulo}
@@ -896,7 +896,7 @@ function PublicacoesFold() {
   return (
     <section
       id="publicacoes"
-      aria-label="Publicações — Em ponto"
+      aria-label="Publicações, Em ponto"
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
     >
@@ -1000,7 +1000,7 @@ function PublicacoesFold() {
                     border: "1px solid color-mix(in oklch, var(--gold) 40%, transparent)",
                   }}
                 >
-                  {PUBLICACOES[0].data} — {PUBLICACOES[0].categoria}
+                  {PUBLICACOES[0].data}, {PUBLICACOES[0].categoria}
                 </span>
                 <h3
                   className="font-display text-[clamp(1.25rem,2vw,1.9rem)] font-medium leading-[1.2] tracking-[-0.02em]"

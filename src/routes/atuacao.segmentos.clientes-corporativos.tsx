@@ -15,13 +15,13 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/atuacao/segmentos/clientes-corporativos")({
   head: () => ({
     meta: [
-      { title: "Clientes Corporativos — Oliveira Ritzmann Advogados" },
+      { title: "Clientes Corporativos | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
           "Advocacia dedicada a grupos empresariais de médio e grande porte. Método que dá previsibilidade às decisões que sustentam a operação.",
       },
-      { property: "og:title", content: "Clientes Corporativos — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Clientes Corporativos | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
@@ -143,7 +143,7 @@ function ClientesCorporativosPage() {
               <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
                 Advocacia dedicada a grupos empresariais de médio e grande porte. Contratos,
                 contencioso, societário e tributário conduzidos com o mesmo método que sustenta
-                trinta anos de decisões relevantes — profundidade em qualquer escala.
+                trinta anos de decisões relevantes, profundidade em qualquer escala.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ function ClientesCorporativosPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
                   src={bannerImg}
-                  alt="Clientes corporativos — sede empresarial"
+                  alt="Clientes corporativos, sede empresarial"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
@@ -182,7 +182,7 @@ function ClientesCorporativosPage() {
             </p>
             <p>
               A equipe integra sócios com atuação consolidada em contencioso, contratos,
-              societário, tributário e trabalhista — condição necessária para tratar a
+              societário, tributário e trabalhista, condição necessária para tratar a
               complexidade real de uma operação empresarial.
             </p>
           </div>

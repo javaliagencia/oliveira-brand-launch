@@ -87,7 +87,7 @@ export function NotFoundPage() {
           </div>
 
           <p className="mt-12 text-xs uppercase tracking-[0.25em] text-[var(--sand)]/50">
-            Oliveira Ritzmann Advogados — 30 anos de método
+            Oliveira Ritzmann Advogados, 30 anos de método
           </p>
         </div>
       </div>

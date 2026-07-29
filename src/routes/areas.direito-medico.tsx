@@ -21,13 +21,13 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/areas/direito-medico")({
   head: () => ({
     meta: [
-      { title: "Direito Médico — Oliveira Ritzmann Advogados" },
+      { title: "Direito Médico | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
           "Assessoria a médicos, clínicas, hospitais e operadoras. Contencioso e consultivo com método, previsibilidade e resultado.",
       },
-      { property: "og:title", content: "Direito Médico — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Direito Médico | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
@@ -159,7 +159,7 @@ function DireitoMedicoPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
                   src={bannerImg.url}
-                  alt="Direito Médico — ambiente clínico"
+                  alt="Direito Médico, ambiente clínico"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
@@ -175,7 +175,7 @@ function DireitoMedicoPage() {
         <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
         <div className="mt-8 max-w-[900px]">
           <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
-            A prática médica exige advocacia que compreenda ciência, ética e regulação —
+            A prática médica exige advocacia que compreenda ciência, ética e regulação,
             e que traduza tudo isso em decisão segura.
           </p>
           <div
@@ -193,7 +193,7 @@ function DireitoMedicoPage() {
             </p>
             <p>
               A equipe integra sócios com atuação consolidada em responsabilidade civil,
-              regulação sanitária, direito societário e contratos empresariais — condição
+              regulação sanitária, direito societário e contratos empresariais, condição
               necessária para tratar a saúde como o setor multidisciplinar que ela é.
             </p>
           </div>

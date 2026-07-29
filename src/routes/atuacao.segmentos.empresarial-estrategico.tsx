@@ -15,13 +15,13 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/atuacao/segmentos/empresarial-estrategico")({
   head: () => ({
     meta: [
-      { title: "Empresarial Estratégico — Oliveira Ritzmann Advogados" },
+      { title: "Empresarial Estratégico | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
           "Advocacia para decisões empresariais de alto impacto: transações, disputas relevantes e movimentos societários conduzidos com método.",
       },
-      { property: "og:title", content: "Empresarial Estratégico — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Empresarial Estratégico | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
@@ -151,7 +151,7 @@ function EmpresarialEstrategicoPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
                   src={bannerImg}
-                  alt="Empresarial estratégico — sala de decisão"
+                  alt="Empresarial estratégico, sala de decisão"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
@@ -178,11 +178,11 @@ function EmpresarialEstrategicoPage() {
             <p>
               Atuamos ao lado de sócios, conselhos e executivos em decisões que definem o rumo
               da empresa: transações, disputas relevantes, reorganizações e situações de crise.
-              A entrega é a mesma em qualquer escala — método, profundidade e presença.
+              A entrega é a mesma em qualquer escala, método, profundidade e presença.
             </p>
             <p>
               A equipe integra sócios com atuação consolidada em contencioso estratégico,
-              societário, arbitragens e governança — condição necessária para conduzir os casos
+              societário, arbitragens e governança, condição necessária para conduzir os casos
               em que a decisão importa mais do que o volume.
             </p>
           </div>

@@ -20,13 +20,13 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/atuacao/segmentos/instituicoes-financeiras")({
   head: () => ({
     meta: [
-      { title: "Instituições Financeiras — Oliveira Ritzmann Advogados" },
+      { title: "Instituições Financeiras | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
           "Assessoria a bancos, financeiras, cooperativas de crédito e fintechs. Contencioso de volume, recuperação de crédito e regulação com método, previsibilidade e resultado.",
       },
-      { property: "og:title", content: "Instituições Financeiras — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Instituições Financeiras | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
@@ -161,7 +161,7 @@ function InstituicoesFinanceirasPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
                   src={bannerImg}
-                  alt="Instituições financeiras — arquitetura corporativa"
+                  alt="Instituições financeiras, arquitetura corporativa"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
@@ -188,12 +188,12 @@ function InstituicoesFinanceirasPage() {
             <p>
               Atendemos instituições financeiras em todo o ciclo do crédito: da estruturação
               contratual e regulatória à recuperação em carteira, com indicadores auditáveis e
-              o mesmo padrão em todas as praças em que operamos. Volume não substitui método —
+              o mesmo padrão em todas as praças em que operamos. Volume não substitui método,
               e é o método que garante previsibilidade em cada etapa.
             </p>
             <p>
               A equipe integra sócios com atuação consolidada em contencioso bancário,
-              recuperação de créditos, direito societário e regulação — condição necessária
+              recuperação de créditos, direito societário e regulação, condição necessária
               para tratar o setor financeiro na sua verdadeira complexidade multidisciplinar.
             </p>
           </div>

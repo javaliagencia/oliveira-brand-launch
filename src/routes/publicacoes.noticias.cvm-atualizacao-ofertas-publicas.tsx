@@ -30,7 +30,7 @@ export const Route = createFileRoute(
 )({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       { name: "description", content: DESCRICAO },
       { property: "og:title", content: TITULO },
       { property: "og:description", content: DESCRICAO },

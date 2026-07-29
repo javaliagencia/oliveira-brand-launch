@@ -27,10 +27,10 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
   "direito-medico": {
     banner: bannerMedico.url,
     hero: "Assessoria integral a médicos, clínicas, hospitais, operadoras e cooperativas. Defesa técnica, regulação e governança conduzidas com o mesmo método que sustenta trinta anos de atuação em decisões que exigem profundidade.",
-    lead: "A prática médica exige advocacia que compreenda ciência, ética e regulação — e que traduza tudo isso em decisão segura.",
+    lead: "A prática médica exige advocacia que compreenda ciência, ética e regulação, e que traduza tudo isso em decisão segura.",
     paragrafos: [
       "Atuamos ao lado de profissionais e instituições de saúde nos momentos em que a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do contencioso individual à estruturação de grandes operadoras, o método é o mesmo: leitura profunda do caso, definição clara da estratégia e execução previsível.",
-      "A equipe integra sócios com atuação consolidada em responsabilidade civil, regulação sanitária, direito societário e contratos empresariais — condição necessária para tratar a saúde como o setor multidisciplinar que ela é.",
+      "A equipe integra sócios com atuação consolidada em responsabilidade civil, regulação sanitária, direito societário e contratos empresariais, condição necessária para tratar a saúde como o setor multidisciplinar que ela é.",
     ],
     servicos: [
       "Defesa técnica em processos éticos e disciplinares (CRM, CFM, CREMESC).",
@@ -78,10 +78,10 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
 
   "recuperacao-de-credito": {
     banner: bannerCredito.url,
-    hero: "Recuperação de crédito conduzida como operação: inteligência de carteira, escala tecnológica e execução disciplinada. Do crédito pulverizado à dívida estruturada, a régua é a mesma — previsibilidade de resultado.",
+    hero: "Recuperação de crédito conduzida como operação: inteligência de carteira, escala tecnológica e execução disciplinada. Do crédito pulverizado à dívida estruturada, a régua é a mesma: previsibilidade de resultado.",
     lead: "Recuperar crédito não é insistir. É saber onde há patrimônio, quando agir e qual caminho encerra o caso mais rápido.",
     paragrafos: [
-      "Trabalhamos carteiras de todos os portes com leitura analítica prévia: segmentação por perfil de devedor, probabilidade de êxito e custo processual. Essa triagem define o que vai para negociação, o que vai para execução e o que deve ser encerrado — decisão que preserva caixa e tempo do cliente.",
+      "Trabalhamos carteiras de todos os portes com leitura analítica prévia: segmentação por perfil de devedor, probabilidade de êxito e custo processual. Essa triagem define o que vai para negociação, o que vai para execução e o que deve ser encerrado, decisão que preserva caixa e tempo do cliente.",
       "A operação combina equipe dedicada, rotinas de pesquisa patrimonial e indicadores de acompanhamento. O cliente enxerga a carteira em números claros: taxa de recuperação, prazo médio e curva de resultado mês a mês.",
     ],
     servicos: [
@@ -132,7 +132,7 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
     hero: "Gestão de contencioso de massa com padronização de teses, automação de rotinas e governança de dados. Volume tratado com o mesmo rigor técnico que o escritório aplica às causas estratégicas.",
     lead: "Em contencioso de volume, o resultado não vem do esforço isolado: vem do processo desenhado para se repetir bem.",
     paragrafos: [
-      "Estruturamos operações de massa com teses padronizadas, fluxos revisados por advogados sêniores e tecnologia de acompanhamento processual. A padronização libera tempo para o que é excepcional — e é justamente ali que a experiência do escritório se concentra.",
+      "Estruturamos operações de massa com teses padronizadas, fluxos revisados por advogados sêniores e tecnologia de acompanhamento processual. A padronização libera tempo para o que é excepcional, e é justamente ali que a experiência do escritório se concentra.",
       "Cada carteira recebe indicadores próprios: provisionamento, tempo de ciclo, índice de êxito e custo por processo. O cliente passa a discutir contencioso com a mesma linguagem com que discute o próprio negócio.",
     ],
     servicos: [
@@ -231,7 +231,7 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
     lead: "O direito cível é a base sobre a qual quase todo negócio se apoia. Tratá-lo com displicência é caro; tratá-lo com método é economia.",
     paragrafos: [
       "Atuamos da redação preventiva de contratos à disputa judicial que deles decorre. A vantagem de manter as duas frentes na mesma equipe é evidente: quem litiga conhece as armadilhas que quem redige precisa evitar.",
-      "A prática cobre responsabilidade civil, relações de consumo, direitos reais, locações, sucessões e conflitos patrimoniais entre sócios e familiares — sempre com atenção ao custo, ao prazo e ao efeito das decisões sobre as relações que continuam depois do processo.",
+      "A prática cobre responsabilidade civil, relações de consumo, direitos reais, locações, sucessões e conflitos patrimoniais entre sócios e familiares, sempre com atenção ao custo, ao prazo e ao efeito das decisões sobre as relações que continuam depois do processo.",
     ],
     servicos: [
       "Elaboração, revisão e negociação de contratos empresariais e civis.",
@@ -326,7 +326,7 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
   trabalhista: {
     banner: bannerTrabalhista.url,
     hero: "Consultivo e contencioso trabalhista para empresas com operação intensiva em pessoas. Prevenção de passivos, negociação sindical e defesa técnica conduzidas com previsibilidade de custo e de prazo.",
-    lead: "Passivo trabalhista raramente nasce no processo. Nasce na rotina — e é lá que ele se resolve.",
+    lead: "Passivo trabalhista raramente nasce no processo. Nasce na rotina, e é lá que ele se resolve.",
     paragrafos: [
       "Atuamos junto a áreas de RH e diretorias na revisão de jornadas, enquadramentos, políticas internas e terceirizações, antes que a divergência vire reclamatória. Quando o litígio é inevitável, a defesa já encontra documentação organizada e tese definida.",
       "No contencioso, a operação combina padronização de teses, acompanhamento por indicadores e presença regional nas varas em que o cliente tem exposição. A leitura do risco é feita em número: probabilidade, provisão e curva de encerramento.",

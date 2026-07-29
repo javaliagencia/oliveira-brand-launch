@@ -16,13 +16,13 @@ import { BrandArrow } from "@/components/brand-ui";
 export const Route = createFileRoute("/hub-de-inovacao")({
   head: () => ({
     meta: [
-      { title: "Hub de Inovação — Dados e Inteligência Artificial" },
+      { title: "Hub de Inovação | Dados e Inteligência Artificial" },
       {
         name: "description",
         content:
           "Dados, inteligência artificial e conhecimento jurídico ampliam nossa capacidade de análise e fortalecem a tomada de decisão.",
       },
-      { property: "og:title", content: "Hub de Inovação — Dados e Inteligência Artificial" },
+      { property: "og:title", content: "Hub de Inovação | Dados e Inteligência Artificial" },
       {
         property: "og:description",
         content:
@@ -200,7 +200,7 @@ function HubInovacaoPage() {
               <div className="border border-[color-mix(in_oklch,var(--sand)_18%,transparent)] px-10 py-12 text-center">
                 <img
                   src={oliveIaLogo}
-                  alt="Oliv.ia — inteligência artificial do Oliveira Ritzmann"
+                  alt="Oliv.ia, inteligência artificial do Oliveira Ritzmann"
                   width={1248}
                   height={544}
                   loading="lazy"

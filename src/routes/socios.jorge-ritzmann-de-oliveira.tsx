@@ -7,7 +7,7 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/socios/jorge-ritzmann-de-oliveira")({
   head: () => ({
     meta: [
-      { title: "Jorge Ritzmann de Oliveira — Sócio | Oliveira Ritzmann Advogados" },
+      { title: "Jorge Ritzmann de Oliveira | Sócio | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/socios/jorge-ritzmann-de-oliveira")({
       },
       {
         property: "og:title",
-        content: "Jorge Ritzmann de Oliveira — Sócio",
+        content: "Jorge Ritzmann de Oliveira, Sócio",
       },
       {
         property: "og:description",
@@ -40,7 +40,7 @@ const FOCUS = [
 
 const CREDENTIALS = [
   
-  { label: "Formação", value: "Direito — Universidade Federal de Santa Catarina" },
+  { label: "Formação", value: "Direito, Universidade Federal de Santa Catarina" },
   { label: "Pós-graduação", value: "Direito Empresarial" },
   { label: "Idiomas", value: "Português · Inglês · Espanhol" },
 ];
@@ -196,7 +196,7 @@ function JorgePage() {
               “
             </span>
             Jorge é o estrategista a quem lideranças recorrem quando a decisão
-            precisa de método — e coragem para sustentá-lo até o resultado.
+            precisa de método, e coragem para sustentá-lo até o resultado.
             <span
               aria-hidden="true"
               className="ml-1 font-display text-[1.1em] leading-none text-[var(--gold)]/60"
@@ -230,8 +230,8 @@ function JorgePage() {
                 decisão bem tomada de um passivo evitável.
               </p>
               <p>
-                Sua atuação combina o rigor do contencioso de volume — carteiras
-                com milhares de processos ativos — à mesa das decisões
+                Sua atuação combina o rigor do contencioso de volume, carteiras
+                com milhares de processos ativos, à mesa das decisões
                 empresariais mais sensíveis: reestruturações, disputas
                 societárias, recuperação de créditos complexos e a arquitetura
                 jurídica de cooperativas de crédito em todo o país.

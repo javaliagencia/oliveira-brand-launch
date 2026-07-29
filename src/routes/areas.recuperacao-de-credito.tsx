@@ -8,13 +8,13 @@ const TITULO = "Recuperação de Crédito";
 export const Route = createFileRoute("/areas/recuperacao-de-credito")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Recuperação de crédito com método, escala e previsibilidade: estratégia, execução e resultado.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:
