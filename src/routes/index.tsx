@@ -940,8 +940,8 @@ function PublicacoesFold() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
-      {/* Fundo em vídeo que acompanha a rolagem de toda a dobra (referência Simmons & Simmons) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      {/* Fundo em vídeo colado à janela e recortado pela dobra (referência Simmons & Simmons) */}
+      <div aria-hidden="true" className="pointer-events-none sticky top-0 z-0 h-0 w-full">
         <video
           ref={videoRef}
           src={pubParticles.url}
@@ -950,10 +950,11 @@ function PublicacoesFold() {
           muted
           playsInline
           preload="auto"
-          className="absolute left-0 top-[-18vh] h-[calc(100%+52vh)] w-full object-cover will-change-transform"
+          className="absolute left-0 top-[-6vh] h-[112vh] w-full object-cover will-change-transform"
           style={{ opacity: 0.85 }}
         />
       </div>
+
 
       {/* Véu que percorre a dobra inteira: verde mais claro no topo, verde escuro ao chegar no CTA */}
       <div
