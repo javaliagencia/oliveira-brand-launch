@@ -1041,10 +1041,11 @@ function PublicacoesFold() {
             href="/publicacoes"
             className="group inline-flex items-center gap-3 px-8 py-4 text-[12px] uppercase tracking-[0.32em] transition-colors"
             style={{
-              color: "var(--ink)",
-              border: "1px solid color-mix(in oklch, var(--ink) 55%, transparent)",
-              backgroundColor: "transparent",
+              color: "var(--sand)",
+              border: "1px solid color-mix(in oklch, var(--gold) 55%, transparent)",
+              backgroundColor: "rgba(8,38,36,0.35)",
             }}
+
           >
             Ver todas as publicações
             <BrandArrow size={14} />
