@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroVideo from "@/assets/hero-colonnade.mp4.asset.json";
+import heroVideo from "@/assets/hero-home-oliveira.mp4.asset.json";
 import imgCorporativos from "@/assets/empresarial-estrategico.jpg.asset.json";
 import imgEmpresarial from "@/assets/clientes-corporativos.jpg.asset.json";
 
@@ -156,11 +156,10 @@ function HeroFold() {
       className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden text-sand"
       style={{ backgroundColor: "var(--ink)" }}
     >
-      {/* Vídeo em loop — camada 0. Escala + translate para cortar a marca d'água do canto inferior direito. */}
+      {/* Vídeo em loop, camada 0. Sem marca d'água: enquadramento cheio, sem recorte. */}
       <video
         ref={(el) => { if (el) el.playbackRate = 0.55; }}
         className="absolute inset-0 -z-20 h-full w-full object-cover"
-        style={{ transform: "scale(1.35) translate(-8%, -6%)", transformOrigin: "center", clipPath: "inset(0 4% 4% 0)" }}
         autoPlay
         muted
         loop
@@ -171,6 +170,7 @@ function HeroFold() {
       >
         <source src={heroVideo.url} type="video/mp4" />
       </video>
+
 
       {/* Overlay verde-profundo — garante contraste e tinge o vídeo */}
       <div
