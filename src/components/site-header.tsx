@@ -129,7 +129,7 @@ export function SiteHeader() {
         <Link
           to="/"
           className="group inline-flex items-center gap-1.5 focus-visible:outline-none md:gap-2"
-          aria-label="Oliveira Ritzmann Advogados — 30 anos — Início"
+          aria-label="Oliveira Ritzmann Advogados, 30 anos, Início"
         >
           <img
             src={logoVerde.url}

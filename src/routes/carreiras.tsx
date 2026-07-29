@@ -16,13 +16,13 @@ import { BrandArrow, BrandLink } from "@/components/brand-ui";
 export const Route = createFileRoute("/carreiras")({
   head: () => ({
     meta: [
-      { title: "Carreiras — Oliveira Ritzmann Advogados" },
+      { title: "Carreiras | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
           "Onde a advocacia se aprende com método. Trinta anos formando advogados em nove praças do país, com sócio acompanhando o trabalho e caminho interno de crescimento.",
       },
-      { property: "og:title", content: "Carreiras — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Carreiras | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
@@ -56,7 +56,7 @@ const PILARES: { titulo: string; texto: string }[] = [
   {
     titulo: "Nove praças, um método",
     texto:
-      "Blumenau, São Paulo, Rio de Janeiro, Curitiba, Porto Alegre, Salvador, Goiânia, Maceió e Aracaju — mesmo padrão técnico em todo o país.",
+      "Blumenau, São Paulo, Rio de Janeiro, Curitiba, Porto Alegre, Salvador, Goiânia, Maceió e Aracaju, mesmo padrão técnico em todo o país.",
   },
 ];
 

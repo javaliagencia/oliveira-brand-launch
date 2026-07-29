@@ -8,13 +8,13 @@ const TITULO = "Contencioso de Volume";
 export const Route = createFileRoute("/areas/contencioso-de-volume")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Gestão de contencioso de volume com método, tecnologia e previsibilidade de resultado.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:

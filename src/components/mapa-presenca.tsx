@@ -334,7 +334,7 @@ export function MapaPresenca({
                 onBlur={() => onAtivar(null)}
                 tabIndex={0}
                 role="button"
-                aria-label={`${s.cidade} — ${s.uf}`}
+                aria-label={`${s.cidade}, ${s.uf}`}
               >
                 <circle
                   cx={s.x}

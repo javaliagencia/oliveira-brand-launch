@@ -8,13 +8,13 @@ const TITULO = "Contencioso Estratégico";
 export const Route = createFileRoute("/areas/contencioso-estrategico")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Contencioso estratégico em causas decisivas: teses, tribunais superiores e gestão de risco.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:

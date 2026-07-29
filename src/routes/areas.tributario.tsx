@@ -7,13 +7,13 @@ const BANNER = getAreaBanner("tributario");
 export const Route = createFileRoute("/areas/tributario")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Planejamento, consultivo e contencioso tributário: reforma, passivos fiscais e defesa técnica.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:

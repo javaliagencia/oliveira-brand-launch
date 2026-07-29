@@ -169,7 +169,7 @@ function SedeCard({ sede }: { sede: Sede }) {
       itemType="https://schema.org/LocalBusiness"
       className="flex flex-col"
     >
-      <meta itemProp="name" content={`Oliveira Ritzmann Advogados — ${sede.cidade}`} />
+      <meta itemProp="name" content={`Oliveira Ritzmann Advogados, ${sede.cidade}`} />
       <p className="font-display text-[17px] font-medium leading-tight text-sand">
         <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
           <span itemProp="addressLocality">{sede.cidade}</span>
@@ -236,11 +236,11 @@ export function SiteFooter() {
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
-        Rodapé — presença, navegação e informações institucionais
+        Rodapé, presença, navegação e informações institucionais
       </h2>
 
       {/* ============================================================
-          Faixa 1 — PRESENÇA (sedes)
+          Faixa 1, PRESENÇA (sedes)
           Fundo --ink (verde-profundo)
          ============================================================ */}
       <section
@@ -279,7 +279,7 @@ export function SiteFooter() {
       </section>
 
       {/* ============================================================
-          Faixa 2 — NAVEGAÇÃO COMPLETA (SEO: espelha o menu sanduíche)
+          Faixa 2, NAVEGAÇÃO COMPLETA (SEO: espelha o menu sanduíche)
           Fundo --ink-2 (verde-escuro médio)
           Ordem: Início · Oliveira Ritzmann · Atuação · Advogados ·
                  Publicações · Contato
@@ -497,7 +497,7 @@ export function SiteFooter() {
       </nav>
 
       {/* ============================================================
-          Faixa 3 — INSTITUCIONAL (Conformidade + Redes + copyright)
+          Faixa 3, INSTITUCIONAL (Conformidade + Redes + copyright)
           Fundo mais escuro (mistura de --ink com preto)
          ============================================================ */}
       <section

@@ -15,13 +15,13 @@ import { MapaPresenca, SEDES } from "@/components/mapa-presenca";
 export const Route = createFileRoute("/presenca")({
   head: () => ({
     meta: [
-      { title: "Presença — Nove unidades, um só método | Oliveira Ritzmann" },
+      { title: "Presença | Nove unidades, um só método | Oliveira Ritzmann" },
       {
         name: "description",
         content:
           "Nove unidades próprias de Blumenau a Maceió, com cobertura em todo o território nacional. Conheça a abrangência geográfica do Oliveira Ritzmann Advogados.",
       },
-      { property: "og:title", content: "Presença — Nove unidades, um só método | Oliveira Ritzmann" },
+      { property: "og:title", content: "Presença | Nove unidades, um só método | Oliveira Ritzmann" },
       {
         property: "og:description",
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/presenca")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Presença — Nove unidades, um só método" },
+      { name: "twitter:title", content: "Presença | Nove unidades, um só método" },
       {
         name: "twitter:description",
         content:

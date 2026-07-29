@@ -17,17 +17,17 @@ import { BrandArrow } from "@/components/brand-ui";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Oliveira Ritzmann Advogados" },
+      { title: "Contato | Oliveira Ritzmann Advogados" },
       {
         name: "description",
         content:
-          "Fale com o Oliveira Ritzmann Advogados. Envie sua mensagem e o sócio responsável retorna o contato — em qualquer uma das nove praças do país.",
+          "Fale com o Oliveira Ritzmann Advogados. Envie sua mensagem e o sócio responsável retorna o contato, em qualquer uma das nove praças do país.",
       },
-      { property: "og:title", content: "Contato — Oliveira Ritzmann Advogados" },
+      { property: "og:title", content: "Contato | Oliveira Ritzmann Advogados" },
       {
         property: "og:description",
         content:
-          "Envie sua mensagem e o sócio responsável retorna o contato — em qualquer uma das nove praças do país.",
+          "Envie sua mensagem e o sócio responsável retorna o contato, em qualquer uma das nove praças do país.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: bannerImg.url },

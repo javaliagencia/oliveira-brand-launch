@@ -8,13 +8,13 @@ const TITULO = "Direito Trabalhista";
 export const Route = createFileRoute("/areas/trabalhista")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Consultivo preventivo, negociação sindical e defesa em contencioso trabalhista para empresas com operação intensiva em pessoas.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:

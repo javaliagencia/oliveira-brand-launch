@@ -8,13 +8,13 @@ const TITULO = "Direito Cível";
 export const Route = createFileRoute("/areas/civel")({
   head: () => ({
     meta: [
-      { title: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { title: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         name: "description",
         content:
           "Direito cível empresarial: responsabilidade civil, contratos e disputas patrimoniais.",
       },
-      { property: "og:title", content: `${TITULO} — Oliveira Ritzmann Advogados` },
+      { property: "og:title", content: `${TITULO} | Oliveira Ritzmann Advogados` },
       {
         property: "og:description",
         content:
