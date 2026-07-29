@@ -66,7 +66,7 @@ function ReconhecimentosFold() {
           <div className="md:col-span-8">
             <span
               aria-hidden="true"
-              className="mb-10 hidden h-px w-full md:block"
+              className="mb-10 -ml-12 hidden h-px w-[calc(100%+3rem)] md:block"
               style={{ backgroundColor: "color-mix(in oklch, var(--ink) 12%, transparent)" }}
             />
             <ul className="flex flex-wrap items-center gap-x-14 gap-y-10 md:justify-between">
