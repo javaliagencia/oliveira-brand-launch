@@ -56,6 +56,8 @@ const NAV_SECTIONS: NavSection[] = [
       { label: "História", href: "/historia" },
       { label: "Presença", href: "/presenca" },
       { label: "Carreiras", href: "/carreiras" },
+      { label: "Hub de Inovação", href: "/hub-de-inovacao" },
+
     ],
   },
   {
