@@ -17,8 +17,6 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
-import seloTopLawyers from "@/assets/selo-top-lawyers-2526.png.asset.json";
-import seloAb2l from "@/assets/selo-ab2l-horizontal.png.asset.json";
 
 
 type Sede = {
@@ -447,30 +445,8 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* Reconhecimentos — selos */}
-          <div className="mt-14 border-t pt-8" style={{ borderColor: "color-mix(in oklch, var(--sand) 12%, transparent)" }}>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-sand/55">
-              Reconhecimentos
-            </p>
-            <ul className="mt-5 flex flex-wrap items-center gap-x-10 gap-y-6">
-              <li>
-                <img
-                  src={seloTopLawyers.url}
-                  alt="Selo Top Lawyers 2025–2026 — O Livro de Ouro dos Escritórios de Advocacia do Brasil"
-                  loading="lazy"
-                  className="h-20 w-auto"
-                />
-              </li>
-              <li>
-                <img
-                  src={seloAb2l.url}
-                  alt="Certificado AB2L Infinite de Inovação Jurídica — Escritório 2026"
-                  loading="lazy"
-                  className="h-16 w-auto rounded-sm"
-                />
-              </li>
-            </ul>
-          </div>
+
+
 
 
           {/* Assinatura entre Navegação e Institucional */}
