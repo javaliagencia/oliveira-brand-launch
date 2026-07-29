@@ -17,8 +17,6 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
-import seloTopLawyers from "@/assets/selo-top-lawyers-2526.png.asset.json";
-import seloAb2l from "@/assets/selo-ab2l-horizontal.png.asset.json";
 
 
 type Sede = {
