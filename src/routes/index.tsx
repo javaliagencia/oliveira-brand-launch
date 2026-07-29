@@ -898,35 +898,34 @@ function PublicacoesFold() {
       id="publicacoes"
       aria-label="Publicações, Em ponto"
       className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "var(--sand)", color: "var(--ink)" }}
+      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
-      {/* Header band — vídeo de partículas em fundo escuro (referência Simmons & Simmons) */}
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
-      >
-        <video
-          src={pubParticles.url}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: 0.75 }}
-        />
-        {/* Véu escuro suave para contraste do texto */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(8,38,36,0.55) 0%, rgba(8,38,36,0.7) 100%)",
-          }}
-        />
+      {/* Fundo em vídeo que acompanha a rolagem de toda a dobra (referência Simmons & Simmons) */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="sticky top-0 h-screen w-full overflow-hidden">
+          <video
+            src={pubParticles.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ opacity: 0.75 }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(8,38,36,0.55) 0%, rgba(8,38,36,0.72) 45%, rgba(8,38,36,0.82) 100%)",
+            }}
+          />
+        </div>
+      </div>
 
-        <div className="relative mx-auto max-w-[1360px] px-6 pt-12 pb-40 md:pt-16 md:pb-56">
+      {/* Header band */}
+      <div className="relative z-[2] w-full">
+        <div className="relative mx-auto max-w-[1360px] px-6 pt-20 pb-24 md:pt-32 md:pb-32">
           <div className="max-w-[62ch]">
             <div className="flex flex-col items-start gap-5">
               <span
@@ -960,8 +959,9 @@ function PublicacoesFold() {
         </div>
       </div>
 
-      {/* Grade puxada para cima — invade a faixa escura como colagem sobre o vídeo */}
-      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-10 md:pb-14" style={{ marginTop: "-60px" }}>
+      {/* Grade das publicações — rola sobre o vídeo */}
+      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 pb-20 md:pb-28">
+
         {/* Grade responsiva: colunas independentes no desktop para eliminar o vão entre o destaque e a notícia abaixo. */}
         <div className="relative grid grid-cols-1 gap-7 md:grid-cols-2 md:items-start md:gap-x-10">
           <div className="flex min-w-0 flex-col gap-5 md:gap-6">
