@@ -84,6 +84,7 @@ const AREAS = [
 export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
   const outrasAreas = AREAS.filter((a) => !slug || !a.href.endsWith(slug));
   const conteudo = getAreaContent(slug);
+  const CONTATOS = (slug && CONTATOS_POR_AREA[slug]) || CONTATOS_PADRAO;
   const { servicos: SERVICOS, setores: SETORES, artigos: ARTIGOS } = conteudo;
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
