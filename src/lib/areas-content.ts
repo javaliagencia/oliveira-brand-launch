@@ -8,7 +8,7 @@ import bannerVolume from "@/assets/areas/contencioso-de-volume.jpg.asset.json";
 import bannerEstrategico from "@/assets/areas/contencioso-estrategico.jpg.asset.json";
 import bannerCivel from "@/assets/areas/civel.jpg.asset.json";
 import bannerTributario from "@/assets/areas/tributario.jpg.asset.json";
-import bannerTrabalhista from "@/assets/areas/trabalhista.jpg";
+import bannerTrabalhista from "@/assets/areas/trabalhista.jpg.asset.json";
 
 export type AreaContent = {
   banner: string;
@@ -324,7 +324,7 @@ export const AREAS_CONTENT: Record<string, AreaContent> = {
   },
 
   trabalhista: {
-    banner: bannerTrabalhista,
+    banner: bannerTrabalhista.url,
     hero: "Consultivo e contencioso trabalhista para empresas com operação intensiva em pessoas. Prevenção de passivos, negociação sindical e defesa técnica conduzidas com previsibilidade de custo e de prazo.",
     lead: "Passivo trabalhista raramente nasce no processo. Nasce na rotina — e é lá que ele se resolve.",
     paragrafos: [
