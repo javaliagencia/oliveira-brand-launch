@@ -44,10 +44,9 @@ function ReconhecimentosFold() {
       <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-4">
-            <SectionEyebrow>Reconhecimentos</SectionEyebrow>
             <h2
               id="reconhecimentos-heading"
-              className="mt-8 font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-light leading-[1.15] tracking-[-0.025em]"
+              className="font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-light leading-[1.15] tracking-[-0.025em]"
               style={{ color: "var(--ink)" }}
             >
               Prêmios e reconhecimentos
