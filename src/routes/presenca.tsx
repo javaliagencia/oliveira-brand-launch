@@ -64,7 +64,7 @@ function PresencaPage() {
           <p className="mt-8 max-w-[62ch] text-[17px] leading-relaxed text-sand/75">
             A abrangência do Oliveira Ritzmann não é uma rede de correspondentes.
             São unidades próprias, com equipes integradas e o mesmo padrão de
-            condução — do Sul ao Nordeste, e de qualquer uma delas para todo o
+            condução, do Sul ao Nordeste, e de qualquer uma delas para todo o
             território nacional.
           </p>
         </div>
