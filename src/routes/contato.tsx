@@ -90,7 +90,7 @@ function ContatoPage() {
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
       {/* HERO — padrão editorial */}
-      <section className="relative bg-[var(--sand)] pt-28 md:pt-32">
+      <section className="relative bg-[var(--sand)] pt-28 pb-0 md:pt-32 md:pb-20">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-0 h-px"
@@ -98,7 +98,7 @@ function ContatoPage() {
         />
         <div className="mx-auto max-w-[1360px] px-6">
           <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
-            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-5 md:px-12 md:py-16 md:-mr-8 md:mt-16">
+            <div className="relative z-10 order-2 bg-[var(--ink)] px-8 py-12 text-[var(--sand)] md:order-1 md:col-span-5 md:px-12 md:py-16 md:-mr-8 md:mt-16 md:mb-[-4rem]">
               <SectionEyebrow tone="gold">Contato</SectionEyebrow>
               <h1 className="mt-6 font-display text-4xl font-light leading-[1.05] tracking-[-0.02em] md:text-[52px]">
                 Fale com{" "}
@@ -112,7 +112,7 @@ function ContatoPage() {
               </p>
             </div>
 
-            <div className="order-1 md:order-2 md:col-span-7">
+            <div className="order-1 md:order-2 md:col-span-7 md:self-start">
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
                   src={bannerImg.url}
