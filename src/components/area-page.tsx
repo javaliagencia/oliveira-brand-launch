@@ -9,6 +9,11 @@ import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.jso
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import socioGuilherme from "@/assets/socios/guilherme-otte.jpg.asset.json";
+import socioJuliano from "@/assets/socios/juliano-schmitt.png.asset.json";
+import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
+import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
+import socioCintia from "@/assets/socios/cintia-carla-senem.png.asset.json";
+import socioBruna from "@/assets/socios/bruna-schmitt.png.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
 import { getAreaContent } from "@/lib/areas-content";
