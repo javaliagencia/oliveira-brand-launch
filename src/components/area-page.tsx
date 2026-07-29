@@ -8,6 +8,7 @@ import { Linkedin, Mail } from "lucide-react";
 import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
+import socioGuilherme from "@/assets/socios/guilherme-otte.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
 import { getAreaContent } from "@/lib/areas-content";
