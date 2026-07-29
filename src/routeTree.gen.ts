@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PresencaRouteImport } from './routes/presenca'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
@@ -19,6 +20,11 @@ import { Route as AtuacaoSegmentosInstituicoesFinanceirasRouteImport } from './r
 import { Route as AtuacaoSegmentosEmpresarialEstrategicoRouteImport } from './routes/atuacao.segmentos.empresarial-estrategico'
 import { Route as AtuacaoSegmentosClientesCorporativosRouteImport } from './routes/atuacao.segmentos.clientes-corporativos'
 
+const PresencaRoute = PresencaRouteImport.update({
+  id: '/presenca',
+  path: '/presenca',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CarreirasRoute: typeof CarreirasRoute
   ContatoRoute: typeof ContatoRoute
+  PresencaRoute: typeof PresencaRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosClientesCorporativosRoute: typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -154,6 +167,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/presenca': {
+      id: '/presenca'
+      path: '/presenca'
+      fullPath: '/presenca'
+      preLoaderRoute: typeof PresencaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contato': {
       id: '/contato'
       path: '/contato'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CarreirasRoute: CarreirasRoute,
   ContatoRoute: ContatoRoute,
+  PresencaRoute: PresencaRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosClientesCorporativosRoute:
@@ -238,3 +259,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
