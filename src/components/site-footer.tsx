@@ -15,6 +15,7 @@
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
 import { Linkedin, Instagram, Facebook } from "lucide-react";
+import { BrandArrow } from "@/components/brand-ui";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
 
@@ -257,6 +258,15 @@ export function SiteFooter() {
           >
             Estrutura própria em nove praças. Atuação em todo o país.
           </h3>
+
+          <a
+            href="/presenca"
+            className="mt-6 inline-flex items-center gap-3 text-[13px] uppercase tracking-[0.14em] text-sand/85 transition-colors duration-200 hover:text-[var(--gold)] focus-visible:text-[var(--gold)]"
+          >
+            Ver a presença no mapa
+            <BrandArrow />
+          </a>
+
 
           <ul className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {SEDES.map((sede) => (
