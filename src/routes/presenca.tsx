@@ -144,7 +144,7 @@ function PresencaPage() {
 
           <p className="mt-14 max-w-[70ch] text-[15px] leading-relaxed text-ink/65">
             Onde não há unidade própria, a operação segue conduzida pelas nossas
-            equipes, com deslocamento e acompanhamento direto — a distância nunca
+            equipes, com deslocamento e acompanhamento direto. A distância nunca
             transfere a responsabilidade pelo caso.
           </p>
 
