@@ -92,7 +92,7 @@ function PresencaPage() {
           <SectionEyebrow tone="ink">Abrangência geográfica</SectionEyebrow>
 
           <div className="mt-12 grid gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 lg:sticky lg:top-28 lg:self-start">
               <MapaPresenca ativa={ativa} onAtivar={setAtiva} />
             </div>
 
