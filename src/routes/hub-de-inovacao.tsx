@@ -9,6 +9,7 @@
  */
 import { createFileRoute } from "@tanstack/react-router";
 import bannerImg from "@/assets/hub-inovacao-hero.jpg";
+import oliveIaLogo from "@/assets/olive-ia-logo-claro.png";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow } from "@/components/brand-ui";
 
