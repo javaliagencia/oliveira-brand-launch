@@ -55,7 +55,7 @@ function ReconhecimentosFold() {
               que avaliam a advocacia brasileira.
             </p>
             <div className="mt-8">
-              <BrandLink href="/oliveira-ritzmann">Saiba mais</BrandLink>
+              <BrandLink href="/presenca">Saiba mais</BrandLink>
             </div>
           </div>
 
