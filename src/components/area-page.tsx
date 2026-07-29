@@ -1,18 +1,19 @@
 /**
  * AreaPage — estrutura padrão das páginas de Área de Atuação.
  *
- * Mesma estrutura da página de Direito Médico; muda apenas o título.
+ * Estrutura única; o conteúdo varia por slug (src/lib/areas-content.ts).
  */
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail } from "lucide-react";
-import bannerImg from "@/assets/areas/direito-medico.jpg.asset.json";
 import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
+import { getAreaContent } from "@/lib/areas-content";
 
-export const AREA_BANNER = bannerImg.url;
+export { getAreaBanner } from "@/lib/areas-content";
+
 
 type Contato = {
   nome: string;
@@ -50,60 +51,20 @@ const CONTATOS: Contato[] = [
   },
 ];
 
-const SERVICOS = [
-  "Defesa técnica em processos éticos e disciplinares (CRM, CFM, CREMESC).",
-  "Contencioso cível em ações de responsabilidade médica e hospitalar.",
-  "Assessoria regulatória junto a Anvisa, ANS e vigilâncias sanitárias.",
-  "Contratos de prestação de serviços médicos, credenciamento e cooperativas.",
-  "Governança clínica, LGPD aplicada à saúde e compliance hospitalar.",
-  "Estruturação societária de clínicas, day-hospitals e grupos médicos.",
-];
-
 const AREAS = [
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
   { label: "Contencioso de Volume", href: "/areas/contencioso-de-volume" },
   { label: "Contencioso Estratégico", href: "/areas/contencioso-estrategico" },
   { label: "Direito Cível", href: "/areas/civel" },
+  { label: "Direito Tributário", href: "/areas/tributario" },
   { label: "Direito Médico", href: "/areas/direito-medico" },
-  { label: "Contencioso estratégico", href: "/atuacao/segmentos/clientes-corporativos" },
 ];
 
-const SETORES = [
-  { label: "Hospitais e day-hospitals", href: "#" },
-  { label: "Clínicas e centros médicos", href: "#" },
-  { label: "Operadoras de saúde suplementar", href: "#" },
-  { label: "Cooperativas médicas", href: "#" },
-  { label: "Laboratórios e diagnóstico por imagem", href: "#" },
-  { label: "Indústria farmacêutica e dispositivos médicos", href: "#" },
-  { label: "Telemedicina e healthtechs", href: "#" },
-  { label: "Profissionais autônomos e sociedades unipessoais", href: "#" },
-];
-
-const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }[] = [
-  {
-    categoria: "Direito Médico",
-    data: "Jul · 2026",
-    titulo:
-      "Erro médico e o ônus da prova: o que muda com a leitura contemporânea da responsabilidade",
-    href: "/inteligencia",
-  },
-  {
-    categoria: "Regulação",
-    data: "Mai · 2026",
-    titulo:
-      "ANS e a judicialização da cobertura assistencial: limites do rol e da boa-fé contratual",
-    href: "/inteligencia",
-  },
-  {
-    categoria: "Governança clínica",
-    data: "Mar · 2026",
-    titulo: "LGPD nos hospitais: consentimento, prontuário e o novo desenho do risco jurídico",
-    href: "/inteligencia",
-  },
-];
 
 export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
   const outrasAreas = AREAS.filter((a) => !slug || !a.href.endsWith(slug));
+  const conteudo = getAreaContent(slug);
+  const { servicos: SERVICOS, setores: SETORES, artigos: ARTIGOS } = conteudo;
   return (
     <article className="bg-[var(--sand)] text-[var(--ink)]">
       {/* HERO */}
@@ -121,16 +82,14 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
                 {titulo}
               </h1>
               <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
-                Assessoria integral a médicos, clínicas, hospitais, operadoras e cooperativas.
-                Defesa técnica, regulação e governança conduzidas com o mesmo método que
-                sustenta trinta anos de atuação em decisões que exigem profundidade.
+                {conteudo.hero}
               </p>
             </div>
 
             <div className="order-1 md:order-2 md:col-span-7 md:self-start">
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
-                  src={bannerImg.url}
+                  src={conteudo.banner}
                   alt={titulo}
                   className="h-full w-full object-cover"
                   loading="eager"
@@ -146,8 +105,7 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
         <SectionEyebrow tone="ink-2">Visão geral</SectionEyebrow>
         <div className="mt-8 max-w-[900px]">
           <p className="font-display text-2xl leading-[1.3] tracking-tight text-[var(--ink-2)] md:text-[32px]">
-            A prática médica exige advocacia que compreenda ciência, ética e regulação —
-            e que traduza tudo isso em decisão segura.
+            {conteudo.lead}
           </p>
           <div
             aria-hidden="true"
@@ -155,18 +113,9 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
             style={{ backgroundColor: "var(--gold)" }}
           />
           <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-[var(--ink)]/85 md:text-base">
-            <p>
-              Atuamos ao lado de profissionais e instituições de saúde nos momentos em que
-              a resposta jurídica precisa acompanhar o rigor técnico da medicina. Do
-              contencioso individual à estruturação de grandes operadoras, o método é o
-              mesmo: leitura profunda do caso, definição clara da estratégia e execução
-              previsível.
-            </p>
-            <p>
-              A equipe integra sócios com atuação consolidada em responsabilidade civil,
-              regulação sanitária, direito societário e contratos empresariais — condição
-              necessária para tratar a saúde como o setor multidisciplinar que ela é.
-            </p>
+            {conteudo.paragrafos.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
 
           <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -292,7 +241,7 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
             <div>
               <SectionEyebrow tone="ink-2">Publicações relacionadas</SectionEyebrow>
               <h2 className="mt-6 max-w-2xl font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
-                Inteligência aplicada ao setor de saúde.
+                {conteudo.publicacoesTitulo}
               </h2>
             </div>
             <BrandLink href="/inteligencia">Ver todas as publicações</BrandLink>
