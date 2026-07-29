@@ -143,6 +143,54 @@ function arco(sede: Sede) {
   return `M${MATRIZ.x},${MATRIZ.y} Q${cx},${cy} ${sede.x},${sede.y}`;
 }
 
+/* ── Interiorização ───────────────────────────────────────────────
+   Pontos de atuação distribuídos por todas as unidades federativas.
+   São derivados dos próprios contornos dos estados (centroide e dois
+   pontos intermediários), garantindo que caiam dentro do território.
+   Cada ponto é vinculado à unidade mais próxima: ao acionar uma sede,
+   o mapa "interioriza" e mostra o alcance que parte dela.            */
+export type PontoInterior = { uf: string; x: number; y: number; sede: string };
+
+function vertices(d: string): Array<[number, number]> {
+  const nums = d.match(/-?\d+(?:\.\d+)?/g) ?? [];
+  const pts: Array<[number, number]> = [];
+  for (let i = 0; i + 1 < nums.length; i += 2) {
+    pts.push([parseFloat(nums[i]), parseFloat(nums[i + 1])]);
+  }
+  return pts;
+}
+
+function construirInterior(): PontoInterior[] {
+  const out: PontoInterior[] = [];
+  for (const [uf, d] of Object.entries(BRASIL_ESTADOS)) {
+    const pts = vertices(d);
+    if (pts.length < 3) continue;
+    const cx = pts.reduce((a, p) => a + p[0], 0) / pts.length;
+    const cy = pts.reduce((a, p) => a + p[1], 0) / pts.length;
+    const candidatos: Array<[number, number]> = [[cx, cy]];
+    for (const frac of [0.28, 0.72]) {
+      const v = pts[Math.floor(pts.length * frac)];
+      candidatos.push([cx + (v[0] - cx) * 0.42, cy + (v[1] - cy) * 0.42]);
+    }
+    for (const [x, y] of candidatos) {
+      let sede = MATRIZ.cidade;
+      let melhor = Infinity;
+      for (const s of SEDES) {
+        const dist = Math.hypot(s.x - x, s.y - y);
+        if (dist < melhor) {
+          melhor = dist;
+          sede = s.cidade;
+        }
+      }
+      out.push({ uf, x, y, sede });
+    }
+  }
+  return out;
+}
+
+const INTERIOR = construirInterior();
+
+
 export function MapaPresenca({
   ativa,
   onAtivar,
