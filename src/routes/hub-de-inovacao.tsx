@@ -178,15 +178,36 @@ function HubInovacaoPage() {
       {/* FECHAMENTO */}
       <section className="relative overflow-hidden bg-[var(--ink)] text-[var(--sand)]">
         <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-28">
-          <SectionEyebrow tone="gold">Experiência</SectionEyebrow>
-          <h2 className="mt-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-[-0.02em] text-[var(--sand)] md:text-[44px]">
-            Nossa inteligência artificial nasce da experiência jurídica
-            construída ao longo de{" "}
-            <span className="font-semibold" style={{ color: "var(--gold)" }}>
-              quase três décadas de atuação.
-            </span>
-          </h2>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center">
+            <div className="md:col-span-7">
+              <SectionEyebrow tone="gold">Experiência</SectionEyebrow>
+              <h2 className="mt-6 font-display text-3xl font-light leading-tight tracking-[-0.02em] text-[var(--sand)] md:text-[44px]">
+                Nossa inteligência artificial nasce da experiência jurídica
+                construída ao longo de{" "}
+                <span className="font-semibold" style={{ color: "var(--gold)" }}>
+                  quase três décadas de atuação.
+                </span>
+              </h2>
+            </div>
+
+            <div className="md:col-span-5 md:justify-self-end">
+              <div className="border border-[color-mix(in_oklch,var(--sand)_18%,transparent)] px-10 py-12 text-center">
+                <img
+                  src={oliveIaLogo}
+                  alt="olive.ia — inteligência artificial do Oliveira Ritzmann"
+                  width={1248}
+                  height={544}
+                  loading="lazy"
+                  className="mx-auto w-full max-w-[300px]"
+                />
+                <p className="mt-6 text-[12px] uppercase tracking-[0.18em] text-[color-mix(in_oklch,var(--sand)_65%,transparent)]">
+                  Inteligência artificial proprietária
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
       </section>
     </article>
   );
