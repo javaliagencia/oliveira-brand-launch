@@ -16,6 +16,7 @@ import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SociosJorgeRitzmannDeOliveiraRouteImport } from './routes/socios.jorge-ritzmann-de-oliveira'
 import { Route as AreasTributarioRouteImport } from './routes/areas.tributario'
+import { Route as AreasTrabalhistaRouteImport } from './routes/areas.trabalhista'
 import { Route as AreasRecuperacaoDeCreditoRouteImport } from './routes/areas.recuperacao-de-credito'
 import { Route as AreasDireitoMedicoRouteImport } from './routes/areas.direito-medico'
 import { Route as AreasContenciosoEstrategicoRouteImport } from './routes/areas.contencioso-estrategico'
@@ -60,6 +61,11 @@ const SociosJorgeRitzmannDeOliveiraRoute =
 const AreasTributarioRoute = AreasTributarioRouteImport.update({
   id: '/areas/tributario',
   path: '/areas/tributario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasTrabalhistaRoute = AreasTrabalhistaRouteImport.update({
+  id: '/areas/trabalhista',
+  path: '/areas/trabalhista',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasRecuperacaoDeCreditoRoute =
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
+  '/areas/trabalhista': typeof AreasTrabalhistaRoute
   '/areas/tributario': typeof AreasTributarioRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByTo {
   '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
+  '/areas/trabalhista': typeof AreasTrabalhistaRoute
   '/areas/tributario': typeof AreasTributarioRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/areas/contencioso-estrategico': typeof AreasContenciosoEstrategicoRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/areas/recuperacao-de-credito': typeof AreasRecuperacaoDeCreditoRoute
+  '/areas/trabalhista': typeof AreasTrabalhistaRoute
   '/areas/tributario': typeof AreasTributarioRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
   '/atuacao/segmentos/clientes-corporativos': typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -183,6 +192,7 @@ export interface FileRouteTypes {
     | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
     | '/areas/recuperacao-de-credito'
+    | '/areas/trabalhista'
     | '/areas/tributario'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
     | '/areas/recuperacao-de-credito'
+    | '/areas/trabalhista'
     | '/areas/tributario'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -219,6 +230,7 @@ export interface FileRouteTypes {
     | '/areas/contencioso-estrategico'
     | '/areas/direito-medico'
     | '/areas/recuperacao-de-credito'
+    | '/areas/trabalhista'
     | '/areas/tributario'
     | '/socios/jorge-ritzmann-de-oliveira'
     | '/atuacao/segmentos/clientes-corporativos'
@@ -238,6 +250,7 @@ export interface RootRouteChildren {
   AreasContenciosoEstrategicoRoute: typeof AreasContenciosoEstrategicoRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   AreasRecuperacaoDeCreditoRoute: typeof AreasRecuperacaoDeCreditoRoute
+  AreasTrabalhistaRoute: typeof AreasTrabalhistaRoute
   AreasTributarioRoute: typeof AreasTributarioRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
   AtuacaoSegmentosClientesCorporativosRoute: typeof AtuacaoSegmentosClientesCorporativosRoute
@@ -295,6 +308,13 @@ declare module '@tanstack/react-router' {
       path: '/areas/tributario'
       fullPath: '/areas/tributario'
       preLoaderRoute: typeof AreasTributarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/trabalhista': {
+      id: '/areas/trabalhista'
+      path: '/areas/trabalhista'
+      fullPath: '/areas/trabalhista'
+      preLoaderRoute: typeof AreasTrabalhistaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/recuperacao-de-credito': {
@@ -374,6 +394,7 @@ const rootRouteChildren: RootRouteChildren = {
   AreasContenciosoEstrategicoRoute: AreasContenciosoEstrategicoRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   AreasRecuperacaoDeCreditoRoute: AreasRecuperacaoDeCreditoRoute,
+  AreasTrabalhistaRoute: AreasTrabalhistaRoute,
   AreasTributarioRoute: AreasTributarioRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
   AtuacaoSegmentosClientesCorporativosRoute:
@@ -388,3 +409,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
