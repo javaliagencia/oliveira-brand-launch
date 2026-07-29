@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
@@ -238,25 +238,25 @@ export function SiteHeader() {
                   {NAV_SECTIONS.map((section) => (
                     <li key={section.href} className="py-6 md:py-7">
                       <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-12">
-                        <a
+                        <NavAnchor
                           href={section.href}
-                          onClick={() => setOpen(false)}
+                          onNavigate={() => setOpen(false)}
                           className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-[1.1] tracking-[-0.01em] text-sand transition-colors hover:text-[var(--gold)]"
                         >
                           {section.label}
-                        </a>
+                        </NavAnchor>
 
                         {section.children && (
                           <ul className="flex flex-col gap-2">
                             {section.children.map((sub) => (
                               <li key={sub.href}>
-                                <a
+                                <NavAnchor
                                   href={sub.href}
-                                  onClick={() => setOpen(false)}
+                                  onNavigate={() => setOpen(false)}
                                   className="block text-[14px] leading-relaxed text-sand/80 transition-colors hover:text-[var(--gold)]"
                                 >
                                   {sub.label}
-                                </a>
+                                </NavAnchor>
                               </li>
                             ))}
                           </ul>
@@ -272,13 +272,13 @@ export function SiteHeader() {
                                 <ul className="mt-3 flex flex-col gap-2">
                                   {group.items.map((sub) => (
                                     <li key={sub.href}>
-                                      <a
+                                      <NavAnchor
                                         href={sub.href}
-                                        onClick={() => setOpen(false)}
+                                        onNavigate={() => setOpen(false)}
                                         className="block text-[13.5px] leading-relaxed text-sand/80 transition-colors hover:text-[var(--gold)]"
                                       >
                                         {sub.label}
-                                      </a>
+                                      </NavAnchor>
                                     </li>
                                   ))}
                                 </ul>
@@ -324,5 +324,37 @@ export function SiteHeader() {
         </div>
       )}
     </header>
+  );
+}
+
+/**
+ * NavAnchor — link do menu que navega pelo roteador (sem recarregar a página)
+ * e fecha o overlay. Mantém `href` real para acessibilidade e cmd+click.
+ */
+function NavAnchor({
+  href,
+  onNavigate,
+  className,
+  children,
+}: {
+  href: string;
+  onNavigate: () => void;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const navigate = useNavigate();
+  return (
+    <a
+      href={href}
+      className={className}
+      onClick={(e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        onNavigate();
+        navigate({ to: href } as never);
+      }}
+    >
+      {children}
+    </a>
   );
 }
