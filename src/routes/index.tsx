@@ -812,18 +812,23 @@ function PublicacoesFold() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
     const update = () => {
       frame = 0;
       const el = sectionRef.current;
       const vid = videoRef.current;
       if (!el || !vid) return;
+      if (reduced) {
+        vid.style.transform = "translate3d(0,0,0)";
+        return;
+      }
       const rect = el.getBoundingClientRect();
-      const travel = Math.max(window.innerHeight * 0.36, rect.height * 0.16);
       const total = Math.max(1, rect.height + window.innerHeight);
       const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
-      // Começa levemente acima do título e desce conforme a página rola.
-      vid.style.transform = `translate3d(0, ${progress * travel}px, 0)`;
+      // Deriva suave: o fundo desce junto com a rolagem, sem ampliar o quadro.
+      const travel = window.innerHeight * 0.12;
+      vid.style.transform = `translate3d(0, ${(progress - 0.5) * 2 * travel}px, 0)`;
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -837,6 +842,7 @@ function PublicacoesFold() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
 
 
   const renderPublicacaoCard = (idx: number) => {
@@ -931,11 +937,12 @@ function PublicacoesFold() {
       ref={sectionRef}
       id="publicacoes"
       aria-label="Publicações, Em ponto"
-      className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
+      className="relative w-full"
+      style={{ backgroundColor: "var(--ink)", color: "var(--sand)", clipPath: "inset(0)" }}
+
     >
-      {/* Fundo em vídeo que acompanha a rolagem de toda a dobra (referência Simmons & Simmons) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      {/* Fundo em vídeo colado à janela e recortado pela dobra (referência Simmons & Simmons) */}
+      <div aria-hidden="true" className="pointer-events-none sticky top-0 z-0 h-0 w-full">
         <video
           ref={videoRef}
           src={pubParticles.url}
@@ -944,10 +951,11 @@ function PublicacoesFold() {
           muted
           playsInline
           preload="auto"
-          className="absolute left-0 top-[-18vh] h-[calc(100%+52vh)] w-full object-cover will-change-transform"
+          className="absolute left-0 top-[-6vh] h-[112vh] w-full object-cover will-change-transform"
           style={{ opacity: 0.85 }}
         />
       </div>
+
 
       {/* Véu que percorre a dobra inteira: verde mais claro no topo, verde escuro ao chegar no CTA */}
       <div
