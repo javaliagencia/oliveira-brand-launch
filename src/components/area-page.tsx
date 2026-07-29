@@ -241,7 +241,7 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
             <div>
               <SectionEyebrow tone="ink-2">Publicações relacionadas</SectionEyebrow>
               <h2 className="mt-6 max-w-2xl font-display text-3xl font-medium leading-tight tracking-tight text-[var(--ink-2)] md:text-[40px]">
-                Inteligência aplicada ao setor de saúde.
+                {conteudo.publicacoesTitulo}
               </h2>
             </div>
             <BrandLink href="/inteligencia">Ver todas as publicações</BrandLink>
