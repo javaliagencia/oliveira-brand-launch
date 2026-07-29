@@ -51,57 +51,15 @@ const CONTATOS: Contato[] = [
   },
 ];
 
-const SERVICOS = [
-  "Defesa técnica em processos éticos e disciplinares (CRM, CFM, CREMESC).",
-  "Contencioso cível em ações de responsabilidade médica e hospitalar.",
-  "Assessoria regulatória junto a Anvisa, ANS e vigilâncias sanitárias.",
-  "Contratos de prestação de serviços médicos, credenciamento e cooperativas.",
-  "Governança clínica, LGPD aplicada à saúde e compliance hospitalar.",
-  "Estruturação societária de clínicas, day-hospitals e grupos médicos.",
-];
-
 const AREAS = [
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
   { label: "Contencioso de Volume", href: "/areas/contencioso-de-volume" },
   { label: "Contencioso Estratégico", href: "/areas/contencioso-estrategico" },
   { label: "Direito Cível", href: "/areas/civel" },
+  { label: "Direito Tributário", href: "/areas/tributario" },
   { label: "Direito Médico", href: "/areas/direito-medico" },
-  { label: "Contencioso estratégico", href: "/atuacao/segmentos/clientes-corporativos" },
 ];
 
-const SETORES = [
-  { label: "Hospitais e day-hospitals", href: "#" },
-  { label: "Clínicas e centros médicos", href: "#" },
-  { label: "Operadoras de saúde suplementar", href: "#" },
-  { label: "Cooperativas médicas", href: "#" },
-  { label: "Laboratórios e diagnóstico por imagem", href: "#" },
-  { label: "Indústria farmacêutica e dispositivos médicos", href: "#" },
-  { label: "Telemedicina e healthtechs", href: "#" },
-  { label: "Profissionais autônomos e sociedades unipessoais", href: "#" },
-];
-
-const ARTIGOS: { categoria: string; data: string; titulo: string; href: string }[] = [
-  {
-    categoria: "Direito Médico",
-    data: "Jul · 2026",
-    titulo:
-      "Erro médico e o ônus da prova: o que muda com a leitura contemporânea da responsabilidade",
-    href: "/inteligencia",
-  },
-  {
-    categoria: "Regulação",
-    data: "Mai · 2026",
-    titulo:
-      "ANS e a judicialização da cobertura assistencial: limites do rol e da boa-fé contratual",
-    href: "/inteligencia",
-  },
-  {
-    categoria: "Governança clínica",
-    data: "Mar · 2026",
-    titulo: "LGPD nos hospitais: consentimento, prontuário e o novo desenho do risco jurídico",
-    href: "/inteligencia",
-  },
-];
 
 export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
   const outrasAreas = AREAS.filter((a) => !slug || !a.href.endsWith(slug));
