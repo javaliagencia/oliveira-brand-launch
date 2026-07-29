@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
@@ -324,5 +324,37 @@ export function SiteHeader() {
         </div>
       )}
     </header>
+  );
+}
+
+/**
+ * NavAnchor — link do menu que navega pelo roteador (sem recarregar a página)
+ * e fecha o overlay. Mantém `href` real para acessibilidade e cmd+click.
+ */
+function NavAnchor({
+  href,
+  onNavigate,
+  className,
+  children,
+}: {
+  href: string;
+  onNavigate: () => void;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const navigate = useNavigate();
+  return (
+    <a
+      href={href}
+      className={className}
+      onClick={(e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        onNavigate();
+        navigate({ to: href } as never);
+      }}
+    >
+      {children}
+    </a>
   );
 }
