@@ -9,7 +9,7 @@
  */
 import { createFileRoute } from "@tanstack/react-router";
 import bannerImg from "@/assets/hub-inovacao-hero.jpg";
-import oliveIaLogo from "@/assets/olive-ia-logo-claro.png";
+import oliveIaLogo from "@/assets/oliv-ia-logo-claro.png";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow } from "@/components/brand-ui";
 
@@ -195,7 +195,7 @@ function HubInovacaoPage() {
               <div className="border border-[color-mix(in_oklch,var(--sand)_18%,transparent)] px-10 py-12 text-center">
                 <img
                   src={oliveIaLogo}
-                  alt="olive.ia — inteligência artificial do Oliveira Ritzmann"
+                  alt="Oliv.ia — inteligência artificial do Oliveira Ritzmann"
                   width={1248}
                   height={544}
                   loading="lazy"
