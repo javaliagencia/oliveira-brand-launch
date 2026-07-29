@@ -945,22 +945,26 @@ function PublicacoesFold() {
             playsInline
             preload="auto"
             className="absolute left-0 top-0 w-full object-cover will-change-transform"
-            style={{ opacity: 0.8, height: "140%" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(8,38,36,0.5) 0%, rgba(8,38,36,0.66) 45%, rgba(8,38,36,0.78) 100%)",
-            }}
+            style={{ opacity: 0.85, height: "140%" }}
           />
         </div>
       </div>
 
+      {/* Véu que percorre a dobra inteira: verde mais claro no topo, verde escuro ao chegar no CTA */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(15,64,60,0.32) 0%, rgba(15,64,60,0.5) 22%, rgba(8,38,36,0.68) 55%, rgba(8,38,36,0.88) 100%)",
+        }}
+      />
+
 
       {/* Header band */}
       <div className="relative z-[2] w-full">
-        <div className="relative mx-auto max-w-[1360px] px-6 pt-20 pb-24 md:pt-32 md:pb-32">
+        <div className="relative mx-auto max-w-[1360px] px-6 pt-40 pb-24 md:pt-56 md:pb-32">
+
           <div className="max-w-[62ch]">
             <div className="flex flex-col items-start gap-5">
               <span
