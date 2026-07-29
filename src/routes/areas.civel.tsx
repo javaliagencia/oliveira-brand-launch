@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AreaPage, AREA_BANNER } from "@/components/area-page";
+import { AreaPage, getAreaBanner } from "@/components/area-page";
+
+const BANNER = getAreaBanner("civel");
 
 const TITULO = "Direito Cível";
 
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/areas/civel")({
           "Consultivo e contencioso cível conduzidos com método, profundidade e previsibilidade.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: AREA_BANNER },
+      { property: "og:image", content: BANNER },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: AREA_BANNER },
+      { name: "twitter:image", content: BANNER },
     ],
   }),
   component: () => <AreaPage titulo={TITULO} slug="civel" />,

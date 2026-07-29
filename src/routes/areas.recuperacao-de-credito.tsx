@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AreaPage, AREA_BANNER } from "@/components/area-page";
+import { AreaPage, getAreaBanner } from "@/components/area-page";
+
+const BANNER = getAreaBanner("recuperacao-de-credito");
 
 const TITULO = "Recuperação de Crédito";
 
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/areas/recuperacao-de-credito")({
           "Prática dedicada à recuperação de créditos complexos, com leitura profunda do caso e execução previsível.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: AREA_BANNER },
+      { property: "og:image", content: BANNER },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: AREA_BANNER },
+      { name: "twitter:image", content: BANNER },
     ],
   }),
   component: () => <AreaPage titulo={TITULO} slug="recuperacao-de-credito" />,

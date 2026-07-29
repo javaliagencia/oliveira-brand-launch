@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AreaPage, AREA_BANNER } from "@/components/area-page";
+import { AreaPage, getAreaBanner } from "@/components/area-page";
+
+const BANNER = getAreaBanner("contencioso-estrategico");
 
 const TITULO = "Contencioso Estratégico";
 
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/areas/contencioso-estrategico")({
           "Atuação em disputas de alta complexidade, com construção de teses e condução técnica em todas as instâncias.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: AREA_BANNER },
+      { property: "og:image", content: BANNER },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: AREA_BANNER },
+      { name: "twitter:image", content: BANNER },
     ],
   }),
   component: () => <AreaPage titulo={TITULO} slug="contencioso-estrategico" />,
