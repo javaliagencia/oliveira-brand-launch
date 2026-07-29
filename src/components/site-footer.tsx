@@ -129,7 +129,7 @@ const PUBLICACOES_LINKS = [
 ];
 
 const ESCRITORIO_LINKS = [
-  { label: "O Oliveira Ritzmann", href: "/oliveira-ritzmann" },
+  { label: "O Oliveira Ritzmann", href: "/presenca" },
   { label: "História", href: "/historia" },
   { label: "Presença", href: "/presenca" },
   { label: "Sócios", href: "/advogados" },
@@ -284,7 +284,7 @@ export function SiteFooter() {
             {/* Oliveira Ritzmann */}
             <div>
               <p className="eyebrow">
-                <a href="/oliveira-ritzmann" className="transition-colors duration-200 hover:text-[var(--gold)]">
+                <a href="/presenca" className="transition-colors duration-200 hover:text-[var(--gold)]">
                   Oliveira Ritzmann
                 </a>
               </p>
