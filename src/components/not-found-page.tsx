@@ -58,7 +58,7 @@ export function NotFoundPage() {
           <p className="mt-6 max-w-xl text-base md:text-lg font-light leading-relaxed text-[var(--sand)]/80">
             O endereço que você buscou não existe, foi movido ou nunca esteve
             por aqui. Toda operação previsível começa por voltar ao ponto de
-            partida — siga por um dos caminhos abaixo.
+            partida, siga por um dos caminhos abaixo.
           </p>
 
           <div className="mt-10 flex flex-col divide-y divide-[var(--gold)]/15 border-y border-[var(--gold)]/15">
