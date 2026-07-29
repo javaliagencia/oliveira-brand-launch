@@ -8,6 +8,7 @@ import bannerVolume from "@/assets/areas/contencioso-de-volume.jpg.asset.json";
 import bannerEstrategico from "@/assets/areas/contencioso-estrategico.jpg.asset.json";
 import bannerCivel from "@/assets/areas/civel.jpg.asset.json";
 import bannerTributario from "@/assets/areas/tributario.jpg.asset.json";
+import bannerTrabalhista from "@/assets/areas/trabalhista.jpg";
 
 export type AreaContent = {
   banner: string;
