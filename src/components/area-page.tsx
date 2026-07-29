@@ -1,18 +1,19 @@
 /**
  * AreaPage — estrutura padrão das páginas de Área de Atuação.
  *
- * Mesma estrutura da página de Direito Médico; muda apenas o título.
+ * Estrutura única; o conteúdo varia por slug (src/lib/areas-content.ts).
  */
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail } from "lucide-react";
-import bannerImg from "@/assets/areas/direito-medico.jpg.asset.json";
 import socioJorge from "@/assets/socios/jorge-ritzmann-de-oliveira.png.asset.json";
 import socioCarolina from "@/assets/socios/carolina-schmidt.jpg.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { BrandArrow, BrandLink } from "@/components/brand-ui";
+import { getAreaContent } from "@/lib/areas-content";
 
-export const AREA_BANNER = bannerImg.url;
+export { getAreaBanner } from "@/lib/areas-content";
+
 
 type Contato = {
   nome: string;
