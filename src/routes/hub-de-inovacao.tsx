@@ -189,6 +189,11 @@ function HubInovacaoPage() {
                   quase três décadas de atuação.
                 </span>
               </h2>
+              <p className="mt-6 max-w-[52ch] text-[15px] font-light leading-relaxed text-[color-mix(in_oklch,var(--sand)_72%,transparent)]">
+                Cada rotina, cada tese e cada decisão acumulada em trinta anos
+                de método viram dado, critério e contexto. É essa memória de
+                atuação que orienta a tecnologia, e não o contrário.
+              </p>
             </div>
 
             <div className="md:col-span-5 md:justify-self-end">
@@ -204,8 +209,27 @@ function HubInovacaoPage() {
                 <p className="mt-6 text-[12px] uppercase tracking-[0.18em] text-[color-mix(in_oklch,var(--sand)_65%,transparent)]">
                   Inteligência artificial proprietária
                 </p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.16em] text-[color-mix(in_oklch,var(--sand)_45%,transparent)]">
+                  Logo provisório
+                </p>
+              </div>
+
+              <div className="mt-8 border-l border-[color-mix(in_oklch,var(--gold)_45%,transparent)] pl-6">
+                <p className="text-[15px] font-light leading-relaxed text-[color-mix(in_oklch,var(--sand)_80%,transparent)]">
+                  A <span className="font-medium text-[var(--sand)]">Oliv.ia</span>{" "}
+                  é a inteligência artificial desenvolvida dentro do Oliveira
+                  Ritzmann. Ela nasce de trinta anos de construção de método:
+                  aprende com os fluxos, as teses e os controles do escritório
+                  para transformar volume em leitura estratégica.
+                </p>
+                <p className="mt-4 text-[15px] font-light leading-relaxed text-[color-mix(in_oklch,var(--sand)_70%,transparent)]">
+                  A partir dessa base, desenhamos soluções customizadas para
+                  cada cliente, ajustadas à sua operação, aos seus indicadores e
+                  ao nível de risco que precisa ser controlado.
+                </p>
               </div>
             </div>
+
           </div>
         </div>
 
