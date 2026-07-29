@@ -937,8 +937,9 @@ function PublicacoesFold() {
       ref={sectionRef}
       id="publicacoes"
       aria-label="Publicações, Em ponto"
-      className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
+      className="relative w-full"
+      style={{ backgroundColor: "var(--ink)", color: "var(--sand)", clipPath: "inset(0)" }}
+
     >
       {/* Fundo em vídeo colado à janela e recortado pela dobra (referência Simmons & Simmons) */}
       <div aria-hidden="true" className="pointer-events-none sticky top-0 z-0 h-0 w-full">
