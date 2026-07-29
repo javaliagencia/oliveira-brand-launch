@@ -970,6 +970,15 @@ function PublicacoesFold() {
 
       {/* Header band */}
       <div className="relative z-[2] w-full">
+        {/* Véu extra atrás do título para garantir leitura sobre o vídeo */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(8,38,36,0.72) 0%, rgba(8,38,36,0.62) 55%, rgba(8,38,36,0) 100%)",
+          }}
+        />
         <div className="relative mx-auto max-w-[1360px] px-6 pt-40 pb-24 md:pt-56 md:pb-32">
 
           <div className="max-w-[62ch]">
@@ -979,8 +988,6 @@ function PublicacoesFold() {
                 style={{
                   color: "var(--gold)",
                   letterSpacing: "0.38em",
-                  textShadow:
-                    "0 1px 14px rgba(8,38,36,0.95), 0 0 2px rgba(0,0,0,0.8)",
                 }}
               >
                 Publicações
@@ -991,7 +998,6 @@ function PublicacoesFold() {
                 style={{
                   height: "2px",
                   backgroundColor: "var(--gold)",
-                  boxShadow: "0 1px 10px rgba(8,38,36,0.9)",
                 }}
               />
             </div>
@@ -1003,6 +1009,8 @@ function PublicacoesFold() {
             </h2>
           </div>
         </div>
+      </div>
+
       </div>
 
       {/* Grade das publicações — rola sobre o vídeo */}
