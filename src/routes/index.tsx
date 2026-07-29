@@ -23,6 +23,86 @@ import socioMariana from "@/assets/socios/mariana-hillesheim.png.asset.json";
 import socioSonia from "@/assets/socios/sonia-angulski.jpg.asset.json";
 import socioTatiane from "@/assets/socios/tatiane-bittencourt.png.asset.json";
 import simboloDourado from "@/assets/simbolo-dourado.png.asset.json";
+import seloTopLawyers from "@/assets/selo-top-lawyers-2526.png.asset.json";
+import seloAb2l from "@/assets/selo-ab2l-horizontal.png.asset.json";
+import selo30anos from "@/assets/selo-30-anos-dourado.png.asset.json";
+
+/**
+ * Dobra — Prêmios e Reconhecimentos.
+ *
+ * Faixa clara (bege claro) entre "Quem conduz o método" e Publicações.
+ * Bloco editorial à esquerda; selos alinhados em linha à direita, em
+ * altura óptica equivalente, com filete dourado separando.
+ */
+function ReconhecimentosFold() {
+  return (
+    <section
+      aria-labelledby="reconhecimentos-heading"
+      className="w-full"
+      style={{ backgroundColor: "color-mix(in oklch, var(--sand) 45%, white)" }}
+    >
+      <div className="mx-auto max-w-[1360px] px-6 py-20 md:py-24">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-16">
+          <div className="md:col-span-4">
+            <SectionEyebrow>Reconhecimentos</SectionEyebrow>
+            <h2
+              id="reconhecimentos-heading"
+              className="mt-8 font-display text-[clamp(1.6rem,2.6vw,2.35rem)] font-light leading-[1.15] tracking-[-0.025em]"
+              style={{ color: "var(--ink)" }}
+            >
+              Prêmios e reconhecimentos
+            </h2>
+            <p
+              className="mt-5 max-w-[38ch] text-[15px] leading-relaxed"
+              style={{ color: "color-mix(in oklch, var(--ink) 72%, transparent)" }}
+            >
+              Trinta anos de método reconhecidos por publicações e entidades
+              que avaliam a advocacia brasileira.
+            </p>
+            <div className="mt-8">
+              <BrandLink href="/oliveira-ritzmann">Saiba mais</BrandLink>
+            </div>
+          </div>
+
+          <div className="md:col-span-8">
+            <span
+              aria-hidden="true"
+              className="mb-10 hidden h-px w-full md:block"
+              style={{ backgroundColor: "color-mix(in oklch, var(--ink) 12%, transparent)" }}
+            />
+            <ul className="flex flex-wrap items-center gap-x-14 gap-y-10 md:justify-between">
+              <li>
+                <img
+                  src={seloTopLawyers.url}
+                  alt="Selo Top Lawyers 2025–2026 — O Livro de Ouro dos Escritórios de Advocacia do Brasil"
+                  loading="lazy"
+                  className="h-24 w-auto md:h-28"
+                />
+              </li>
+              <li>
+                <img
+                  src={seloAb2l.url}
+                  alt="Certificado AB2L Infinite de Inovação Jurídica — Escritório 2026"
+                  loading="lazy"
+                  className="h-20 w-auto rounded-sm md:h-24"
+                />
+              </li>
+              <li>
+                <img
+                  src={selo30anos.url}
+                  alt="Selo comemorativo de 30 anos do Oliveira Ritzmann Advogados"
+                  loading="lazy"
+                  className="h-24 w-auto md:h-28"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 
 
@@ -70,7 +150,9 @@ function Index() {
       <HeroFold />
       <CompetenciasFold />
       <ManifestoFold />
+      <ReconhecimentosFold />
       <PublicacoesFold />
+
       <CarreiraFold />
     </main>
   );
