@@ -457,3 +457,48 @@
 }
 
 
+
+/* ---------- Mapa de presença ---------- */
+.mapa-estados path {
+  opacity: 0;
+  animation: mapa-uf-in 700ms ease-out forwards;
+}
+@keyframes mapa-uf-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mapa-arco {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: mapa-arco-draw 1400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: opacity 300ms ease, stroke-width 300ms ease;
+}
+@keyframes mapa-arco-draw {
+  to { stroke-dashoffset: 0; }
+}
+.mapa-ponto {
+  opacity: 0;
+  animation: mapa-ponto-in 600ms ease-out forwards;
+  transition: opacity 300ms ease;
+}
+.mapa-ponto:focus { outline: none; }
+@keyframes mapa-ponto-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.mapa-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapa-pulso 3.2s ease-in-out infinite;
+  transition: r 300ms ease;
+}
+@keyframes mapa-pulso {
+  0%, 100% { transform: scale(0.6); opacity: 0.55; }
+  50% { transform: scale(1.25); opacity: 0.15; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mapa-estados path,
+  .mapa-ponto,
+  .mapa-arco,
+  .mapa-halo { animation: none !important; opacity: 1; stroke-dashoffset: 0; }
+}
