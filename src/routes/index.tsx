@@ -806,6 +806,38 @@ function PublicacoesMonogramOutline({ className = "" }: { className?: string }) 
 }
 
 function PublicacoesFold() {
+  // Parallax: o vídeo de fundo caminha junto com a rolagem, passando por baixo
+  // da colagem de notícias (referência Simmons & Simmons).
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const el = sectionRef.current;
+      const vid = videoRef.current;
+      if (!el || !vid) return;
+      const rect = el.getBoundingClientRect();
+      const total = rect.height + window.innerHeight;
+      const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
+      // O vídeo é 40% mais alto que a viewport e desliza dentro dela.
+      vid.style.transform = `translate3d(0, ${-progress * 28}%, 0)`;
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+
   const renderPublicacaoCard = (idx: number) => {
     const pub = PUBLICACOES[idx];
 
@@ -895,6 +927,7 @@ function PublicacoesFold() {
 
   return (
     <section
+      ref={sectionRef}
       id="publicacoes"
       aria-label="Publicações, Em ponto"
       className="relative w-full overflow-hidden"
@@ -904,24 +937,26 @@ function PublicacoesFold() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           <video
+            ref={videoRef}
             src={pubParticles.url}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ opacity: 0.75 }}
+            className="absolute left-0 top-0 w-full object-cover will-change-transform"
+            style={{ opacity: 0.8, height: "140%" }}
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(8,38,36,0.55) 0%, rgba(8,38,36,0.72) 45%, rgba(8,38,36,0.82) 100%)",
+                "linear-gradient(180deg, rgba(8,38,36,0.5) 0%, rgba(8,38,36,0.66) 45%, rgba(8,38,36,0.78) 100%)",
             }}
           />
         </div>
       </div>
+
 
       {/* Header band */}
       <div className="relative z-[2] w-full">
