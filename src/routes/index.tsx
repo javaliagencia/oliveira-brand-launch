@@ -806,8 +806,8 @@ function PublicacoesMonogramOutline({ className = "" }: { className?: string }) 
 }
 
 function PublicacoesFold() {
-  // Parallax: o vídeo de fundo caminha junto com a rolagem, passando por baixo
-  // da colagem de notícias (referência Simmons & Simmons).
+  // Parallax: o vídeo de fundo pertence à dobra inteira e também se desloca
+  // durante a rolagem, passando por baixo da colagem de notícias.
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -819,10 +819,11 @@ function PublicacoesFold() {
       const vid = videoRef.current;
       if (!el || !vid) return;
       const rect = el.getBoundingClientRect();
-      const total = rect.height + window.innerHeight;
+      const travel = Math.max(window.innerHeight * 0.36, rect.height * 0.16);
+      const total = Math.max(1, rect.height + window.innerHeight);
       const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
-      // O vídeo é 40% mais alto que a viewport e desliza dentro dela.
-      vid.style.transform = `translate3d(0, ${-progress * 28}%, 0)`;
+      // Começa levemente acima do título e desce conforme a página rola.
+      vid.style.transform = `translate3d(0, ${progress * travel}px, 0)`;
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -934,20 +935,18 @@ function PublicacoesFold() {
       style={{ backgroundColor: "var(--ink)", color: "var(--sand)" }}
     >
       {/* Fundo em vídeo que acompanha a rolagem de toda a dobra (referência Simmons & Simmons) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
-          <video
-            ref={videoRef}
-            src={pubParticles.url}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute left-0 top-0 w-full object-cover will-change-transform"
-            style={{ opacity: 0.85, height: "140%" }}
-          />
-        </div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <video
+          ref={videoRef}
+          src={pubParticles.url}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute left-0 top-[-18vh] h-[calc(100%+52vh)] w-full object-cover will-change-transform"
+          style={{ opacity: 0.85 }}
+        />
       </div>
 
       {/* Véu que percorre a dobra inteira: verde mais claro no topo, verde escuro ao chegar no CTA */}
