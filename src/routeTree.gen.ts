@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PresencaRouteImport } from './routes/presenca'
+import { Route as HubDeInovacaoRouteImport } from './routes/hub-de-inovacao'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ import { Route as AtuacaoSegmentosClientesCorporativosRouteImport } from './rout
 const PresencaRoute = PresencaRouteImport.update({
   id: '/presenca',
   path: '/presenca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HubDeInovacaoRoute = HubDeInovacaoRouteImport.update({
+  id: '/hub-de-inovacao',
+  path: '/hub-de-inovacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/carreiras': typeof CarreirasRoute
   '/contato': typeof ContatoRoute
+  '/hub-de-inovacao': typeof HubDeInovacaoRoute
   '/presenca': typeof PresencaRoute
   '/areas/direito-medico': typeof AreasDireitoMedicoRoute
   '/socios/jorge-ritzmann-de-oliveira': typeof SociosJorgeRitzmannDeOliveiraRoute
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/hub-de-inovacao'
     | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/hub-de-inovacao'
     | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carreiras'
     | '/contato'
+    | '/hub-de-inovacao'
     | '/presenca'
     | '/areas/direito-medico'
     | '/socios/jorge-ritzmann-de-oliveira'
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CarreirasRoute: typeof CarreirasRoute
   ContatoRoute: typeof ContatoRoute
+  HubDeInovacaoRoute: typeof HubDeInovacaoRoute
   PresencaRoute: typeof PresencaRoute
   AreasDireitoMedicoRoute: typeof AreasDireitoMedicoRoute
   SociosJorgeRitzmannDeOliveiraRoute: typeof SociosJorgeRitzmannDeOliveiraRoute
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       path: '/presenca'
       fullPath: '/presenca'
       preLoaderRoute: typeof PresencaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hub-de-inovacao': {
+      id: '/hub-de-inovacao'
+      path: '/hub-de-inovacao'
+      fullPath: '/hub-de-inovacao'
+      preLoaderRoute: typeof HubDeInovacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CarreirasRoute: CarreirasRoute,
   ContatoRoute: ContatoRoute,
+  HubDeInovacaoRoute: HubDeInovacaoRoute,
   PresencaRoute: PresencaRoute,
   AreasDireitoMedicoRoute: AreasDireitoMedicoRoute,
   SociosJorgeRitzmannDeOliveiraRoute: SociosJorgeRitzmannDeOliveiraRoute,
