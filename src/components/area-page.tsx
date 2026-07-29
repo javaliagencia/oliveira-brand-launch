@@ -25,8 +25,8 @@ type Contato = {
   linkedin: string;
 };
 
-const CONTATOS: Contato[] = [
-  {
+const PESSOAS = {
+  jorge: {
     nome: "Jorge Ritzmann de Oliveira",
     cargo: "Sócio-fundador · Coordenação da área",
     foto: socioJorge.url,
@@ -34,7 +34,7 @@ const CONTATOS: Contato[] = [
     email: "jorge@oliveiraritzmann.com.br",
     linkedin: "https://www.linkedin.com",
   },
-  {
+  carolina: {
     nome: "Carolina Schmidt",
     cargo: "Sócia · Contencioso e regulação",
     foto: socioCarolina.url,
@@ -42,7 +42,7 @@ const CONTATOS: Contato[] = [
     email: "carolina@oliveiraritzmann.com.br",
     linkedin: "https://www.linkedin.com",
   },
-  {
+  sonia: {
     nome: "Sônia Angulski",
     cargo: "Sócia · Consultivo e contratos",
     foto: socioSonia.url,
@@ -50,7 +50,26 @@ const CONTATOS: Contato[] = [
     email: "sonia@oliveiraritzmann.com.br",
     linkedin: "https://www.linkedin.com",
   },
-];
+  guilherme: {
+    nome: "Guilherme Otte",
+    cargo: "Sócio · Tributário e consultivo",
+    foto: socioGuilherme.url,
+    href: "#",
+    email: "guilherme@oliveiraritzmann.com.br",
+    linkedin: "https://www.linkedin.com",
+  },
+} satisfies Record<string, Contato>;
+
+const CONTATOS_PADRAO: Contato[] = [PESSOAS.jorge, PESSOAS.carolina, PESSOAS.sonia];
+
+/** Advogados responsáveis por área. */
+const CONTATOS_POR_AREA: Record<string, Contato[]> = {
+  "recuperacao-de-credito": [PESSOAS.jorge, PESSOAS.carolina],
+  tributario: [PESSOAS.jorge, PESSOAS.guilherme],
+  trabalhista: [PESSOAS.sonia],
+  civel: [PESSOAS.carolina],
+  "contencioso-de-volume": [PESSOAS.jorge],
+};
 
 const AREAS = [
   { label: "Recuperação de Crédito", href: "/areas/recuperacao-de-credito" },
