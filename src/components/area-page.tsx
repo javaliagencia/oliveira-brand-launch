@@ -82,16 +82,14 @@ export function AreaPage({ titulo, slug }: { titulo: string; slug?: string }) {
                 {titulo}
               </h1>
               <p className="mt-6 text-[15px] leading-relaxed text-[color-mix(in_oklch,var(--sand)_85%,transparent)] md:text-[16px]">
-                Assessoria integral a médicos, clínicas, hospitais, operadoras e cooperativas.
-                Defesa técnica, regulação e governança conduzidas com o mesmo método que
-                sustenta trinta anos de atuação em decisões que exigem profundidade.
+                {conteudo.hero}
               </p>
             </div>
 
             <div className="order-1 md:order-2 md:col-span-7 md:self-start">
               <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[16/11]">
                 <img
-                  src={bannerImg.url}
+                  src={conteudo.banner}
                   alt={titulo}
                   className="h-full w-full object-cover"
                   loading="eager"
