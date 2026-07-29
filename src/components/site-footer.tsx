@@ -15,6 +15,7 @@
  * cliente. Cada endereço vem marcado com schema.org LocalBusiness.
  */
 import { Linkedin, Instagram, Facebook } from "lucide-react";
+import { BrandArrow } from "@/components/brand-ui";
 import logoVerde from "@/assets/logo-horizontal-verde.png.asset.json";
 import selo30 from "@/assets/selo-30-anos-dourado.png.asset.json";
 
