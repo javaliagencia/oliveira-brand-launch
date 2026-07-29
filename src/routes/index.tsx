@@ -44,7 +44,7 @@ function ReconhecimentosFold() {
       <div className="mx-auto max-w-[1360px] px-6 py-12 md:py-14">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-4">
-            <h2 id="reconhecimentos-heading">
+            <h2 id="reconhecimentos-heading" className="m-0 p-0 font-sans text-[15px] font-medium leading-none tracking-normal">
               <SectionEyebrow tone="ink">Prêmios e reconhecimentos</SectionEyebrow>
             </h2>
             <p
