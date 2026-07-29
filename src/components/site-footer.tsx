@@ -135,6 +135,8 @@ const ESCRITORIO_LINKS = [
   { label: "Presença", href: "/presenca" },
   { label: "Sócios", href: "/advogados" },
   { label: "Carreiras", href: "/carreiras" },
+  { label: "Hub de Inovação", href: "/hub-de-inovacao" },
+
 ];
 
 const CONTATO_LINKS = [
